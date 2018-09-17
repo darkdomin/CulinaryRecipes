@@ -98,7 +98,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.txtShortDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.contextShortDesription = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cofnijToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
@@ -145,7 +144,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.pbLittlePhoto = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.rtxtDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.contextLongDescription = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmList = new System.Windows.Forms.ToolStripMenuItem();
             this.separatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -158,7 +156,6 @@
             this.usuńToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.rTxtIngredients = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.contextIngridients = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -166,7 +163,6 @@
             this.kopiujToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.wklejToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuńToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtName = new CulinaryRecipes.ReadOnlyTextBox();
             this.contextName = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.undoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -193,6 +189,10 @@
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.txtShortDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
+            this.rtxtDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
+            this.rTxtIngredients = new CulinaryRecipes.ReadOnlyRichTextBox();
+            this.txtName = new CulinaryRecipes.ReadOnlyTextBox();
             this.menuStrip1.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -285,33 +285,33 @@
             // podglToolStripMenuItem
             // 
             this.podglToolStripMenuItem.Name = "podglToolStripMenuItem";
-            this.podglToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.podglToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.podglToolStripMenuItem.Text = "Podgląd Wydruku";
             this.podglToolStripMenuItem.Click += new System.EventHandler(this.podglToolStripMenuItem_Click);
             // 
             // drukujToolStripMenuItem
             // 
             this.drukujToolStripMenuItem.Name = "drukujToolStripMenuItem";
-            this.drukujToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.drukujToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.drukujToolStripMenuItem.Text = "Drukuj";
             this.drukujToolStripMenuItem.Click += new System.EventHandler(this.drukujToolStripMenuItem_Click);
             // 
             // listaZakupowaToolStripMenuItem
             // 
             this.listaZakupowaToolStripMenuItem.Name = "listaZakupowaToolStripMenuItem";
-            this.listaZakupowaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaZakupowaToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.listaZakupowaToolStripMenuItem.Text = "Lista Zakupowa";
             this.listaZakupowaToolStripMenuItem.Click += new System.EventHandler(this.listaZakupowaToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(166, 6);
             // 
             // zamknijToolStripMenuItem
             // 
             this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.zamknijToolStripMenuItem.Text = "Zamknij";
             this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
             // 
@@ -1034,6 +1034,7 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            this.panelMain.Controls.Add(this.btnAddRest);
             this.panelMain.Controls.Add(this.txtShortDescription);
             this.panelMain.Controls.Add(this.rtxtPortion);
             this.panelMain.Controls.Add(this.rtxtAmountsOfFood);
@@ -1063,7 +1064,6 @@
             this.panelMain.Controls.Add(this.lblCuisine);
             this.panelMain.Controls.Add(this.label20);
             this.panelMain.Controls.Add(this.label15);
-            this.panelMain.Controls.Add(this.btnAddRest);
             this.panelMain.Controls.Add(this.lblLevel);
             this.panelMain.Controls.Add(this.label19);
             this.panelMain.Controls.Add(this.label18);
@@ -1085,20 +1085,6 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1034, 801);
             this.panelMain.TabIndex = 23;
-            // 
-            // txtShortDescription
-            // 
-            this.txtShortDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.txtShortDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtShortDescription.ContextMenuStrip = this.contextShortDesription;
-            this.txtShortDescription.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtShortDescription.ForeColor = System.Drawing.Color.White;
-            this.txtShortDescription.Location = new System.Drawing.Point(777, 137);
-            this.txtShortDescription.Name = "txtShortDescription";
-            this.txtShortDescription.ReadOnly = true;
-            this.txtShortDescription.Size = new System.Drawing.Size(220, 130);
-            this.txtShortDescription.TabIndex = 69;
-            this.txtShortDescription.Text = "";
             // 
             // contextShortDesription
             // 
@@ -1182,7 +1168,7 @@
             // pb9
             // 
             this.pb9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb9.Location = new System.Drawing.Point(69, 74);
+            this.pb9.Location = new System.Drawing.Point(60, 74);
             this.pb9.Name = "pb9";
             this.pb9.Size = new System.Drawing.Size(5, 683);
             this.pb9.TabIndex = 66;
@@ -1200,9 +1186,9 @@
             // pb2
             // 
             this.pb2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb2.Location = new System.Drawing.Point(69, 64);
+            this.pb2.Location = new System.Drawing.Point(60, 64);
             this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(367, 10);
+            this.pb2.Size = new System.Drawing.Size(376, 10);
             this.pb2.TabIndex = 64;
             this.pb2.TabStop = false;
             // 
@@ -1448,10 +1434,11 @@
             this.btnAddRest.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddRest.FlatAppearance.BorderSize = 0;
             this.btnAddRest.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddRest.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAddRest.ForeColor = System.Drawing.Color.White;
-            this.btnAddRest.Location = new System.Drawing.Point(564, 193);
+            this.btnAddRest.Location = new System.Drawing.Point(722, 200);
             this.btnAddRest.Name = "btnAddRest";
-            this.btnAddRest.Size = new System.Drawing.Size(75, 23);
+            this.btnAddRest.Size = new System.Drawing.Size(75, 34);
             this.btnAddRest.TabIndex = 38;
             this.btnAddRest.Text = "Dodaj";
             this.btnAddRest.UseVisualStyleBackColor = false;
@@ -1571,23 +1558,6 @@
             this.label13.Text = "Opis";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // rtxtDescription
-            // 
-            this.rtxtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtxtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.rtxtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxtDescription.ContextMenuStrip = this.contextLongDescription;
-            this.rtxtDescription.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rtxtDescription.ForeColor = System.Drawing.Color.White;
-            this.rtxtDescription.Location = new System.Drawing.Point(475, 386);
-            this.rtxtDescription.Name = "rtxtDescription";
-            this.rtxtDescription.ReadOnly = true;
-            this.rtxtDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtxtDescription.Size = new System.Drawing.Size(520, 371);
-            this.rtxtDescription.TabIndex = 20;
-            this.rtxtDescription.Text = "";
-            this.rtxtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtDescription_KeyDown);
-            // 
             // contextLongDescription
             // 
             this.contextLongDescription.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1683,23 +1653,6 @@
             this.label12.TabIndex = 3;
             this.label12.Text = "Składniki";
             // 
-            // rTxtIngredients
-            // 
-            this.rTxtIngredients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.rTxtIngredients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.rTxtIngredients.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rTxtIngredients.ContextMenuStrip = this.contextIngridients;
-            this.rTxtIngredients.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rTxtIngredients.ForeColor = System.Drawing.Color.White;
-            this.rTxtIngredients.Location = new System.Drawing.Point(74, 74);
-            this.rTxtIngredients.Name = "rTxtIngredients";
-            this.rTxtIngredients.ReadOnly = true;
-            this.rTxtIngredients.Size = new System.Drawing.Size(362, 683);
-            this.rTxtIngredients.TabIndex = 2;
-            this.rTxtIngredients.Text = "";
-            this.rTxtIngredients.WordWrap = false;
-            // 
             // contextIngridients
             // 
             this.contextIngridients.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1751,22 +1704,6 @@
             this.usuńToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
             this.usuńToolStripMenuItem1.Text = "Usuń";
             this.usuńToolStripMenuItem1.Click += new System.EventHandler(this.usuńToolStripMenuItem1_Click);
-            // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.ContextMenuStrip = this.contextName;
-            this.txtName.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtName.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtName.ForeColor = System.Drawing.Color.White;
-            this.txtName.Location = new System.Drawing.Point(16, 7);
-            this.txtName.MaxLength = 85;
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(1004, 26);
-            this.txtName.TabIndex = 0;
-            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // contextName
             // 
@@ -1992,6 +1929,70 @@
             // 
             this.printDialog1.Document = this.printDocument1;
             this.printDialog1.UseEXDialog = true;
+            // 
+            // txtShortDescription
+            // 
+            this.txtShortDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.txtShortDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtShortDescription.ContextMenuStrip = this.contextShortDesription;
+            this.txtShortDescription.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtShortDescription.ForeColor = System.Drawing.Color.White;
+            this.txtShortDescription.Location = new System.Drawing.Point(777, 137);
+            this.txtShortDescription.Name = "txtShortDescription";
+            this.txtShortDescription.ReadOnly = true;
+            this.txtShortDescription.Size = new System.Drawing.Size(220, 130);
+            this.txtShortDescription.TabIndex = 69;
+            this.txtShortDescription.Text = "";
+            // 
+            // rtxtDescription
+            // 
+            this.rtxtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtxtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.rtxtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtxtDescription.ContextMenuStrip = this.contextLongDescription;
+            this.rtxtDescription.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rtxtDescription.ForeColor = System.Drawing.Color.White;
+            this.rtxtDescription.Location = new System.Drawing.Point(475, 386);
+            this.rtxtDescription.Name = "rtxtDescription";
+            this.rtxtDescription.ReadOnly = true;
+            this.rtxtDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtxtDescription.Size = new System.Drawing.Size(520, 371);
+            this.rtxtDescription.TabIndex = 20;
+            this.rtxtDescription.Text = "";
+            this.rtxtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtDescription_KeyDown);
+            // 
+            // rTxtIngredients
+            // 
+            this.rTxtIngredients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.rTxtIngredients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.rTxtIngredients.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rTxtIngredients.ContextMenuStrip = this.contextIngridients;
+            this.rTxtIngredients.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rTxtIngredients.ForeColor = System.Drawing.Color.White;
+            this.rTxtIngredients.Location = new System.Drawing.Point(65, 74);
+            this.rTxtIngredients.Name = "rTxtIngredients";
+            this.rTxtIngredients.ReadOnly = true;
+            this.rTxtIngredients.Size = new System.Drawing.Size(370, 683);
+            this.rTxtIngredients.TabIndex = 2;
+            this.rTxtIngredients.Text = "";
+            this.rTxtIngredients.WordWrap = false;
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtName.ContextMenuStrip = this.contextName;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtName.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtName.ForeColor = System.Drawing.Color.White;
+            this.txtName.Location = new System.Drawing.Point(16, 7);
+            this.txtName.MaxLength = 85;
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(1004, 26);
+            this.txtName.TabIndex = 0;
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form2
             // 

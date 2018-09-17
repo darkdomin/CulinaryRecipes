@@ -919,7 +919,16 @@ namespace CulinaryRecipes
                 if (check == false)
                 {
                     if (txtName.Text == titleForm2) { }
-                    else Function.CheckName(txtName);
+                    else
+                    {
+                        rtxtAmountsOfFood.Text = SecuringAmountOffood3(rtxtAmountsOfFood);
+                        rTxtIngredients.Text = SecuringAmountOffood3(rTxtIngredients);
+                        txtShortDescription.Text = SecuringAmountOffood3(txtShortDescription);
+                        rtxtDescription.Text = SecuringAmountOffood3(rtxtDescription);
+                        Function.CheckName(txtName);
+                     
+                    }
+               
                     if (txtName.Text != "")
                     {
                         rtxtAmountsOfFood.Lines = AddStamp(rtxtAmountsOfFood.Lines);
@@ -962,14 +971,17 @@ namespace CulinaryRecipes
                             up.PreservesMeal = IdMealForm2[5];
                             up.SaladMeal = IdMealForm2[6];
                             #endregion
-                            if (lblTime.Text == "") executionTimeForm2 = dash;
-                            else up.CategoryPreparationTime = executionTimeForm2;
-                            if (lblLevel.Text == "") difficultLevelForm2 = dash;
-                            else up.CategoryDifficultLevel = difficultLevelForm2;
+                            //if (lblTime.Text == "-") executionTimeForm2 = dash;
+                            //else
+                            up.CategoryPreparationTime = executionTimeForm2;
+                            //if (lblLevel.Text == "-") difficultLevelForm2 = dash;
+                            ////else
+                            up.CategoryDifficultLevel = difficultLevelForm2;
                             if (idRatingForm2 == null) idRatingForm2 = dash;
                             else up.CategoryRating = idRatingForm2;
-                            if (lblCuisine.Text == "") listOfCuisinesForm2 = dash;
-                            else up.CategoryCuisines = lblCuisine.Text;
+                            //if (lblCuisine.Text == "-") listOfCuisinesForm2 = dash;
+                            //else
+                                up.CategoryCuisines = lblCuisine.Text;
                             if (linkForm2 == null) linkForm2 = stringOfCharacters.ToString();
                             else up.PhotoLinkLocation = linkForm2;
 
