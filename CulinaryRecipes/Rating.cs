@@ -19,7 +19,5 @@ namespace CulinaryRecipes
             new Rating {Id=2,RatingName="gwiazdkaDwa" },
             new Rating {Id=3,RatingName="gwiazdkaTrzy" },
         };
-        
-       
     }
 }

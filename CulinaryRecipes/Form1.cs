@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CulinaryRecipes.Properties;
-using LiteDB;
-using System.IO;
-using System.Xml.Serialization;
-using System.Xml;
+﻿using CulinaryRecipes.Properties;
+using System;
 using System.Collections;
-using System.Xml.XPath;
+using System.Collections.Generic;
+using System.IO;
 using System.Net.NetworkInformation;
+using System.Text;
+using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace CulinaryRecipes
 {
@@ -32,7 +24,7 @@ namespace CulinaryRecipes
         int[] ingridients = new int[7];
         XmlSerializer xs;
         List<RecipesBase> ls;
-        bool d = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -178,7 +170,6 @@ namespace CulinaryRecipes
                     fs.Close();
                 }
             }
-            
         }
 
         private void exportujBazęDanychToolStripMenuItem_Click(object sender, EventArgs e)
@@ -192,7 +183,7 @@ namespace CulinaryRecipes
 
                 foreach (var r in RecipesBase.getAll())
                 {
-                    ls.Add(new RecipesBase(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation,r.Vegetarian));
+                    ls.Add(new RecipesBase(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian));
                 }
                 xs.Serialize(fs, ls);
                 fs.Close();
@@ -429,9 +420,11 @@ namespace CulinaryRecipes
                 ingredientForm1 = dgGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
                 amountsOfIngredientsForm1 = dgGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
 
-                if (dgGrid.Rows[e.RowIndex].Cells[4].Value.ToString() == stringOfCharactersForm2.stringOfCharacters.ToString()) txtShortDescription.Text = CleanDash(txtShortDescription.Text);
-                else txtShortDescription.Text = dgGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
-
+                if (dgGrid.Rows[e.RowIndex].Cells[4].Value.ToString() == stringOfCharactersForm2.stringOfCharacters.ToString() + stringOfCharactersForm2.stringOfCharacters1.ToString()) txtShortDescription.Text = CleanDash(txtShortDescription.Text);
+                else
+                {
+                    txtShortDescription.Text = dgGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
+                }
                 instructionForm1 = dgGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
                 NumberOfPortionsForm1 = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[6].Value);
 
@@ -508,10 +501,10 @@ namespace CulinaryRecipes
 
             for (int i = 0; i < nameVariableForm1.Length; i++)
             {
-                if (nameVariableForm1[i] == stringOfCharactersForm2.stringOfCharacters&& nameVariableForm1[i+1] == stringOfCharactersForm2.stringOfCharacters1)
+                if (nameVariableForm1[i] == stringOfCharactersForm2.stringOfCharacters && nameVariableForm1[i + 1] == stringOfCharactersForm2.stringOfCharacters1)
                 {
                     S[i] = ' ';
-                    S[i+1] = ' ';
+                    S[i + 1] = ' ';
                 }
                 else
                 {
@@ -534,18 +527,6 @@ namespace CulinaryRecipes
                 pbStar1.Visible = false;
                 pbStar2.Visible = false;
                 pbStar3.Visible = false;
-            }
-            else
-            {
-                ////pbLittlePhoto.Visible = true;
-                //txtLittleName.Visible = true;
-                //txtShortDescription.Visible = true;
-                //lblShortTime.Visible = true;
-                //lblShortLevel.Visible = true;
-                //lblCuisine.Visible = true;
-                //pbStar1.Visible = true;
-                //pbStar2.Visible = true;
-                //pbStar3.Visible = true;
             }
         }
 
@@ -599,11 +580,11 @@ namespace CulinaryRecipes
             dgGrid.Columns.Add("Photo", "Photo");
             // dgGrid.Columns.Add("Vegetarian","Vegetarian");
 
-            for (int i = 0; i < dgGrid.ColumnCount; i++)
-            {
-                if (i == 1) continue;
-                else dgGrid.Columns[i].Visible = false;
-            }
+            //for (int i = 0; i < dgGrid.ColumnCount; i++)
+            //{
+            //    if (i == 1) continue;
+            //    else dgGrid.Columns[i].Visible = false;
+            //}
         }
 
         private void filldgGrid()
@@ -738,7 +719,7 @@ namespace CulinaryRecipes
                 {
                     if ((int)RecipesBase.GetPropValue(r, _propName) == 1 && _name.Checked)
                     {
-                        dgGrid.Rows.Add(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation,r.Vegetarian);
+                        dgGrid.Rows.Add(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian);
                     }
                 }
             }

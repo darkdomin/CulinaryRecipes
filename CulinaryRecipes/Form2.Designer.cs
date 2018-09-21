@@ -40,20 +40,20 @@
             this.edycjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.przeliczPorcjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.chcEggs = new System.Windows.Forms.CheckBox();
-            this.chcMeat = new System.Windows.Forms.CheckBox();
-            this.chcBird = new System.Windows.Forms.CheckBox();
+            this.chcFish = new System.Windows.Forms.CheckBox();
             this.chcPasta = new System.Windows.Forms.CheckBox();
+            this.chcFruits = new System.Windows.Forms.CheckBox();
+            this.chcMuschrooms = new System.Windows.Forms.CheckBox();
+            this.chcBird = new System.Windows.Forms.CheckBox();
+            this.chcMeat = new System.Windows.Forms.CheckBox();
+            this.chcEggs = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lbl34 = new System.Windows.Forms.Label();
-            this.chcMuschrooms = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.chcFruits = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.chcFish = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
@@ -69,19 +69,19 @@
             this.panel22 = new System.Windows.Forms.Panel();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.panelRight = new System.Windows.Forms.Panel();
+            this.chcSnack = new System.Windows.Forms.CheckBox();
+            this.chcDinner = new System.Windows.Forms.CheckBox();
+            this.chcSoup = new System.Windows.Forms.CheckBox();
+            this.chcDessert = new System.Windows.Forms.CheckBox();
+            this.chcDrink = new System.Windows.Forms.CheckBox();
+            this.chcPreserves = new System.Windows.Forms.CheckBox();
             this.chcSalad = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.chcPreserves = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.chcDrink = new System.Windows.Forms.CheckBox();
             this.label = new System.Windows.Forms.Label();
-            this.chcDessert = new System.Windows.Forms.CheckBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.chcSoup = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.chcDinner = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.chcSnack = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -98,6 +98,7 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnAddRest = new System.Windows.Forms.Button();
             this.contextShortDesription = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cofnijToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
@@ -133,7 +134,6 @@
             this.lblCuisine = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnAddRest = new System.Windows.Forms.Button();
             this.lblLevel = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -189,6 +189,7 @@
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.txtShortDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.rtxtDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.rTxtIngredients = new CulinaryRecipes.ReadOnlyRichTextBox();
@@ -256,6 +257,7 @@
             this.contextName.SuspendLayout();
             this.contextAmounts.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -331,19 +333,19 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            this.panelLeft.Controls.Add(this.chcEggs);
-            this.panelLeft.Controls.Add(this.chcMeat);
-            this.panelLeft.Controls.Add(this.chcBird);
+            this.panelLeft.Controls.Add(this.chcFish);
             this.panelLeft.Controls.Add(this.chcPasta);
+            this.panelLeft.Controls.Add(this.chcFruits);
+            this.panelLeft.Controls.Add(this.chcMuschrooms);
+            this.panelLeft.Controls.Add(this.chcBird);
+            this.panelLeft.Controls.Add(this.chcMeat);
+            this.panelLeft.Controls.Add(this.chcEggs);
             this.panelLeft.Controls.Add(this.label10);
             this.panelLeft.Controls.Add(this.label9);
             this.panelLeft.Controls.Add(this.label11);
             this.panelLeft.Controls.Add(this.lbl34);
-            this.panelLeft.Controls.Add(this.chcMuschrooms);
             this.panelLeft.Controls.Add(this.panel1);
-            this.panelLeft.Controls.Add(this.chcFruits);
             this.panelLeft.Controls.Add(this.label7);
-            this.panelLeft.Controls.Add(this.chcFish);
             this.panelLeft.Controls.Add(this.label4);
             this.panelLeft.Controls.Add(this.panel17);
             this.panelLeft.Controls.Add(this.panel23);
@@ -360,33 +362,61 @@
             this.panelLeft.Size = new System.Drawing.Size(100, 801);
             this.panelLeft.TabIndex = 14;
             // 
-            // chcEggs
+            // chcFish
             // 
-            this.chcEggs.AutoSize = true;
-            this.chcEggs.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.chcEggs.Enabled = false;
-            this.chcEggs.ForeColor = System.Drawing.Color.White;
-            this.chcEggs.Location = new System.Drawing.Point(83, 714);
-            this.chcEggs.Name = "chcEggs";
-            this.chcEggs.Size = new System.Drawing.Size(15, 14);
-            this.chcEggs.TabIndex = 18;
-            this.chcEggs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chcEggs.UseVisualStyleBackColor = true;
-            this.chcEggs.CheckedChanged += new System.EventHandler(this.chcEggs_CheckedChanged);
+            this.chcFish.AutoSize = true;
+            this.chcFish.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcFish.Enabled = false;
+            this.chcFish.ForeColor = System.Drawing.Color.White;
+            this.chcFish.Location = new System.Drawing.Point(83, 42);
+            this.chcFish.Name = "chcFish";
+            this.chcFish.Size = new System.Drawing.Size(15, 14);
+            this.chcFish.TabIndex = 11;
+            this.chcFish.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chcFish.UseVisualStyleBackColor = true;
+            this.chcFish.CheckedChanged += new System.EventHandler(this.chcFish_CheckedChanged);
             // 
-            // chcMeat
+            // chcPasta
             // 
-            this.chcMeat.AutoSize = true;
-            this.chcMeat.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.chcMeat.Enabled = false;
-            this.chcMeat.ForeColor = System.Drawing.Color.White;
-            this.chcMeat.Location = new System.Drawing.Point(83, 600);
-            this.chcMeat.Name = "chcMeat";
-            this.chcMeat.Size = new System.Drawing.Size(15, 14);
-            this.chcMeat.TabIndex = 18;
-            this.chcMeat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chcMeat.UseVisualStyleBackColor = true;
-            this.chcMeat.CheckedChanged += new System.EventHandler(this.chcMeat_CheckedChanged);
+            this.chcPasta.AutoSize = true;
+            this.chcPasta.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcPasta.Enabled = false;
+            this.chcPasta.ForeColor = System.Drawing.Color.White;
+            this.chcPasta.Location = new System.Drawing.Point(83, 149);
+            this.chcPasta.Name = "chcPasta";
+            this.chcPasta.Size = new System.Drawing.Size(15, 14);
+            this.chcPasta.TabIndex = 16;
+            this.chcPasta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chcPasta.UseVisualStyleBackColor = true;
+            this.chcPasta.CheckedChanged += new System.EventHandler(this.chcPasta_CheckedChanged);
+            // 
+            // chcFruits
+            // 
+            this.chcFruits.AutoSize = true;
+            this.chcFruits.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcFruits.Enabled = false;
+            this.chcFruits.ForeColor = System.Drawing.Color.White;
+            this.chcFruits.Location = new System.Drawing.Point(83, 263);
+            this.chcFruits.Name = "chcFruits";
+            this.chcFruits.Size = new System.Drawing.Size(15, 14);
+            this.chcFruits.TabIndex = 16;
+            this.chcFruits.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chcFruits.UseVisualStyleBackColor = true;
+            this.chcFruits.CheckedChanged += new System.EventHandler(this.chcFruits_CheckedChanged);
+            // 
+            // chcMuschrooms
+            // 
+            this.chcMuschrooms.AutoSize = true;
+            this.chcMuschrooms.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcMuschrooms.Enabled = false;
+            this.chcMuschrooms.ForeColor = System.Drawing.Color.White;
+            this.chcMuschrooms.Location = new System.Drawing.Point(83, 376);
+            this.chcMuschrooms.Name = "chcMuschrooms";
+            this.chcMuschrooms.Size = new System.Drawing.Size(15, 14);
+            this.chcMuschrooms.TabIndex = 18;
+            this.chcMuschrooms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chcMuschrooms.UseVisualStyleBackColor = true;
+            this.chcMuschrooms.CheckedChanged += new System.EventHandler(this.chcMuschrooms_CheckedChanged);
             // 
             // chcBird
             // 
@@ -402,19 +432,33 @@
             this.chcBird.UseVisualStyleBackColor = true;
             this.chcBird.CheckedChanged += new System.EventHandler(this.chcBird_CheckedChanged);
             // 
-            // chcPasta
+            // chcMeat
             // 
-            this.chcPasta.AutoSize = true;
-            this.chcPasta.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.chcPasta.Enabled = false;
-            this.chcPasta.ForeColor = System.Drawing.Color.White;
-            this.chcPasta.Location = new System.Drawing.Point(83, 149);
-            this.chcPasta.Name = "chcPasta";
-            this.chcPasta.Size = new System.Drawing.Size(15, 14);
-            this.chcPasta.TabIndex = 16;
-            this.chcPasta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chcPasta.UseVisualStyleBackColor = true;
-            this.chcPasta.CheckedChanged += new System.EventHandler(this.chcPasta_CheckedChanged);
+            this.chcMeat.AutoSize = true;
+            this.chcMeat.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcMeat.Enabled = false;
+            this.chcMeat.ForeColor = System.Drawing.Color.White;
+            this.chcMeat.Location = new System.Drawing.Point(83, 600);
+            this.chcMeat.Name = "chcMeat";
+            this.chcMeat.Size = new System.Drawing.Size(15, 14);
+            this.chcMeat.TabIndex = 18;
+            this.chcMeat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chcMeat.UseVisualStyleBackColor = true;
+            this.chcMeat.CheckedChanged += new System.EventHandler(this.chcMeat_CheckedChanged);
+            // 
+            // chcEggs
+            // 
+            this.chcEggs.AutoSize = true;
+            this.chcEggs.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcEggs.Enabled = false;
+            this.chcEggs.ForeColor = System.Drawing.Color.White;
+            this.chcEggs.Location = new System.Drawing.Point(83, 714);
+            this.chcEggs.Name = "chcEggs";
+            this.chcEggs.Size = new System.Drawing.Size(15, 14);
+            this.chcEggs.TabIndex = 18;
+            this.chcEggs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chcEggs.UseVisualStyleBackColor = true;
+            this.chcEggs.CheckedChanged += new System.EventHandler(this.chcEggs_CheckedChanged);
             // 
             // label10
             // 
@@ -461,20 +505,6 @@
             this.lbl34.TabIndex = 17;
             this.lbl34.Text = "GRZYBY";
             // 
-            // chcMuschrooms
-            // 
-            this.chcMuschrooms.AutoSize = true;
-            this.chcMuschrooms.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.chcMuschrooms.Enabled = false;
-            this.chcMuschrooms.ForeColor = System.Drawing.Color.White;
-            this.chcMuschrooms.Location = new System.Drawing.Point(83, 376);
-            this.chcMuschrooms.Name = "chcMuschrooms";
-            this.chcMuschrooms.Size = new System.Drawing.Size(15, 14);
-            this.chcMuschrooms.TabIndex = 18;
-            this.chcMuschrooms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chcMuschrooms.UseVisualStyleBackColor = true;
-            this.chcMuschrooms.CheckedChanged += new System.EventHandler(this.chcMuschrooms_CheckedChanged);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBox16);
@@ -495,20 +525,6 @@
             this.pictureBox16.TabIndex = 5;
             this.pictureBox16.TabStop = false;
             // 
-            // chcFruits
-            // 
-            this.chcFruits.AutoSize = true;
-            this.chcFruits.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.chcFruits.Enabled = false;
-            this.chcFruits.ForeColor = System.Drawing.Color.White;
-            this.chcFruits.Location = new System.Drawing.Point(83, 263);
-            this.chcFruits.Name = "chcFruits";
-            this.chcFruits.Size = new System.Drawing.Size(15, 14);
-            this.chcFruits.TabIndex = 16;
-            this.chcFruits.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chcFruits.UseVisualStyleBackColor = true;
-            this.chcFruits.CheckedChanged += new System.EventHandler(this.chcFruits_CheckedChanged);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -521,20 +537,6 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "KASZA\r\nRYŻ,MAKARON";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // chcFish
-            // 
-            this.chcFish.AutoSize = true;
-            this.chcFish.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.chcFish.Enabled = false;
-            this.chcFish.ForeColor = System.Drawing.Color.White;
-            this.chcFish.Location = new System.Drawing.Point(83, 42);
-            this.chcFish.Name = "chcFish";
-            this.chcFish.Size = new System.Drawing.Size(15, 14);
-            this.chcFish.TabIndex = 11;
-            this.chcFish.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chcFish.UseVisualStyleBackColor = true;
-            this.chcFish.CheckedChanged += new System.EventHandler(this.chcFish_CheckedChanged);
             // 
             // label4
             // 
@@ -684,19 +686,19 @@
             // panelRight
             // 
             this.panelRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            this.panelRight.Controls.Add(this.chcSnack);
+            this.panelRight.Controls.Add(this.chcDinner);
+            this.panelRight.Controls.Add(this.chcSoup);
+            this.panelRight.Controls.Add(this.chcDessert);
+            this.panelRight.Controls.Add(this.chcDrink);
+            this.panelRight.Controls.Add(this.chcPreserves);
             this.panelRight.Controls.Add(this.chcSalad);
             this.panelRight.Controls.Add(this.label6);
-            this.panelRight.Controls.Add(this.chcPreserves);
             this.panelRight.Controls.Add(this.label5);
-            this.panelRight.Controls.Add(this.chcDrink);
             this.panelRight.Controls.Add(this.label);
-            this.panelRight.Controls.Add(this.chcDessert);
             this.panelRight.Controls.Add(this.label34);
-            this.panelRight.Controls.Add(this.chcSoup);
             this.panelRight.Controls.Add(this.label3);
-            this.panelRight.Controls.Add(this.chcDinner);
             this.panelRight.Controls.Add(this.label1);
-            this.panelRight.Controls.Add(this.chcSnack);
             this.panelRight.Controls.Add(this.label2);
             this.panelRight.Controls.Add(this.panel3);
             this.panelRight.Controls.Add(this.panel4);
@@ -712,6 +714,89 @@
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(100, 801);
             this.panelRight.TabIndex = 22;
+            // 
+            // chcSnack
+            // 
+            this.chcSnack.AutoSize = true;
+            this.chcSnack.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcSnack.Enabled = false;
+            this.chcSnack.ForeColor = System.Drawing.Color.White;
+            this.chcSnack.Location = new System.Drawing.Point(4, 42);
+            this.chcSnack.Name = "chcSnack";
+            this.chcSnack.Size = new System.Drawing.Size(15, 14);
+            this.chcSnack.TabIndex = 23;
+            this.chcSnack.UseVisualStyleBackColor = true;
+            this.chcSnack.CheckedChanged += new System.EventHandler(this.chcSnack_CheckedChanged);
+            // 
+            // chcDinner
+            // 
+            this.chcDinner.AutoSize = true;
+            this.chcDinner.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcDinner.Enabled = false;
+            this.chcDinner.ForeColor = System.Drawing.Color.White;
+            this.chcDinner.Location = new System.Drawing.Point(4, 150);
+            this.chcDinner.Name = "chcDinner";
+            this.chcDinner.Size = new System.Drawing.Size(15, 14);
+            this.chcDinner.TabIndex = 23;
+            this.chcDinner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chcDinner.UseVisualStyleBackColor = true;
+            this.chcDinner.CheckedChanged += new System.EventHandler(this.chcDinner_CheckedChanged);
+            // 
+            // chcSoup
+            // 
+            this.chcSoup.AutoSize = true;
+            this.chcSoup.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcSoup.Enabled = false;
+            this.chcSoup.ForeColor = System.Drawing.Color.White;
+            this.chcSoup.Location = new System.Drawing.Point(4, 263);
+            this.chcSoup.Name = "chcSoup";
+            this.chcSoup.Size = new System.Drawing.Size(15, 14);
+            this.chcSoup.TabIndex = 23;
+            this.chcSoup.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chcSoup.UseVisualStyleBackColor = true;
+            this.chcSoup.CheckedChanged += new System.EventHandler(this.chcSoup_CheckedChanged);
+            // 
+            // chcDessert
+            // 
+            this.chcDessert.AutoSize = true;
+            this.chcDessert.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcDessert.Enabled = false;
+            this.chcDessert.ForeColor = System.Drawing.Color.White;
+            this.chcDessert.Location = new System.Drawing.Point(2, 377);
+            this.chcDessert.Name = "chcDessert";
+            this.chcDessert.Size = new System.Drawing.Size(15, 14);
+            this.chcDessert.TabIndex = 23;
+            this.chcDessert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chcDessert.UseVisualStyleBackColor = true;
+            this.chcDessert.CheckedChanged += new System.EventHandler(this.chcDessert_CheckedChanged);
+            // 
+            // chcDrink
+            // 
+            this.chcDrink.AutoSize = true;
+            this.chcDrink.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcDrink.Enabled = false;
+            this.chcDrink.ForeColor = System.Drawing.Color.White;
+            this.chcDrink.Location = new System.Drawing.Point(2, 489);
+            this.chcDrink.Name = "chcDrink";
+            this.chcDrink.Size = new System.Drawing.Size(15, 14);
+            this.chcDrink.TabIndex = 23;
+            this.chcDrink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chcDrink.UseVisualStyleBackColor = true;
+            this.chcDrink.CheckedChanged += new System.EventHandler(this.chcDrink_CheckedChanged);
+            // 
+            // chcPreserves
+            // 
+            this.chcPreserves.AutoSize = true;
+            this.chcPreserves.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcPreserves.Enabled = false;
+            this.chcPreserves.ForeColor = System.Drawing.Color.White;
+            this.chcPreserves.Location = new System.Drawing.Point(3, 602);
+            this.chcPreserves.Name = "chcPreserves";
+            this.chcPreserves.Size = new System.Drawing.Size(15, 14);
+            this.chcPreserves.TabIndex = 23;
+            this.chcPreserves.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chcPreserves.UseVisualStyleBackColor = true;
+            this.chcPreserves.CheckedChanged += new System.EventHandler(this.chcPreserves_CheckedChanged);
             // 
             // chcSalad
             // 
@@ -739,20 +824,6 @@
             this.label6.Text = "SAŁATKI \r\nI SURÓWKI";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // chcPreserves
-            // 
-            this.chcPreserves.AutoSize = true;
-            this.chcPreserves.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.chcPreserves.Enabled = false;
-            this.chcPreserves.ForeColor = System.Drawing.Color.White;
-            this.chcPreserves.Location = new System.Drawing.Point(3, 602);
-            this.chcPreserves.Name = "chcPreserves";
-            this.chcPreserves.Size = new System.Drawing.Size(15, 14);
-            this.chcPreserves.TabIndex = 23;
-            this.chcPreserves.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chcPreserves.UseVisualStyleBackColor = true;
-            this.chcPreserves.CheckedChanged += new System.EventHandler(this.chcPreserves_CheckedChanged);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -763,20 +834,6 @@
             this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 23;
             this.label5.Text = "PRZETWORY";
-            // 
-            // chcDrink
-            // 
-            this.chcDrink.AutoSize = true;
-            this.chcDrink.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.chcDrink.Enabled = false;
-            this.chcDrink.ForeColor = System.Drawing.Color.White;
-            this.chcDrink.Location = new System.Drawing.Point(2, 489);
-            this.chcDrink.Name = "chcDrink";
-            this.chcDrink.Size = new System.Drawing.Size(15, 14);
-            this.chcDrink.TabIndex = 23;
-            this.chcDrink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chcDrink.UseVisualStyleBackColor = true;
-            this.chcDrink.CheckedChanged += new System.EventHandler(this.chcDrink_CheckedChanged);
             // 
             // label
             // 
@@ -790,20 +847,6 @@
             this.label.Text = "DRINKI\r\nI NAPOJE\r\n";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // chcDessert
-            // 
-            this.chcDessert.AutoSize = true;
-            this.chcDessert.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.chcDessert.Enabled = false;
-            this.chcDessert.ForeColor = System.Drawing.Color.White;
-            this.chcDessert.Location = new System.Drawing.Point(2, 377);
-            this.chcDessert.Name = "chcDessert";
-            this.chcDessert.Size = new System.Drawing.Size(15, 14);
-            this.chcDessert.TabIndex = 23;
-            this.chcDessert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chcDessert.UseVisualStyleBackColor = true;
-            this.chcDessert.CheckedChanged += new System.EventHandler(this.chcDessert_CheckedChanged);
-            // 
             // label34
             // 
             this.label34.AutoSize = true;
@@ -816,20 +859,6 @@
             this.label34.Text = "CIASTA\r\nI DESERY";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // chcSoup
-            // 
-            this.chcSoup.AutoSize = true;
-            this.chcSoup.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.chcSoup.Enabled = false;
-            this.chcSoup.ForeColor = System.Drawing.Color.White;
-            this.chcSoup.Location = new System.Drawing.Point(4, 263);
-            this.chcSoup.Name = "chcSoup";
-            this.chcSoup.Size = new System.Drawing.Size(15, 14);
-            this.chcSoup.TabIndex = 23;
-            this.chcSoup.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chcSoup.UseVisualStyleBackColor = true;
-            this.chcSoup.CheckedChanged += new System.EventHandler(this.chcSoup_CheckedChanged);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -840,20 +869,6 @@
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 23;
             this.label3.Text = "ZUPY";
-            // 
-            // chcDinner
-            // 
-            this.chcDinner.AutoSize = true;
-            this.chcDinner.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.chcDinner.Enabled = false;
-            this.chcDinner.ForeColor = System.Drawing.Color.White;
-            this.chcDinner.Location = new System.Drawing.Point(4, 150);
-            this.chcDinner.Name = "chcDinner";
-            this.chcDinner.Size = new System.Drawing.Size(15, 14);
-            this.chcDinner.TabIndex = 23;
-            this.chcDinner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chcDinner.UseVisualStyleBackColor = true;
-            this.chcDinner.CheckedChanged += new System.EventHandler(this.chcDinner_CheckedChanged);
             // 
             // label1
             // 
@@ -866,19 +881,6 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "DANIA\r\nGŁÓWNE";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // chcSnack
-            // 
-            this.chcSnack.AutoSize = true;
-            this.chcSnack.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.chcSnack.Enabled = false;
-            this.chcSnack.ForeColor = System.Drawing.Color.White;
-            this.chcSnack.Location = new System.Drawing.Point(4, 42);
-            this.chcSnack.Name = "chcSnack";
-            this.chcSnack.Size = new System.Drawing.Size(15, 14);
-            this.chcSnack.TabIndex = 23;
-            this.chcSnack.UseVisualStyleBackColor = true;
-            this.chcSnack.CheckedChanged += new System.EventHandler(this.chcSnack_CheckedChanged);
             // 
             // label2
             // 
@@ -1034,6 +1036,7 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            this.panelMain.Controls.Add(this.pictureBox27);
             this.panelMain.Controls.Add(this.btnAddRest);
             this.panelMain.Controls.Add(this.txtShortDescription);
             this.panelMain.Controls.Add(this.rtxtPortion);
@@ -1085,6 +1088,23 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1034, 801);
             this.panelMain.TabIndex = 23;
+            // 
+            // btnAddRest
+            // 
+            this.btnAddRest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAddRest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddRest.FlatAppearance.BorderSize = 0;
+            this.btnAddRest.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddRest.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAddRest.ForeColor = System.Drawing.Color.White;
+            this.btnAddRest.Location = new System.Drawing.Point(722, 200);
+            this.btnAddRest.Name = "btnAddRest";
+            this.btnAddRest.Size = new System.Drawing.Size(75, 34);
+            this.btnAddRest.TabIndex = 38;
+            this.btnAddRest.Text = "Dodaj";
+            this.btnAddRest.UseVisualStyleBackColor = false;
+            this.btnAddRest.Visible = false;
+            this.btnAddRest.Click += new System.EventHandler(this.btnAddRest_Click);
             // 
             // contextShortDesription
             // 
@@ -1142,9 +1162,9 @@
             // 
             this.rtxtPortion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.rtxtPortion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxtPortion.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rtxtPortion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtxtPortion.ForeColor = System.Drawing.Color.White;
-            this.rtxtPortion.Location = new System.Drawing.Point(310, 39);
+            this.rtxtPortion.Location = new System.Drawing.Point(310, 41);
             this.rtxtPortion.MaxLength = 2;
             this.rtxtPortion.Multiline = false;
             this.rtxtPortion.Name = "rtxtPortion";
@@ -1156,9 +1176,9 @@
             // 
             this.rtxtAmountsOfFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.rtxtAmountsOfFood.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxtAmountsOfFood.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rtxtAmountsOfFood.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtxtAmountsOfFood.ForeColor = System.Drawing.Color.White;
-            this.rtxtAmountsOfFood.Location = new System.Drawing.Point(17, 74);
+            this.rtxtAmountsOfFood.Location = new System.Drawing.Point(22, 74);
             this.rtxtAmountsOfFood.Name = "rtxtAmountsOfFood";
             this.rtxtAmountsOfFood.ReadOnly = true;
             this.rtxtAmountsOfFood.Size = new System.Drawing.Size(38, 683);
@@ -1168,7 +1188,7 @@
             // pb9
             // 
             this.pb9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb9.Location = new System.Drawing.Point(60, 74);
+            this.pb9.Location = new System.Drawing.Point(65, 74);
             this.pb9.Name = "pb9";
             this.pb9.Size = new System.Drawing.Size(5, 683);
             this.pb9.TabIndex = 66;
@@ -1179,16 +1199,16 @@
             this.pb1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.pb1.Location = new System.Drawing.Point(17, 64);
             this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(38, 10);
+            this.pb1.Size = new System.Drawing.Size(43, 10);
             this.pb1.TabIndex = 65;
             this.pb1.TabStop = false;
             // 
             // pb2
             // 
             this.pb2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb2.Location = new System.Drawing.Point(60, 64);
+            this.pb2.Location = new System.Drawing.Point(65, 64);
             this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(376, 10);
+            this.pb2.Size = new System.Drawing.Size(371, 10);
             this.pb2.TabIndex = 64;
             this.pb2.TabStop = false;
             // 
@@ -1245,6 +1265,7 @@
             this.pb4.Size = new System.Drawing.Size(230, 5);
             this.pb4.TabIndex = 56;
             this.pb4.TabStop = false;
+            this.pb4.Tag = "a";
             // 
             // pictureBox26
             // 
@@ -1428,23 +1449,6 @@
             this.label15.TabIndex = 40;
             this.label15.Text = "Ilości";
             // 
-            // btnAddRest
-            // 
-            this.btnAddRest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnAddRest.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddRest.FlatAppearance.BorderSize = 0;
-            this.btnAddRest.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddRest.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAddRest.ForeColor = System.Drawing.Color.White;
-            this.btnAddRest.Location = new System.Drawing.Point(722, 200);
-            this.btnAddRest.Name = "btnAddRest";
-            this.btnAddRest.Size = new System.Drawing.Size(75, 34);
-            this.btnAddRest.TabIndex = 38;
-            this.btnAddRest.Text = "Dodaj";
-            this.btnAddRest.UseVisualStyleBackColor = false;
-            this.btnAddRest.Visible = false;
-            this.btnAddRest.Click += new System.EventHandler(this.btnAddRest_Click);
-            // 
             // lblLevel
             // 
             this.lblLevel.AutoSize = true;
@@ -1504,7 +1508,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTime.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTime.ForeColor = System.Drawing.Color.White;
             this.lblTime.Location = new System.Drawing.Point(574, 75);
             this.lblTime.Name = "lblTime";
@@ -1517,7 +1521,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label16.Location = new System.Drawing.Point(539, 75);
+            this.label16.Location = new System.Drawing.Point(530, 74);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(38, 15);
             this.label16.TabIndex = 27;
@@ -1829,7 +1833,7 @@
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnClose.Location = new System.Drawing.Point(879, 6);
+            this.btnClose.Location = new System.Drawing.Point(879, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 4;
@@ -1845,7 +1849,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(722, 6);
+            this.btnCancel.Location = new System.Drawing.Point(722, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
@@ -1862,7 +1866,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(560, 6);
+            this.btnDelete.Location = new System.Drawing.Point(560, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 2;
@@ -1878,7 +1882,7 @@
             this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModify.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnModify.ForeColor = System.Drawing.Color.White;
-            this.btnModify.Location = new System.Drawing.Point(291, 5);
+            this.btnModify.Location = new System.Drawing.Point(291, 3);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(75, 23);
             this.btnModify.TabIndex = 1;
@@ -1894,7 +1898,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(41, 6);
+            this.btnAdd.Location = new System.Drawing.Point(41, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 0;
@@ -1929,6 +1933,15 @@
             // 
             this.printDialog1.Document = this.printDocument1;
             this.printDialog1.UseEXDialog = true;
+            // 
+            // pictureBox27
+            // 
+            this.pictureBox27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.pictureBox27.Location = new System.Drawing.Point(17, 74);
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.Size = new System.Drawing.Size(5, 683);
+            this.pictureBox27.TabIndex = 70;
+            this.pictureBox27.TabStop = false;
             // 
             // txtShortDescription
             // 
@@ -1970,10 +1983,10 @@
             this.rTxtIngredients.ContextMenuStrip = this.contextIngridients;
             this.rTxtIngredients.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rTxtIngredients.ForeColor = System.Drawing.Color.White;
-            this.rTxtIngredients.Location = new System.Drawing.Point(65, 74);
+            this.rTxtIngredients.Location = new System.Drawing.Point(69, 74);
             this.rTxtIngredients.Name = "rTxtIngredients";
             this.rTxtIngredients.ReadOnly = true;
-            this.rTxtIngredients.Size = new System.Drawing.Size(370, 683);
+            this.rTxtIngredients.Size = new System.Drawing.Size(366, 684);
             this.rTxtIngredients.TabIndex = 2;
             this.rTxtIngredients.Text = "";
             this.rTxtIngredients.WordWrap = false;
@@ -1984,13 +1997,13 @@
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtName.ContextMenuStrip = this.contextName;
             this.txtName.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtName.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtName.Font = new System.Drawing.Font("Corbel", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtName.ForeColor = System.Drawing.Color.White;
             this.txtName.Location = new System.Drawing.Point(16, 7);
             this.txtName.MaxLength = 85;
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(1004, 26);
+            this.txtName.Size = new System.Drawing.Size(1004, 25);
             this.txtName.TabIndex = 0;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2079,6 +2092,7 @@
             this.contextName.ResumeLayout(false);
             this.contextAmounts.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2248,5 +2262,6 @@
         private System.Windows.Forms.RichTextBox rtxtAmountsOfFood;
         private System.Windows.Forms.RichTextBox rtxtPortion;
         private ReadOnlyRichTextBox txtShortDescription;
+        private System.Windows.Forms.PictureBox pictureBox27;
     }
 }

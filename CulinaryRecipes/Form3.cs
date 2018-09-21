@@ -193,7 +193,6 @@ namespace CulinaryRecipes
             }
         }
         
-        
         private void richTextBox1_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start(e.LinkText);
@@ -243,8 +242,6 @@ namespace CulinaryRecipes
             rtxtLinkForm3.Paste();
         }
 
-     
-
         private void usuńToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rtxtLinkForm3.SelectedText = "";
@@ -257,7 +254,6 @@ namespace CulinaryRecipes
             difficultLevelForm3 = btndifficultLevOne.Tag.ToString();
         }
        
-
         public string interval = "  ";
         public int[] IdMealForm3 = new int[7];
         public int[] idComponentsForm3 = new int[7];
@@ -322,7 +318,6 @@ namespace CulinaryRecipes
             this.Visible = false;
             this.Close();
             model.ShowDialog();
-          
         }
               
         public Form3()
@@ -347,7 +342,6 @@ namespace CulinaryRecipes
             {
                 RatingForm3 = c.Id.ToString();
             }
-
         }
 
         private void btnTwoStar_Click(object sender, EventArgs e)

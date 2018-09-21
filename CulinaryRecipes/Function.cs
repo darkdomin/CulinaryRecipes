@@ -21,25 +21,27 @@ namespace CulinaryRecipes
                 }
             }
         }
+
         public static Color CreateColor()
         {
             Color gray = new Color();
             gray = Color.FromArgb(41, 43, 57);
             return gray;
         }
+
         public static Color CreateColorBlockingFields()
         {
             Color gray = new Color();
             gray = Color.FromArgb(40, 50, 60);
             return gray;
         }
+
         public static Color CreateBrightColor()
         {
             Color gray = new Color();
             gray = Color.FromArgb(87, 93, 135);
             return gray;
         }
-
 
         public static void ColorAreaAfterUnblocking(Control set)
         {
@@ -52,6 +54,7 @@ namespace CulinaryRecipes
                 if (kolorOdblokowania is TextBox) ((TextBox)kolorOdblokowania).BackColor = CreateBrightColor();
             }
         }
+
         public static void UnblockingFields(Control set)
         {
             foreach (Control unblock in set.Controls)
@@ -65,6 +68,7 @@ namespace CulinaryRecipes
                     ((TextBox)unblock).ReadOnly = false;
             }
         }
+
         public static void BlockingFields(Control set)
         {
             foreach (Control block in set.Controls)
@@ -91,6 +95,7 @@ namespace CulinaryRecipes
             }
             name.BackColor = Function.CreateColor();//txtPortion
         }
+
         public static void BlockCheckbox(Control set)
         {
             foreach (Control check in set.Controls)
@@ -101,6 +106,7 @@ namespace CulinaryRecipes
                 }
             }
         }
+
         public static void ClearFields(Control set)
         {
             foreach (Control clear in set.Controls)
@@ -118,6 +124,7 @@ namespace CulinaryRecipes
                 }
             }
         }
+
         public static void CheckName(TextBox name)
         {
             foreach (var r in RecipesBase.getAll())
@@ -130,6 +137,7 @@ namespace CulinaryRecipes
                 }
             }
         }
+
         public static void UnblockCheckbox(Control set)
         {
             foreach (Control check in set.Controls)
@@ -140,10 +148,27 @@ namespace CulinaryRecipes
                 }
             }
         }
+
         public static void StartPositionFromZero(TextBox name)
         {
             if (name.SelectedText.Length >= 0) name.SelectionStart = 0;
         }
-      
+
+        public static void DisplaySelectionRightPanel(Control set, int[] PanelLeftOrRight)
+        {
+            int i = 0;
+            foreach (Control p in set.Controls)
+            {
+                if (i >= 7) { break; }
+                else
+                {
+                    if (p is CheckBox && PanelLeftOrRight[i] == 1)
+                    {
+                        ((CheckBox)p).Checked = true;
+                    }
+                }
+                i++;
+            }
+        }
     }
 }
