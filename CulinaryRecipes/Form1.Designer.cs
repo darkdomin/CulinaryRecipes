@@ -143,6 +143,8 @@
             this.pbFrame = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnClear = new System.Windows.Forms.Button();
+            this.importujPojedynczyPlikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eksportujPojedynczyPlikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cMenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -241,6 +243,8 @@
             // 
             // importujBazęToolStripMenuItem
             // 
+            this.importujBazęToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importujPojedynczyPlikToolStripMenuItem});
             this.importujBazęToolStripMenuItem.Name = "importujBazęToolStripMenuItem";
             this.importujBazęToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.importujBazęToolStripMenuItem.Text = "Importuj Bazę Danych";
@@ -248,6 +252,8 @@
             // 
             // exportujBazęDanychToolStripMenuItem
             // 
+            this.exportujBazęDanychToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eksportujPojedynczyPlikToolStripMenuItem});
             this.exportujBazęDanychToolStripMenuItem.Name = "exportujBazęDanychToolStripMenuItem";
             this.exportujBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.exportujBazęDanychToolStripMenuItem.Text = "Exportuj Bazę Danych";
@@ -1409,6 +1415,20 @@
             this.btnClear.Visible = false;
             this.btnClear.Click += new System.EventHandler(this.button1_Click);
             // 
+            // importujPojedynczyPlikToolStripMenuItem
+            // 
+            this.importujPojedynczyPlikToolStripMenuItem.Name = "importujPojedynczyPlikToolStripMenuItem";
+            this.importujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.importujPojedynczyPlikToolStripMenuItem.Text = "Importuj pojedynczy plik";
+            this.importujPojedynczyPlikToolStripMenuItem.Click += new System.EventHandler(this.importujPojedynczyPlikToolStripMenuItem_Click);
+            // 
+            // eksportujPojedynczyPlikToolStripMenuItem
+            // 
+            this.eksportujPojedynczyPlikToolStripMenuItem.Name = "eksportujPojedynczyPlikToolStripMenuItem";
+            this.eksportujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.eksportujPojedynczyPlikToolStripMenuItem.Text = "Eksportuj pojedynczy plik";
+            this.eksportujPojedynczyPlikToolStripMenuItem.Click += new System.EventHandler(this.eksportujPojedynczyPlikToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1654,6 +1674,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ToolStripMenuItem importujPojedynczyPlikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eksportujPojedynczyPlikToolStripMenuItem;
     }
 }
 

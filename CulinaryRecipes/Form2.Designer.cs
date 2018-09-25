@@ -98,6 +98,7 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.btnAddRest = new System.Windows.Forms.Button();
             this.contextShortDesription = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cofnijToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -189,7 +190,6 @@
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.txtShortDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.rtxtDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.rTxtIngredients = new CulinaryRecipes.ReadOnlyRichTextBox();
@@ -226,6 +226,7 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panelMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.contextShortDesription.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
@@ -257,7 +258,6 @@
             this.contextName.SuspendLayout();
             this.contextAmounts.SuspendLayout();
             this.panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -287,33 +287,33 @@
             // podglToolStripMenuItem
             // 
             this.podglToolStripMenuItem.Name = "podglToolStripMenuItem";
-            this.podglToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.podglToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.podglToolStripMenuItem.Text = "Podgląd Wydruku";
             this.podglToolStripMenuItem.Click += new System.EventHandler(this.podglToolStripMenuItem_Click);
             // 
             // drukujToolStripMenuItem
             // 
             this.drukujToolStripMenuItem.Name = "drukujToolStripMenuItem";
-            this.drukujToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.drukujToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.drukujToolStripMenuItem.Text = "Drukuj";
             this.drukujToolStripMenuItem.Click += new System.EventHandler(this.drukujToolStripMenuItem_Click);
             // 
             // listaZakupowaToolStripMenuItem
             // 
             this.listaZakupowaToolStripMenuItem.Name = "listaZakupowaToolStripMenuItem";
-            this.listaZakupowaToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.listaZakupowaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listaZakupowaToolStripMenuItem.Text = "Lista Zakupowa";
             this.listaZakupowaToolStripMenuItem.Click += new System.EventHandler(this.listaZakupowaToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(166, 6);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(177, 6);
             // 
             // zamknijToolStripMenuItem
             // 
             this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zamknijToolStripMenuItem.Text = "Zamknij";
             this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
             // 
@@ -1088,6 +1088,15 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1034, 801);
             this.panelMain.TabIndex = 23;
+            // 
+            // pictureBox27
+            // 
+            this.pictureBox27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.pictureBox27.Location = new System.Drawing.Point(17, 74);
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.Size = new System.Drawing.Size(5, 683);
+            this.pictureBox27.TabIndex = 70;
+            this.pictureBox27.TabStop = false;
             // 
             // btnAddRest
             // 
@@ -1934,15 +1943,6 @@
             this.printDialog1.Document = this.printDocument1;
             this.printDialog1.UseEXDialog = true;
             // 
-            // pictureBox27
-            // 
-            this.pictureBox27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pictureBox27.Location = new System.Drawing.Point(17, 74);
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(5, 683);
-            this.pictureBox27.TabIndex = 70;
-            this.pictureBox27.TabStop = false;
-            // 
             // txtShortDescription
             // 
             this.txtShortDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
@@ -2061,6 +2061,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.contextShortDesription.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
@@ -2092,7 +2093,6 @@
             this.contextName.ResumeLayout(false);
             this.contextAmounts.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

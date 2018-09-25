@@ -18,6 +18,7 @@ namespace CulinaryRecipes
         public int idDgGridForm2, NumberOfPortionsForm2, counterForm2;
         string addRest = "Zmień", add = "add";
         public string titleForm2, amountsOfIngredientsForm2, ingredientForm2, ShortDescriptionForm2, instructionForm2, listOfCuisinesForm2, idRatingForm2 = "-", difficultLevelForm2, executionTimeForm2, linkForm2 = "-", unlockFieldsForm2, clear = "0";
+        
         public char stringOfCharacters = ']';
         public char stringOfCharacters1 = '[';
         public string dash = "-";
@@ -442,6 +443,7 @@ namespace CulinaryRecipes
                             txtShortDescription.Text = SecuringAmountOffood3(txtShortDescription);
                             rtxtDescription.Text = SecuringAmountOffood3(rtxtDescription);
                             MessageBox.Show("Dodano przedmiot");
+                            btnAddRest.Visible = false;
                             btnClose.Text = "Zamknij";
                             Function.BlockingFields(panelMain);
                             Function.BlockCheckbox(panelLeft);
@@ -834,16 +836,11 @@ namespace CulinaryRecipes
                             up.PreservesMeal = IdMealForm2[5];
                             up.SaladMeal = IdMealForm2[6];
                             #endregion
-                            //if (lblTime.Text == "-") executionTimeForm2 = dash;
-                            //else
+                           
                             up.CategoryPreparationTime = executionTimeForm2;
-                            //if (lblLevel.Text == "-") difficultLevelForm2 = dash;
-                            ////else
                             up.CategoryDifficultLevel = difficultLevelForm2;
                             if (idRatingForm2 == null) idRatingForm2 = dash;
                             else up.CategoryRating = idRatingForm2;
-                            //if (lblCuisine.Text == "-") listOfCuisinesForm2 = dash;
-                            //else
                             up.CategoryCuisines = lblCuisine.Text;
                             if (linkForm2 == null) linkForm2 = stringOfCharacters.ToString();
                             else up.PhotoLinkLocation = linkForm2;
@@ -1100,13 +1097,11 @@ namespace CulinaryRecipes
                 if (rtxtAmountsOfFood.Lines[k] == string.Empty) { tablica[i] = ""; }
                 else tablica[i] = rtxtAmountsOfFood.Lines[k];
 
+                
                 if (tablica[i].Length == 1) tablica[i] = tablica[i] + "     ";
-                else if (tablica[i].Length == 1) tablica[i] = tablica[i] + "     ";
                 else if (tablica[i].Length == 2) tablica[i] = tablica[i] + "    ";
                 else if (tablica[i].Length == 3) tablica[i] = tablica[i] + "   ";
                 else if (tablica[i].Length == 4) tablica[i] = tablica[i] + "  ";
-
-
                 k++;
             }
             for (int j = 1; j < rTxtIngredients.Lines.Length * 2; j = j + 2)
@@ -1259,6 +1254,9 @@ namespace CulinaryRecipes
 
         //zmienne pamięciowe- Anuluj//
         public string title1, amounts, ingrediet, shortDes, longDes, cuisines, level, time, rating;
+
+     
+
         public int portions;
         private void AssignmentMainFields()
         {
