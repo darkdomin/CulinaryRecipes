@@ -39,11 +39,15 @@
             this.nowyPrzepisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.importujBazęToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importujPojedynczyPlikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportujBazęDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eksportujPojedynczyPlikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuńBazęDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cIekawostkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -135,6 +139,9 @@
             this.lblAmountsSeek = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.lblYouHave = new System.Windows.Forms.Label();
+            this.lblStatistic = new System.Windows.Forms.Label();
             this.pbStar3 = new System.Windows.Forms.PictureBox();
             this.pbStar2 = new System.Windows.Forms.PictureBox();
             this.pbStar1 = new System.Windows.Forms.PictureBox();
@@ -142,9 +149,8 @@
             this.btnSeek = new System.Windows.Forms.Button();
             this.pbFrame = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.importujPojedynczyPlikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eksportujPojedynczyPlikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblCulinary = new System.Windows.Forms.Label();
+            this.chcStstistic = new System.Windows.Forms.CheckBox();
             this.cMenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -250,6 +256,13 @@
             this.importujBazęToolStripMenuItem.Text = "Importuj Bazę Danych";
             this.importujBazęToolStripMenuItem.Click += new System.EventHandler(this.importujBazęToolStripMenuItem_Click);
             // 
+            // importujPojedynczyPlikToolStripMenuItem
+            // 
+            this.importujPojedynczyPlikToolStripMenuItem.Name = "importujPojedynczyPlikToolStripMenuItem";
+            this.importujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.importujPojedynczyPlikToolStripMenuItem.Text = "Importuj pojedynczy plik";
+            this.importujPojedynczyPlikToolStripMenuItem.Click += new System.EventHandler(this.importujPojedynczyPlikToolStripMenuItem_Click);
+            // 
             // exportujBazęDanychToolStripMenuItem
             // 
             this.exportujBazęDanychToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -258,6 +271,13 @@
             this.exportujBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.exportujBazęDanychToolStripMenuItem.Text = "Exportuj Bazę Danych";
             this.exportujBazęDanychToolStripMenuItem.Click += new System.EventHandler(this.exportujBazęDanychToolStripMenuItem_Click);
+            // 
+            // eksportujPojedynczyPlikToolStripMenuItem
+            // 
+            this.eksportujPojedynczyPlikToolStripMenuItem.Name = "eksportujPojedynczyPlikToolStripMenuItem";
+            this.eksportujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.eksportujPojedynczyPlikToolStripMenuItem.Text = "Eksportuj pojedynczy plik";
+            this.eksportujPojedynczyPlikToolStripMenuItem.Click += new System.EventHandler(this.eksportujPojedynczyPlikToolStripMenuItem_Click);
             // 
             // usuńBazęDanychToolStripMenuItem
             // 
@@ -280,10 +300,24 @@
             // 
             // oProgramieToolStripMenuItem
             // 
+            this.oProgramieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem3,
+            this.cIekawostkiToolStripMenuItem});
             this.oProgramieToolStripMenuItem.Name = "oProgramieToolStripMenuItem";
             this.oProgramieToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.oProgramieToolStripMenuItem.Text = "O programie";
             this.oProgramieToolStripMenuItem.Click += new System.EventHandler(this.oProgramieToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(137, 22);
+            // 
+            // cIekawostkiToolStripMenuItem
+            // 
+            this.cIekawostkiToolStripMenuItem.Name = "cIekawostkiToolStripMenuItem";
+            this.cIekawostkiToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.cIekawostkiToolStripMenuItem.Text = "CIekawostki";
             // 
             // menuStrip1
             // 
@@ -1122,8 +1156,11 @@
             this.dgGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.dgGrid.Location = new System.Drawing.Point(207, 464);
             this.dgGrid.Name = "dgGrid";
+            this.dgGrid.ReadOnly = true;
             this.dgGrid.RowHeadersVisible = false;
             this.dgGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dgGrid.RowTemplate.Height = 25;
+            this.dgGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgGrid.Size = new System.Drawing.Size(492, 281);
             this.dgGrid.TabIndex = 19;
             this.dgGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGrid_CellClick);
@@ -1273,7 +1310,7 @@
             this.lblCuisine.AutoSize = true;
             this.lblCuisine.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblCuisine.ForeColor = System.Drawing.Color.White;
-            this.lblCuisine.Location = new System.Drawing.Point(317, 388);
+            this.lblCuisine.Location = new System.Drawing.Point(317, 396);
             this.lblCuisine.Name = "lblCuisine";
             this.lblCuisine.Size = new System.Drawing.Size(0, 14);
             this.lblCuisine.TabIndex = 41;
@@ -1321,6 +1358,46 @@
             this.label15.Size = new System.Drawing.Size(10, 14);
             this.label15.TabIndex = 47;
             this.label15.Text = "|";
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Maroon;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClear.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnClear.Location = new System.Drawing.Point(641, 132);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(62, 22);
+            this.btnClear.TabIndex = 48;
+            this.btnClear.Text = "wyczyść";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Visible = false;
+            this.btnClear.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblYouHave
+            // 
+            this.lblYouHave.AutoSize = true;
+            this.lblYouHave.BackColor = System.Drawing.Color.Black;
+            this.lblYouHave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblYouHave.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblYouHave.Location = new System.Drawing.Point(755, 95);
+            this.lblYouHave.Name = "lblYouHave";
+            this.lblYouHave.Size = new System.Drawing.Size(44, 15);
+            this.lblYouHave.TabIndex = 49;
+            this.lblYouHave.Text = "Masz : ";
+            this.lblYouHave.Visible = false;
+            // 
+            // lblStatistic
+            // 
+            this.lblStatistic.AutoSize = true;
+            this.lblStatistic.BackColor = System.Drawing.Color.Black;
+            this.lblStatistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblStatistic.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblStatistic.Location = new System.Drawing.Point(801, 95);
+            this.lblStatistic.Name = "lblStatistic";
+            this.lblStatistic.Size = new System.Drawing.Size(26, 15);
+            this.lblStatistic.TabIndex = 50;
+            this.lblStatistic.Text = "112";
+            this.lblStatistic.Visible = false;
             // 
             // pbStar3
             // 
@@ -1391,7 +1468,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 24);
@@ -1401,33 +1478,30 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // btnClear
+            // lblCulinary
             // 
-            this.btnClear.BackColor = System.Drawing.Color.Maroon;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClear.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnClear.Location = new System.Drawing.Point(641, 132);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(62, 22);
-            this.btnClear.TabIndex = 48;
-            this.btnClear.Text = "wyczyść";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Visible = false;
-            this.btnClear.Click += new System.EventHandler(this.button1_Click);
+            this.lblCulinary.AutoSize = true;
+            this.lblCulinary.BackColor = System.Drawing.Color.Black;
+            this.lblCulinary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblCulinary.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblCulinary.Location = new System.Drawing.Point(833, 95);
+            this.lblCulinary.Name = "lblCulinary";
+            this.lblCulinary.Size = new System.Drawing.Size(61, 15);
+            this.lblCulinary.TabIndex = 51;
+            this.lblCulinary.Text = "Przepisów";
+            this.lblCulinary.Visible = false;
             // 
-            // importujPojedynczyPlikToolStripMenuItem
+            // chcStstistic
             // 
-            this.importujPojedynczyPlikToolStripMenuItem.Name = "importujPojedynczyPlikToolStripMenuItem";
-            this.importujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.importujPojedynczyPlikToolStripMenuItem.Text = "Importuj pojedynczy plik";
-            this.importujPojedynczyPlikToolStripMenuItem.Click += new System.EventHandler(this.importujPojedynczyPlikToolStripMenuItem_Click);
-            // 
-            // eksportujPojedynczyPlikToolStripMenuItem
-            // 
-            this.eksportujPojedynczyPlikToolStripMenuItem.Name = "eksportujPojedynczyPlikToolStripMenuItem";
-            this.eksportujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.eksportujPojedynczyPlikToolStripMenuItem.Text = "Eksportuj pojedynczy plik";
-            this.eksportujPojedynczyPlikToolStripMenuItem.Click += new System.EventHandler(this.eksportujPojedynczyPlikToolStripMenuItem_Click);
+            this.chcStstistic.AutoSize = true;
+            this.chcStstistic.BackColor = System.Drawing.Color.Black;
+            this.chcStstistic.Location = new System.Drawing.Point(822, 68);
+            this.chcStstistic.Name = "chcStstistic";
+            this.chcStstistic.Size = new System.Drawing.Size(71, 17);
+            this.chcStstistic.TabIndex = 52;
+            this.chcStstistic.Text = "Statystyki";
+            this.chcStstistic.UseVisualStyleBackColor = false;
+            this.chcStstistic.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Form1
             // 
@@ -1435,6 +1509,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.ClientSize = new System.Drawing.Size(904, 769);
+            this.Controls.Add(this.chcStstistic);
+            this.Controls.Add(this.lblCulinary);
+            this.Controls.Add(this.lblStatistic);
+            this.Controls.Add(this.lblYouHave);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -1676,6 +1754,12 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ToolStripMenuItem importujPojedynczyPlikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eksportujPojedynczyPlikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.Label lblYouHave;
+        private System.Windows.Forms.Label lblStatistic;
+        private System.Windows.Forms.ToolStripMenuItem cIekawostkiToolStripMenuItem;
+        private System.Windows.Forms.Label lblCulinary;
+        private System.Windows.Forms.CheckBox chcStstistic;
     }
 }
 

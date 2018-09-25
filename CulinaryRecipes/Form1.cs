@@ -37,9 +37,16 @@ namespace CulinaryRecipes
             CreateDataGridView();
             seekName = 1;
             CheckConnection();
+            Statistic();
         }
 
         #region Buttony
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Statistic();
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -156,6 +163,7 @@ namespace CulinaryRecipes
                         xs.Serialize(fs, ls);
                         fs.Close();
                         MessageBox.Show("Eksport pliku zakończył się sukcesem");
+                    
                     }
                     catch (Exception ex)
                     {
@@ -191,10 +199,13 @@ namespace CulinaryRecipes
                         m.Id = NewId + 1, m.RecipesName = r.RecipesName, m.Ingredients = r.Ingredients, m.AmountsMeal = r.AmountsMeal, m.ShortDescription = r.ShortDescription, m.LongDescription = r.LongDescription, m.NumberPortions = r.NumberPortions, m.CategoryCuisines = r.CategoryCuisines, m.CategoryRating = r.CategoryRating, m.CategoryDifficultLevel = r.CategoryDifficultLevel, m.CategoryPreparationTime = r.CategoryPreparationTime, m.SnackMeal = r.SnackMeal, m.DinnerMeal = r.DinnerMeal, m.SoupMeal = r.SoupMeal, m.DessertMeal = r.DessertMeal, m.DrinkMeal = r.DrinkMeal, m.PreservesMeal = r.PreservesMeal, m.SaladMeal = r.SaladMeal, m.IdFishIngredients = r.IdFishIngredients, m.IdPastaIngredients = r.IdPastaIngredients, m.IdFruitsIngredients = r.IdFruitsIngredients, m.IdMuschroomsIngredients = r.IdMuschroomsIngredients, m.IdBirdIngredients = r.IdBirdIngredients, m.IdMeatIngredients = r.IdMeatIngredients, m.IdEggsIngredients = r.IdEggsIngredients, m.PhotoLinkLocation = r.PhotoLinkLocation, m.Vegetarian = r.Vegetarian);
                         RecipesBase.add(m);
                     }
-                    MessageBox.Show("Baza danych została zaimportowana");
-                    dgGrid.Visible = true;
+                    filldgGrid();
+                    MessageBox.Show(m.RecipesName+"\n"+"został zaimportowany.", "PLIK ");
+                    
                     fs.Close();
-                }catch(Exception ex)
+                    Statistic();
+                }
+                catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -551,6 +562,27 @@ namespace CulinaryRecipes
 
         #region Function
 
+        public void Statistic()
+        {
+            if (chcStstistic.Checked)
+            {
+                foreach (var p in RecipesBase.getAll())
+                {
+                    NewId = p.Id;
+                }
+                lblStatistic.Text = NewId.ToString();
+                lblYouHave.Visible = true;
+                lblStatistic.Visible = true;
+                lblCulinary.Visible = true;
+            }
+            else
+            {
+                lblYouHave.Visible = false;
+                lblStatistic.Visible = false;
+                lblCulinary.Visible = false;
+            }
+        }
+
         public void CheckConnection()
         {
             if (isAvailable == false && counter == 0)
@@ -649,13 +681,13 @@ namespace CulinaryRecipes
             dgGrid.Columns.Add("Meatcheckbox", "Meatcheckbox");
             dgGrid.Columns.Add("Eggscheckbox", "Eggscheckbox");
             dgGrid.Columns.Add("Photo", "Photo");
-            // dgGrid.Columns.Add("Vegetarian","Vegetarian");
+            dgGrid.Columns.Add("Vegetarian", "Vegetarian");
 
-            //for (int i = 0; i < dgGrid.ColumnCount; i++)
-            //{
-            //    if (i == 1) continue;
-            //    else dgGrid.Columns[i].Visible = false;
-            //}
+            for (int i = 0; i < dgGrid.ColumnCount; i++)
+            {
+                if (i == 1) continue;
+                else dgGrid.Columns[i].Visible = false;
+            }
         }
 
         private void filldgGrid()
@@ -681,6 +713,7 @@ namespace CulinaryRecipes
         {
             ClearDataBase(idDgGrid);
             filldgGrid();
+            Statistic();
         }
 
         private void label12_Click(object sender, EventArgs e)
@@ -814,6 +847,8 @@ namespace CulinaryRecipes
             }
             CleanThumbnails();
         }
+
+       
 
         private void odznaczanieCheckBox(CheckBox gl, string nameMain, CheckBox one, string name1, CheckBox two, string name2, CheckBox three, string name3, CheckBox four, string name4, CheckBox five, string name5, CheckBox six, string name6, CheckBox seven, string name7, CheckBox eight, string name8, CheckBox nine, string name9, CheckBox ten, string name10, CheckBox eleven, string name11, CheckBox twelve, string name12, CheckBox thirteen, string name13)
         {
