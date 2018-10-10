@@ -12,16 +12,14 @@ namespace CulinaryRecipes
 {
     public partial class Form1 : Form
     {
-        int idDgGrid, NumberOfPortionsForm1;
+        int idDgGrid, NumberOfPortionsForm1, seekName;
         string ingredientForm1, instructionForm1, idRatingForm1, amountsOfIngredientsForm1;
         bool isAvailable = NetworkInterface.GetIsNetworkAvailable();
-
         public int counter = 0;
-        Form2 stringOfCharactersForm2 = new Form2();
-
-        int seekName;
         int[] idMeal = new int[7];
         int[] ingridients = new int[7];
+        Form2 stringOfCharactersForm2 = new Form2();
+
         XmlSerializer xs;
         List<RecipesBase> ls;
 
@@ -120,11 +118,11 @@ namespace CulinaryRecipes
                     {
                         filldgGrid();
                     }
-                    else if (seek.Length > dgGrid.Rows[i].Cells[number].Value.ToString().Length)
+                    else if (!dgGrid.Rows[i].Cells[number].Value.ToString().Contains(txtSeek.Text))
                     {
                         dgGrid.Rows[i].Visible = false;
                     }
-                    else if (grid.IndexOf(txtSeek.Text) >= 0)
+                    else if (dgGrid.Rows[i].Cells[number].Value.ToString().Contains(txtSeek.Text))
                     {
                         continue;
                     }
@@ -135,11 +133,13 @@ namespace CulinaryRecipes
                 }
             }
         }
-
         private void btnSeek_Click(object sender, EventArgs e)
         {
             Search(seekName);
-            btnClear.Visible = true;
+            lblCleanDgGrid.Visible = true;
+            lblLineOne.Visible = true;
+            lblLineTwo.Visible = true;
+
         }
         #endregion
 
@@ -163,7 +163,7 @@ namespace CulinaryRecipes
                         xs.Serialize(fs, ls);
                         fs.Close();
                         MessageBox.Show("Eksport pliku zakończył się sukcesem");
-                    
+
                     }
                     catch (Exception ex)
                     {
@@ -200,12 +200,12 @@ namespace CulinaryRecipes
                         RecipesBase.add(m);
                     }
                     filldgGrid();
-                    MessageBox.Show(m.RecipesName+"\n"+"został zaimportowany.", "PLIK ");
-                    
+                    MessageBox.Show(m.RecipesName + "\n" + "został zaimportowany.", "PLIK ");
+
                     fs.Close();
                     Statistic();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -288,7 +288,6 @@ namespace CulinaryRecipes
         #region CheckBoxMeal
         private void chcSnack_CheckedChanged(object sender, EventArgs e)
         {
-
             if (chcSnack.Checked == false)
             {
                 odznaczanieCheckBox(chcSnack, "Snackcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
@@ -299,6 +298,7 @@ namespace CulinaryRecipes
                 DeleteDuplikat();
             }
             CleanThumbnails();
+            CleanFunctionClear();
         }
 
         private void chcDinner_CheckedChanged(object sender, EventArgs e)
@@ -313,7 +313,7 @@ namespace CulinaryRecipes
                 DeleteDuplikat();
             }
             CleanThumbnails();
-
+            CleanFunctionClear();
         }
 
         private void chcSoup_CheckedChanged(object sender, EventArgs e)
@@ -328,6 +328,7 @@ namespace CulinaryRecipes
                 DeleteDuplikat();
             }
             CleanThumbnails();
+            CleanFunctionClear();
         }
 
         private void chcDessert_CheckedChanged(object sender, EventArgs e)
@@ -342,6 +343,7 @@ namespace CulinaryRecipes
                 DeleteDuplikat();
             }
             CleanThumbnails();
+            CleanFunctionClear();
         }
 
         private void chcDrink_CheckedChanged(object sender, EventArgs e)
@@ -356,6 +358,7 @@ namespace CulinaryRecipes
                 DeleteDuplikat();
             }
             CleanThumbnails();
+            CleanFunctionClear();
         }
 
         private void chcPreserves_CheckedChanged(object sender, EventArgs e)
@@ -370,6 +373,7 @@ namespace CulinaryRecipes
                 DeleteDuplikat();
             }
             CleanThumbnails();
+            CleanFunctionClear();
         }
 
         private void chcSalad_CheckedChanged(object sender, EventArgs e)
@@ -384,13 +388,13 @@ namespace CulinaryRecipes
                 DeleteDuplikat();
             }
             CleanThumbnails();
+            CleanFunctionClear();
         }
         #endregion
 
         #region CheckBoxIngridients
         private void chcFish_CheckedChanged(object sender, EventArgs e)
         {
-
             if (chcFish.Checked == false)
             {
                 odznaczanieCheckBox(chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
@@ -401,6 +405,7 @@ namespace CulinaryRecipes
                 DeleteDuplikat();
             }
             CleanThumbnails();
+            CleanFunctionClear();
         }
 
         private void chcPasta_CheckedChanged(object sender, EventArgs e)
@@ -415,6 +420,7 @@ namespace CulinaryRecipes
                 DeleteDuplikat();
             }
             CleanThumbnails();
+            CleanFunctionClear();
         }
 
         private void chcFruits_CheckedChanged(object sender, EventArgs e)
@@ -429,6 +435,7 @@ namespace CulinaryRecipes
                 DeleteDuplikat();
             }
             CleanThumbnails();
+            CleanFunctionClear();
         }
 
         private void chcMuschrooms_CheckedChanged(object sender, EventArgs e)
@@ -443,6 +450,7 @@ namespace CulinaryRecipes
                 DeleteDuplikat();
             }
             CleanThumbnails();
+            CleanFunctionClear();
         }
 
         private void chcBird_CheckedChanged(object sender, EventArgs e)
@@ -457,6 +465,7 @@ namespace CulinaryRecipes
                 DeleteDuplikat();
             }
             CleanThumbnails();
+            CleanFunctionClear();
         }
 
         private void chcMeat_CheckedChanged(object sender, EventArgs e)
@@ -471,6 +480,7 @@ namespace CulinaryRecipes
                 DeleteDuplikat();
             }
             CleanThumbnails();
+            CleanFunctionClear();
         }
 
         private void chcEggs_CheckedChanged(object sender, EventArgs e)
@@ -485,6 +495,7 @@ namespace CulinaryRecipes
                 DeleteDuplikat();
             }
             CleanThumbnails();
+            CleanFunctionClear();
         }
         #endregion
 
@@ -782,12 +793,15 @@ namespace CulinaryRecipes
             nowy.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void lblCleanDgGrid_Click(object sender, EventArgs e)
         {
+
             if (dgGrid.RowCount > 0 && chcFish.Checked == false && chcPasta.Checked == false && chcFruits.Checked == false && chcMuschrooms.Checked == false && chcBird.Checked == false && chcMeat.Checked == false && chcEggs.Checked == false && chcSnack.Checked == false && chcDinner.Checked == false && chcSoup.Checked == false && chcDessert.Checked == false && chcDrink.Checked == false && chcPreserves.Checked == false && chcFish.Checked == false)
             {
                 dgGrid.Rows.Clear();
-                btnClear.Visible = false;
+                lblCleanDgGrid.Visible = false;
+                lblLineOne.Visible = false;
+                lblLineTwo.Visible = false;
             }
             else if (chcFish.Checked)
             {
@@ -848,7 +862,6 @@ namespace CulinaryRecipes
             CleanThumbnails();
         }
 
-       
 
         private void odznaczanieCheckBox(CheckBox gl, string nameMain, CheckBox one, string name1, CheckBox two, string name2, CheckBox three, string name3, CheckBox four, string name4, CheckBox five, string name5, CheckBox six, string name6, CheckBox seven, string name7, CheckBox eight, string name8, CheckBox nine, string name9, CheckBox ten, string name10, CheckBox eleven, string name11, CheckBox twelve, string name12, CheckBox thirteen, string name13)
         {
@@ -924,7 +937,16 @@ namespace CulinaryRecipes
 
             NewForm.ShowDialog();
         }
-        #endregion
 
+        private void CleanFunctionClear()
+        {
+            if (dgGrid.Rows.Count < 1)
+            {
+                lblCleanDgGrid.Visible = false;
+                lblLineOne.Visible = false;
+                lblLineTwo.Visible = false;
+            }
+        }
+        #endregion
     }
 }

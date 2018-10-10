@@ -123,25 +123,6 @@ namespace CulinaryRecipes
             return col.FindAll();
 
         }
-        public static RecipesBase szukaj(string cos)
-        {
-            using (var db = new LiteDatabase("mydb.db"))
-            {
-                // Get collection instance
-                var col = db.GetCollection<RecipesBase>("customer");
-
-                // Insert document to collection - if collection do not exits, create now
-               // col.Insert(new RecipesBase { Id = 1, Name = "John Doe" });
-
-                // Create, if not exists, new index on Name field
-                col.EnsureIndex(x => x.RecipesName);
-
-                // Now, search for document your document
-                var customer = col.FindOne(x => x.RecipesName == cos);
-
-                return customer;
-            }
-        }
         //usuń
         public static void del(int id)
         {

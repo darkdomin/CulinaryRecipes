@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.cMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -139,7 +139,6 @@
             this.lblAmountsSeek = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
             this.lblYouHave = new System.Windows.Forms.Label();
             this.lblStatistic = new System.Windows.Forms.Label();
             this.pbStar3 = new System.Windows.Forms.PictureBox();
@@ -151,6 +150,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCulinary = new System.Windows.Forms.Label();
             this.chcStstistic = new System.Windows.Forms.CheckBox();
+            this.lblCleanDgGrid = new System.Windows.Forms.Label();
+            this.lblLineOne = new System.Windows.Forms.Label();
+            this.lblLineTwo = new System.Windows.Forms.Label();
             this.cMenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1140,28 +1142,30 @@
             // dgGrid
             // 
             this.dgGrid.AllowUserToAddRows = false;
+            this.dgGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.dgGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgGrid.ColumnHeadersVisible = false;
             this.dgGrid.ContextMenuStrip = this.cMenuStrip;
             this.dgGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgGrid.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            this.dgGrid.Location = new System.Drawing.Point(207, 464);
+            this.dgGrid.Location = new System.Drawing.Point(207, 480);
             this.dgGrid.Name = "dgGrid";
             this.dgGrid.ReadOnly = true;
             this.dgGrid.RowHeadersVisible = false;
             this.dgGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.dgGrid.RowTemplate.Height = 25;
             this.dgGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgGrid.Size = new System.Drawing.Size(492, 281);
+            this.dgGrid.Size = new System.Drawing.Size(492, 265);
             this.dgGrid.TabIndex = 19;
             this.dgGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGrid_CellClick);
             // 
@@ -1359,20 +1363,6 @@
             this.label15.TabIndex = 47;
             this.label15.Text = "|";
             // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.Maroon;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClear.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnClear.Location = new System.Drawing.Point(641, 132);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(62, 22);
-            this.btnClear.TabIndex = 48;
-            this.btnClear.Text = "wyczyść";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Visible = false;
-            this.btnClear.Click += new System.EventHandler(this.button1_Click);
-            // 
             // lblYouHave
             // 
             this.lblYouHave.AutoSize = true;
@@ -1503,17 +1493,55 @@
             this.chcStstistic.UseVisualStyleBackColor = false;
             this.chcStstistic.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // lblCleanDgGrid
+            // 
+            this.lblCleanDgGrid.AutoSize = true;
+            this.lblCleanDgGrid.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCleanDgGrid.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblCleanDgGrid.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblCleanDgGrid.Location = new System.Drawing.Point(420, 461);
+            this.lblCleanDgGrid.Name = "lblCleanDgGrid";
+            this.lblCleanDgGrid.Size = new System.Drawing.Size(79, 13);
+            this.lblCleanDgGrid.TabIndex = 53;
+            this.lblCleanDgGrid.Text = "wyczyść siatkę";
+            this.lblCleanDgGrid.Visible = false;
+            this.lblCleanDgGrid.Click += new System.EventHandler(this.lblCleanDgGrid_Click);
+            // 
+            // lblLineOne
+            // 
+            this.lblLineOne.AutoSize = true;
+            this.lblLineOne.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblLineOne.Location = new System.Drawing.Point(401, 460);
+            this.lblLineOne.Name = "lblLineOne";
+            this.lblLineOne.Size = new System.Drawing.Size(10, 14);
+            this.lblLineOne.TabIndex = 54;
+            this.lblLineOne.Text = "|";
+            this.lblLineOne.Visible = false;
+            // 
+            // lblLineTwo
+            // 
+            this.lblLineTwo.AutoSize = true;
+            this.lblLineTwo.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblLineTwo.Location = new System.Drawing.Point(507, 460);
+            this.lblLineTwo.Name = "lblLineTwo";
+            this.lblLineTwo.Size = new System.Drawing.Size(10, 14);
+            this.lblLineTwo.TabIndex = 55;
+            this.lblLineTwo.Text = "|";
+            this.lblLineTwo.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.ClientSize = new System.Drawing.Size(904, 769);
+            this.Controls.Add(this.lblCleanDgGrid);
+            this.Controls.Add(this.lblLineTwo);
+            this.Controls.Add(this.lblLineOne);
             this.Controls.Add(this.chcStstistic);
             this.Controls.Add(this.lblCulinary);
             this.Controls.Add(this.lblStatistic);
             this.Controls.Add(this.lblYouHave);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.lblAmountsSeek);
@@ -1751,7 +1779,6 @@
         private System.Windows.Forms.Label lblAmountsSeek;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ToolStripMenuItem importujPojedynczyPlikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eksportujPojedynczyPlikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
@@ -1760,6 +1787,9 @@
         private System.Windows.Forms.ToolStripMenuItem cIekawostkiToolStripMenuItem;
         private System.Windows.Forms.Label lblCulinary;
         private System.Windows.Forms.CheckBox chcStstistic;
+        private System.Windows.Forms.Label lblCleanDgGrid;
+        private System.Windows.Forms.Label lblLineOne;
+        private System.Windows.Forms.Label lblLineTwo;
     }
 }
 

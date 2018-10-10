@@ -15,17 +15,29 @@ namespace CulinaryRecipes
 {
     public partial class Form2 : Form
     {
-        public int idDgGridForm2, NumberOfPortionsForm2, counterForm2;
-        string addRest = "Zmień", add = "add";
-        public string titleForm2, amountsOfIngredientsForm2, ingredientForm2, ShortDescriptionForm2, instructionForm2, listOfCuisinesForm2, idRatingForm2 = "-", difficultLevelForm2, executionTimeForm2, linkForm2 = "-", unlockFieldsForm2, clear = "0";
-        
-        public char stringOfCharacters = ']';
-        public char stringOfCharacters1 = '[';
-        public string dash = "-";
-        double converted;
-        public string interval = "  ";
+        public int idDgGridForm2 { get; set; }
+        public int NumberOfPortionsForm2 { get; set; }
+        public int counterForm2 { get; set; }
         public int[] IdMealForm2 = new int[7];
         public int[] ingridientsForm2 = new int[7];
+        public string titleForm2 { get; set; }
+        public string amountsOfIngredientsForm2{ get; set; }
+        public string ingredientForm2{ get; set; }
+        public string ShortDescriptionForm2{ get; set; }
+        public string instructionForm2{ get; set; }
+        public string listOfCuisinesForm2 { get; set; }
+        public string idRatingForm2 = "-";
+        public string difficultLevelForm2 { get; set; }
+        public string executionTimeForm2 { get; set; }
+        public string linkForm2 = "-";
+        public string unlockFieldsForm2 { get; set; }
+        public string clear = "0";
+        public string dash = "-";
+        public string interval = "  ";
+        string addRest = "Zmień", add = "add";
+        public char stringOfCharacters = ']';
+        public char stringOfCharacters1 = '[';
+        double converted;
         public bool cancel = false;
 
         #region Funkcje
@@ -247,7 +259,6 @@ namespace CulinaryRecipes
                 Function.UnblockCheckbox(panelLeft);
                 Function.UnblockCheckbox(panelRight);
                 clear = add;
-
                 btnAddRest.Visible = true;
                 lblTime.Visible = true;
             }
@@ -375,7 +386,6 @@ namespace CulinaryRecipes
             }
             else
             {
-
                 ConvertAmountsOfFood();
                 ChangeDotToComma(rtxtAmountsOfFood);
                 ChangeDotToComma(rtxtPortion);
@@ -449,7 +459,6 @@ namespace CulinaryRecipes
                             Function.BlockCheckbox(panelLeft);
                             Function.BlockCheckbox(panelRight);
                             Function.ColorFieldsAfterBlocking(panelMain, rtxtPortion);
-                            // btnModify.Visible = false;
                             ShowStar(1, pbStar1, idRatingForm2);
                             ShowStar(2, pbStar2, idRatingForm2);
                             ShowStar(3, pbStar3, idRatingForm2);
@@ -698,8 +707,7 @@ namespace CulinaryRecipes
         private void włToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (cmList.Text == "Włącz Listę") cmList.Text = "Wyłącz Listę";
-            else
-                cmList.Text = "Włącz Listę";
+            else cmList.Text = "Włącz Listę";
         }
 
         private void rtxtDescription_KeyDown(object sender, KeyEventArgs e)
@@ -939,8 +947,6 @@ namespace CulinaryRecipes
         public string im { get; internal set; }
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            //Font czcionka = rTxtIngredients.Font;
-
             Font czcionka2 = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 
             int wysokoscWiersza2 = (int)czcionka2.GetHeight(e.Graphics);
@@ -989,7 +995,7 @@ namespace CulinaryRecipes
                     if (szerokosc < e.MarginBounds.Width)
                     {
                         if (i % 2 == 0) tekst1 += tablica[i];
-                        else tekst1 += /*"                   " +*/ tablica[i] + "\n";
+                        else tekst1 += tablica[i] + "\n";
                     }
                     else
                     {
@@ -1122,8 +1128,6 @@ namespace CulinaryRecipes
 
         private void printDocument2_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            // Font czcionka2 = rTxtIngredients.Font;
-
             Font czcionka2 = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 
             int wysokoscWiersza2 = (int)czcionka2.GetHeight(e.Graphics);
@@ -1140,7 +1144,7 @@ namespace CulinaryRecipes
                     if (szerokosc < e.MarginBounds.Width)
                     {
                         if (i % 2 == 0) tekst1 += tablica[i];
-                        else tekst1 += /*"                   " +*/ tablica[i] + "\n";
+                        else tekst1 +=  tablica[i] + "\n";
                     }
                     else
                     {
@@ -1254,9 +1258,6 @@ namespace CulinaryRecipes
 
         //zmienne pamięciowe- Anuluj//
         public string title1, amounts, ingrediet, shortDes, longDes, cuisines, level, time, rating;
-
-     
-
         public int portions;
         private void AssignmentMainFields()
         {
@@ -1333,6 +1334,37 @@ namespace CulinaryRecipes
         private void chcDrink_CheckedChanged(object sender, EventArgs e)
         {
             CheckingCheckbox(chcDrink, 5, IdMealForm2);
+        }
+
+        private void rTxtIngredients_KeyDown(object sender, KeyEventArgs e)
+        {
+            int start = rTxtIngredients.SelectionStart;
+            if (e.KeyCode == Keys.Enter && rTxtIngredients.Lines.Length >= lenght)
+            {
+                MessageBox.Show("Program nie może mieć więcej niż linii");
+                string[] proba = rTxtIngredients.Lines;
+                proba[lenght-1] = null;
+                rTxtIngredients.Lines = proba;
+                e.Handled = true;
+                rTxtIngredients.SelectionStart = start ;
+            }
+            else { }
+        }
+        int lenght = 38;
+        private void rtxtAmountsOfFood_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            int start = rtxtAmountsOfFood.SelectionStart;
+            if (e.KeyCode == Keys.Enter && rtxtAmountsOfFood.Lines.Length >= lenght)
+            {
+                MessageBox.Show("Program nie może mieć więcej niż linii");
+                string[] copyLines = rtxtAmountsOfFood.Lines;
+                copyLines[lenght-1] = null;
+                rtxtAmountsOfFood.Lines = copyLines;
+                e.Handled = true;
+                rtxtAmountsOfFood.SelectionStart = start;
+            }
+            else { }
         }
 
         private void chcPreserves_CheckedChanged(object sender, EventArgs e)

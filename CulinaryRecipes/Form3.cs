@@ -14,15 +14,39 @@ namespace CulinaryRecipes
     public partial class Form3 : Form
     {
         
-        public int idDgGridForm3, NumberOfPortionsForm3,counterForm3 ;
+        public int idDgGridForm3 { get; set; }
+        public int NumberOfPortionsForm3 { get; set; }
+        public int counterForm3 { get; set; }
+        public int portions3{ get; set; }
 
-        public string titleForm3, ingredientForm3, shortDescriptionForm3, InstructionForm3, listOfCuisinesForm3, difficultLevelForm3, executionTimeForm3, AmountsOfFoodForm3, unlockFieldsForm3 = "1", photoForm3, RatingForm3, clearForm3, LinkForm23;
+        public string titleForm3 { get; set; }
+        public string ingredientForm3 { get; set; }
+        public string shortDescriptionForm3 { get; set; }
+        public string InstructionForm3 { get; set; }
+        public string listOfCuisinesForm3 { get; set; }
+        public string difficultLevelForm3 { get; set; }
+        public string executionTimeForm3 { get; set; }
+        public string AmountsOfFoodForm3 { get; set; }
+        public string unlockFieldsForm3 = "1";
+        public string photoForm3 { get; set; }
+        public string RatingForm3 { get; set; }
+        public string clearForm3 { get; set; }
+        public string LinkForm23 { get; set; }
+        
         //zmienne pamięciowe- Anuluj//
-        public string title3, amounts3, ingrediet3, shortDes3, longDes3, cuisines3, level3, time3, rating3;
-        public int portions3;
-        public bool cancel3;
+        public string title3 { get; set; }
+        public string amounts3 { get; set; }
+        public string ingrediet3 { get; set; }
+        public string shortDes3 { get; set; }
+        public string longDes3 { get; set; }
+        public string cuisines3 { get; set; }
+        public string level3 { get; set; }
+        public string time3 { get; set; }
+        public string rating3 { get; set; }
 
+        public bool cancel3 { get; set; }
         string add = "add";
+
         private void button2_Click(object sender, EventArgs e)
         {
             ChangeColorButtons(gbLevel);
@@ -129,11 +153,13 @@ namespace CulinaryRecipes
                 }    
             }
         }
+
         private void DisplayPhoto()
         {
             rtxtLinkForm3.Text = photoForm3;
             pbLittlePhoto.ImageLocation = rtxtLinkForm3.Text;
         }
+
         private void CheckedKittchen(string name, Control set)
         {
             foreach (Control c in set.Controls)
@@ -148,7 +174,7 @@ namespace CulinaryRecipes
             }
         }
         
-    private void Form3_Load(object sender, EventArgs e)
+        private void Form3_Load(object sender, EventArgs e)
         {
             if(clearForm3==add)
             {
@@ -165,12 +191,10 @@ namespace CulinaryRecipes
                 DisplayPhoto();
                 CheckedKittchen(listOfCuisinesForm3, gbKitchen);
             }
-       
         }
         
         public void UncheckedRadioButton(Control set)
         {
-           
             foreach (Control c in set.Controls)
             {
                 if (c is RadioButton)
@@ -179,6 +203,7 @@ namespace CulinaryRecipes
                 }
             }
         }
+
         private void ChangeColorButtons(GroupBox _name)
         {
             foreach (Control przyciski in _name.Controls)
@@ -232,9 +257,7 @@ namespace CulinaryRecipes
 
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
-
             Application.Exit();
-          
         }
 
         private void wklejToolStripMenuItem_Click(object sender, EventArgs e)
@@ -330,6 +353,7 @@ namespace CulinaryRecipes
             _name.BackColor = Color.White;
             _name.ForeColor = Color.Black;
         }
+
         private void btnOneStar_Click(object sender, EventArgs e)
         {
             ChangeColorButtons(gbRating);
