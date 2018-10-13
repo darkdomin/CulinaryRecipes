@@ -12,7 +12,7 @@ namespace CulinaryRecipes
 {
     public partial class Form1 : Form
     {
-        int idDgGrid, NumberOfPortionsForm1, seekName;
+        int idDgGrid, numberOfPortionsForm1, seekName;
         string ingredientForm1, instructionForm1, idRatingForm1, amountsOfIngredientsForm1;
         bool isAvailable = NetworkInterface.GetIsNetworkAvailable();
         public int counter = 0;
@@ -76,7 +76,7 @@ namespace CulinaryRecipes
                 if (instructionForm1 != null) OpenForm.instructionForm2 = CleanDash(instructionForm1);
                 else OpenForm.instructionForm2 = instructionForm1;
 
-                OpenForm.NumberOfPortionsForm2 = NumberOfPortionsForm1;
+                OpenForm.numberOfPortionsForm2 = numberOfPortionsForm1;
                 OpenForm.linkForm2 = pbLittlePhoto.ImageLocation;
                 OpenForm.listOfCuisinesForm2 = lblCuisine.Text;
                 OpenForm.idRatingForm2 = idRatingForm1;
@@ -518,7 +518,7 @@ namespace CulinaryRecipes
                     txtShortDescription.Text = dgGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
                 }
                 instructionForm1 = dgGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
-                NumberOfPortionsForm1 = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[6].Value);
+                numberOfPortionsForm1 = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[6].Value);
 
                 if (dgGrid.Rows[e.RowIndex].Cells[7].Value.ToString() == stringOfCharactersForm2.stringOfCharacters.ToString()) { }
                 else lblCuisine.Text = dgGrid.Rows[e.RowIndex].Cells[7].Value.ToString();

@@ -15,7 +15,7 @@ namespace CulinaryRecipes
     {
         
         public int idDgGridForm3 { get; set; }
-        public int NumberOfPortionsForm3 { get; set; }
+        public int numberOfPortionsForm3 { get; set; }
         public int counterForm3 { get; set; }
         public int portions3{ get; set; }
 
@@ -292,7 +292,7 @@ namespace CulinaryRecipes
             model.ingredientForm2 = ingredientForm3;
             model.ShortDescriptionForm2 = shortDescriptionForm3;
             model.instructionForm2 = InstructionForm3;
-            model.NumberOfPortionsForm2 = NumberOfPortionsForm3;
+            model.numberOfPortionsForm2 = numberOfPortionsForm3;
             photoForm3 = rtxtLinkForm3.Text;
             if (photoForm3 == null || photoForm3 == "") photoForm3 = "-";
             model.linkForm2 = photoForm3;
