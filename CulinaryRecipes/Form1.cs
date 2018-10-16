@@ -290,12 +290,12 @@ namespace CulinaryRecipes
         {
             if (chcSnack.Checked == false)
             {
-                odznaczanieCheckBox(chcSnack, "Snackcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcSnack, "Snackcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else
             {
                 fillGrid("SnackMeal", chcSnack, "Snackcheckbox");
-                DeleteDuplikat();
+                DeleteDuplicate();
             }
             CleanThumbnails();
             CleanFunctionClear();
@@ -303,29 +303,31 @@ namespace CulinaryRecipes
 
         private void chcDinner_CheckedChanged(object sender, EventArgs e)
         {
-            if (chcDinner.Checked == false)
-            {
-                odznaczanieCheckBox(chcDinner, "Dinnercheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
-            }
-            else
-            {
-                fillGrid("DinnerMeal", chcDinner, "Dinnercheckbox");
-                DeleteDuplikat();
-            }
-            CleanThumbnails();
-            CleanFunctionClear();
+            //if (chcDinner.Checked == false)
+            //{
+            //    ClearCheckBox(chcDinner, "Dinnercheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+            //}
+            //else
+            //{
+            //    fillGrid("DinnerMeal", chcDinner, "Dinnercheckbox");
+            //    DeleteDuplicate();
+            //}
+            //CleanThumbnails();
+            //CleanFunctionClear();
+
+            cos(chcDinner, chcDinner, "Dinnercheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox", "DinnerMeal", chcDinner, "Dinnercheckbox");
         }
 
         private void chcSoup_CheckedChanged(object sender, EventArgs e)
         {
             if (chcSoup.Checked == false)
             {
-                odznaczanieCheckBox(chcSoup, "Soupcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcSoup, "Soupcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else
             {
                 fillGrid("SoupMeal", chcSoup, "Soupcheckbox");
-                DeleteDuplikat();
+                DeleteDuplicate();
             }
             CleanThumbnails();
             CleanFunctionClear();
@@ -335,12 +337,12 @@ namespace CulinaryRecipes
         {
             if (chcDessert.Checked == false)
             {
-                odznaczanieCheckBox(chcDessert, "Dessertcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcDessert, "Dessertcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else
             {
                 fillGrid("DessertMeal", chcDessert, "Dessertcheckbox");
-                DeleteDuplikat();
+                DeleteDuplicate();
             }
             CleanThumbnails();
             CleanFunctionClear();
@@ -350,12 +352,12 @@ namespace CulinaryRecipes
         {
             if (chcDrink.Checked == false)
             {
-                odznaczanieCheckBox(chcDrink, "Drinkscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcDrink, "Drinkscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else
             {
                 fillGrid("DrinkMeal", chcDrink, "Drinkscheckbox");
-                DeleteDuplikat();
+                DeleteDuplicate();
             }
             CleanThumbnails();
             CleanFunctionClear();
@@ -365,12 +367,12 @@ namespace CulinaryRecipes
         {
             if (chcPreserves.Checked == false)
             {
-                odznaczanieCheckBox(chcPreserves, "Preservescheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcPreserves, "Preservescheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcSalad, "Saladcheckbox");
             }
             else
             {
                 fillGrid("PreservesMeal", chcPreserves, "Preservescheckbox");
-                DeleteDuplikat();
+                DeleteDuplicate();
             }
             CleanThumbnails();
             CleanFunctionClear();
@@ -380,44 +382,59 @@ namespace CulinaryRecipes
         {
             if (chcSalad.Checked == false)
             {
-                odznaczanieCheckBox(chcSalad, "Saladcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox");
+                ClearCheckBox(chcSalad, "Saladcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox");
             }
             else
             {
                 fillGrid("SaladMeal", chcSalad, "Saladcheckbox");
-                DeleteDuplikat();
+                DeleteDuplicate();
             }
             CleanThumbnails();
             CleanFunctionClear();
         }
         #endregion
 
-        #region CheckBoxIngridients
-        private void chcFish_CheckedChanged(object sender, EventArgs e)
+        private void cos(CheckBox name, CheckBox gl, string nameMain, CheckBox one, string name1, CheckBox two, string name2, CheckBox three, string name3, CheckBox four, string name4, CheckBox five, string name5, CheckBox six, string name6, CheckBox seven, string name7, CheckBox eight, string name8, CheckBox nine, string name9, CheckBox ten, string name10, CheckBox eleven, string name11, CheckBox twelve, string name12, CheckBox thirteen, string name13, string _propName, CheckBox _name, string nazwa)
         {
-            if (chcFish.Checked == false)
+            if (name.Checked == false)
             {
-                odznaczanieCheckBox(chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(gl, nameMain, one, name1, two, name2, three, name3, four, name4, five, name5, six, name6, seven, name7, eight, name8, nine, name9, ten, name10, eleven, name11, twelve, name12, thirteen, name13);
             }
             else
             {
-                fillGrid("IdFishIngredients", chcFish, "Fishcheckbox");
-                DeleteDuplikat();
+                fillGrid(_propName, _name, nazwa);
+                DeleteDuplicate();
             }
             CleanThumbnails();
             CleanFunctionClear();
+        }
+        #region CheckBoxIngridients
+        private void chcFish_CheckedChanged(object sender, EventArgs e)
+        {
+            //if (chcFish.Checked == false)
+            //{
+            //    ClearCheckBox(chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+            //}
+            //else
+            //{
+            // fillGrid("IdFishIngredients", chcFish, "Fishcheckbox");
+            //    DeleteDuplicate();
+            //}
+            //CleanThumbnails();
+            //CleanFunctionClear();
+            cos(chcFish, chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox", "IdFishIngredients", chcFish, "Fishcheckbox");
         }
 
         private void chcPasta_CheckedChanged(object sender, EventArgs e)
         {
             if (chcPasta.Checked == false)
             {
-                odznaczanieCheckBox(chcPasta, "Pastacheckbox", chcFish, "Fishcheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcPasta, "Pastacheckbox", chcFish, "Fishcheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else
             {
                 fillGrid("IdPastaIngredients", chcPasta, "Pastacheckbox");
-                DeleteDuplikat();
+                DeleteDuplicate();
             }
             CleanThumbnails();
             CleanFunctionClear();
@@ -427,12 +444,12 @@ namespace CulinaryRecipes
         {
             if (chcFruits.Checked == false)
             {
-                odznaczanieCheckBox(chcFruits, "Fruitscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcFruits, "Fruitscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else
             {
                 fillGrid("IdFruitsIngredients", chcFruits, "Fruitscheckbox");
-                DeleteDuplikat();
+                DeleteDuplicate();
             }
             CleanThumbnails();
             CleanFunctionClear();
@@ -442,12 +459,12 @@ namespace CulinaryRecipes
         {
             if (chcMuschrooms.Checked == false)
             {
-                odznaczanieCheckBox(chcMuschrooms, "Mushroomscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcMuschrooms, "Mushroomscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else
             {
                 fillGrid("IdMuschroomsIngredients", chcMuschrooms, "Mushroomscheckbox");
-                DeleteDuplikat();
+                DeleteDuplicate();
             }
             CleanThumbnails();
             CleanFunctionClear();
@@ -457,12 +474,12 @@ namespace CulinaryRecipes
         {
             if (chcBird.Checked == false)
             {
-                odznaczanieCheckBox(chcBird, "Birdcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcBird, "Birdcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else
             {
                 fillGrid("IdBirdIngredients", chcBird, "Birdcheckbox");
-                DeleteDuplikat();
+                DeleteDuplicate();
             }
             CleanThumbnails();
             CleanFunctionClear();
@@ -472,12 +489,12 @@ namespace CulinaryRecipes
         {
             if (chcMeat.Checked == false)
             {
-                odznaczanieCheckBox(chcMeat, "Meatcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcMeat, "Meatcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else
             {
                 fillGrid("IdMeatIngredients", chcMeat, "Meatcheckbox");
-                DeleteDuplikat();
+                DeleteDuplicate();
             }
             CleanThumbnails();
             CleanFunctionClear();
@@ -487,12 +504,12 @@ namespace CulinaryRecipes
         {
             if (chcEggs.Checked == false)
             {
-                odznaczanieCheckBox(chcEggs, "Eggscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcEggs, "Eggscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else
             {
                 fillGrid("IdEggsIngredients", chcEggs, "Eggscheckbox");
-                DeleteDuplikat();
+                DeleteDuplicate();
             }
             CleanThumbnails();
             CleanFunctionClear();
@@ -517,14 +534,20 @@ namespace CulinaryRecipes
                 {
                     txtShortDescription.Text = dgGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
                 }
+
                 instructionForm1 = dgGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
                 numberOfPortionsForm1 = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[6].Value);
 
-                if (dgGrid.Rows[e.RowIndex].Cells[7].Value.ToString() == stringOfCharactersForm2.stringOfCharacters.ToString()) { }
-                else lblCuisine.Text = dgGrid.Rows[e.RowIndex].Cells[7].Value.ToString();
-                if (dgGrid.Rows[e.RowIndex].Cells[8].Value.ToString() == stringOfCharactersForm2.stringOfCharacters.ToString()) { }
-                else idRatingForm1 = dgGrid.Rows[e.RowIndex].Cells[8].Value.ToString();
+                if (dgGrid.Rows[e.RowIndex].Cells[7].Value.ToString() != stringOfCharactersForm2.stringOfCharacters.ToString())
+                {
+                    lblCuisine.Text = dgGrid.Rows[e.RowIndex].Cells[7].Value.ToString();
+                }
 
+                if (dgGrid.Rows[e.RowIndex].Cells[8].Value.ToString() != stringOfCharactersForm2.stringOfCharacters.ToString())
+                {
+                    idRatingForm1 = dgGrid.Rows[e.RowIndex].Cells[8].Value.ToString();
+                }
+                    
                 if (idRatingForm1 == "1") pbStar1.Visible = true;
                 else if (idRatingForm1 == "2")
                 {
@@ -777,7 +800,7 @@ namespace CulinaryRecipes
             }
         }
 
-        private void DeleteDuplikat()
+        private void DeleteDuplicate()
         {
             dgGrid.Sort(new RowComparer(SortOrder.Ascending));
             for (int i = 0; i < dgGrid.RowCount - 1; i++)
@@ -805,65 +828,65 @@ namespace CulinaryRecipes
             }
             else if (chcFish.Checked)
             {
-                odznaczanieCheckBox(chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else if (chcPasta.Checked)
             {
-                odznaczanieCheckBox(chcPasta, "Pastacheckbox", chcFish, "Fishcheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcPasta, "Pastacheckbox", chcFish, "Fishcheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else if (chcFruits.Checked)
             {
-                odznaczanieCheckBox(chcFruits, "Fruitscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcFruits, "Fruitscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else if (chcMuschrooms.Checked)
             {
-                odznaczanieCheckBox(chcMuschrooms, "Mushroomscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcMuschrooms, "Mushroomscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else if (chcBird.Checked)
             {
-                odznaczanieCheckBox(chcBird, "Birdcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcBird, "Birdcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else if (chcMeat.Checked)
             {
-                odznaczanieCheckBox(chcMeat, "Meatcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcMeat, "Meatcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else if (chcEggs.Checked)
             {
-                odznaczanieCheckBox(chcEggs, "Eggscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcEggs, "Eggscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else if (chcSnack.Checked)
             {
-                odznaczanieCheckBox(chcSnack, "Snackcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcSnack, "Snackcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else if (chcDinner.Checked)
             {
-                odznaczanieCheckBox(chcDinner, "Dinnercheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcDinner, "Dinnercheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else if (chcSoup.Checked)
             {
-                odznaczanieCheckBox(chcSoup, "Soupcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcSoup, "Soupcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else if (chcDessert.Checked)
             {
-                odznaczanieCheckBox(chcDessert, "Dessertcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcDessert, "Dessertcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else if (chcDrink.Checked)
             {
-                odznaczanieCheckBox(chcDrink, "Drinkscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcDrink, "Drinkscheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcPreserves, "Preservescheckbox", chcSalad, "Saladcheckbox");
             }
             else if (chcPreserves.Checked)
             {
-                odznaczanieCheckBox(chcPreserves, "Preservescheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcSalad, "Saladcheckbox");
+                ClearCheckBox(chcPreserves, "Preservescheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcSalad, "Saladcheckbox");
             }
             else if (chcSalad.Checked)
             {
-                odznaczanieCheckBox(chcSalad, "Saladcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox");
+                ClearCheckBox(chcSalad, "Saladcheckbox", chcFish, "Fishcheckbox", chcPasta, "Pastacheckbox", chcFruits, "Fruitscheckbox", chcMuschrooms, "Mushroomscheckbox", chcBird, "Birdcheckbox", chcMeat, "Meatcheckbox", chcEggs, "Eggscheckbox", chcSnack, "Snackcheckbox", chcDinner, "Dinnercheckbox", chcSoup, "Soupcheckbox", chcDessert, "Dessertcheckbox", chcDrink, "Drinkscheckbox", chcPreserves, "Preservescheckbox");
             }
             CleanThumbnails();
         }
 
 
-        private void odznaczanieCheckBox(CheckBox gl, string nameMain, CheckBox one, string name1, CheckBox two, string name2, CheckBox three, string name3, CheckBox four, string name4, CheckBox five, string name5, CheckBox six, string name6, CheckBox seven, string name7, CheckBox eight, string name8, CheckBox nine, string name9, CheckBox ten, string name10, CheckBox eleven, string name11, CheckBox twelve, string name12, CheckBox thirteen, string name13)
+        private void ClearCheckBox(CheckBox gl, string nameMain, CheckBox one, string name1, CheckBox two, string name2, CheckBox three, string name3, CheckBox four, string name4, CheckBox five, string name5, CheckBox six, string name6, CheckBox seven, string name7, CheckBox eight, string name8, CheckBox nine, string name9, CheckBox ten, string name10, CheckBox eleven, string name11, CheckBox twelve, string name12, CheckBox thirteen, string name13)
         {
             for (int i = dgGrid.RowCount - 1; i >= 0; i--)
             {

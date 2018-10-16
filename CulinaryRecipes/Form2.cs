@@ -518,100 +518,92 @@ namespace CulinaryRecipes
             rtxtAmountsOfFood.Lines = tab;
         }
 
-        private void przeliczPorcjeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (rtxtAmountsOfFood.ReadOnly == false) { MessageBox.Show("Przeliczać porcje można dopiero po dodaniu przepisu lub po wykonaniu jego modyfikacji"); }
-            else
-            {
-                rtxtPortion.ReadOnly = false;
-                MessageBox.Show("Wpisz na ile porcji chcesz przeliczyć przepis");
-                rtxtPortion.BackColor = Function.CreateBrightColor();
-                btnConvert.Visible = true;
-                convertNumbers = Convert.ToDouble(rtxtPortion.Text);
-            }
-        }
         double convertNumbers;
-
+        string convertportions = "Przelicz Porcje";
+        string convert = "Przelicz";
         private void btnConvert_Click(object sender, EventArgs e)
         {
-            if (rtxtAmountsOfFood.ReadOnly == true && rtxtPortion.ReadOnly == false)
-            {
-                int nrLinii = rtxtAmountsOfFood.Lines.Length;
-                double[] sk = new double[nrLinii];
-                double[] liczba = new double[nrLinii];
-                string[] liczba2 = new string[nrLinii];
+            btnConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 
-                SecuringAmountOffood(rtxtPortion);
-                if (rtxtPortion.Text == "")
-                {
-                    rtxtPortion.BackColor = Function.CreateBrightColor();
-                    rtxtPortion.ReadOnly = false;
-                }
+            if (btnConvert.Text==convertportions)
+            {
+                if (rtxtAmountsOfFood.ReadOnly == false) { MessageBox.Show("Przeliczać porcje można dopiero po dodaniu przepisu lub po wykonaniu jego modyfikacji"); }
                 else
                 {
-                    if (double.TryParse(convertNumbers.ToString(), out converted))
-                    {
-                        for (int i = 0; i < nrLinii; i++)
-                        {
-                            if (double.TryParse(rtxtAmountsOfFood.Lines[i], out sk[i]))
-                            {
-                                liczba[i] = sk[i] / convertNumbers;
-                                liczba2[i] = liczba[i].ToString();
-                            }
-                        }
-                    }
-                    rtxtAmountsOfFood.Lines = liczba2;
+                    rtxtPortion.ReadOnly = false;
+                    rtxtPortion.BackColor = Function.CreateBrightColor();
+                    btnConvert.Visible = true;
+                    convertNumbers = Convert.ToDouble(rtxtPortion.Text);
                 }
+                btnConvert.Text = convert;
             }
-            if (rtxtPortion.Text == "") { }
             else
             {
-                int numberLine = rtxtAmountsOfFood.Lines.Length;
-                double[] sk2 = new double[numberLine];
-                double[] numberOne = new double[numberLine];
-                string[] numberTwo = new string[numberLine];
-
-                if (double.TryParse(rtxtPortion.Text, out converted))
+                if (rtxtAmountsOfFood.ReadOnly == true && rtxtPortion.ReadOnly == false)
                 {
-                    for (int i = 0; i < numberLine; i++)
+                    int nrLinii = rtxtAmountsOfFood.Lines.Length;
+                    double[] sk = new double[nrLinii];
+                    double[] liczba = new double[nrLinii];
+                    string[] liczba2 = new string[nrLinii];
+
+                    SecuringAmountOffood(rtxtPortion);
+                    if (rtxtPortion.Text == "")
                     {
-                        if (rtxtAmountsOfFood.Lines[i] == "") continue;
-                        if (double.TryParse(rtxtAmountsOfFood.Lines[i], out sk2[i]))
-                        {
-                            //if (converted == 0)
-                            //{
-                            //    MessageBox.Show("Nie moża dzielić przez 0");
-                            //    rtxtPortion.Text = numberOfPortionsForm2.ToString();
-                            //    break;
-                            //}
-                            //else
-                            //{
-                            numberOne[i] = Math.Round(sk2[i] * converted, 1);
-                            numberTwo[i] = numberOne[i].ToString();
-                            //  }
-                        }
-                        else
-                        {
-                            MessageBox.Show("W tej rubryce można wpisywać tylko ilości");
-                        }
+                        rtxtPortion.BackColor = Function.CreateBrightColor();
+                        rtxtPortion.ReadOnly = false;
                     }
-                    for (int i = 0; i < numberLine; i++)
+                    else
                     {
-                        rtxtAmountsOfFood.Lines = numberTwo;
+                        if (double.TryParse(convertNumbers.ToString(), out converted))
+                        {
+                            for (int i = 0; i < nrLinii; i++)
+                            {
+                                if (double.TryParse(rtxtAmountsOfFood.Lines[i], out sk[i]))
+                                {
+                                    liczba[i] = sk[i] / convertNumbers;
+                                    liczba2[i] = liczba[i].ToString();
+                                }
+                            }
+                        }
+                        rtxtAmountsOfFood.Lines = liczba2;
                     }
                 }
-                //else
-                //{
-                //    MessageBox.Show("Możesz wpisywać tylko cyfry", "Uwaga!", MessageBoxButtons.OKCancel);
-                //    rtxtAmountsOfFood.Text = amountsOfIngredientsForm2;
-                //    rtxtPortion.Text = numberOfPortionsForm2.ToString();
-                //}
-                btnConvert.Visible = false;
-                rtxtPortion.BackColor = Function.CreateColor();
-                rtxtPortion.ReadOnly = true;
-                rtxtAmountsOfFood.Visible = true;
+                if (rtxtPortion.Text != "") 
+                {
+                    int numberLine = rtxtAmountsOfFood.Lines.Length;
+                    double[] sk2 = new double[numberLine];
+                    double[] numberOne = new double[numberLine];
+                    string[] numberTwo = new string[numberLine];
+
+                    if (double.TryParse(rtxtPortion.Text, out converted))
+                    {
+                        for (int i = 0; i < numberLine; i++)
+                        {
+                            if (rtxtAmountsOfFood.Lines[i] == "") continue;
+                            if (double.TryParse(rtxtAmountsOfFood.Lines[i], out sk2[i]))
+                            {
+                                numberOne[i] = Math.Round(sk2[i] * converted, 1);
+                                numberTwo[i] = numberOne[i].ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("W tej rubryce można wpisywać tylko ilości");
+                            }
+                        }
+                        for (int i = 0; i < numberLine; i++)
+                        {
+                            rtxtAmountsOfFood.Lines = numberTwo;
+                        }
+                    }
+                    rtxtPortion.BackColor = Function.CreateColor();
+                    rtxtPortion.ReadOnly = true;
+                    rtxtAmountsOfFood.Visible = true;
+                    btnConvert.Text = convertportions;
+                    btnConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+                }
             }
         }
+        
         #endregion
 
         private void wytnijToolStripMenuItem_Click(object sender, EventArgs e)

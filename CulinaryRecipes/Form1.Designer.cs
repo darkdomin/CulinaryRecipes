@@ -46,8 +46,6 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cIekawostkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -302,24 +300,10 @@
             // 
             // oProgramieToolStripMenuItem
             // 
-            this.oProgramieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem3,
-            this.cIekawostkiToolStripMenuItem});
             this.oProgramieToolStripMenuItem.Name = "oProgramieToolStripMenuItem";
             this.oProgramieToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.oProgramieToolStripMenuItem.Text = "O programie";
             this.oProgramieToolStripMenuItem.Click += new System.EventHandler(this.oProgramieToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(137, 22);
-            // 
-            // cIekawostkiToolStripMenuItem
-            // 
-            this.cIekawostkiToolStripMenuItem.Name = "cIekawostkiToolStripMenuItem";
-            this.cIekawostkiToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.cIekawostkiToolStripMenuItem.Text = "CIekawostki";
             // 
             // menuStrip1
             // 
@@ -1781,10 +1765,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ToolStripMenuItem importujPojedynczyPlikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eksportujPojedynczyPlikToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.Label lblYouHave;
         private System.Windows.Forms.Label lblStatistic;
-        private System.Windows.Forms.ToolStripMenuItem cIekawostkiToolStripMenuItem;
         private System.Windows.Forms.Label lblCulinary;
         private System.Windows.Forms.CheckBox chcStstistic;
         private System.Windows.Forms.Label lblCleanDgGrid;

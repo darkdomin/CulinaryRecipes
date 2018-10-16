@@ -37,8 +37,6 @@
             this.listaZakupowaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.edycjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.przeliczPorcjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.chcFish = new System.Windows.Forms.CheckBox();
             this.chcPasta = new System.Windows.Forms.CheckBox();
@@ -100,7 +98,6 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.btnAddRest = new System.Windows.Forms.Button();
-            this.txtShortDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.contextShortDesription = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cofnijToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
@@ -146,7 +143,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.pbLittlePhoto = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.rtxtDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.contextLongDescription = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmList = new System.Windows.Forms.ToolStripMenuItem();
             this.separatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -159,7 +155,6 @@
             this.usuńToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.rTxtIngredients = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.contextIngridients = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -167,7 +162,6 @@
             this.kopiujToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.wklejToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuńToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtName = new CulinaryRecipes.ReadOnlyTextBox();
             this.contextName = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.undoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -194,6 +188,10 @@
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.txtShortDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
+            this.rtxtDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
+            this.rTxtIngredients = new CulinaryRecipes.ReadOnlyRichTextBox();
+            this.txtName = new CulinaryRecipes.ReadOnlyTextBox();
             this.menuStrip1.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -263,9 +261,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.plikToolStripMenuItem,
-            this.edycjaToolStripMenuItem,
-            this.przeliczPorcjeToolStripMenuItem});
+            this.plikToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1234, 24);
@@ -316,19 +312,6 @@
             this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.zamknijToolStripMenuItem.Text = "Zamknij";
             this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
-            // 
-            // edycjaToolStripMenuItem
-            // 
-            this.edycjaToolStripMenuItem.Name = "edycjaToolStripMenuItem";
-            this.edycjaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.edycjaToolStripMenuItem.Text = "Edycja";
-            // 
-            // przeliczPorcjeToolStripMenuItem
-            // 
-            this.przeliczPorcjeToolStripMenuItem.Name = "przeliczPorcjeToolStripMenuItem";
-            this.przeliczPorcjeToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.przeliczPorcjeToolStripMenuItem.Text = "Przelicz Porcje";
-            this.przeliczPorcjeToolStripMenuItem.Click += new System.EventHandler(this.przeliczPorcjeToolStripMenuItem_Click);
             // 
             // panelLeft
             // 
@@ -1115,20 +1098,6 @@
             this.btnAddRest.Visible = false;
             this.btnAddRest.Click += new System.EventHandler(this.btnAddRest_Click);
             // 
-            // txtShortDescription
-            // 
-            this.txtShortDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.txtShortDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtShortDescription.ContextMenuStrip = this.contextShortDesription;
-            this.txtShortDescription.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtShortDescription.ForeColor = System.Drawing.Color.White;
-            this.txtShortDescription.Location = new System.Drawing.Point(777, 137);
-            this.txtShortDescription.Name = "txtShortDescription";
-            this.txtShortDescription.ReadOnly = true;
-            this.txtShortDescription.Size = new System.Drawing.Size(220, 130);
-            this.txtShortDescription.TabIndex = 69;
-            this.txtShortDescription.Text = "";
-            // 
             // contextShortDesription
             // 
             this.contextShortDesription.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1425,19 +1394,19 @@
             // 
             // btnConvert
             // 
-            this.btnConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.btnConvert.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConvert.FlatAppearance.BorderSize = 0;
             this.btnConvert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnConvert.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnConvert.ForeColor = System.Drawing.Color.White;
             this.btnConvert.Location = new System.Drawing.Point(354, 38);
             this.btnConvert.Name = "btnConvert";
-            this.btnConvert.Size = new System.Drawing.Size(60, 22);
+            this.btnConvert.Size = new System.Drawing.Size(97, 22);
             this.btnConvert.TabIndex = 43;
-            this.btnConvert.Text = "Przelicz";
+            this.btnConvert.Text = "Przelicz Porcje";
             this.btnConvert.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnConvert.UseVisualStyleBackColor = false;
-            this.btnConvert.Visible = false;
             this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
             // 
             // lblCuisine
@@ -1586,23 +1555,6 @@
             this.label13.Text = "Opis";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // rtxtDescription
-            // 
-            this.rtxtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtxtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.rtxtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxtDescription.ContextMenuStrip = this.contextLongDescription;
-            this.rtxtDescription.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rtxtDescription.ForeColor = System.Drawing.Color.White;
-            this.rtxtDescription.Location = new System.Drawing.Point(475, 386);
-            this.rtxtDescription.Name = "rtxtDescription";
-            this.rtxtDescription.ReadOnly = true;
-            this.rtxtDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtxtDescription.Size = new System.Drawing.Size(520, 371);
-            this.rtxtDescription.TabIndex = 20;
-            this.rtxtDescription.Text = "";
-            this.rtxtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtDescription_KeyDown);
-            // 
             // contextLongDescription
             // 
             this.contextLongDescription.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1698,24 +1650,6 @@
             this.label12.TabIndex = 3;
             this.label12.Text = "Składniki";
             // 
-            // rTxtIngredients
-            // 
-            this.rTxtIngredients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.rTxtIngredients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.rTxtIngredients.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rTxtIngredients.ContextMenuStrip = this.contextIngridients;
-            this.rTxtIngredients.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rTxtIngredients.ForeColor = System.Drawing.Color.White;
-            this.rTxtIngredients.Location = new System.Drawing.Point(69, 74);
-            this.rTxtIngredients.Name = "rTxtIngredients";
-            this.rTxtIngredients.ReadOnly = true;
-            this.rTxtIngredients.Size = new System.Drawing.Size(367, 684);
-            this.rTxtIngredients.TabIndex = 2;
-            this.rTxtIngredients.Text = "";
-            this.rTxtIngredients.WordWrap = false;
-            this.rTxtIngredients.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtIngredients_KeyDown);
-            // 
             // contextIngridients
             // 
             this.contextIngridients.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1767,22 +1701,6 @@
             this.usuńToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
             this.usuńToolStripMenuItem1.Text = "Usuń";
             this.usuńToolStripMenuItem1.Click += new System.EventHandler(this.usuńToolStripMenuItem1_Click);
-            // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.ContextMenuStrip = this.contextName;
-            this.txtName.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtName.Font = new System.Drawing.Font("Corbel", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtName.ForeColor = System.Drawing.Color.White;
-            this.txtName.Location = new System.Drawing.Point(16, 7);
-            this.txtName.MaxLength = 85;
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(1004, 25);
-            this.txtName.TabIndex = 0;
-            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // contextName
             // 
@@ -2009,6 +1927,71 @@
             this.printDialog1.Document = this.printDocument1;
             this.printDialog1.UseEXDialog = true;
             // 
+            // txtShortDescription
+            // 
+            this.txtShortDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.txtShortDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtShortDescription.ContextMenuStrip = this.contextShortDesription;
+            this.txtShortDescription.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtShortDescription.ForeColor = System.Drawing.Color.White;
+            this.txtShortDescription.Location = new System.Drawing.Point(777, 137);
+            this.txtShortDescription.Name = "txtShortDescription";
+            this.txtShortDescription.ReadOnly = true;
+            this.txtShortDescription.Size = new System.Drawing.Size(220, 130);
+            this.txtShortDescription.TabIndex = 69;
+            this.txtShortDescription.Text = "";
+            // 
+            // rtxtDescription
+            // 
+            this.rtxtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtxtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.rtxtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtxtDescription.ContextMenuStrip = this.contextLongDescription;
+            this.rtxtDescription.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rtxtDescription.ForeColor = System.Drawing.Color.White;
+            this.rtxtDescription.Location = new System.Drawing.Point(475, 386);
+            this.rtxtDescription.Name = "rtxtDescription";
+            this.rtxtDescription.ReadOnly = true;
+            this.rtxtDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtxtDescription.Size = new System.Drawing.Size(520, 371);
+            this.rtxtDescription.TabIndex = 20;
+            this.rtxtDescription.Text = "";
+            this.rtxtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtDescription_KeyDown);
+            // 
+            // rTxtIngredients
+            // 
+            this.rTxtIngredients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.rTxtIngredients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.rTxtIngredients.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rTxtIngredients.ContextMenuStrip = this.contextIngridients;
+            this.rTxtIngredients.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rTxtIngredients.ForeColor = System.Drawing.Color.White;
+            this.rTxtIngredients.Location = new System.Drawing.Point(69, 74);
+            this.rTxtIngredients.Name = "rTxtIngredients";
+            this.rTxtIngredients.ReadOnly = true;
+            this.rTxtIngredients.Size = new System.Drawing.Size(367, 684);
+            this.rTxtIngredients.TabIndex = 2;
+            this.rTxtIngredients.Text = "";
+            this.rTxtIngredients.WordWrap = false;
+            this.rTxtIngredients.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtIngredients_KeyDown);
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtName.ContextMenuStrip = this.contextName;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtName.Font = new System.Drawing.Font("Corbel", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtName.ForeColor = System.Drawing.Color.White;
+            this.txtName.Location = new System.Drawing.Point(16, 7);
+            this.txtName.MaxLength = 85;
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(1004, 25);
+            this.txtName.TabIndex = 0;
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2196,8 +2179,6 @@
         private System.Windows.Forms.ContextMenuStrip contextAmounts;
         private System.Windows.Forms.ContextMenuStrip contextShortDesription;
         private System.Windows.Forms.ContextMenuStrip contextLongDescription;
-        private System.Windows.Forms.ToolStripMenuItem edycjaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem przeliczPorcjeToolStripMenuItem;
         private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.ToolStripMenuItem wytnijToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kopiujToolStripMenuItem;
