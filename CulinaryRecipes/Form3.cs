@@ -20,6 +20,7 @@ namespace CulinaryRecipes
         public int portions3{ get; set; }
 
         public string titleForm3 { get; set; }
+        public string gramsForm3 { get; set; }
         public string ingredientForm3 { get; set; }
         public string shortDescriptionForm3 { get; set; }
         public string InstructionForm3 { get; set; }
@@ -289,6 +290,7 @@ namespace CulinaryRecipes
             model.idDgGridForm2 = idDgGridForm3;
             model.titleForm2 = titleForm3;
             model.amountsOfIngredientsForm2 = AmountsOfFoodForm3;
+            model.gramsForm2 = gramsForm3;
             model.ingredientForm2 = ingredientForm3;
             model.ShortDescriptionForm2 = shortDescriptionForm3;
             model.instructionForm2 = InstructionForm3;

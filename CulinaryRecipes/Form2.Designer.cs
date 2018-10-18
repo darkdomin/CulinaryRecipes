@@ -96,6 +96,18 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.lblHelpTab = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.pictureBox29 = new System.Windows.Forms.PictureBox();
+            this.contextIngridients = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.wytnijToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.kopiujToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.wklejToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuńToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pbConvert = new System.Windows.Forms.PictureBox();
+            this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.btnAddRest = new System.Windows.Forms.Button();
             this.contextShortDesription = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -155,13 +167,6 @@
             this.usuńToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.contextIngridients = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.wytnijToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.kopiujToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.wklejToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuńToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextName = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.undoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -188,6 +193,7 @@
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.rTxtGrams = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.txtShortDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.rtxtDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.rTxtIngredients = new CulinaryRecipes.ReadOnlyRichTextBox();
@@ -224,6 +230,10 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panelMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
+            this.contextIngridients.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConvert)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.contextShortDesription.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb9)).BeginInit();
@@ -252,7 +262,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLittlePhoto)).BeginInit();
             this.contextLongDescription.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.contextIngridients.SuspendLayout();
             this.contextName.SuspendLayout();
             this.contextAmounts.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -265,7 +274,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1234, 24);
-            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // plikToolStripMenuItem
@@ -343,7 +352,7 @@
             this.panelLeft.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(100, 801);
-            this.panelLeft.TabIndex = 14;
+            this.panelLeft.TabIndex = 0;
             // 
             // chcFish
             // 
@@ -354,7 +363,7 @@
             this.chcFish.Location = new System.Drawing.Point(83, 42);
             this.chcFish.Name = "chcFish";
             this.chcFish.Size = new System.Drawing.Size(15, 14);
-            this.chcFish.TabIndex = 11;
+            this.chcFish.TabIndex = 0;
             this.chcFish.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chcFish.UseVisualStyleBackColor = true;
             this.chcFish.CheckedChanged += new System.EventHandler(this.chcFish_CheckedChanged);
@@ -368,7 +377,7 @@
             this.chcPasta.Location = new System.Drawing.Point(83, 149);
             this.chcPasta.Name = "chcPasta";
             this.chcPasta.Size = new System.Drawing.Size(15, 14);
-            this.chcPasta.TabIndex = 16;
+            this.chcPasta.TabIndex = 0;
             this.chcPasta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chcPasta.UseVisualStyleBackColor = true;
             this.chcPasta.CheckedChanged += new System.EventHandler(this.chcPasta_CheckedChanged);
@@ -382,7 +391,7 @@
             this.chcFruits.Location = new System.Drawing.Point(83, 263);
             this.chcFruits.Name = "chcFruits";
             this.chcFruits.Size = new System.Drawing.Size(15, 14);
-            this.chcFruits.TabIndex = 16;
+            this.chcFruits.TabIndex = 0;
             this.chcFruits.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chcFruits.UseVisualStyleBackColor = true;
             this.chcFruits.CheckedChanged += new System.EventHandler(this.chcFruits_CheckedChanged);
@@ -396,7 +405,7 @@
             this.chcMuschrooms.Location = new System.Drawing.Point(83, 376);
             this.chcMuschrooms.Name = "chcMuschrooms";
             this.chcMuschrooms.Size = new System.Drawing.Size(15, 14);
-            this.chcMuschrooms.TabIndex = 18;
+            this.chcMuschrooms.TabIndex = 0;
             this.chcMuschrooms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chcMuschrooms.UseVisualStyleBackColor = true;
             this.chcMuschrooms.CheckedChanged += new System.EventHandler(this.chcMuschrooms_CheckedChanged);
@@ -410,7 +419,7 @@
             this.chcBird.Location = new System.Drawing.Point(83, 490);
             this.chcBird.Name = "chcBird";
             this.chcBird.Size = new System.Drawing.Size(15, 14);
-            this.chcBird.TabIndex = 18;
+            this.chcBird.TabIndex = 0;
             this.chcBird.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chcBird.UseVisualStyleBackColor = true;
             this.chcBird.CheckedChanged += new System.EventHandler(this.chcBird_CheckedChanged);
@@ -424,7 +433,7 @@
             this.chcMeat.Location = new System.Drawing.Point(83, 600);
             this.chcMeat.Name = "chcMeat";
             this.chcMeat.Size = new System.Drawing.Size(15, 14);
-            this.chcMeat.TabIndex = 18;
+            this.chcMeat.TabIndex = 0;
             this.chcMeat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chcMeat.UseVisualStyleBackColor = true;
             this.chcMeat.CheckedChanged += new System.EventHandler(this.chcMeat_CheckedChanged);
@@ -438,7 +447,7 @@
             this.chcEggs.Location = new System.Drawing.Point(83, 714);
             this.chcEggs.Name = "chcEggs";
             this.chcEggs.Size = new System.Drawing.Size(15, 14);
-            this.chcEggs.TabIndex = 18;
+            this.chcEggs.TabIndex = 6;
             this.chcEggs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chcEggs.UseVisualStyleBackColor = true;
             this.chcEggs.CheckedChanged += new System.EventHandler(this.chcEggs_CheckedChanged);
@@ -451,7 +460,7 @@
             this.label10.Location = new System.Drawing.Point(36, 697);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 13);
-            this.label10.TabIndex = 21;
+            this.label10.TabIndex = 7;
             this.label10.Text = "JAJA";
             // 
             // label9
@@ -462,7 +471,7 @@
             this.label9.Location = new System.Drawing.Point(27, 584);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(39, 13);
-            this.label9.TabIndex = 20;
+            this.label9.TabIndex = 0;
             this.label9.Text = "MIĘSO";
             // 
             // label11
@@ -473,7 +482,7 @@
             this.label11.Location = new System.Drawing.Point(5, 463);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(92, 26);
-            this.label11.TabIndex = 19;
+            this.label11.TabIndex = 0;
             this.label11.Text = "DRÓB\r\nDZIKIE PTACTWO\r\n";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -485,7 +494,7 @@
             this.lbl34.Location = new System.Drawing.Point(23, 358);
             this.lbl34.Name = "lbl34";
             this.lbl34.Size = new System.Drawing.Size(49, 13);
-            this.lbl34.TabIndex = 17;
+            this.lbl34.TabIndex = 0;
             this.lbl34.Text = "GRZYBY";
             // 
             // panel1
@@ -495,7 +504,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(10, 35, 10, 10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(70, 70);
-            this.panel1.TabIndex = 7;
+            this.panel1.TabIndex = 11;
             // 
             // pictureBox16
             // 
@@ -505,7 +514,7 @@
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(70, 70);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox16.TabIndex = 5;
+            this.pictureBox16.TabIndex = 0;
             this.pictureBox16.TabStop = false;
             // 
             // label7
@@ -517,7 +526,7 @@
             this.label7.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 26);
-            this.label7.TabIndex = 15;
+            this.label7.TabIndex = 0;
             this.label7.Text = "KASZA\r\nRYŻ,MAKARON";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -529,7 +538,7 @@
             this.label4.Location = new System.Drawing.Point(5, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 26);
-            this.label4.TabIndex = 10;
+            this.label4.TabIndex = 0;
             this.label4.Text = "RYBY\r\nOWOCE MORZA";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -540,7 +549,7 @@
             this.panel17.Margin = new System.Windows.Forms.Padding(10, 35, 10, 10);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(70, 70);
-            this.panel17.TabIndex = 6;
+            this.panel17.TabIndex = 14;
             // 
             // pictureBox12
             // 
@@ -550,7 +559,7 @@
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(70, 70);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox12.TabIndex = 5;
+            this.pictureBox12.TabIndex = 0;
             this.pictureBox12.TabStop = false;
             // 
             // panel23
@@ -560,7 +569,7 @@
             this.panel23.Margin = new System.Windows.Forms.Padding(10, 35, 10, 10);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(70, 70);
-            this.panel23.TabIndex = 6;
+            this.panel23.TabIndex = 15;
             // 
             // pictureBox15
             // 
@@ -570,7 +579,7 @@
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(70, 70);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox15.TabIndex = 5;
+            this.pictureBox15.TabIndex = 0;
             this.pictureBox15.TabStop = false;
             // 
             // label8
@@ -582,7 +591,7 @@
             this.label8.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 26);
-            this.label8.TabIndex = 15;
+            this.label8.TabIndex = 0;
             this.label8.Text = "OWOCE\r\nI WARZYWA";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -593,7 +602,7 @@
             this.panel18.Margin = new System.Windows.Forms.Padding(10, 35, 10, 10);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(70, 70);
-            this.panel18.TabIndex = 5;
+            this.panel18.TabIndex = 17;
             // 
             // pictureBox11
             // 
@@ -603,7 +612,7 @@
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(70, 70);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox11.TabIndex = 5;
+            this.pictureBox11.TabIndex = 0;
             this.pictureBox11.TabStop = false;
             // 
             // panel19
@@ -613,7 +622,7 @@
             this.panel19.Margin = new System.Windows.Forms.Padding(10, 35, 10, 10);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(70, 70);
-            this.panel19.TabIndex = 6;
+            this.panel19.TabIndex = 18;
             // 
             // pictureBox14
             // 
@@ -623,7 +632,7 @@
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(70, 70);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox14.TabIndex = 5;
+            this.pictureBox14.TabIndex = 0;
             this.pictureBox14.TabStop = false;
             // 
             // panel20
@@ -633,7 +642,7 @@
             this.panel20.Margin = new System.Windows.Forms.Padding(10);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(70, 70);
-            this.panel20.TabIndex = 6;
+            this.panel20.TabIndex = 19;
             // 
             // pictureBox10
             // 
@@ -643,7 +652,7 @@
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(70, 70);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox10.TabIndex = 5;
+            this.pictureBox10.TabIndex = 0;
             this.pictureBox10.TabStop = false;
             // 
             // panel22
@@ -653,7 +662,7 @@
             this.panel22.Margin = new System.Windows.Forms.Padding(10, 35, 10, 10);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(70, 70);
-            this.panel22.TabIndex = 6;
+            this.panel22.TabIndex = 20;
             // 
             // pictureBox13
             // 
@@ -663,7 +672,7 @@
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(70, 70);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox13.TabIndex = 5;
+            this.pictureBox13.TabIndex = 0;
             this.pictureBox13.TabStop = false;
             // 
             // panelRight
@@ -696,7 +705,7 @@
             this.panelRight.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(100, 801);
-            this.panelRight.TabIndex = 22;
+            this.panelRight.TabIndex = 0;
             // 
             // chcSnack
             // 
@@ -707,7 +716,7 @@
             this.chcSnack.Location = new System.Drawing.Point(4, 42);
             this.chcSnack.Name = "chcSnack";
             this.chcSnack.Size = new System.Drawing.Size(15, 14);
-            this.chcSnack.TabIndex = 23;
+            this.chcSnack.TabIndex = 0;
             this.chcSnack.UseVisualStyleBackColor = true;
             this.chcSnack.CheckedChanged += new System.EventHandler(this.chcSnack_CheckedChanged);
             // 
@@ -720,7 +729,7 @@
             this.chcDinner.Location = new System.Drawing.Point(4, 150);
             this.chcDinner.Name = "chcDinner";
             this.chcDinner.Size = new System.Drawing.Size(15, 14);
-            this.chcDinner.TabIndex = 23;
+            this.chcDinner.TabIndex = 0;
             this.chcDinner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chcDinner.UseVisualStyleBackColor = true;
             this.chcDinner.CheckedChanged += new System.EventHandler(this.chcDinner_CheckedChanged);
@@ -734,7 +743,7 @@
             this.chcSoup.Location = new System.Drawing.Point(4, 263);
             this.chcSoup.Name = "chcSoup";
             this.chcSoup.Size = new System.Drawing.Size(15, 14);
-            this.chcSoup.TabIndex = 23;
+            this.chcSoup.TabIndex = 0;
             this.chcSoup.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chcSoup.UseVisualStyleBackColor = true;
             this.chcSoup.CheckedChanged += new System.EventHandler(this.chcSoup_CheckedChanged);
@@ -748,7 +757,7 @@
             this.chcDessert.Location = new System.Drawing.Point(2, 377);
             this.chcDessert.Name = "chcDessert";
             this.chcDessert.Size = new System.Drawing.Size(15, 14);
-            this.chcDessert.TabIndex = 23;
+            this.chcDessert.TabIndex = 3;
             this.chcDessert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chcDessert.UseVisualStyleBackColor = true;
             this.chcDessert.CheckedChanged += new System.EventHandler(this.chcDessert_CheckedChanged);
@@ -762,7 +771,7 @@
             this.chcDrink.Location = new System.Drawing.Point(2, 489);
             this.chcDrink.Name = "chcDrink";
             this.chcDrink.Size = new System.Drawing.Size(15, 14);
-            this.chcDrink.TabIndex = 23;
+            this.chcDrink.TabIndex = 4;
             this.chcDrink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chcDrink.UseVisualStyleBackColor = true;
             this.chcDrink.CheckedChanged += new System.EventHandler(this.chcDrink_CheckedChanged);
@@ -776,7 +785,7 @@
             this.chcPreserves.Location = new System.Drawing.Point(3, 602);
             this.chcPreserves.Name = "chcPreserves";
             this.chcPreserves.Size = new System.Drawing.Size(15, 14);
-            this.chcPreserves.TabIndex = 23;
+            this.chcPreserves.TabIndex = 0;
             this.chcPreserves.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chcPreserves.UseVisualStyleBackColor = true;
             this.chcPreserves.CheckedChanged += new System.EventHandler(this.chcPreserves_CheckedChanged);
@@ -790,7 +799,7 @@
             this.chcSalad.Location = new System.Drawing.Point(1, 713);
             this.chcSalad.Name = "chcSalad";
             this.chcSalad.Size = new System.Drawing.Size(15, 14);
-            this.chcSalad.TabIndex = 24;
+            this.chcSalad.TabIndex = 0;
             this.chcSalad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chcSalad.UseVisualStyleBackColor = true;
             this.chcSalad.CheckedChanged += new System.EventHandler(this.chcSalad_CheckedChanged);
@@ -803,7 +812,7 @@
             this.label6.Location = new System.Drawing.Point(21, 687);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 26);
-            this.label6.TabIndex = 23;
+            this.label6.TabIndex = 0;
             this.label6.Text = "SAŁATKI \r\nI SURÓWKI";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -815,7 +824,7 @@
             this.label5.Location = new System.Drawing.Point(15, 586);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 13);
-            this.label5.TabIndex = 23;
+            this.label5.TabIndex = 0;
             this.label5.Text = "PRZETWORY";
             // 
             // label
@@ -826,7 +835,7 @@
             this.label.Location = new System.Drawing.Point(25, 458);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(52, 26);
-            this.label.TabIndex = 23;
+            this.label.TabIndex = 0;
             this.label.Text = "DRINKI\r\nI NAPOJE\r\n";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -838,7 +847,7 @@
             this.label34.Location = new System.Drawing.Point(25, 346);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(52, 26);
-            this.label34.TabIndex = 23;
+            this.label34.TabIndex = 0;
             this.label34.Text = "CIASTA\r\nI DESERY";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -850,7 +859,7 @@
             this.label3.Location = new System.Drawing.Point(31, 246);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
-            this.label3.TabIndex = 23;
+            this.label3.TabIndex = 0;
             this.label3.Text = "ZUPY";
             // 
             // label1
@@ -861,7 +870,7 @@
             this.label1.Location = new System.Drawing.Point(23, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 26);
-            this.label1.TabIndex = 23;
+            this.label1.TabIndex = 0;
             this.label1.Text = "DANIA\r\nGŁÓWNE";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -873,7 +882,7 @@
             this.label2.Location = new System.Drawing.Point(17, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
-            this.label2.TabIndex = 23;
+            this.label2.TabIndex = 0;
             this.label2.Text = "PRZEKĄSKI";
             // 
             // panel3
@@ -883,7 +892,7 @@
             this.panel3.Margin = new System.Windows.Forms.Padding(10, 35, 10, 10);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(70, 70);
-            this.panel3.TabIndex = 7;
+            this.panel3.TabIndex = 14;
             // 
             // pictureBox9
             // 
@@ -893,7 +902,7 @@
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(70, 70);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox9.TabIndex = 19;
+            this.pictureBox9.TabIndex = 0;
             this.pictureBox9.TabStop = false;
             // 
             // panel4
@@ -903,7 +912,7 @@
             this.panel4.Margin = new System.Windows.Forms.Padding(10, 35, 10, 10);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(70, 70);
-            this.panel4.TabIndex = 6;
+            this.panel4.TabIndex = 15;
             // 
             // pictureBox5
             // 
@@ -913,7 +922,7 @@
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(70, 70);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox5.TabIndex = 6;
+            this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
             // panel5
@@ -923,7 +932,7 @@
             this.panel5.Margin = new System.Windows.Forms.Padding(10, 35, 10, 10);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(70, 70);
-            this.panel5.TabIndex = 6;
+            this.panel5.TabIndex = 16;
             // 
             // pictureBox8
             // 
@@ -933,7 +942,7 @@
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(70, 70);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox8.TabIndex = 19;
+            this.pictureBox8.TabIndex = 0;
             this.pictureBox8.TabStop = false;
             // 
             // panel6
@@ -943,7 +952,7 @@
             this.panel6.Margin = new System.Windows.Forms.Padding(10, 35, 10, 10);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(70, 70);
-            this.panel6.TabIndex = 5;
+            this.panel6.TabIndex = 17;
             // 
             // pictureBox4
             // 
@@ -953,7 +962,7 @@
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(70, 70);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox4.TabIndex = 17;
+            this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
             // panel7
@@ -963,7 +972,7 @@
             this.panel7.Margin = new System.Windows.Forms.Padding(10, 35, 10, 10);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(70, 70);
-            this.panel7.TabIndex = 6;
+            this.panel7.TabIndex = 18;
             // 
             // pictureBox7
             // 
@@ -973,7 +982,7 @@
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(70, 70);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox7.TabIndex = 19;
+            this.pictureBox7.TabIndex = 0;
             this.pictureBox7.TabStop = false;
             // 
             // panel8
@@ -983,7 +992,7 @@
             this.panel8.Margin = new System.Windows.Forms.Padding(10);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(70, 70);
-            this.panel8.TabIndex = 6;
+            this.panel8.TabIndex = 19;
             // 
             // pictureBox3
             // 
@@ -993,7 +1002,7 @@
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(70, 70);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
             // panel9
@@ -1003,7 +1012,7 @@
             this.panel9.Margin = new System.Windows.Forms.Padding(10, 35, 10, 10);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(70, 70);
-            this.panel9.TabIndex = 6;
+            this.panel9.TabIndex = 20;
             // 
             // pictureBox6
             // 
@@ -1013,12 +1022,18 @@
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(70, 70);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox6.TabIndex = 6;
+            this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
             // 
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            this.panelMain.Controls.Add(this.lblHelpTab);
+            this.panelMain.Controls.Add(this.label21);
+            this.panelMain.Controls.Add(this.pictureBox29);
+            this.panelMain.Controls.Add(this.rTxtGrams);
+            this.panelMain.Controls.Add(this.pbConvert);
+            this.panelMain.Controls.Add(this.pictureBox28);
             this.panelMain.Controls.Add(this.pictureBox27);
             this.panelMain.Controls.Add(this.btnAddRest);
             this.panelMain.Controls.Add(this.txtShortDescription);
@@ -1070,15 +1085,115 @@
             this.panelMain.Location = new System.Drawing.Point(100, 24);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1034, 801);
-            this.panelMain.TabIndex = 23;
+            this.panelMain.TabIndex = 0;
+            // 
+            // lblHelpTab
+            // 
+            this.lblHelpTab.AutoSize = true;
+            this.lblHelpTab.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblHelpTab.Location = new System.Drawing.Point(653, 44);
+            this.lblHelpTab.Name = "lblHelpTab";
+            this.lblHelpTab.Size = new System.Drawing.Size(57, 15);
+            this.lblHelpTab.TabIndex = 47;
+            this.lblHelpTab.Text = "labelHelp";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label21.Location = new System.Drawing.Point(50, 48);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(56, 14);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "jednostki";
+            // 
+            // pictureBox29
+            // 
+            this.pictureBox29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.pictureBox29.Location = new System.Drawing.Point(56, 74);
+            this.pictureBox29.Name = "pictureBox29";
+            this.pictureBox29.Size = new System.Drawing.Size(2, 683);
+            this.pictureBox29.TabIndex = 1;
+            this.pictureBox29.TabStop = false;
+            // 
+            // contextIngridients
+            // 
+            this.contextIngridients.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.undoToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.wytnijToolStripMenuItem1,
+            this.kopiujToolStripMenuItem1,
+            this.wklejToolStripMenuItem1,
+            this.usuńToolStripMenuItem1});
+            this.contextIngridients.Name = "contextMenuStrip2";
+            this.contextIngridients.Size = new System.Drawing.Size(109, 120);
+            // 
+            // undoToolStripMenuItem
+            // 
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.undoToolStripMenuItem.Text = "Cofnij";
+            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(105, 6);
+            // 
+            // wytnijToolStripMenuItem1
+            // 
+            this.wytnijToolStripMenuItem1.Name = "wytnijToolStripMenuItem1";
+            this.wytnijToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
+            this.wytnijToolStripMenuItem1.Text = "Wytnij";
+            this.wytnijToolStripMenuItem1.Click += new System.EventHandler(this.wytnijToolStripMenuItem1_Click);
+            // 
+            // kopiujToolStripMenuItem1
+            // 
+            this.kopiujToolStripMenuItem1.Name = "kopiujToolStripMenuItem1";
+            this.kopiujToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
+            this.kopiujToolStripMenuItem1.Text = "Kopiuj";
+            this.kopiujToolStripMenuItem1.Click += new System.EventHandler(this.kopiujToolStripMenuItem1_Click);
+            // 
+            // wklejToolStripMenuItem1
+            // 
+            this.wklejToolStripMenuItem1.Name = "wklejToolStripMenuItem1";
+            this.wklejToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
+            this.wklejToolStripMenuItem1.Text = "Wklej";
+            this.wklejToolStripMenuItem1.Click += new System.EventHandler(this.wklejToolStripMenuItem1_Click);
+            // 
+            // usuńToolStripMenuItem1
+            // 
+            this.usuńToolStripMenuItem1.Name = "usuńToolStripMenuItem1";
+            this.usuńToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
+            this.usuńToolStripMenuItem1.Text = "Usuń";
+            this.usuńToolStripMenuItem1.Click += new System.EventHandler(this.usuńToolStripMenuItem1_Click);
+            // 
+            // pbConvert
+            // 
+            this.pbConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            this.pbConvert.Location = new System.Drawing.Point(307, 41);
+            this.pbConvert.Name = "pbConvert";
+            this.pbConvert.Size = new System.Drawing.Size(3, 20);
+            this.pbConvert.TabIndex = 3;
+            this.pbConvert.TabStop = false;
+            // 
+            // pictureBox28
+            // 
+            this.pictureBox28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.pictureBox28.Location = new System.Drawing.Point(56, 64);
+            this.pictureBox28.Name = "pictureBox28";
+            this.pictureBox28.Size = new System.Drawing.Size(36, 10);
+            this.pictureBox28.TabIndex = 4;
+            this.pictureBox28.TabStop = false;
             // 
             // pictureBox27
             // 
             this.pictureBox27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pictureBox27.Location = new System.Drawing.Point(17, 74);
+            this.pictureBox27.Location = new System.Drawing.Point(8, 74);
             this.pictureBox27.Name = "pictureBox27";
             this.pictureBox27.Size = new System.Drawing.Size(5, 683);
-            this.pictureBox27.TabIndex = 70;
+            this.pictureBox27.TabIndex = 5;
             this.pictureBox27.TabStop = false;
             // 
             // btnAddRest
@@ -1089,10 +1204,10 @@
             this.btnAddRest.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddRest.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAddRest.ForeColor = System.Drawing.Color.White;
-            this.btnAddRest.Location = new System.Drawing.Point(722, 200);
+            this.btnAddRest.Location = new System.Drawing.Point(740, 200);
             this.btnAddRest.Name = "btnAddRest";
             this.btnAddRest.Size = new System.Drawing.Size(75, 34);
-            this.btnAddRest.TabIndex = 38;
+            this.btnAddRest.TabIndex = 0;
             this.btnAddRest.Text = "Dodaj";
             this.btnAddRest.UseVisualStyleBackColor = false;
             this.btnAddRest.Visible = false;
@@ -1160,9 +1275,10 @@
             this.rtxtPortion.MaxLength = 2;
             this.rtxtPortion.Multiline = false;
             this.rtxtPortion.Name = "rtxtPortion";
-            this.rtxtPortion.Size = new System.Drawing.Size(26, 20);
-            this.rtxtPortion.TabIndex = 68;
+            this.rtxtPortion.Size = new System.Drawing.Size(20, 20);
+            this.rtxtPortion.TabIndex = 0;
             this.rtxtPortion.Text = "";
+            this.rtxtPortion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtPortion_KeyDown);
             // 
             // rtxtAmountsOfFood
             // 
@@ -1170,93 +1286,94 @@
             this.rtxtAmountsOfFood.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtAmountsOfFood.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtxtAmountsOfFood.ForeColor = System.Drawing.Color.White;
-            this.rtxtAmountsOfFood.Location = new System.Drawing.Point(22, 74);
+            this.rtxtAmountsOfFood.Location = new System.Drawing.Point(13, 74);
             this.rtxtAmountsOfFood.Name = "rtxtAmountsOfFood";
             this.rtxtAmountsOfFood.ReadOnly = true;
+            this.rtxtAmountsOfFood.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.rtxtAmountsOfFood.Size = new System.Drawing.Size(38, 683);
-            this.rtxtAmountsOfFood.TabIndex = 67;
+            this.rtxtAmountsOfFood.TabIndex = 1;
             this.rtxtAmountsOfFood.Text = "";
             this.rtxtAmountsOfFood.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtAmountsOfFood_KeyDown);
             // 
             // pb9
             // 
             this.pb9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb9.Location = new System.Drawing.Point(65, 74);
+            this.pb9.Location = new System.Drawing.Point(97, 74);
             this.pb9.Name = "pb9";
             this.pb9.Size = new System.Drawing.Size(5, 683);
-            this.pb9.TabIndex = 66;
+            this.pb9.TabIndex = 9;
             this.pb9.TabStop = false;
             // 
             // pb1
             // 
             this.pb1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb1.Location = new System.Drawing.Point(17, 64);
+            this.pb1.Location = new System.Drawing.Point(8, 64);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(43, 10);
-            this.pb1.TabIndex = 65;
+            this.pb1.TabIndex = 10;
             this.pb1.TabStop = false;
             // 
             // pb2
             // 
             this.pb2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb2.Location = new System.Drawing.Point(65, 64);
+            this.pb2.Location = new System.Drawing.Point(97, 64);
             this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(371, 10);
-            this.pb2.TabIndex = 64;
+            this.pb2.Size = new System.Drawing.Size(365, 10);
+            this.pb2.TabIndex = 11;
             this.pb2.TabStop = false;
             // 
             // pb8
             // 
             this.pb8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb8.Location = new System.Drawing.Point(995, 386);
+            this.pb8.Location = new System.Drawing.Point(1001, 386);
             this.pb8.Name = "pb8";
             this.pb8.Size = new System.Drawing.Size(10, 371);
-            this.pb8.TabIndex = 61;
+            this.pb8.TabIndex = 12;
             this.pb8.TabStop = false;
             // 
             // pb6
             // 
             this.pb6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb6.Location = new System.Drawing.Point(465, 386);
+            this.pb6.Location = new System.Drawing.Point(487, 386);
             this.pb6.Name = "pb6";
             this.pb6.Size = new System.Drawing.Size(10, 371);
-            this.pb6.TabIndex = 60;
+            this.pb6.TabIndex = 13;
             this.pb6.TabStop = false;
             // 
             // pb7
             // 
             this.pb7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb7.Location = new System.Drawing.Point(465, 376);
+            this.pb7.Location = new System.Drawing.Point(487, 376);
             this.pb7.Name = "pb7";
-            this.pb7.Size = new System.Drawing.Size(540, 10);
-            this.pb7.TabIndex = 59;
+            this.pb7.Size = new System.Drawing.Size(524, 10);
+            this.pb7.TabIndex = 14;
             this.pb7.TabStop = false;
             // 
             // pb5
             // 
             this.pb5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb5.Location = new System.Drawing.Point(997, 137);
+            this.pb5.Location = new System.Drawing.Point(1007, 137);
             this.pb5.Name = "pb5";
             this.pb5.Size = new System.Drawing.Size(5, 130);
-            this.pb5.TabIndex = 58;
+            this.pb5.TabIndex = 15;
             this.pb5.TabStop = false;
             // 
             // pb3
             // 
             this.pb3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb3.Location = new System.Drawing.Point(772, 137);
+            this.pb3.Location = new System.Drawing.Point(792, 137);
             this.pb3.Name = "pb3";
             this.pb3.Size = new System.Drawing.Size(5, 130);
-            this.pb3.TabIndex = 57;
+            this.pb3.TabIndex = 16;
             this.pb3.TabStop = false;
             // 
             // pb4
             // 
             this.pb4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb4.Location = new System.Drawing.Point(772, 132);
+            this.pb4.Location = new System.Drawing.Point(792, 132);
             this.pb4.Name = "pb4";
-            this.pb4.Size = new System.Drawing.Size(230, 5);
-            this.pb4.TabIndex = 56;
+            this.pb4.Size = new System.Drawing.Size(220, 5);
+            this.pb4.TabIndex = 17;
             this.pb4.TabStop = false;
             this.pb4.Tag = "a";
             // 
@@ -1267,7 +1384,7 @@
             this.pictureBox26.Location = new System.Drawing.Point(15, 7);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(1005, 1);
-            this.pictureBox26.TabIndex = 54;
+            this.pictureBox26.TabIndex = 18;
             this.pictureBox26.TabStop = false;
             // 
             // pictureBox25
@@ -1277,7 +1394,7 @@
             this.pictureBox25.Location = new System.Drawing.Point(1019, 7);
             this.pictureBox25.Name = "pictureBox25";
             this.pictureBox25.Size = new System.Drawing.Size(1, 26);
-            this.pictureBox25.TabIndex = 53;
+            this.pictureBox25.TabIndex = 19;
             this.pictureBox25.TabStop = false;
             // 
             // pictureBox24
@@ -1287,7 +1404,7 @@
             this.pictureBox24.Location = new System.Drawing.Point(15, 7);
             this.pictureBox24.Name = "pictureBox24";
             this.pictureBox24.Size = new System.Drawing.Size(1, 26);
-            this.pictureBox24.TabIndex = 52;
+            this.pictureBox24.TabIndex = 20;
             this.pictureBox24.TabStop = false;
             // 
             // pictureBox23
@@ -1297,57 +1414,57 @@
             this.pictureBox23.Location = new System.Drawing.Point(15, 32);
             this.pictureBox23.Name = "pictureBox23";
             this.pictureBox23.Size = new System.Drawing.Size(1005, 1);
-            this.pictureBox23.TabIndex = 51;
+            this.pictureBox23.TabIndex = 21;
             this.pictureBox23.TabStop = false;
             // 
             // pictureBox22
             // 
             this.pictureBox22.BackColor = System.Drawing.Color.White;
             this.pictureBox22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox22.Location = new System.Drawing.Point(451, 757);
+            this.pictureBox22.Location = new System.Drawing.Point(476, 757);
             this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(570, 1);
-            this.pictureBox22.TabIndex = 50;
+            this.pictureBox22.Size = new System.Drawing.Size(545, 1);
+            this.pictureBox22.TabIndex = 22;
             this.pictureBox22.TabStop = false;
             // 
             // pictureBox21
             // 
             this.pictureBox21.BackColor = System.Drawing.Color.White;
             this.pictureBox21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox21.Location = new System.Drawing.Point(16, 757);
+            this.pictureBox21.Location = new System.Drawing.Point(7, 757);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(420, 1);
-            this.pictureBox21.TabIndex = 49;
+            this.pictureBox21.Size = new System.Drawing.Size(456, 1);
+            this.pictureBox21.TabIndex = 23;
             this.pictureBox21.TabStop = false;
             // 
             // pictureBox20
             // 
             this.pictureBox20.BackColor = System.Drawing.Color.White;
             this.pictureBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox20.Location = new System.Drawing.Point(16, 63);
+            this.pictureBox20.Location = new System.Drawing.Point(8, 63);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(420, 1);
-            this.pictureBox20.TabIndex = 48;
+            this.pictureBox20.Size = new System.Drawing.Size(455, 1);
+            this.pictureBox20.TabIndex = 24;
             this.pictureBox20.TabStop = false;
             // 
             // pictureBox19
             // 
             this.pictureBox19.BackColor = System.Drawing.Color.White;
             this.pictureBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox19.Location = new System.Drawing.Point(16, 63);
+            this.pictureBox19.Location = new System.Drawing.Point(7, 63);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(1, 695);
-            this.pictureBox19.TabIndex = 47;
+            this.pictureBox19.TabIndex = 25;
             this.pictureBox19.TabStop = false;
             // 
             // pictureBox18
             // 
             this.pictureBox18.BackColor = System.Drawing.Color.White;
             this.pictureBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox18.Location = new System.Drawing.Point(436, 63);
+            this.pictureBox18.Location = new System.Drawing.Point(463, 63);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(1, 695);
-            this.pictureBox18.TabIndex = 46;
+            this.pictureBox18.TabIndex = 26;
             this.pictureBox18.TabStop = false;
             // 
             // pictureBox17
@@ -1357,38 +1474,38 @@
             this.pictureBox17.Location = new System.Drawing.Point(1020, 333);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(1, 424);
-            this.pictureBox17.TabIndex = 45;
+            this.pictureBox17.TabIndex = 27;
             this.pictureBox17.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(450, 333);
+            this.pictureBox1.Location = new System.Drawing.Point(476, 333);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1, 425);
-            this.pictureBox1.TabIndex = 44;
+            this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
             // pbStar2
             // 
             this.pbStar2.Image = global::CulinaryRecipes.Properties.Resources.gwiazdka;
-            this.pbStar2.Location = new System.Drawing.Point(803, 290);
+            this.pbStar2.Location = new System.Drawing.Point(828, 290);
             this.pbStar2.Name = "pbStar2";
             this.pbStar2.Size = new System.Drawing.Size(23, 23);
             this.pbStar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbStar2.TabIndex = 32;
+            this.pbStar2.TabIndex = 29;
             this.pbStar2.TabStop = false;
             this.pbStar2.Visible = false;
             // 
             // pbStar3
             // 
             this.pbStar3.Image = global::CulinaryRecipes.Properties.Resources.gwiazdka;
-            this.pbStar3.Location = new System.Drawing.Point(945, 290);
+            this.pbStar3.Location = new System.Drawing.Point(960, 290);
             this.pbStar3.Name = "pbStar3";
             this.pbStar3.Size = new System.Drawing.Size(23, 23);
             this.pbStar3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbStar3.TabIndex = 33;
+            this.pbStar3.TabIndex = 30;
             this.pbStar3.TabStop = false;
             this.pbStar3.Visible = false;
             // 
@@ -1403,7 +1520,7 @@
             this.btnConvert.Location = new System.Drawing.Point(354, 38);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(97, 22);
-            this.btnConvert.TabIndex = 43;
+            this.btnConvert.TabIndex = 0;
             this.btnConvert.Text = "Przelicz Porcje";
             this.btnConvert.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnConvert.UseVisualStyleBackColor = false;
@@ -1417,7 +1534,7 @@
             this.lblCuisine.Location = new System.Drawing.Point(598, 308);
             this.lblCuisine.Name = "lblCuisine";
             this.lblCuisine.Size = new System.Drawing.Size(11, 15);
-            this.lblCuisine.TabIndex = 42;
+            this.lblCuisine.TabIndex = 0;
             this.lblCuisine.Text = "-";
             // 
             // label20
@@ -1428,18 +1545,18 @@
             this.label20.Location = new System.Drawing.Point(543, 308);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(56, 15);
-            this.label20.TabIndex = 41;
+            this.label20.TabIndex = 0;
             this.label20.Text = "Kuchnia:";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label15.Location = new System.Drawing.Point(15, 42);
+            this.label15.Location = new System.Drawing.Point(7, 48);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(44, 19);
-            this.label15.TabIndex = 40;
+            this.label15.Size = new System.Drawing.Size(33, 14);
+            this.label15.TabIndex = 0;
             this.label15.Text = "Ilości";
             // 
             // lblLevel
@@ -1447,10 +1564,10 @@
             this.lblLevel.AutoSize = true;
             this.lblLevel.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblLevel.ForeColor = System.Drawing.Color.White;
-            this.lblLevel.Location = new System.Drawing.Point(891, 76);
+            this.lblLevel.Location = new System.Drawing.Point(901, 76);
             this.lblLevel.Name = "lblLevel";
             this.lblLevel.Size = new System.Drawing.Size(11, 14);
-            this.lblLevel.TabIndex = 37;
+            this.lblLevel.TabIndex = 0;
             this.lblLevel.Text = "-";
             // 
             // label19
@@ -1458,10 +1575,10 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label19.Location = new System.Drawing.Point(777, 75);
+            this.label19.Location = new System.Drawing.Point(787, 75);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(108, 15);
-            this.label19.TabIndex = 36;
+            this.label19.TabIndex = 0;
             this.label19.Text = "Stopień Trudność:";
             // 
             // label18
@@ -1469,20 +1586,20 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label18.Location = new System.Drawing.Point(247, 41);
+            this.label18.Location = new System.Drawing.Point(246, 41);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(57, 19);
-            this.label18.TabIndex = 34;
+            this.label18.TabIndex = 0;
             this.label18.Text = "Porcje:";
             // 
             // pbStar1
             // 
             this.pbStar1.Image = global::CulinaryRecipes.Properties.Resources.gwiazdka;
-            this.pbStar1.Location = new System.Drawing.Point(876, 290);
+            this.pbStar1.Location = new System.Drawing.Point(895, 290);
             this.pbStar1.Name = "pbStar1";
             this.pbStar1.Size = new System.Drawing.Size(23, 23);
             this.pbStar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbStar1.TabIndex = 31;
+            this.pbStar1.TabIndex = 38;
             this.pbStar1.TabStop = false;
             this.pbStar1.Visible = false;
             // 
@@ -1491,10 +1608,10 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label17.Location = new System.Drawing.Point(708, 308);
+            this.label17.Location = new System.Drawing.Point(718, 308);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(48, 15);
-            this.label17.TabIndex = 30;
+            this.label17.TabIndex = 0;
             this.label17.Text = "Ocena:";
             this.label17.Visible = false;
             // 
@@ -1503,10 +1620,10 @@
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(574, 75);
+            this.lblTime.Location = new System.Drawing.Point(584, 75);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(11, 14);
-            this.lblTime.TabIndex = 28;
+            this.lblTime.TabIndex = 0;
             this.lblTime.Text = "-";
             // 
             // label16
@@ -1514,10 +1631,10 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label16.Location = new System.Drawing.Point(530, 74);
+            this.label16.Location = new System.Drawing.Point(540, 74);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(38, 15);
-            this.label16.TabIndex = 27;
+            this.label16.TabIndex = 0;
             this.label16.Text = "Czas:";
             // 
             // label14
@@ -1525,10 +1642,10 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label14.Location = new System.Drawing.Point(771, 103);
+            this.label14.Location = new System.Drawing.Point(791, 103);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(47, 19);
-            this.label14.TabIndex = 23;
+            this.label14.TabIndex = 0;
             this.label14.Text = "Skrót";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -1536,11 +1653,11 @@
             // 
             this.pbLittlePhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbLittlePhoto.Image = global::CulinaryRecipes.Properties.Resources.przepisy;
-            this.pbLittlePhoto.Location = new System.Drawing.Point(465, 103);
+            this.pbLittlePhoto.Location = new System.Drawing.Point(489, 103);
             this.pbLittlePhoto.Name = "pbLittlePhoto";
             this.pbLittlePhoto.Size = new System.Drawing.Size(289, 194);
             this.pbLittlePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLittlePhoto.TabIndex = 22;
+            this.pbLittlePhoto.TabIndex = 43;
             this.pbLittlePhoto.TabStop = false;
             // 
             // label13
@@ -1548,10 +1665,10 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label13.Location = new System.Drawing.Point(463, 346);
+            this.label13.Location = new System.Drawing.Point(490, 346);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(41, 19);
-            this.label13.TabIndex = 21;
+            this.label13.TabIndex = 0;
             this.label13.Text = "Opis";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -1633,74 +1750,22 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(450, 63);
+            this.pictureBox2.Location = new System.Drawing.Point(476, 63);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(571, 270);
-            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.Size = new System.Drawing.Size(545, 270);
+            this.pictureBox2.TabIndex = 46;
             this.pictureBox2.TabStop = false;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label12.Location = new System.Drawing.Point(68, 42);
+            this.label12.Location = new System.Drawing.Point(111, 48);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 19);
-            this.label12.TabIndex = 3;
+            this.label12.Size = new System.Drawing.Size(55, 14);
+            this.label12.TabIndex = 0;
             this.label12.Text = "Składniki";
-            // 
-            // contextIngridients
-            // 
-            this.contextIngridients.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.undoToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.wytnijToolStripMenuItem1,
-            this.kopiujToolStripMenuItem1,
-            this.wklejToolStripMenuItem1,
-            this.usuńToolStripMenuItem1});
-            this.contextIngridients.Name = "contextMenuStrip2";
-            this.contextIngridients.Size = new System.Drawing.Size(109, 120);
-            // 
-            // undoToolStripMenuItem
-            // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
-            this.undoToolStripMenuItem.Text = "Cofnij";
-            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(105, 6);
-            // 
-            // wytnijToolStripMenuItem1
-            // 
-            this.wytnijToolStripMenuItem1.Name = "wytnijToolStripMenuItem1";
-            this.wytnijToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
-            this.wytnijToolStripMenuItem1.Text = "Wytnij";
-            this.wytnijToolStripMenuItem1.Click += new System.EventHandler(this.wytnijToolStripMenuItem1_Click);
-            // 
-            // kopiujToolStripMenuItem1
-            // 
-            this.kopiujToolStripMenuItem1.Name = "kopiujToolStripMenuItem1";
-            this.kopiujToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
-            this.kopiujToolStripMenuItem1.Text = "Kopiuj";
-            this.kopiujToolStripMenuItem1.Click += new System.EventHandler(this.kopiujToolStripMenuItem1_Click);
-            // 
-            // wklejToolStripMenuItem1
-            // 
-            this.wklejToolStripMenuItem1.Name = "wklejToolStripMenuItem1";
-            this.wklejToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
-            this.wklejToolStripMenuItem1.Text = "Wklej";
-            this.wklejToolStripMenuItem1.Click += new System.EventHandler(this.wklejToolStripMenuItem1_Click);
-            // 
-            // usuńToolStripMenuItem1
-            // 
-            this.usuńToolStripMenuItem1.Name = "usuńToolStripMenuItem1";
-            this.usuńToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
-            this.usuńToolStripMenuItem1.Text = "Usuń";
-            this.usuńToolStripMenuItem1.Click += new System.EventHandler(this.usuńToolStripMenuItem1_Click);
             // 
             // contextName
             // 
@@ -1818,7 +1883,7 @@
             this.panelMenu.Location = new System.Drawing.Point(100, 789);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(1034, 36);
-            this.panelMenu.TabIndex = 24;
+            this.panelMenu.TabIndex = 5;
             // 
             // btnClose
             // 
@@ -1829,7 +1894,7 @@
             this.btnClose.Location = new System.Drawing.Point(879, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 4;
+            this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Zamknij";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -1845,7 +1910,7 @@
             this.btnCancel.Location = new System.Drawing.Point(722, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 3;
+            this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Anuluj";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Visible = false;
@@ -1862,7 +1927,7 @@
             this.btnDelete.Location = new System.Drawing.Point(560, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "Usuń";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -1878,7 +1943,7 @@
             this.btnModify.Location = new System.Drawing.Point(291, 3);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(75, 23);
-            this.btnModify.TabIndex = 1;
+            this.btnModify.TabIndex = 0;
             this.btnModify.Text = "Modyfikuj";
             this.btnModify.UseVisualStyleBackColor = false;
             this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
@@ -1927,6 +1992,25 @@
             this.printDialog1.Document = this.printDocument1;
             this.printDialog1.UseEXDialog = true;
             // 
+            // rTxtGrams
+            // 
+            this.rTxtGrams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.rTxtGrams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.rTxtGrams.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rTxtGrams.ContextMenuStrip = this.contextIngridients;
+            this.rTxtGrams.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rTxtGrams.ForeColor = System.Drawing.Color.White;
+            this.rTxtGrams.Location = new System.Drawing.Point(58, 74);
+            this.rTxtGrams.Name = "rTxtGrams";
+            this.rTxtGrams.ReadOnly = true;
+            this.rTxtGrams.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.rTxtGrams.Size = new System.Drawing.Size(34, 683);
+            this.rTxtGrams.TabIndex = 2;
+            this.rTxtGrams.Text = "";
+            this.rTxtGrams.WordWrap = false;
+            this.rTxtGrams.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtGrams_KeyDown);
+            // 
             // txtShortDescription
             // 
             this.txtShortDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
@@ -1934,11 +2018,11 @@
             this.txtShortDescription.ContextMenuStrip = this.contextShortDesription;
             this.txtShortDescription.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtShortDescription.ForeColor = System.Drawing.Color.White;
-            this.txtShortDescription.Location = new System.Drawing.Point(777, 137);
+            this.txtShortDescription.Location = new System.Drawing.Point(797, 137);
             this.txtShortDescription.Name = "txtShortDescription";
             this.txtShortDescription.ReadOnly = true;
-            this.txtShortDescription.Size = new System.Drawing.Size(220, 130);
-            this.txtShortDescription.TabIndex = 69;
+            this.txtShortDescription.Size = new System.Drawing.Size(210, 130);
+            this.txtShortDescription.TabIndex = 0;
             this.txtShortDescription.Text = "";
             // 
             // rtxtDescription
@@ -1949,12 +2033,12 @@
             this.rtxtDescription.ContextMenuStrip = this.contextLongDescription;
             this.rtxtDescription.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtxtDescription.ForeColor = System.Drawing.Color.White;
-            this.rtxtDescription.Location = new System.Drawing.Point(475, 386);
+            this.rtxtDescription.Location = new System.Drawing.Point(497, 386);
             this.rtxtDescription.Name = "rtxtDescription";
             this.rtxtDescription.ReadOnly = true;
             this.rtxtDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtxtDescription.Size = new System.Drawing.Size(520, 371);
-            this.rtxtDescription.TabIndex = 20;
+            this.rtxtDescription.Size = new System.Drawing.Size(504, 371);
+            this.rtxtDescription.TabIndex = 0;
             this.rtxtDescription.Text = "";
             this.rtxtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtDescription_KeyDown);
             // 
@@ -1967,11 +2051,12 @@
             this.rTxtIngredients.ContextMenuStrip = this.contextIngridients;
             this.rTxtIngredients.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rTxtIngredients.ForeColor = System.Drawing.Color.White;
-            this.rTxtIngredients.Location = new System.Drawing.Point(69, 74);
+            this.rTxtIngredients.Location = new System.Drawing.Point(102, 74);
             this.rTxtIngredients.Name = "rTxtIngredients";
             this.rTxtIngredients.ReadOnly = true;
-            this.rTxtIngredients.Size = new System.Drawing.Size(367, 684);
-            this.rTxtIngredients.TabIndex = 2;
+            this.rTxtIngredients.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.rTxtIngredients.Size = new System.Drawing.Size(360, 684);
+            this.rTxtIngredients.TabIndex = 3;
             this.rTxtIngredients.Text = "";
             this.rTxtIngredients.WordWrap = false;
             this.rTxtIngredients.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtIngredients_KeyDown);
@@ -2046,6 +2131,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
+            this.contextIngridients.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbConvert)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.contextShortDesription.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb9)).EndInit();
@@ -2074,7 +2163,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLittlePhoto)).EndInit();
             this.contextLongDescription.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.contextIngridients.ResumeLayout(false);
             this.contextName.ResumeLayout(false);
             this.contextAmounts.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
@@ -2246,5 +2334,11 @@
         private System.Windows.Forms.RichTextBox rtxtPortion;
         private ReadOnlyRichTextBox txtShortDescription;
         private System.Windows.Forms.PictureBox pictureBox27;
+        private System.Windows.Forms.PictureBox pictureBox28;
+        private System.Windows.Forms.PictureBox pbConvert;
+        private ReadOnlyRichTextBox rTxtGrams;
+        private System.Windows.Forms.PictureBox pictureBox29;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblHelpTab;
     }
 }

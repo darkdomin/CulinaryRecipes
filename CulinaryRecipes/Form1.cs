@@ -13,7 +13,7 @@ namespace CulinaryRecipes
     public partial class Form1 : Form
     {
         int idDgGrid, numberOfPortionsForm1, seekName;
-        string ingredientForm1, instructionForm1, idRatingForm1, amountsOfIngredientsForm1;
+        string gramsForm1,ingredientForm1, instructionForm1, idRatingForm1, amountsOfIngredientsForm1;
         bool isAvailable = NetworkInterface.GetIsNetworkAvailable();
         public int counter = 0;
         int[] idMeal = new int[7];
@@ -36,6 +36,7 @@ namespace CulinaryRecipes
             seekName = 1;
             CheckConnection();
             Statistic();
+          //  CleanThumbnails();
         }
 
         #region Buttony
@@ -66,7 +67,9 @@ namespace CulinaryRecipes
                 OpenForm.titleForm2 = txtLittleName.Text;
                 if (amountsOfIngredientsForm1 != null) OpenForm.amountsOfIngredientsForm2 = CleanDash(amountsOfIngredientsForm1);
                 else OpenForm.amountsOfIngredientsForm2 = amountsOfIngredientsForm1;
-
+              //  if (gramsForm1 != null) OpenForm.gramsForm2 = CleanDash(gramsForm1);
+               // else
+                    OpenForm.gramsForm2 = gramsForm1;
                 if (ingredientForm1 != null) OpenForm.ingredientForm2 = CleanDash(ingredientForm1);
                 else OpenForm.ingredientForm2 = ingredientForm1;
 
@@ -136,9 +139,13 @@ namespace CulinaryRecipes
         private void btnSeek_Click(object sender, EventArgs e)
         {
             Search(seekName);
-            lblCleanDgGrid.Visible = true;
-            lblLineOne.Visible = true;
-            lblLineTwo.Visible = true;
+            if(dgGrid.Rows.Count>0)
+            {
+                lblCleanDgGrid.Visible = true;
+                lblLineOne.Visible = true;
+                lblLineTwo.Visible = true;
+            }
+            
 
         }
         #endregion
@@ -158,7 +165,7 @@ namespace CulinaryRecipes
                         string sciezka = saveFileDialog1.FileName;
                         FileStream fs = new FileStream(sciezka, System.IO.FileMode.Create, FileAccess.Write);
 
-                        ls.Add(new RecipesBase(eksportId.Id, eksportId.RecipesName, eksportId.Ingredients, eksportId.AmountsMeal, eksportId.ShortDescription, eksportId.LongDescription, eksportId.NumberPortions, eksportId.CategoryCuisines, eksportId.CategoryRating, eksportId.CategoryDifficultLevel, eksportId.CategoryPreparationTime, eksportId.SnackMeal, eksportId.DinnerMeal, eksportId.SoupMeal, eksportId.DessertMeal, eksportId.DrinkMeal, eksportId.PreservesMeal, eksportId.SaladMeal, eksportId.IdFishIngredients, eksportId.IdPastaIngredients, eksportId.IdFruitsIngredients, eksportId.IdMuschroomsIngredients, eksportId.IdBirdIngredients, eksportId.IdMeatIngredients, eksportId.IdEggsIngredients, eksportId.PhotoLinkLocation, eksportId.Vegetarian));
+                        ls.Add(new RecipesBase(eksportId.Id, eksportId.RecipesName, eksportId.Ingredients, eksportId.AmountsMeal, eksportId.ShortDescription, eksportId.LongDescription, eksportId.NumberPortions, eksportId.CategoryCuisines, eksportId.CategoryRating, eksportId.CategoryDifficultLevel, eksportId.CategoryPreparationTime, eksportId.SnackMeal, eksportId.DinnerMeal, eksportId.SoupMeal, eksportId.DessertMeal, eksportId.DrinkMeal, eksportId.PreservesMeal, eksportId.SaladMeal, eksportId.IdFishIngredients, eksportId.IdPastaIngredients, eksportId.IdFruitsIngredients, eksportId.IdMuschroomsIngredients, eksportId.IdBirdIngredients, eksportId.IdMeatIngredients, eksportId.IdEggsIngredients, eksportId.PhotoLinkLocation, eksportId.Vegetarian,eksportId.Grams));
 
                         xs.Serialize(fs, ls);
                         fs.Close();
@@ -196,7 +203,7 @@ namespace CulinaryRecipes
                     foreach (var r in ls)
                     {
                         dgGrid.Rows.Add(
-                        m.Id = NewId + 1, m.RecipesName = r.RecipesName, m.Ingredients = r.Ingredients, m.AmountsMeal = r.AmountsMeal, m.ShortDescription = r.ShortDescription, m.LongDescription = r.LongDescription, m.NumberPortions = r.NumberPortions, m.CategoryCuisines = r.CategoryCuisines, m.CategoryRating = r.CategoryRating, m.CategoryDifficultLevel = r.CategoryDifficultLevel, m.CategoryPreparationTime = r.CategoryPreparationTime, m.SnackMeal = r.SnackMeal, m.DinnerMeal = r.DinnerMeal, m.SoupMeal = r.SoupMeal, m.DessertMeal = r.DessertMeal, m.DrinkMeal = r.DrinkMeal, m.PreservesMeal = r.PreservesMeal, m.SaladMeal = r.SaladMeal, m.IdFishIngredients = r.IdFishIngredients, m.IdPastaIngredients = r.IdPastaIngredients, m.IdFruitsIngredients = r.IdFruitsIngredients, m.IdMuschroomsIngredients = r.IdMuschroomsIngredients, m.IdBirdIngredients = r.IdBirdIngredients, m.IdMeatIngredients = r.IdMeatIngredients, m.IdEggsIngredients = r.IdEggsIngredients, m.PhotoLinkLocation = r.PhotoLinkLocation, m.Vegetarian = r.Vegetarian);
+                        m.Id = NewId + 1, m.RecipesName = r.RecipesName, m.Ingredients = r.Ingredients, m.AmountsMeal = r.AmountsMeal, m.ShortDescription = r.ShortDescription, m.LongDescription = r.LongDescription, m.NumberPortions = r.NumberPortions, m.CategoryCuisines = r.CategoryCuisines, m.CategoryRating = r.CategoryRating, m.CategoryDifficultLevel = r.CategoryDifficultLevel, m.CategoryPreparationTime = r.CategoryPreparationTime, m.SnackMeal = r.SnackMeal, m.DinnerMeal = r.DinnerMeal, m.SoupMeal = r.SoupMeal, m.DessertMeal = r.DessertMeal, m.DrinkMeal = r.DrinkMeal, m.PreservesMeal = r.PreservesMeal, m.SaladMeal = r.SaladMeal, m.IdFishIngredients = r.IdFishIngredients, m.IdPastaIngredients = r.IdPastaIngredients, m.IdFruitsIngredients = r.IdFruitsIngredients, m.IdMuschroomsIngredients = r.IdMuschroomsIngredients, m.IdBirdIngredients = r.IdBirdIngredients, m.IdMeatIngredients = r.IdMeatIngredients, m.IdEggsIngredients = r.IdEggsIngredients, m.PhotoLinkLocation = r.PhotoLinkLocation, m.Vegetarian = r.Vegetarian,m.Grams=r.Grams);
                         RecipesBase.add(m);
                     }
                     filldgGrid();
@@ -214,58 +221,12 @@ namespace CulinaryRecipes
 
         private void importujBazęToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dgGrid.Visible = false;
-            filldgGrid();
-
-            if (dgGrid.Rows.Count > 0) { MessageBox.Show("Zanim Zaimportujesz plik wyczyść bazę danych. - Plik - Usuń bazę danych"); }
-            else
-            {
-                openFileDialog1.Filter = "Pliki tekstowe (*.xml)|*.xml";
-
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    string sciezka = openFileDialog1.FileName;
-                    FileStream fs = new FileStream(sciezka, System.IO.FileMode.Open, FileAccess.Read);
-                    ls = (List<RecipesBase>)xs.Deserialize(fs);
-
-                    RecipesBase m = new RecipesBase();
-                    if (dgGrid.Rows.Count <= 0)
-                    {
-                        foreach (var r in ls)
-                        {
-                            dgGrid.Rows.Add(
-                            m.Id = r.Id, m.RecipesName = r.RecipesName, m.Ingredients = r.Ingredients, m.AmountsMeal = r.AmountsMeal, m.ShortDescription = r.ShortDescription, m.LongDescription = r.LongDescription, m.NumberPortions = r.NumberPortions, m.CategoryCuisines = r.CategoryCuisines, m.CategoryRating = r.CategoryRating, m.CategoryDifficultLevel = r.CategoryDifficultLevel, m.CategoryPreparationTime = r.CategoryPreparationTime, m.SnackMeal = r.SnackMeal, m.DinnerMeal = r.DinnerMeal, m.SoupMeal = r.SoupMeal, m.DessertMeal = r.DessertMeal, m.DrinkMeal = r.DrinkMeal, m.PreservesMeal = r.PreservesMeal, m.SaladMeal = r.SaladMeal, m.IdFishIngredients = r.IdFishIngredients, m.IdPastaIngredients = r.IdPastaIngredients, m.IdFruitsIngredients = r.IdFruitsIngredients, m.IdMuschroomsIngredients = r.IdMuschroomsIngredients, m.IdBirdIngredients = r.IdBirdIngredients, m.IdMeatIngredients = r.IdMeatIngredients, m.IdEggsIngredients = r.IdEggsIngredients, m.PhotoLinkLocation = r.PhotoLinkLocation, m.Vegetarian = r.Vegetarian);
-                            RecipesBase.add(m);
-                        }
-                        MessageBox.Show("Baza danych została zaimportowana");
-                        dgGrid.Visible = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Baza danych przed importem musi być pusta");
-                    }
-                    fs.Close();
-                }
-            }
+            
         }
 
         private void exportujBazęDanychToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.Filter = "Pliki tekstowe (*.xml)|*.xml";
-
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                string sciezka = saveFileDialog1.FileName;
-                FileStream fs = new FileStream(sciezka, System.IO.FileMode.Create, FileAccess.Write);
-
-                foreach (var r in RecipesBase.getAll())
-                {
-                    ls.Add(new RecipesBase(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian));
-                }
-                xs.Serialize(fs, ls);
-                fs.Close();
-                MessageBox.Show("Eksport bazy danych zakończył się sukcesem");
-            }
+           
         }
 
         private void usuńBazęDanychToolStripMenuItem_Click(object sender, EventArgs e)
@@ -583,6 +544,12 @@ namespace CulinaryRecipes
                 else pbLittlePhoto.ImageLocation = dgGrid.Rows[e.RowIndex].Cells[25].Value.ToString();
 
                 //wegetarianskie.checkbox=Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[26].Value);
+                if (dgGrid.Rows[e.RowIndex].Cells[27].Value.ToString() != stringOfCharactersForm2.stringOfCharacters.ToString())
+                {
+                    gramsForm1 = dgGrid.Rows[e.RowIndex].Cells[27].Value.ToString();
+                }
+                
+
                 pbLittlePhoto.Visible = true;
                 txtLittleName.Visible = true;
                 txtShortDescription.Visible = true;
@@ -600,10 +567,14 @@ namespace CulinaryRecipes
         {
             if (chcStstistic.Checked)
             {
+                int count = 1;
                 foreach (var p in RecipesBase.getAll())
                 {
-                    NewId = p.Id;
+                    NewId = count;
+                    count++;
                 }
+            
+                
                 lblStatistic.Text = NewId.ToString();
                 lblYouHave.Visible = true;
                 lblStatistic.Visible = true;
@@ -664,6 +635,9 @@ namespace CulinaryRecipes
                 pbStar2.Visible = false;
                 pbStar3.Visible = false;
                 idDgGrid = 0;
+                //lblCleanDgGrid.Visible = false;
+                //lblLineOne.Visible = false;
+                //lblLineTwo.Visible = false;
             }
         }
 
@@ -716,8 +690,9 @@ namespace CulinaryRecipes
             dgGrid.Columns.Add("Eggscheckbox", "Eggscheckbox");
             dgGrid.Columns.Add("Photo", "Photo");
             dgGrid.Columns.Add("Vegetarian", "Vegetarian");
+            dgGrid.Columns.Add("Grams", "Grams");
 
-            for (int i = 0; i < dgGrid.ColumnCount; i++)
+            for (int i = 0; i < dgGrid.ColumnCount; i++)//dgGrid.ColumnCount
             {
                 if (i == 1) continue;
                 else dgGrid.Columns[i].Visible = false;
@@ -729,7 +704,7 @@ namespace CulinaryRecipes
             dgGrid.Rows.Clear();
             foreach (var r in RecipesBase.getAll())
             {
-                dgGrid.Rows.Add(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian);
+                dgGrid.Rows.Add(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian,r.Grams);
             }
         }
 
@@ -814,6 +789,62 @@ namespace CulinaryRecipes
         {
             Form4 nowy = new Form4();
             nowy.ShowDialog();
+        }
+
+        private void importujCalaBazęDanychToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dgGrid.Visible = false;
+            filldgGrid();
+
+            if (dgGrid.Rows.Count > 0) { MessageBox.Show("Zanim Zaimportujesz plik wyczyść bazę danych. - Plik - Usuń bazę danych"); }
+            else
+            {
+                openFileDialog1.Filter = "Pliki tekstowe (*.xml)|*.xml";
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    string sciezka = openFileDialog1.FileName;
+                    FileStream fs = new FileStream(sciezka, System.IO.FileMode.Open, FileAccess.Read);
+                    ls = (List<RecipesBase>)xs.Deserialize(fs);
+
+                    RecipesBase m = new RecipesBase();
+                    if (dgGrid.Rows.Count <= 0)
+                    {
+                        foreach (var r in ls)
+                        {
+                            dgGrid.Rows.Add(
+                            m.Id = r.Id, m.RecipesName = r.RecipesName, m.Ingredients = r.Ingredients, m.AmountsMeal = r.AmountsMeal, m.ShortDescription = r.ShortDescription, m.LongDescription = r.LongDescription, m.NumberPortions = r.NumberPortions, m.CategoryCuisines = r.CategoryCuisines, m.CategoryRating = r.CategoryRating, m.CategoryDifficultLevel = r.CategoryDifficultLevel, m.CategoryPreparationTime = r.CategoryPreparationTime, m.SnackMeal = r.SnackMeal, m.DinnerMeal = r.DinnerMeal, m.SoupMeal = r.SoupMeal, m.DessertMeal = r.DessertMeal, m.DrinkMeal = r.DrinkMeal, m.PreservesMeal = r.PreservesMeal, m.SaladMeal = r.SaladMeal, m.IdFishIngredients = r.IdFishIngredients, m.IdPastaIngredients = r.IdPastaIngredients, m.IdFruitsIngredients = r.IdFruitsIngredients, m.IdMuschroomsIngredients = r.IdMuschroomsIngredients, m.IdBirdIngredients = r.IdBirdIngredients, m.IdMeatIngredients = r.IdMeatIngredients, m.IdEggsIngredients = r.IdEggsIngredients, m.PhotoLinkLocation = r.PhotoLinkLocation, m.Vegetarian = r.Vegetarian, m.Grams = r.Grams);
+                            RecipesBase.add(m);
+                        }
+                        MessageBox.Show("Baza danych została zaimportowana");
+                        dgGrid.Visible = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Baza danych przed importem musi być pusta");
+                    }
+                    fs.Close();
+                }
+            }
+        }
+
+        private void eksportujCalaBazeDanychToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Filter = "Pliki tekstowe (*.xml)|*.xml";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string sciezka = saveFileDialog1.FileName;
+                FileStream fs = new FileStream(sciezka, System.IO.FileMode.Create, FileAccess.Write);
+
+                foreach (var r in RecipesBase.getAll())
+                {
+                    ls.Add(new RecipesBase(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian, r.Grams));
+                }
+                xs.Serialize(fs, ls);
+                fs.Close();
+                MessageBox.Show("Eksport bazy danych zakończył się sukcesem");
+            }
         }
 
         private void lblCleanDgGrid_Click(object sender, EventArgs e)
@@ -927,7 +958,7 @@ namespace CulinaryRecipes
                 {
                     if ((int)RecipesBase.GetPropValue(r, _propName) == 1 && _name.Checked)
                     {
-                        dgGrid.Rows.Add(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian);
+                        dgGrid.Rows.Add(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian,r.Grams);
                     }
                 }
             }

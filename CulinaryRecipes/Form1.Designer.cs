@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.cMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -151,6 +151,8 @@
             this.lblCleanDgGrid = new System.Windows.Forms.Label();
             this.lblLineOne = new System.Windows.Forms.Label();
             this.lblLineTwo = new System.Windows.Forms.Label();
+            this.importujCalaBazęDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eksportujCalaBazeDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cMenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -250,26 +252,28 @@
             // importujBazęToolStripMenuItem
             // 
             this.importujBazęToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importujPojedynczyPlikToolStripMenuItem});
+            this.importujPojedynczyPlikToolStripMenuItem,
+            this.importujCalaBazęDanychToolStripMenuItem});
             this.importujBazęToolStripMenuItem.Name = "importujBazęToolStripMenuItem";
-            this.importujBazęToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.importujBazęToolStripMenuItem.Text = "Importuj Bazę Danych";
+            this.importujBazęToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importujBazęToolStripMenuItem.Text = "Import";
             this.importujBazęToolStripMenuItem.Click += new System.EventHandler(this.importujBazęToolStripMenuItem_Click);
             // 
             // importujPojedynczyPlikToolStripMenuItem
             // 
             this.importujPojedynczyPlikToolStripMenuItem.Name = "importujPojedynczyPlikToolStripMenuItem";
-            this.importujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.importujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.importujPojedynczyPlikToolStripMenuItem.Text = "Importuj pojedynczy plik";
             this.importujPojedynczyPlikToolStripMenuItem.Click += new System.EventHandler(this.importujPojedynczyPlikToolStripMenuItem_Click);
             // 
             // exportujBazęDanychToolStripMenuItem
             // 
             this.exportujBazęDanychToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eksportujPojedynczyPlikToolStripMenuItem});
+            this.eksportujPojedynczyPlikToolStripMenuItem,
+            this.eksportujCalaBazeDanychToolStripMenuItem});
             this.exportujBazęDanychToolStripMenuItem.Name = "exportujBazęDanychToolStripMenuItem";
-            this.exportujBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.exportujBazęDanychToolStripMenuItem.Text = "Exportuj Bazę Danych";
+            this.exportujBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportujBazęDanychToolStripMenuItem.Text = "Eksport";
             this.exportujBazęDanychToolStripMenuItem.Click += new System.EventHandler(this.exportujBazęDanychToolStripMenuItem_Click);
             // 
             // eksportujPojedynczyPlikToolStripMenuItem
@@ -1133,14 +1137,14 @@
             this.dgGrid.ColumnHeadersVisible = false;
             this.dgGrid.ContextMenuStrip = this.cMenuStrip;
             this.dgGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.dgGrid.Location = new System.Drawing.Point(207, 480);
             this.dgGrid.Name = "dgGrid";
@@ -1513,6 +1517,20 @@
             this.lblLineTwo.Text = "|";
             this.lblLineTwo.Visible = false;
             // 
+            // importujCalaBazęDanychToolStripMenuItem
+            // 
+            this.importujCalaBazęDanychToolStripMenuItem.Name = "importujCalaBazęDanychToolStripMenuItem";
+            this.importujCalaBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.importujCalaBazęDanychToolStripMenuItem.Text = "Importuj Cala Bazę Danych";
+            this.importujCalaBazęDanychToolStripMenuItem.Click += new System.EventHandler(this.importujCalaBazęDanychToolStripMenuItem_Click);
+            // 
+            // eksportujCalaBazeDanychToolStripMenuItem
+            // 
+            this.eksportujCalaBazeDanychToolStripMenuItem.Name = "eksportujCalaBazeDanychToolStripMenuItem";
+            this.eksportujCalaBazeDanychToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.eksportujCalaBazeDanychToolStripMenuItem.Text = "Eksportuj Cala Baze Danych";
+            this.eksportujCalaBazeDanychToolStripMenuItem.Click += new System.EventHandler(this.eksportujCalaBazeDanychToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1772,6 +1790,8 @@
         private System.Windows.Forms.Label lblCleanDgGrid;
         private System.Windows.Forms.Label lblLineOne;
         private System.Windows.Forms.Label lblLineTwo;
+        private System.Windows.Forms.ToolStripMenuItem importujCalaBazęDanychToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eksportujCalaBazeDanychToolStripMenuItem;
     }
 }
 
