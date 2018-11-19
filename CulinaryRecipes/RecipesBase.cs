@@ -15,7 +15,6 @@ namespace CulinaryRecipes
         [XmlElement("NazwaPrzepisu")]
         public string RecipesName { get; set; }
         [XmlElement("Składniki")]
-        
         public string Ingredients { get; set; }
         [XmlElement("ilościSkladnikow")]
         public string AmountsMeal { get; set; }
@@ -33,6 +32,7 @@ namespace CulinaryRecipes
         public string CategoryDifficultLevel { get; set; }
         [XmlElement("CzasPrzygotowania")]
         public string CategoryPreparationTime { get; set; }
+        
 
         #region Meal
         [XmlElement("Snack")]

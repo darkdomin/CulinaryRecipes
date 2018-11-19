@@ -91,7 +91,7 @@
             this.btnTime30.Location = new System.Drawing.Point(67, 45);
             this.btnTime30.Name = "btnTime30";
             this.btnTime30.Size = new System.Drawing.Size(75, 23);
-            this.btnTime30.TabIndex = 0;
+            this.btnTime30.TabIndex = 16;
             this.btnTime30.Tag = "30 min";
             this.btnTime30.Text = "30 min";
             this.btnTime30.UseVisualStyleBackColor = false;
@@ -108,7 +108,7 @@
             this.btnTime60.Location = new System.Drawing.Point(165, 45);
             this.btnTime60.Name = "btnTime60";
             this.btnTime60.Size = new System.Drawing.Size(75, 23);
-            this.btnTime60.TabIndex = 1;
+            this.btnTime60.TabIndex = 17;
             this.btnTime60.Tag = "60 min";
             this.btnTime60.Text = "60 min";
             this.btnTime60.UseVisualStyleBackColor = false;
@@ -125,7 +125,7 @@
             this.btnTime90.Location = new System.Drawing.Point(256, 45);
             this.btnTime90.Name = "btnTime90";
             this.btnTime90.Size = new System.Drawing.Size(75, 23);
-            this.btnTime90.TabIndex = 2;
+            this.btnTime90.TabIndex = 18;
             this.btnTime90.Tag = "90 min";
             this.btnTime90.Text = "90 min";
             this.btnTime90.UseVisualStyleBackColor = false;
@@ -142,7 +142,7 @@
             this.btnTime100.Location = new System.Drawing.Point(349, 45);
             this.btnTime100.Name = "btnTime100";
             this.btnTime100.Size = new System.Drawing.Size(75, 23);
-            this.btnTime100.TabIndex = 3;
+            this.btnTime100.TabIndex = 19;
             this.btnTime100.Tag = "pow 90";
             this.btnTime100.Text = "pow 90";
             this.btnTime100.UseVisualStyleBackColor = false;
@@ -159,7 +159,7 @@
             this.btndifficultLevThree.Location = new System.Drawing.Point(322, 52);
             this.btndifficultLevThree.Name = "btndifficultLevThree";
             this.btndifficultLevThree.Size = new System.Drawing.Size(75, 23);
-            this.btndifficultLevThree.TabIndex = 6;
+            this.btndifficultLevThree.TabIndex = 15;
             this.btndifficultLevThree.Tag = "Trudny";
             this.btndifficultLevThree.Text = "Trudny";
             this.btndifficultLevThree.UseVisualStyleBackColor = false;
@@ -176,7 +176,7 @@
             this.btndifficultLevTwo.Location = new System.Drawing.Point(231, 52);
             this.btndifficultLevTwo.Name = "btndifficultLevTwo";
             this.btndifficultLevTwo.Size = new System.Drawing.Size(75, 23);
-            this.btndifficultLevTwo.TabIndex = 5;
+            this.btndifficultLevTwo.TabIndex = 14;
             this.btndifficultLevTwo.Tag = "Średni";
             this.btndifficultLevTwo.Text = "Średni";
             this.btndifficultLevTwo.UseVisualStyleBackColor = false;
@@ -193,7 +193,7 @@
             this.btndifficultLevOne.Location = new System.Drawing.Point(133, 52);
             this.btndifficultLevOne.Name = "btndifficultLevOne";
             this.btndifficultLevOne.Size = new System.Drawing.Size(75, 23);
-            this.btndifficultLevOne.TabIndex = 4;
+            this.btndifficultLevOne.TabIndex = 13;
             this.btndifficultLevOne.Tag = "Łatwy";
             this.btndifficultLevOne.Text = "Łatwy";
             this.btndifficultLevOne.UseVisualStyleBackColor = false;
@@ -241,7 +241,7 @@
             this.rbAmerican.Location = new System.Drawing.Point(16, 39);
             this.rbAmerican.Name = "rbAmerican";
             this.rbAmerican.Size = new System.Drawing.Size(92, 18);
-            this.rbAmerican.TabIndex = 10;
+            this.rbAmerican.TabIndex = 0;
             this.rbAmerican.TabStop = true;
             this.rbAmerican.Tag = "amerykańska";
             this.rbAmerican.Text = "amerykanska";
@@ -257,7 +257,7 @@
             this.rbAsian.Location = new System.Drawing.Point(139, 39);
             this.rbAsian.Name = "rbAsian";
             this.rbAsian.Size = new System.Drawing.Size(72, 18);
-            this.rbAsian.TabIndex = 11;
+            this.rbAsian.TabIndex = 1;
             this.rbAsian.TabStop = true;
             this.rbAsian.Tag = "azjatycka";
             this.rbAsian.Text = "azjatycka";
@@ -273,7 +273,7 @@
             this.rbCeska.Location = new System.Drawing.Point(261, 39);
             this.rbCeska.Name = "rbCeska";
             this.rbCeska.Size = new System.Drawing.Size(58, 18);
-            this.rbCeska.TabIndex = 12;
+            this.rbCeska.TabIndex = 2;
             this.rbCeska.TabStop = true;
             this.rbCeska.Tag = "czeska";
             this.rbCeska.Text = "czeska";
@@ -289,7 +289,7 @@
             this.rbFrench.Location = new System.Drawing.Point(371, 39);
             this.rbFrench.Name = "rbFrench";
             this.rbFrench.Size = new System.Drawing.Size(73, 18);
-            this.rbFrench.TabIndex = 13;
+            this.rbFrench.TabIndex = 3;
             this.rbFrench.TabStop = true;
             this.rbFrench.Tag = "francuska";
             this.rbFrench.Text = "francuska";
@@ -305,7 +305,7 @@
             this.rbGreece.Location = new System.Drawing.Point(16, 85);
             this.rbGreece.Name = "rbGreece";
             this.rbGreece.Size = new System.Drawing.Size(58, 18);
-            this.rbGreece.TabIndex = 14;
+            this.rbGreece.TabIndex = 5;
             this.rbGreece.TabStop = true;
             this.rbGreece.Tag = "grecka";
             this.rbGreece.Text = "grecka";
@@ -321,7 +321,7 @@
             this.rbPortuguese.Location = new System.Drawing.Point(139, 85);
             this.rbPortuguese.Name = "rbPortuguese";
             this.rbPortuguese.Size = new System.Drawing.Size(83, 18);
-            this.rbPortuguese.TabIndex = 15;
+            this.rbPortuguese.TabIndex = 6;
             this.rbPortuguese.TabStop = true;
             this.rbPortuguese.Tag = "Portugalska";
             this.rbPortuguese.Text = "portugalska";
@@ -337,7 +337,7 @@
             this.rbPolish.Location = new System.Drawing.Point(261, 85);
             this.rbPolish.Name = "rbPolish";
             this.rbPolish.Size = new System.Drawing.Size(57, 18);
-            this.rbPolish.TabIndex = 16;
+            this.rbPolish.TabIndex = 7;
             this.rbPolish.TabStop = true;
             this.rbPolish.Tag = "polska";
             this.rbPolish.Text = "polska";
@@ -353,7 +353,7 @@
             this.rbItalish.Location = new System.Drawing.Point(371, 85);
             this.rbItalish.Name = "rbItalish";
             this.rbItalish.Size = new System.Drawing.Size(60, 18);
-            this.rbItalish.TabIndex = 17;
+            this.rbItalish.TabIndex = 8;
             this.rbItalish.TabStop = true;
             this.rbItalish.Tag = "włoska";
             this.rbItalish.Text = "wloska";
@@ -382,7 +382,7 @@
             this.btnOneStar.Location = new System.Drawing.Point(94, 51);
             this.btnOneStar.Name = "btnOneStar";
             this.btnOneStar.Size = new System.Drawing.Size(75, 23);
-            this.btnOneStar.TabIndex = 19;
+            this.btnOneStar.TabIndex = 10;
             this.btnOneStar.Tag = "1";
             this.btnOneStar.Text = "*";
             this.btnOneStar.UseVisualStyleBackColor = false;
@@ -399,7 +399,7 @@
             this.btnTwoStar.Location = new System.Drawing.Point(223, 51);
             this.btnTwoStar.Name = "btnTwoStar";
             this.btnTwoStar.Size = new System.Drawing.Size(75, 23);
-            this.btnTwoStar.TabIndex = 20;
+            this.btnTwoStar.TabIndex = 11;
             this.btnTwoStar.Tag = "2";
             this.btnTwoStar.Text = "**";
             this.btnTwoStar.UseVisualStyleBackColor = false;
@@ -416,7 +416,7 @@
             this.btnThreeStar.Location = new System.Drawing.Point(349, 51);
             this.btnThreeStar.Name = "btnThreeStar";
             this.btnThreeStar.Size = new System.Drawing.Size(75, 23);
-            this.btnThreeStar.TabIndex = 21;
+            this.btnThreeStar.TabIndex = 12;
             this.btnThreeStar.Tag = "3";
             this.btnThreeStar.Text = "***";
             this.btnThreeStar.UseVisualStyleBackColor = false;
@@ -432,7 +432,7 @@
             this.gbTime.Location = new System.Drawing.Point(53, 349);
             this.gbTime.Name = "gbTime";
             this.gbTime.Size = new System.Drawing.Size(502, 98);
-            this.gbTime.TabIndex = 22;
+            this.gbTime.TabIndex = 3;
             this.gbTime.TabStop = false;
             // 
             // gbLevel
@@ -444,7 +444,7 @@
             this.gbLevel.Location = new System.Drawing.Point(53, 248);
             this.gbLevel.Name = "gbLevel";
             this.gbLevel.Size = new System.Drawing.Size(501, 89);
-            this.gbLevel.TabIndex = 23;
+            this.gbLevel.TabIndex = 2;
             this.gbLevel.TabStop = false;
             // 
             // gbRating
@@ -456,7 +456,7 @@
             this.gbRating.Location = new System.Drawing.Point(53, 141);
             this.gbRating.Name = "gbRating";
             this.gbRating.Size = new System.Drawing.Size(500, 96);
-            this.gbRating.TabIndex = 24;
+            this.gbRating.TabIndex = 1;
             this.gbRating.TabStop = false;
             // 
             // gbKitchen
@@ -476,7 +476,7 @@
             this.gbKitchen.Location = new System.Drawing.Point(156, 12);
             this.gbKitchen.Name = "gbKitchen";
             this.gbKitchen.Size = new System.Drawing.Size(585, 119);
-            this.gbKitchen.TabIndex = 25;
+            this.gbKitchen.TabIndex = 0;
             this.gbKitchen.TabStop = false;
             // 
             // rbHungarian
@@ -488,7 +488,7 @@
             this.rbHungarian.Location = new System.Drawing.Point(486, 85);
             this.rbHungarian.Name = "rbHungarian";
             this.rbHungarian.Size = new System.Drawing.Size(76, 18);
-            this.rbHungarian.TabIndex = 19;
+            this.rbHungarian.TabIndex = 9;
             this.rbHungarian.TabStop = true;
             this.rbHungarian.Tag = "węgierska";
             this.rbHungarian.Text = "węgierska";
@@ -504,7 +504,7 @@
             this.rbSpanish.Location = new System.Drawing.Point(486, 39);
             this.rbSpanish.Name = "rbSpanish";
             this.rbSpanish.Size = new System.Drawing.Size(79, 18);
-            this.rbSpanish.TabIndex = 18;
+            this.rbSpanish.TabIndex = 4;
             this.rbSpanish.TabStop = true;
             this.rbSpanish.Tag = "hiszpańska";
             this.rbSpanish.Text = "hiszpańska";
@@ -516,11 +516,11 @@
             this.lbllink.AutoSize = true;
             this.lbllink.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lbllink.ForeColor = System.Drawing.Color.White;
-            this.lbllink.Location = new System.Drawing.Point(218, 11);
+            this.lbllink.Location = new System.Drawing.Point(182, 11);
             this.lbllink.Name = "lbllink";
-            this.lbllink.Size = new System.Drawing.Size(84, 14);
+            this.lbllink.Size = new System.Drawing.Size(144, 14);
             this.lbllink.TabIndex = 27;
-            this.lbllink.Text = "Link do Zdjęcia";
+            this.lbllink.Text = "Link do Zdjęcia z Internetu";
             // 
             // gbLink
             // 
@@ -529,7 +529,7 @@
             this.gbLink.Location = new System.Drawing.Point(53, 456);
             this.gbLink.Name = "gbLink";
             this.gbLink.Size = new System.Drawing.Size(502, 60);
-            this.gbLink.TabIndex = 28;
+            this.gbLink.TabIndex = 4;
             this.gbLink.TabStop = false;
             // 
             // rtxtLinkForm3
@@ -608,7 +608,7 @@
             this.button4.Location = new System.Drawing.Point(631, 479);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(150, 23);
-            this.button4.TabIndex = 29;
+            this.button4.TabIndex = 22;
             this.button4.Text = "Zatwierdź";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -633,8 +633,8 @@
             this.btnPhotoForm3.ForeColor = System.Drawing.Color.White;
             this.btnPhotoForm3.Location = new System.Drawing.Point(647, 385);
             this.btnPhotoForm3.Name = "btnPhotoForm3";
-            this.btnPhotoForm3.Size = new System.Drawing.Size(115, 23);
-            this.btnPhotoForm3.TabIndex = 31;
+            this.btnPhotoForm3.Size = new System.Drawing.Size(115, 32);
+            this.btnPhotoForm3.TabIndex = 21;
             this.btnPhotoForm3.Tag = "";
             this.btnPhotoForm3.Text = "Dodaj Zdjęcie";
             this.btnPhotoForm3.UseVisualStyleBackColor = false;

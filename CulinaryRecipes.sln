@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CulinaryRecipes", "Culinary
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupCulinary", "SetupCulinary\SetupCulinary.vdproj", "{057CA1FF-1934-4A6A-8ABF-10D119AA19CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{00592A0C-90C8-4FD3-A78F-E02F425A31FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testy", "Testy", "{34AD8657-22C4-43E9-8767-BC66004C2C60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTest", "CommonTest\CommonTest.csproj", "{ECC50EC1-622A-4FE0-BDE9-58EDCF922F25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,9 +25,20 @@ Global
 		{35E18D5B-CF32-4636-A11A-FAFC440F9652}.Release|Any CPU.Build.0 = Release|Any CPU
 		{057CA1FF-1934-4A6A-8ABF-10D119AA19CD}.Debug|Any CPU.ActiveCfg = Debug
 		{057CA1FF-1934-4A6A-8ABF-10D119AA19CD}.Release|Any CPU.ActiveCfg = Release
+		{00592A0C-90C8-4FD3-A78F-E02F425A31FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00592A0C-90C8-4FD3-A78F-E02F425A31FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00592A0C-90C8-4FD3-A78F-E02F425A31FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00592A0C-90C8-4FD3-A78F-E02F425A31FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECC50EC1-622A-4FE0-BDE9-58EDCF922F25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECC50EC1-622A-4FE0-BDE9-58EDCF922F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECC50EC1-622A-4FE0-BDE9-58EDCF922F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECC50EC1-622A-4FE0-BDE9-58EDCF922F25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ECC50EC1-622A-4FE0-BDE9-58EDCF922F25} = {34AD8657-22C4-43E9-8767-BC66004C2C60}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {15D4AE65-C7FF-4BC2-AD1B-6087D823CC4C}

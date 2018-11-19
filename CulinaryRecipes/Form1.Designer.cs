@@ -40,8 +40,10 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.importujBazęToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importujPojedynczyPlikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importujCalaBazęDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportujBazęDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eksportujPojedynczyPlikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eksportujCalaBazeDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuńBazęDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -151,8 +153,7 @@
             this.lblCleanDgGrid = new System.Windows.Forms.Label();
             this.lblLineOne = new System.Windows.Forms.Label();
             this.lblLineTwo = new System.Windows.Forms.Label();
-            this.importujCalaBazęDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eksportujCalaBazeDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.cMenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -233,6 +234,7 @@
             this.usuńBazęDanychToolStripMenuItem,
             this.toolStripMenuItem2,
             this.zamknijToolStripMenuItem});
+            this.plikToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
             this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.plikToolStripMenuItem.Text = "Plik";
@@ -240,14 +242,15 @@
             // nowyPrzepisToolStripMenuItem
             // 
             this.nowyPrzepisToolStripMenuItem.Name = "nowyPrzepisToolStripMenuItem";
-            this.nowyPrzepisToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.nowyPrzepisToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.nowyPrzepisToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.nowyPrzepisToolStripMenuItem.Text = "Nowy przepis";
             this.nowyPrzepisToolStripMenuItem.Click += new System.EventHandler(this.nowyPrzepisToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(187, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(185, 6);
             // 
             // importujBazęToolStripMenuItem
             // 
@@ -255,16 +258,26 @@
             this.importujPojedynczyPlikToolStripMenuItem,
             this.importujCalaBazęDanychToolStripMenuItem});
             this.importujBazęToolStripMenuItem.Name = "importujBazęToolStripMenuItem";
-            this.importujBazęToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importujBazęToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.importujBazęToolStripMenuItem.Text = "Import";
-            this.importujBazęToolStripMenuItem.Click += new System.EventHandler(this.importujBazęToolStripMenuItem_Click);
+          
             // 
             // importujPojedynczyPlikToolStripMenuItem
             // 
             this.importujPojedynczyPlikToolStripMenuItem.Name = "importujPojedynczyPlikToolStripMenuItem";
-            this.importujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.importujPojedynczyPlikToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.I)));
+            this.importujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
             this.importujPojedynczyPlikToolStripMenuItem.Text = "Importuj pojedynczy plik";
             this.importujPojedynczyPlikToolStripMenuItem.Click += new System.EventHandler(this.importujPojedynczyPlikToolStripMenuItem_Click);
+            // 
+            // importujCalaBazęDanychToolStripMenuItem
+            // 
+            this.importujCalaBazęDanychToolStripMenuItem.Name = "importujCalaBazęDanychToolStripMenuItem";
+            this.importujCalaBazęDanychToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+            this.importujCalaBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.importujCalaBazęDanychToolStripMenuItem.Text = "Importuj Cała Bazę Danych";
+            this.importujCalaBazęDanychToolStripMenuItem.Click += new System.EventHandler(this.importujCalaBazęDanychToolStripMenuItem_Click);
             // 
             // exportujBazęDanychToolStripMenuItem
             // 
@@ -272,38 +285,51 @@
             this.eksportujPojedynczyPlikToolStripMenuItem,
             this.eksportujCalaBazeDanychToolStripMenuItem});
             this.exportujBazęDanychToolStripMenuItem.Name = "exportujBazęDanychToolStripMenuItem";
-            this.exportujBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportujBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.exportujBazęDanychToolStripMenuItem.Text = "Eksport";
-            this.exportujBazęDanychToolStripMenuItem.Click += new System.EventHandler(this.exportujBazęDanychToolStripMenuItem_Click);
+           
             // 
             // eksportujPojedynczyPlikToolStripMenuItem
             // 
             this.eksportujPojedynczyPlikToolStripMenuItem.Name = "eksportujPojedynczyPlikToolStripMenuItem";
-            this.eksportujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.eksportujPojedynczyPlikToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.E)));
+            this.eksportujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
             this.eksportujPojedynczyPlikToolStripMenuItem.Text = "Eksportuj pojedynczy plik";
             this.eksportujPojedynczyPlikToolStripMenuItem.Click += new System.EventHandler(this.eksportujPojedynczyPlikToolStripMenuItem_Click);
+            // 
+            // eksportujCalaBazeDanychToolStripMenuItem
+            // 
+            this.eksportujCalaBazeDanychToolStripMenuItem.Name = "eksportujCalaBazeDanychToolStripMenuItem";
+            this.eksportujCalaBazeDanychToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.eksportujCalaBazeDanychToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
+            this.eksportujCalaBazeDanychToolStripMenuItem.Text = "Eksportuj Cala Baze Danych";
+            this.eksportujCalaBazeDanychToolStripMenuItem.Click += new System.EventHandler(this.eksportujCalaBazeDanychToolStripMenuItem_Click);
             // 
             // usuńBazęDanychToolStripMenuItem
             // 
             this.usuńBazęDanychToolStripMenuItem.Name = "usuńBazęDanychToolStripMenuItem";
-            this.usuńBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.usuńBazęDanychToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
+            this.usuńBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.usuńBazęDanychToolStripMenuItem.Text = "Usuń Bazę danych";
             this.usuńBazęDanychToolStripMenuItem.Click += new System.EventHandler(this.usuńBazęDanychToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(187, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(185, 6);
             // 
             // zamknijToolStripMenuItem
             // 
             this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.zamknijToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.zamknijToolStripMenuItem.Text = "Zamknij";
             this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
             // 
             // oProgramieToolStripMenuItem
             // 
+            this.oProgramieToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.oProgramieToolStripMenuItem.Name = "oProgramieToolStripMenuItem";
             this.oProgramieToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.oProgramieToolStripMenuItem.Text = "O programie";
@@ -485,7 +511,8 @@
             this.chcSnack.Location = new System.Drawing.Point(51, 13);
             this.chcSnack.Name = "chcSnack";
             this.chcSnack.Size = new System.Drawing.Size(15, 14);
-            this.chcSnack.TabIndex = 7;
+            this.chcSnack.TabIndex = 13;
+            this.chcSnack.TabStop = false;
             this.chcSnack.UseVisualStyleBackColor = true;
             this.chcSnack.CheckedChanged += new System.EventHandler(this.chcSnack_CheckedChanged);
             // 
@@ -541,7 +568,8 @@
             this.chcDinner.Location = new System.Drawing.Point(51, 9);
             this.chcDinner.Name = "chcDinner";
             this.chcDinner.Size = new System.Drawing.Size(15, 14);
-            this.chcDinner.TabIndex = 9;
+            this.chcDinner.TabIndex = 14;
+            this.chcDinner.TabStop = false;
             this.chcDinner.UseVisualStyleBackColor = true;
             this.chcDinner.CheckedChanged += new System.EventHandler(this.chcDinner_CheckedChanged);
             // 
@@ -576,7 +604,8 @@
             this.chcSoup.Location = new System.Drawing.Point(50, 12);
             this.chcSoup.Name = "chcSoup";
             this.chcSoup.Size = new System.Drawing.Size(15, 14);
-            this.chcSoup.TabIndex = 11;
+            this.chcSoup.TabIndex = 15;
+            this.chcSoup.TabStop = false;
             this.chcSoup.UseVisualStyleBackColor = true;
             this.chcSoup.CheckedChanged += new System.EventHandler(this.chcSoup_CheckedChanged);
             // 
@@ -599,7 +628,8 @@
             this.chcDessert.Location = new System.Drawing.Point(52, 13);
             this.chcDessert.Name = "chcDessert";
             this.chcDessert.Size = new System.Drawing.Size(15, 14);
-            this.chcDessert.TabIndex = 11;
+            this.chcDessert.TabIndex = 16;
+            this.chcDessert.TabStop = false;
             this.chcDessert.UseVisualStyleBackColor = true;
             this.chcDessert.CheckedChanged += new System.EventHandler(this.chcDessert_CheckedChanged);
             // 
@@ -646,7 +676,8 @@
             this.chcDrink.Location = new System.Drawing.Point(51, 9);
             this.chcDrink.Name = "chcDrink";
             this.chcDrink.Size = new System.Drawing.Size(15, 14);
-            this.chcDrink.TabIndex = 13;
+            this.chcDrink.TabIndex = 17;
+            this.chcDrink.TabStop = false;
             this.chcDrink.UseVisualStyleBackColor = true;
             this.chcDrink.CheckedChanged += new System.EventHandler(this.chcDrink_CheckedChanged);
             // 
@@ -680,7 +711,8 @@
             this.chcPreserves.Location = new System.Drawing.Point(51, 11);
             this.chcPreserves.Name = "chcPreserves";
             this.chcPreserves.Size = new System.Drawing.Size(15, 14);
-            this.chcPreserves.TabIndex = 13;
+            this.chcPreserves.TabIndex = 17;
+            this.chcPreserves.TabStop = false;
             this.chcPreserves.UseVisualStyleBackColor = true;
             this.chcPreserves.CheckedChanged += new System.EventHandler(this.chcPreserves_CheckedChanged);
             // 
@@ -715,7 +747,8 @@
             this.chcSalad.Location = new System.Drawing.Point(51, 10);
             this.chcSalad.Name = "chcSalad";
             this.chcSalad.Size = new System.Drawing.Size(15, 14);
-            this.chcSalad.TabIndex = 13;
+            this.chcSalad.TabIndex = 18;
+            this.chcSalad.TabStop = false;
             this.chcSalad.UseVisualStyleBackColor = true;
             this.chcSalad.CheckedChanged += new System.EventHandler(this.chcSalad_CheckedChanged);
             // 
@@ -884,7 +917,8 @@
             this.chcBird.Location = new System.Drawing.Point(5, 17);
             this.chcBird.Name = "chcBird";
             this.chcBird.Size = new System.Drawing.Size(15, 14);
-            this.chcBird.TabIndex = 17;
+            this.chcBird.TabIndex = 10;
+            this.chcBird.TabStop = false;
             this.chcBird.UseVisualStyleBackColor = true;
             this.chcBird.CheckedChanged += new System.EventHandler(this.chcBird_CheckedChanged);
             // 
@@ -897,7 +931,8 @@
             this.chcEggs.Location = new System.Drawing.Point(4, 15);
             this.chcEggs.Name = "chcEggs";
             this.chcEggs.Size = new System.Drawing.Size(15, 14);
-            this.chcEggs.TabIndex = 17;
+            this.chcEggs.TabIndex = 12;
+            this.chcEggs.TabStop = false;
             this.chcEggs.UseVisualStyleBackColor = true;
             this.chcEggs.CheckedChanged += new System.EventHandler(this.chcEggs_CheckedChanged);
             // 
@@ -910,7 +945,8 @@
             this.chcMuschrooms.Location = new System.Drawing.Point(4, 13);
             this.chcMuschrooms.Name = "chcMuschrooms";
             this.chcMuschrooms.Size = new System.Drawing.Size(15, 14);
-            this.chcMuschrooms.TabIndex = 15;
+            this.chcMuschrooms.TabIndex = 9;
+            this.chcMuschrooms.TabStop = false;
             this.chcMuschrooms.UseVisualStyleBackColor = true;
             this.chcMuschrooms.CheckedChanged += new System.EventHandler(this.chcMuschrooms_CheckedChanged);
             // 
@@ -923,7 +959,8 @@
             this.chcMeat.Location = new System.Drawing.Point(4, 19);
             this.chcMeat.Name = "chcMeat";
             this.chcMeat.Size = new System.Drawing.Size(15, 14);
-            this.chcMeat.TabIndex = 17;
+            this.chcMeat.TabIndex = 11;
+            this.chcMeat.TabStop = false;
             this.chcMeat.UseVisualStyleBackColor = true;
             this.chcMeat.CheckedChanged += new System.EventHandler(this.chcMeat_CheckedChanged);
             // 
@@ -946,7 +983,8 @@
             this.chcFish.Location = new System.Drawing.Point(3, 12);
             this.chcFish.Name = "chcFish";
             this.chcFish.Size = new System.Drawing.Size(15, 14);
-            this.chcFish.TabIndex = 9;
+            this.chcFish.TabIndex = 6;
+            this.chcFish.TabStop = false;
             this.chcFish.UseVisualStyleBackColor = true;
             this.chcFish.CheckedChanged += new System.EventHandler(this.chcFish_CheckedChanged);
             // 
@@ -958,7 +996,7 @@
             this.label4.Location = new System.Drawing.Point(5, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 26);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 6;
             this.label4.Text = "      RYBY\r\nOWOCE MORZA\r\n";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -981,7 +1019,8 @@
             this.chcPasta.Location = new System.Drawing.Point(3, 8);
             this.chcPasta.Name = "chcPasta";
             this.chcPasta.Size = new System.Drawing.Size(15, 14);
-            this.chcPasta.TabIndex = 11;
+            this.chcPasta.TabIndex = 7;
+            this.chcPasta.TabStop = false;
             this.chcPasta.UseVisualStyleBackColor = true;
             this.chcPasta.CheckedChanged += new System.EventHandler(this.chcPasta_CheckedChanged);
             // 
@@ -1016,7 +1055,8 @@
             this.chcFruits.Location = new System.Drawing.Point(3, 14);
             this.chcFruits.Name = "chcFruits";
             this.chcFruits.Size = new System.Drawing.Size(15, 14);
-            this.chcFruits.TabIndex = 13;
+            this.chcFruits.TabIndex = 8;
+            this.chcFruits.TabStop = false;
             this.chcFruits.UseVisualStyleBackColor = true;
             this.chcFruits.CheckedChanged += new System.EventHandler(this.chcFruits_CheckedChanged);
             // 
@@ -1124,7 +1164,7 @@
             this.txtSeek.Location = new System.Drawing.Point(210, 165);
             this.txtSeek.Name = "txtSeek";
             this.txtSeek.Size = new System.Drawing.Size(453, 37);
-            this.txtSeek.TabIndex = 17;
+            this.txtSeek.TabIndex = 0;
             this.txtSeek.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dgGrid
@@ -1154,8 +1194,10 @@
             this.dgGrid.RowTemplate.Height = 25;
             this.dgGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgGrid.Size = new System.Drawing.Size(492, 265);
-            this.dgGrid.TabIndex = 19;
+            this.dgGrid.TabIndex = 2;
             this.dgGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGrid_CellClick);
+            this.dgGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGrid_CellDoubleClick);
+            this.dgGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgGrid_KeyDown);
             // 
             // txtLittleName
             // 
@@ -1169,6 +1211,7 @@
             this.txtLittleName.ReadOnly = true;
             this.txtLittleName.Size = new System.Drawing.Size(229, 43);
             this.txtLittleName.TabIndex = 22;
+            this.txtLittleName.TabStop = false;
             this.txtLittleName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtShortDescription
@@ -1183,6 +1226,7 @@
             this.txtShortDescription.ReadOnly = true;
             this.txtShortDescription.Size = new System.Drawing.Size(229, 73);
             this.txtShortDescription.TabIndex = 23;
+            this.txtShortDescription.TabStop = false;
             this.txtShortDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblTime
@@ -1228,10 +1272,11 @@
             this.btnOpen.Location = new System.Drawing.Point(428, 432);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(64, 23);
-            this.btnOpen.TabIndex = 30;
+            this.btnOpen.TabIndex = 4;
             this.btnOpen.Text = "otwórz";
             this.btnOpen.UseVisualStyleBackColor = false;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            this.btnOpen.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnOpen_KeyDown);
             // 
             // btnNew
             // 
@@ -1244,10 +1289,11 @@
             this.btnNew.Location = new System.Drawing.Point(262, 432);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(64, 23);
-            this.btnNew.TabIndex = 32;
+            this.btnNew.TabIndex = 3;
             this.btnNew.Text = "Nowy";
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            this.btnNew.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnNew_KeyDown);
             // 
             // btnClose
             // 
@@ -1260,10 +1306,11 @@
             this.btnClose.Location = new System.Drawing.Point(586, 430);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(64, 23);
-            this.btnClose.TabIndex = 33;
+            this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Zamknij";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnClose_KeyDown);
             // 
             // lblShortLevel
             // 
@@ -1431,9 +1478,10 @@
             this.btnSeek.Location = new System.Drawing.Point(665, 165);
             this.btnSeek.Name = "btnSeek";
             this.btnSeek.Size = new System.Drawing.Size(38, 38);
-            this.btnSeek.TabIndex = 20;
+            this.btnSeek.TabIndex = 1;
             this.btnSeek.UseVisualStyleBackColor = false;
             this.btnSeek.Click += new System.EventHandler(this.btnSeek_Click);
+            this.btnSeek.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnSeek_KeyDown);
             // 
             // pbFrame
             // 
@@ -1476,7 +1524,8 @@
             this.chcStstistic.Location = new System.Drawing.Point(822, 68);
             this.chcStstistic.Name = "chcStstistic";
             this.chcStstistic.Size = new System.Drawing.Size(71, 17);
-            this.chcStstistic.TabIndex = 52;
+            this.chcStstistic.TabIndex = 19;
+            this.chcStstistic.TabStop = false;
             this.chcStstistic.Text = "Statystyki";
             this.chcStstistic.UseVisualStyleBackColor = false;
             this.chcStstistic.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -1517,26 +1566,30 @@
             this.lblLineTwo.Text = "|";
             this.lblLineTwo.Visible = false;
             // 
-            // importujCalaBazęDanychToolStripMenuItem
+            // button1
             // 
-            this.importujCalaBazęDanychToolStripMenuItem.Name = "importujCalaBazęDanychToolStripMenuItem";
-            this.importujCalaBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.importujCalaBazęDanychToolStripMenuItem.Text = "Importuj Cala Bazę Danych";
-            this.importujCalaBazęDanychToolStripMenuItem.Click += new System.EventHandler(this.importujCalaBazęDanychToolStripMenuItem_Click);
-            // 
-            // eksportujCalaBazeDanychToolStripMenuItem
-            // 
-            this.eksportujCalaBazeDanychToolStripMenuItem.Name = "eksportujCalaBazeDanychToolStripMenuItem";
-            this.eksportujCalaBazeDanychToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.eksportujCalaBazeDanychToolStripMenuItem.Text = "Eksportuj Cala Baze Danych";
-            this.eksportujCalaBazeDanychToolStripMenuItem.Click += new System.EventHandler(this.eksportujCalaBazeDanychToolStripMenuItem_Click);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(458, 256);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 20);
+            this.button1.TabIndex = 56;
+            this.button1.TabStop = false;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
+            this.AcceptButton = this.btnSeek;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.ClientSize = new System.Drawing.Size(904, 769);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblCleanDgGrid);
             this.Controls.Add(this.lblLineTwo);
             this.Controls.Add(this.lblLineOne);
@@ -1792,6 +1845,7 @@
         private System.Windows.Forms.Label lblLineTwo;
         private System.Windows.Forms.ToolStripMenuItem importujCalaBazęDanychToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eksportujCalaBazeDanychToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
 

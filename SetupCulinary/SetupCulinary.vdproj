@@ -40,12 +40,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_113A58C9DDD8C4CC82DBE97D56064A0E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_26A36E3E24D740A29409E2DD754B8B63"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -53,6 +47,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_C330E7C4CACDE41C738C282F1C5DA830"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_113A58C9DDD8C4CC82DBE97D56064A0E"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -73,6 +73,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -89,6 +105,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -289,15 +313,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SetupCulinary"
-        "ProductCode" = "8:{E0711C06-D98A-4783-AA27-C00BB9F751E9}"
-        "PackageCode" = "8:{F772C93C-D315-4F15-973C-EC2A6BA11936}"
+        "ProductCode" = "8:{061C22D2-AEFC-44D8-9922-68C10F23CD1C}"
+        "PackageCode" = "8:{DB12DA2F-1252-4C7D-B178-B05F6AE9AF67}"
         "UpgradeCode" = "8:{841E5933-096C-4C5E-8CBD-035B7D324018}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.5.0"
         "Manufacturer" = "8:DarkCompany"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

@@ -1,15 +1,13 @@
-﻿using CulinaryRecipes.Properties;
+﻿using Common;
+using CulinaryRecipes.Properties;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
-using System.Text.RegularExpressions;
+using System.Linq;
+using System.Windows.Forms;
+
 
 namespace CulinaryRecipes
 {
@@ -379,6 +377,13 @@ namespace CulinaryRecipes
             }
         }
 
+        public RecipesBase Model(RecipesBase model)
+        {
+         //   RecipesBase model = new RecipesBase();
+            if (rtxtPortion.Text == "") model.NumberPortions = 1;
+            else model.NumberPortions = int.Parse(rtxtPortion.Text);
+            return model;
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             btnCancel.Visible = true;
@@ -395,8 +400,8 @@ namespace CulinaryRecipes
                 Function.UnblockingFields(panelMain);
                 Function.ColorAreaAfterUnblocking(panelMain);
                 Function.ClearFields(panelMain);
-                Function.UncheckedCheckBox(panelRight);
-                Function.UncheckedCheckBox(panelLeft);
+                WinForm.UncheckedCheckBox(panelRight);
+                WinForm.UncheckedCheckBox(panelLeft);
 
                 ClearLabelText();
                 pbLittlePhoto.Image = Resources.przepisy;
@@ -439,8 +444,9 @@ namespace CulinaryRecipes
                                 model.ShortDescription = txtShortDescription.Text;
                                 model.LongDescription = rtxtDescription.Text;
 
-                                if (rtxtPortion.Text == "") model.NumberPortions = 1;
-                                else model.NumberPortions = int.Parse(rtxtPortion.Text);
+                                //if (rtxtPortion.Text == "") model.NumberPortions = 1;
+                                //else model.NumberPortions = int.Parse(rtxtPortion.Text);
+                                Model(model);
 
                                 model.CategoryCuisines = lblCuisine.Text;
                                 model.CategoryRating = idRatingForm2;
@@ -469,6 +475,7 @@ namespace CulinaryRecipes
                                 #endregion
 
                                 RecipesBase.add(model);
+                                rtxtPortion.Text = 1.ToString();
                                 titleForm2 = txtName.Text;
                                 idDgGridForm2 = model.Id;
                                 SecuringBlock();
@@ -1228,17 +1235,17 @@ namespace CulinaryRecipes
             string space2 = " ";
             for (int i = 0; i < rTxtIngredients.Lines.Length*3; i = i + 3)
             {
-                if (rtxtAmountsOfFood.Lines[k].Length == 1) space = "    ";
-                else if (rtxtAmountsOfFood.Lines[k].Length == 2) space = "   ";
-                else if (rtxtAmountsOfFood.Lines[k].Length == 3) space = "  ";
-                else if (rtxtAmountsOfFood.Lines[k].Length == 4) space = " ";
-                // Space();
-                if (rTxtGrams.Lines[k].Length == 1) space2 = "     ";
-                else if (rTxtGrams.Lines[k].Length == 2) space2 = "    ";
-                else if (rTxtGrams.Lines[k].Length == 3) space2 = "   ";
-                else if (rTxtGrams.Lines[k].Length == 4) space2 = "  ";
-                else if (rTxtGrams.Lines[k].Length == 5) space2 = " ";
-                else if (rTxtGrams.Lines[k].Length == 6) space2 = "";
+                //if (rtxtAmountsOfFood.Lines[k].Length == 1) space = "    ";
+                //else if (rtxtAmountsOfFood.Lines[k].Length == 2) space = "   ";
+                //else if (rtxtAmountsOfFood.Lines[k].Length == 3) space = "  ";
+                //else if (rtxtAmountsOfFood.Lines[k].Length == 4) space = " ";
+                //// Space();
+                //if (rTxtGrams.Lines[k].Length == 1) space2 = "     ";
+                //else if (rTxtGrams.Lines[k].Length == 2) space2 = "    ";
+                //else if (rTxtGrams.Lines[k].Length == 3) space2 = "   ";
+                //else if (rTxtGrams.Lines[k].Length == 4) space2 = "  ";
+                //else if (rTxtGrams.Lines[k].Length == 5) space2 = " ";
+                //else if (rTxtGrams.Lines[k].Length == 6) space2 = "";
 
                 if (rtxtAmountsOfFood.Lines[k] == string.Empty) { table[i] = space; }
                 else table[i] = rtxtAmountsOfFood.Lines[k] + space + rTxtGrams.Lines[k] + space2 + rTxtIngredients.Lines[k];
@@ -1514,7 +1521,7 @@ namespace CulinaryRecipes
         private void ChangeFocusNewProject(RichTextBox first, RichTextBox second, KeyEventArgs e)
         {
             int i = first.SelectionStart;
-            if (first.Lines.Length == 1 && e.KeyCode == Keys.PageDown)
+            if (first.Lines.Length == 1 && e.KeyCode== Keys.PageDown)
             {
                 second.Focus();
                 e.Handled = true;
@@ -1532,6 +1539,7 @@ namespace CulinaryRecipes
             }
         }
 
+       
 
         private void rtxtAmountsOfFood_KeyDown(object sender, KeyEventArgs e)
         {
