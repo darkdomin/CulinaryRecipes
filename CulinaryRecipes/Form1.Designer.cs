@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.cMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -243,14 +243,14 @@
             // 
             this.nowyPrzepisToolStripMenuItem.Name = "nowyPrzepisToolStripMenuItem";
             this.nowyPrzepisToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nowyPrzepisToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.nowyPrzepisToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.nowyPrzepisToolStripMenuItem.Text = "Nowy przepis";
             this.nowyPrzepisToolStripMenuItem.Click += new System.EventHandler(this.nowyPrzepisToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(185, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(218, 6);
             // 
             // importujBazęToolStripMenuItem
             // 
@@ -260,7 +260,6 @@
             this.importujBazęToolStripMenuItem.Name = "importujBazęToolStripMenuItem";
             this.importujBazęToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.importujBazęToolStripMenuItem.Text = "Import";
-          
             // 
             // importujPojedynczyPlikToolStripMenuItem
             // 
@@ -287,7 +286,6 @@
             this.exportujBazęDanychToolStripMenuItem.Name = "exportujBazęDanychToolStripMenuItem";
             this.exportujBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.exportujBazęDanychToolStripMenuItem.Text = "Eksport";
-           
             // 
             // eksportujPojedynczyPlikToolStripMenuItem
             // 
@@ -317,7 +315,7 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(185, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(218, 6);
             // 
             // zamknijToolStripMenuItem
             // 
@@ -1177,14 +1175,14 @@
             this.dgGrid.ColumnHeadersVisible = false;
             this.dgGrid.ContextMenuStrip = this.cMenuStrip;
             this.dgGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgGrid.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.dgGrid.Location = new System.Drawing.Point(207, 480);
             this.dgGrid.Name = "dgGrid";
@@ -1198,6 +1196,7 @@
             this.dgGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGrid_CellClick);
             this.dgGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGrid_CellDoubleClick);
             this.dgGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgGrid_KeyDown);
+            this.dgGrid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgGrid_KeyPress);
             // 
             // txtLittleName
             // 

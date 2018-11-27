@@ -507,7 +507,7 @@ namespace CulinaryRecipes
         RecipesBase eksportId = new RecipesBase();
         private void dgGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            OneCliCK(e);
+            OneCliCK();
         }
 
         #region Function
@@ -797,40 +797,42 @@ namespace CulinaryRecipes
             }
         }
 
-        public void OneCliCK(DataGridViewCellEventArgs e)
+        public void OneCliCK()
         {
+            //DataGridViewCellEventArgs e
             deleteCMS.Visible = true;
-
-            if (e.RowIndex >= 0)
+            int row = dgGrid.CurrentCell.RowIndex;
+            if (row >= 0)
             {
-                idDgGrid = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[0].Value);
+                
+                idDgGrid = Convert.ToInt32(dgGrid.Rows[row].Cells[0].Value);
                 eksportId = RecipesBase.getById(idDgGrid);
-                txtLittleName.Text = dgGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-                ingredientForm1 = dgGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-                amountsOfIngredientsForm1 = dgGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtLittleName.Text = dgGrid.Rows[row].Cells[1].Value.ToString();
+                ingredientForm1 = dgGrid.Rows[row].Cells[2].Value.ToString();
+                amountsOfIngredientsForm1 = dgGrid.Rows[row].Cells[3].Value.ToString();
 
-                if (dgGrid.Rows[e.RowIndex].Cells[4].Value.ToString() ==
+                if (dgGrid.Rows[row].Cells[4].Value.ToString() ==
                     stringOfCharactersForm2.stringOfCharacters.ToString() +
                     stringOfCharactersForm2.stringOfCharacters1.ToString())
                     txtShortDescription.Text = CleanDash(txtShortDescription.Text);
                 else
                 {
-                    txtShortDescription.Text = dgGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    txtShortDescription.Text = dgGrid.Rows[row].Cells[4].Value.ToString();
                 }
 
-                instructionForm1 = dgGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
-                numberOfPortionsForm1 = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[6].Value);
+                instructionForm1 = dgGrid.Rows[row].Cells[5].Value.ToString();
+                numberOfPortionsForm1 = Convert.ToInt32(dgGrid.Rows[row].Cells[6].Value);
 
-                if (dgGrid.Rows[e.RowIndex].Cells[7].Value.ToString() !=
+                if (dgGrid.Rows[row].Cells[7].Value.ToString() !=
                     stringOfCharactersForm2.stringOfCharacters.ToString())
                 {
-                    lblCuisine.Text = dgGrid.Rows[e.RowIndex].Cells[7].Value.ToString();
+                    lblCuisine.Text = dgGrid.Rows[row].Cells[7].Value.ToString();
                 }
 
-                if (dgGrid.Rows[e.RowIndex].Cells[8].Value.ToString() !=
+                if (dgGrid.Rows[row].Cells[8].Value.ToString() !=
                     stringOfCharactersForm2.stringOfCharacters.ToString())
                 {
-                    idRatingForm1 = dgGrid.Rows[e.RowIndex].Cells[8].Value.ToString();
+                    idRatingForm1 = dgGrid.Rows[row].Cells[8].Value.ToString();
                 }
 
                 if (idRatingForm1 == "1") pbStar1.Visible = true;
@@ -846,33 +848,33 @@ namespace CulinaryRecipes
                     pbStar3.Visible = true;
                 }
 
-                lblShortLevel.Text = dgGrid.Rows[e.RowIndex].Cells[9].Value.ToString();
-                lblShortTime.Text = dgGrid.Rows[e.RowIndex].Cells[10].Value.ToString();
+                lblShortLevel.Text = dgGrid.Rows[row].Cells[9].Value.ToString();
+                lblShortTime.Text = dgGrid.Rows[row].Cells[10].Value.ToString();
 
-                idMeal[0] = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[11].Value);
-                idMeal[1] = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[12].Value);
-                idMeal[2] = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[13].Value);
-                idMeal[3] = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[14].Value);
-                idMeal[4] = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[15].Value);
-                idMeal[5] = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[16].Value);
-                idMeal[6] = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[17].Value);
+                idMeal[0] = Convert.ToInt32(dgGrid.Rows[row].Cells[11].Value);
+                idMeal[1] = Convert.ToInt32(dgGrid.Rows[row].Cells[12].Value);
+                idMeal[2] = Convert.ToInt32(dgGrid.Rows[row].Cells[13].Value);
+                idMeal[3] = Convert.ToInt32(dgGrid.Rows[row].Cells[14].Value);
+                idMeal[4] = Convert.ToInt32(dgGrid.Rows[row].Cells[15].Value);
+                idMeal[5] = Convert.ToInt32(dgGrid.Rows[row].Cells[16].Value);
+                idMeal[6] = Convert.ToInt32(dgGrid.Rows[row].Cells[17].Value);
 
-                ingridients[0] = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[18].Value);
-                ingridients[1] = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[19].Value);
-                ingridients[2] = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[20].Value);
-                ingridients[3] = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[21].Value);
-                ingridients[4] = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[22].Value);
-                ingridients[5] = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[23].Value);
-                ingridients[6] = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[24].Value);
-                if (dgGrid.Rows[e.RowIndex].Cells[25].Value.ToString() ==
+                ingridients[0] = Convert.ToInt32(dgGrid.Rows[row].Cells[18].Value);
+                ingridients[1] = Convert.ToInt32(dgGrid.Rows[row].Cells[19].Value);
+                ingridients[2] = Convert.ToInt32(dgGrid.Rows[row].Cells[20].Value);
+                ingridients[3] = Convert.ToInt32(dgGrid.Rows[row].Cells[21].Value);
+                ingridients[4] = Convert.ToInt32(dgGrid.Rows[row].Cells[22].Value);
+                ingridients[5] = Convert.ToInt32(dgGrid.Rows[row].Cells[23].Value);
+                ingridients[6] = Convert.ToInt32(dgGrid.Rows[row].Cells[24].Value);
+                if (dgGrid.Rows[row].Cells[25].Value.ToString() ==
                     stringOfCharactersForm2.stringOfCharacters.ToString()) pbLittlePhoto.Image = Resources.przepisy;
-                else pbLittlePhoto.ImageLocation = dgGrid.Rows[e.RowIndex].Cells[25].Value.ToString();
+                else pbLittlePhoto.ImageLocation = dgGrid.Rows[row].Cells[25].Value.ToString();
 
                 //wegetarianskie.checkbox=Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[26].Value);
-                if (dgGrid.Rows[e.RowIndex].Cells[27].Value.ToString() !=
+                if (dgGrid.Rows[row].Cells[27].Value.ToString() !=
                     stringOfCharactersForm2.stringOfCharacters.ToString())
                 {
-                    gramsForm1 = dgGrid.Rows[e.RowIndex].Cells[27].Value.ToString();
+                    gramsForm1 = dgGrid.Rows[row].Cells[27].Value.ToString();
                 }
 
 
@@ -889,7 +891,7 @@ namespace CulinaryRecipes
 
         private void dgGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            OneCliCK(e);
+            OneCliCK();
             OpenClick();
         }
 
@@ -910,13 +912,12 @@ namespace CulinaryRecipes
 
         private void dgGrid_KeyDown(object sender, KeyEventArgs e)
         {
-           
-            //if (e.KeyCode == Keys.Enter)
-            //{
-            //    OneCliCK(e);
-            //    OpenClick();
-            //}
-            
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                OneCliCK();
+                OpenClick();
+            }
         }
 
         private void btnNew_KeyDown(object sender, KeyEventArgs e)
@@ -937,7 +938,17 @@ namespace CulinaryRecipes
                 OpenClick();
         }
 
-      
+
+
+       
+
+
+
+
+        private void dgGrid_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
 
         private void lblCleanDgGrid_Click(object sender, EventArgs e)
         {
