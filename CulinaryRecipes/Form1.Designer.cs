@@ -154,6 +154,8 @@
             this.lblLineOne = new System.Windows.Forms.Label();
             this.lblLineTwo = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.chcVegetarian = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.cMenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1196,7 +1198,7 @@
             this.dgGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGrid_CellClick);
             this.dgGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGrid_CellDoubleClick);
             this.dgGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgGrid_KeyDown);
-            this.dgGrid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgGrid_KeyPress);
+           
             // 
             // txtLittleName
             // 
@@ -1473,6 +1475,7 @@
             this.btnSeek.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSeek.FlatAppearance.BorderSize = 0;
             this.btnSeek.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSeek.ForeColor = System.Drawing.Color.Transparent;
             this.btnSeek.Image = ((System.Drawing.Image)(resources.GetObject("btnSeek.Image")));
             this.btnSeek.Location = new System.Drawing.Point(665, 165);
             this.btnSeek.Name = "btnSeek";
@@ -1579,7 +1582,33 @@
             this.button1.TabStop = false;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            
+            // 
+            // chcVegetarian
+            // 
+            this.chcVegetarian.AutoSize = true;
+            this.chcVegetarian.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcVegetarian.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chcVegetarian.ForeColor = System.Drawing.Color.White;
+            this.chcVegetarian.Location = new System.Drawing.Point(423, 95);
+            this.chcVegetarian.Name = "chcVegetarian";
+            this.chcVegetarian.Size = new System.Drawing.Size(15, 14);
+            this.chcVegetarian.TabIndex = 7;
+            this.chcVegetarian.TabStop = false;
+            this.chcVegetarian.UseVisualStyleBackColor = true;
+            this.chcVegetarian.CheckedChanged += new System.EventHandler(this.chcVegetarian_CheckedChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(444, 97);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(95, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "WEGETARIAŃSKIE";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Form1
             // 
@@ -1588,6 +1617,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.ClientSize = new System.Drawing.Size(904, 769);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.chcVegetarian);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblCleanDgGrid);
             this.Controls.Add(this.lblLineTwo);
@@ -1845,6 +1876,8 @@
         private System.Windows.Forms.ToolStripMenuItem importujCalaBazęDanychToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eksportujCalaBazeDanychToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox chcVegetarian;
+        private System.Windows.Forms.Label label12;
     }
 }
 

@@ -70,7 +70,7 @@ namespace CulinaryRecipes
         [XmlElement("Zdjecie")]
         public string PhotoLinkLocation { get; set; }
         [XmlElement("Wegetariańskie")]
-        public string Vegetarian { get; set; }
+        public int Vegetarian { get; set; }
         [XmlElement("Gramatura")]
         public string Grams { get; set; }
 
@@ -79,7 +79,7 @@ namespace CulinaryRecipes
 
         }
 
-        public RecipesBase(int Id, string Name, string Ingredients, string Amounts, string ShortDescription, string LongDescription, int NumberPortions, string CategoryCuisines, string CategoryRating, string categoryDifficultLevel, string categoryPreparationTime, int snack, int dinner, int soup, int dessert, int drink, int preserves, int salad, int fish, int pasta, int fruits, int muschrooms, int bird, int meat, int eggs, string photoLinkLocation,string vegetarian,string grams)
+        public RecipesBase(int Id, string Name, string Ingredients, string Amounts, string ShortDescription, string LongDescription, int NumberPortions, string CategoryCuisines, string CategoryRating, string categoryDifficultLevel, string categoryPreparationTime, int snack, int dinner, int soup, int dessert, int drink, int preserves, int salad, int fish, int pasta, int fruits, int muschrooms, int bird, int meat, int eggs, string photoLinkLocation,int vegetarian,string grams)
         {
             this.Id = Id;
             this.RecipesName = Name;

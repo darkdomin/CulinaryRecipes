@@ -17,7 +17,7 @@ namespace CulinaryRecipes
         public int numberOfPortionsForm2 { get; set; }
         public int counterForm2 { get; set; }
         public int[] IdMealForm2 = new int[7];
-        public int[] ingridientsForm2 = new int[7];
+        public int[] ingridientsForm2 = new int[8];
         public string titleForm2 { get; set; }
         public string amountsOfIngredientsForm2 { get; set; }
         public string gramsForm2 { get; set; }
@@ -66,30 +66,6 @@ namespace CulinaryRecipes
             return rtxtDescription.Text;
         }
 
-        //private void changeColorPbUnblock(Control set)
-        //{
-        //    foreach (Control c in set.Controls)
-        //    {
-        //        if (c is PictureBox)
-        //        {
-        //            if (c.Name == pbLittlePhoto.Name || c.Name == pbStar1.Name || c.Name == pbStar2.Name || c.Name == pbStar3.Name || c.Name == pictureBox2.Name) continue;
-        //            ((PictureBox)c).BackColor = Function.CreateBrightColor();
-        //        }
-        //    }
-        //}
-
-        //private void changeColorPbblock(Control set)
-        //{
-        //    foreach (Control c in set.Controls)
-        //    {
-        //        if (c is PictureBox)
-        //        {
-        //            if (c.Name == pbLittlePhoto.Name || c.Name == pbStar1.Name || c.Name == pbStar2.Name || c.Name == pbStar3.Name || c.Name == pictureBox2.Name) continue;
-        //            ((PictureBox)c).BackColor = Function.CreateColorBlockingFields();
-        //        }
-        //    }
-        //}
-
         // Funkcja zbiorcza dla changeColorPbblock, changeColorPbUnblock
         private void Color(Control set, Color color)
         {
@@ -136,8 +112,6 @@ namespace CulinaryRecipes
             pbStar2.Visible = false;
             pbStar3.Visible = false;
         }
-
-
 
         //wstawia znak jezeli textbox jest pusty
         private string IfTextBoxIsEmpty(string namebox)
@@ -194,9 +168,6 @@ namespace CulinaryRecipes
                         name.Lines = kopialiczba;
                     }
                 }
-
-
-
 
                 //    string wzorzec = @"(\d+)";
                 //    string wzorzec2 = @"";
@@ -262,7 +233,29 @@ namespace CulinaryRecipes
         {
             InitializeComponent();
         }
-
+        public void StopTabAndRuN()
+        {
+            if (txtName.ReadOnly == true)
+            {
+                txtName.TabStop = false;
+                rTxtIngredients.TabStop = false;
+                rTxtGrams.TabStop = false;
+                rtxtAmountsOfFood.TabStop = false;
+                rtxtDescription.TabStop = false;
+                rtxtPortion.TabStop = false;
+                txtShortDescription.TabStop = false;
+            }
+            else
+            {
+                txtName.TabStop = true;
+                rTxtIngredients.TabStop = true;
+                rTxtGrams.TabStop = true;
+                rtxtAmountsOfFood.TabStop = true;
+                rtxtDescription.TabStop = true;
+                rtxtPortion.TabStop = true;
+                txtShortDescription.TabStop = true;
+            }
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
             if (titleForm2 == null)
@@ -279,9 +272,13 @@ namespace CulinaryRecipes
                 clear = add;
                 btnAddRest.Visible = true;
                 lblTime.Visible = true;
+                chcVegetarian.Enabled = true;
             }
             else if (unlockFieldsForm2 == "1" && txtName.ReadOnly == true)
             {
+                StopTabAndRuN();
+                chcVegetarian.Enabled = true;
+                if (ingridientsForm2[7] == 1) chcVegetarian.Checked = true;
                 rTxtGrams.Text = gramsForm2;
                 //changeColorPbUnblock(panelMain);
                 Color(panelMain, Function.CreateBrightColor());
@@ -338,6 +335,8 @@ namespace CulinaryRecipes
             }
             else
             {
+
+                StopTabAndRuN();
                 linkForm22 = linkForm2;
                 txtName.Text = titleForm2;
 
@@ -350,7 +349,7 @@ namespace CulinaryRecipes
                 {
                     if (rtxtAmountsOfFood.Lines[i].Length >= 5)
                     {
-                        rtxtAmountsOfFood.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+                        rtxtAmountsOfFood.ScrollBars = RichTextBoxScrollBars.Horizontal;
                     }
                     i++;
                 }
@@ -369,6 +368,8 @@ namespace CulinaryRecipes
 
                 Function.DisplaySelectionRightPanel(panelRight, IdMealForm2);
                 Function.DisplaySelectionRightPanel(panelLeft, ingridientsForm2);
+                if (ingridientsForm2[7] == 1) chcVegetarian.Checked = true;
+                else chcVegetarian.Checked = false;
 
                 ShowStar(1, pbStar1, idRatingForm2);
                 ShowStar(2, pbStar2, idRatingForm2);
@@ -387,10 +388,12 @@ namespace CulinaryRecipes
         private void btnAdd_Click(object sender, EventArgs e)
         {
             btnCancel.Visible = true;
-
+            AssignmentMainFields();
             if (txtName.ReadOnly == true)
             {
-                AssignmentMainFields();
+                
+                chcVegetarian.Enabled = true;
+                
                 if (pbStar1.Visible == true)
                 {
                     HideStars();
@@ -427,8 +430,6 @@ namespace CulinaryRecipes
                     if (check == false)
                     {
                         txtName.Text = txtName.Text.ToUpper();
-
-
                         if (txtName.Text != "")
                         {
                             AddStampBlock();
@@ -444,8 +445,6 @@ namespace CulinaryRecipes
                                 model.ShortDescription = txtShortDescription.Text;
                                 model.LongDescription = rtxtDescription.Text;
 
-                                //if (rtxtPortion.Text == "") model.NumberPortions = 1;
-                                //else model.NumberPortions = int.Parse(rtxtPortion.Text);
                                 Model(model);
 
                                 model.CategoryCuisines = lblCuisine.Text;
@@ -472,9 +471,11 @@ namespace CulinaryRecipes
                                 model.IdBirdIngredients = ingridientsForm2[4];
                                 model.IdMeatIngredients = ingridientsForm2[5];
                                 model.IdEggsIngredients = ingridientsForm2[6];
+                                model.Vegetarian = ingridientsForm2[7];
                                 #endregion
 
                                 RecipesBase.add(model);
+                                chcVegetarian.Enabled = false;
                                 rtxtPortion.Text = 1.ToString();
                                 titleForm2 = txtName.Text;
                                 idDgGridForm2 = model.Id;
@@ -630,96 +631,6 @@ namespace CulinaryRecipes
         }
         private void btnConvert_Click(object sender, EventArgs e)
         {
-
-            //if (rtxtAmountsOfFood.ReadOnly == false)
-            //{
-            //    MessageBox.Show("Przeliczać porcje można dopiero po dodaniu przepisu lub po wykonaniu jego modyfikacji");
-            //}
-            //else
-            //{
-            //    if (btnConvert.Text == convertportions)
-            //    {
-            //        btnConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            //        btnModify.Enabled = false;
-            //        btnAdd.Enabled = false;
-
-            //        rtxtPortion.ReadOnly = false;
-            //        rtxtPortion.BackColor = Function.CreateBrightColor();
-            //        pbConvert.BackColor = Function.CreateBrightColor();
-            //        convertNumbers = Convert.ToDouble(rtxtPortion.Text);
-            //        btnConvert.Text = convert;
-            //    }
-
-            //    else
-            //    {
-            //        if (rtxtAmountsOfFood.ReadOnly == true && rtxtPortion.ReadOnly == false)
-            //        {
-            //            int nrLinii = rtxtAmountsOfFood.Lines.Length;
-            //            double[] sk = new double[nrLinii];
-            //            double[] liczba = new double[nrLinii];
-            //            string[] liczba2 = new string[nrLinii];
-
-            //            SecuringAmountOffood(rtxtPortion);
-            //            if (rtxtPortion.Text == "")
-            //            {
-            //                rtxtPortion.BackColor = Function.CreateBrightColor();
-
-            //                rtxtPortion.ReadOnly = false;
-            //            }
-            //            else
-            //            {
-            //                if (double.TryParse(convertNumbers.ToString(), out converted))
-            //                {
-            //                    for (int i = 0; i < nrLinii; i++)
-            //                    {
-            //                        if (double.TryParse(rtxtAmountsOfFood.Lines[i], out sk[i]))
-            //                        {
-            //                            liczba[i] = sk[i] / convertNumbers;
-            //                            liczba2[i] = liczba[i].ToString();
-            //                        }
-            //                    }
-            //                }
-            //                rtxtAmountsOfFood.Lines = liczba2;
-            //            }
-            //        }
-            //        if (rtxtPortion.Text != "")
-            //        {
-            //            int numberLine = rtxtAmountsOfFood.Lines.Length;
-            //            double[] sk2 = new double[numberLine];
-            //            double[] numberOne = new double[numberLine];
-            //            string[] numberTwo = new string[numberLine];
-
-            //            if (double.TryParse(rtxtPortion.Text, out converted))
-            //            {
-            //                for (int i = 0; i < numberLine; i++)
-            //                {
-            //                    if (rtxtAmountsOfFood.Lines[i] == "") continue;
-            //                    if (double.TryParse(rtxtAmountsOfFood.Lines[i], out sk2[i]))
-            //                    {
-            //                        numberOne[i] = Math.Round(sk2[i] * converted, 1);
-            //                        numberTwo[i] = numberOne[i].ToString();
-            //                    }
-            //                    else
-            //                    {
-            //                        MessageBox.Show("W tej rubryce można wpisywać tylko ilości");
-            //                    }
-            //                }
-            //                for (int i = 0; i < numberLine; i++)
-            //                {
-            //                    rtxtAmountsOfFood.Lines = numberTwo;
-            //                }
-            //            }
-            //            rtxtPortion.BackColor = Function.CreateColor();
-            //            pbConvert.BackColor = Function.CreateColor();
-            //            rtxtPortion.ReadOnly = true;
-            //            rtxtAmountsOfFood.Visible = true;
-            //            btnConvert.Text = convertportions;
-            //            btnConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            //        }
-            //        btnModify.Enabled = true;
-            //        btnAdd.Enabled = true;
-            //    }
-            //}
             ConvertFunction();
         }
 
@@ -911,6 +822,8 @@ namespace CulinaryRecipes
             btnCancel.Text = "Anuluj";
             if (txtName.ReadOnly == true)
             {
+                
+                chcVegetarian.Enabled = true;
                 AssignmentMainFields();
                 linkForm22 = linkForm2;
                 Function.ColorAreaAfterUnblocking(panelMain);
@@ -927,6 +840,7 @@ namespace CulinaryRecipes
             }
             else
             {
+                
                 ConvertAmountsOfFood();
                 ChangeDotToComma(rtxtAmountsOfFood);
                 ChangeDotToComma(rtxtPortion);
@@ -975,6 +889,8 @@ namespace CulinaryRecipes
                             up.IdBirdIngredients = ingridientsForm2[4];
                             up.IdMeatIngredients = ingridientsForm2[5];
                             up.IdEggsIngredients = ingridientsForm2[6];
+                            up.Vegetarian = ingridientsForm2[7];
+
                             #endregion
                             #region MealRight
                             up.SnackMeal = IdMealForm2[0];
@@ -998,7 +914,7 @@ namespace CulinaryRecipes
                             else up.PhotoLinkLocation = linkForm2;
 
                             RecipesBase.update(up);
-
+                            chcVegetarian.Enabled = false;
                             SecuringBlock();
                             MessageBox.Show("Modyfikacja przebiegła pomyślnie!!!");
 
@@ -1206,19 +1122,7 @@ namespace CulinaryRecipes
         {
             printDocument1.Print();
         }
-        //private string Space()
-        //{
-        //    string space = "";
-
-        //    for (int j = 0; j < rtxtAmountsOfFood.Lines.Length; j++)
-        //    {
-        //        for (int i = 0; i < 5; i++)
-        //        {
-        //            if (rtxtAmountsOfFood.Lines[j].Length == i) space += " ";
-        //        }
-        //    }
-        //    return space;
-        //}
+    
         string[] table;
         string[] tablelka;
         private void podglToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1235,17 +1139,6 @@ namespace CulinaryRecipes
             string space2 = " ";
             for (int i = 0; i < rTxtIngredients.Lines.Length*3; i = i + 3)
             {
-                //if (rtxtAmountsOfFood.Lines[k].Length == 1) space = "    ";
-                //else if (rtxtAmountsOfFood.Lines[k].Length == 2) space = "   ";
-                //else if (rtxtAmountsOfFood.Lines[k].Length == 3) space = "  ";
-                //else if (rtxtAmountsOfFood.Lines[k].Length == 4) space = " ";
-                //// Space();
-                //if (rTxtGrams.Lines[k].Length == 1) space2 = "     ";
-                //else if (rTxtGrams.Lines[k].Length == 2) space2 = "    ";
-                //else if (rTxtGrams.Lines[k].Length == 3) space2 = "   ";
-                //else if (rTxtGrams.Lines[k].Length == 4) space2 = "  ";
-                //else if (rTxtGrams.Lines[k].Length == 5) space2 = " ";
-                //else if (rTxtGrams.Lines[k].Length == 6) space2 = "";
 
                 if (rtxtAmountsOfFood.Lines[k] == string.Empty) { table[i] = space; }
                 else table[i] = rtxtAmountsOfFood.Lines[k] + space + rTxtGrams.Lines[k] + space2 + rTxtIngredients.Lines[k];
@@ -1390,11 +1283,16 @@ namespace CulinaryRecipes
             Form1 form1 = new Form1();
             form1.counter = counterForm2;
             form1.ShowDialog();
+            
         }
 
         //zmienne pamięciowe- Anuluj//
         public string title1, amounts, grams, ingrediet, shortDes, longDes, cuisines, level, time, rating;
         public int portions;
+        public int[] NewingridientsForm2 = new int[8];
+        bool[] checkBoxesCancel = new bool[15];
+       
+
         private void AssignmentMainFields()
         {
             cancel = true;
@@ -1410,13 +1308,50 @@ namespace CulinaryRecipes
             level = lblLevel.Text;
             time = lblTime.Text;
             rating = idRatingForm2;
+            checkBoxesCancel[0]= chcFish.Checked;
+            checkBoxesCancel[1] = chcPasta.Checked;
+            checkBoxesCancel[2] = chcFruits.Checked;
+            checkBoxesCancel[3] = chcMuschrooms.Checked;
+            checkBoxesCancel[4] = chcBird.Checked;
+            checkBoxesCancel[5] = chcMeat.Checked;
+            checkBoxesCancel[6] = chcEggs.Checked;
+            checkBoxesCancel[7] = chcVegetarian.Checked;
+
+            checkBoxesCancel[8] = chcSnack.Checked;
+            checkBoxesCancel[9] = chcDinner.Checked;
+            checkBoxesCancel[10] = chcSoup.Checked;
+            checkBoxesCancel[11] = chcDessert.Checked;
+            checkBoxesCancel[12] = chcDrink.Checked;
+            checkBoxesCancel[13] = chcPreserves.Checked;
+            checkBoxesCancel[14] = chcSalad.Checked;
         }
+      
+           
         public string linkForm22;
         private void btnCancel_Click(object sender, EventArgs e)
         {
 
             if (cancel == true)
             {
+
+
+                chcFish.Checked = checkBoxesCancel[0];
+                chcPasta.Checked = checkBoxesCancel[1];
+                chcFruits.Checked = checkBoxesCancel[2];
+                chcMuschrooms.Checked = checkBoxesCancel[3];
+                chcBird.Checked= checkBoxesCancel[4];
+                chcMeat.Checked = checkBoxesCancel[5];
+                chcEggs.Checked = checkBoxesCancel[6];
+                chcVegetarian.Checked = checkBoxesCancel[7];
+
+                        chcSnack.Checked = checkBoxesCancel[8];
+                chcDinner.Checked = checkBoxesCancel[9];
+                chcSoup.Checked = checkBoxesCancel[10];
+                chcDessert.Checked = checkBoxesCancel[11];
+                chcDrink.Checked = checkBoxesCancel[12];
+                chcPreserves.Checked = checkBoxesCancel[13];
+                chcSalad.Checked = checkBoxesCancel[14];
+
                 txtName.Text = title1;
                 rtxtAmountsOfFood.Text = amounts;
                 rTxtGrams.Text = grams;
@@ -1539,7 +1474,17 @@ namespace CulinaryRecipes
             }
         }
 
-       
+        private void chcVegetarian_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckingCheckbox(chcVegetarian, 8, ingridientsForm2);
+            if(chcVegetarian.Checked)
+            {
+                chcBird.Checked = false;
+                chcMeat.Checked = false;
+                chcVegetarian.Checked = true;
+            }
+          
+        }
 
         private void rtxtAmountsOfFood_KeyDown(object sender, KeyEventArgs e)
         {
@@ -1584,11 +1529,13 @@ namespace CulinaryRecipes
         private void chcBird_CheckedChanged(object sender, EventArgs e)
         {
             CheckingCheckbox(chcBird, 5, ingridientsForm2);
+            chcVegetarian.Checked = false;
         }
 
         private void chcMeat_CheckedChanged(object sender, EventArgs e)
         {
             CheckingCheckbox(chcMeat, 6, ingridientsForm2);
+            chcVegetarian.Checked = false;
         }
 
         private void chcEggs_CheckedChanged(object sender, EventArgs e)

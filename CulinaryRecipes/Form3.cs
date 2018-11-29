@@ -280,7 +280,7 @@ namespace CulinaryRecipes
        
         public string interval = "  ";
         public int[] IdMealForm3 = new int[7];
-        public int[] idComponentsForm3 = new int[7];
+        public int[] idComponentsForm3 = new int[8];
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -325,6 +325,7 @@ namespace CulinaryRecipes
             model.ingridientsForm2[4] = idComponentsForm3[4];
             model.ingridientsForm2[5] = idComponentsForm3[5];
             model.ingridientsForm2[6] = idComponentsForm3[6];
+            model.ingridientsForm2[7] = idComponentsForm3[7];
             #endregion
             model.counterForm2 = counterForm3;
             #region Pamięć

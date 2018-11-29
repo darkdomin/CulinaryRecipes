@@ -96,6 +96,8 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.chcVegetarian = new System.Windows.Forms.CheckBox();
             this.label21 = new System.Windows.Forms.Label();
             this.pictureBox29 = new System.Windows.Forms.PictureBox();
             this.contextIngridients = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -1047,6 +1049,8 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            this.panelMain.Controls.Add(this.label22);
+            this.panelMain.Controls.Add(this.chcVegetarian);
             this.panelMain.Controls.Add(this.label21);
             this.panelMain.Controls.Add(this.pictureBox29);
             this.panelMain.Controls.Add(this.rTxtGrams);
@@ -1104,6 +1108,31 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1034, 801);
             this.panelMain.TabIndex = 0;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(916, 39);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(95, 13);
+            this.label22.TabIndex = 21;
+            this.label22.Text = "WEGETARIAŃSKIE";
+            // 
+            // chcVegetarian
+            // 
+            this.chcVegetarian.AutoSize = true;
+            this.chcVegetarian.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcVegetarian.Enabled = false;
+            this.chcVegetarian.ForeColor = System.Drawing.Color.White;
+            this.chcVegetarian.Location = new System.Drawing.Point(898, 38);
+            this.chcVegetarian.Name = "chcVegetarian";
+            this.chcVegetarian.Size = new System.Drawing.Size(15, 14);
+            this.chcVegetarian.TabIndex = 47;
+            this.chcVegetarian.TabStop = false;
+            this.chcVegetarian.UseVisualStyleBackColor = true;
+            this.chcVegetarian.CheckedChanged += new System.EventHandler(this.chcVegetarian_CheckedChanged);
             // 
             // label21
             // 
@@ -1180,7 +1209,7 @@
             // pbConvert
             // 
             this.pbConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            this.pbConvert.Location = new System.Drawing.Point(307, 41);
+            this.pbConvert.Location = new System.Drawing.Point(307, 40);
             this.pbConvert.Name = "pbConvert";
             this.pbConvert.Size = new System.Drawing.Size(3, 20);
             this.pbConvert.TabIndex = 3;
@@ -1191,7 +1220,7 @@
             this.pictureBox28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.pictureBox28.Location = new System.Drawing.Point(56, 64);
             this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(46, 10);
+            this.pictureBox28.Size = new System.Drawing.Size(58, 10);
             this.pictureBox28.TabIndex = 4;
             this.pictureBox28.TabStop = false;
             // 
@@ -1279,7 +1308,7 @@
             this.rtxtPortion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtPortion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtxtPortion.ForeColor = System.Drawing.Color.White;
-            this.rtxtPortion.Location = new System.Drawing.Point(310, 41);
+            this.rtxtPortion.Location = new System.Drawing.Point(310, 40);
             this.rtxtPortion.MaxLength = 2;
             this.rtxtPortion.Multiline = false;
             this.rtxtPortion.Name = "rtxtPortion";
@@ -1306,7 +1335,7 @@
             // pb9
             // 
             this.pb9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb9.Location = new System.Drawing.Point(107, 74);
+            this.pb9.Location = new System.Drawing.Point(119, 74);
             this.pb9.Name = "pb9";
             this.pb9.Size = new System.Drawing.Size(5, 683);
             this.pb9.TabIndex = 9;
@@ -1324,9 +1353,9 @@
             // pb2
             // 
             this.pb2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb2.Location = new System.Drawing.Point(107, 64);
+            this.pb2.Location = new System.Drawing.Point(119, 64);
             this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(355, 10);
+            this.pb2.Size = new System.Drawing.Size(343, 10);
             this.pb2.TabIndex = 11;
             this.pb2.TabStop = false;
             // 
@@ -2013,10 +2042,11 @@
             this.rTxtGrams.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rTxtGrams.ForeColor = System.Drawing.Color.White;
             this.rTxtGrams.Location = new System.Drawing.Point(58, 74);
+            this.rTxtGrams.MaxLength = 8;
             this.rTxtGrams.Name = "rTxtGrams";
             this.rTxtGrams.ReadOnly = true;
             this.rTxtGrams.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.rTxtGrams.Size = new System.Drawing.Size(44, 683);
+            this.rTxtGrams.Size = new System.Drawing.Size(56, 683);
             this.rTxtGrams.TabIndex = 3;
             this.rTxtGrams.Text = "";
             this.rTxtGrams.WordWrap = false;
@@ -2062,11 +2092,11 @@
             this.rTxtIngredients.ContextMenuStrip = this.contextIngridients;
             this.rTxtIngredients.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rTxtIngredients.ForeColor = System.Drawing.Color.White;
-            this.rTxtIngredients.Location = new System.Drawing.Point(112, 74);
+            this.rTxtIngredients.Location = new System.Drawing.Point(124, 74);
             this.rTxtIngredients.Name = "rTxtIngredients";
             this.rTxtIngredients.ReadOnly = true;
             this.rTxtIngredients.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.rTxtIngredients.Size = new System.Drawing.Size(350, 684);
+            this.rTxtIngredients.Size = new System.Drawing.Size(338, 684);
             this.rTxtIngredients.TabIndex = 4;
             this.rTxtIngredients.Text = "";
             this.rTxtIngredients.WordWrap = false;
@@ -2350,5 +2380,7 @@
         private ReadOnlyRichTextBox rTxtGrams;
         private System.Windows.Forms.PictureBox pictureBox29;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.CheckBox chcVegetarian;
     }
 }
