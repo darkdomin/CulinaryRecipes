@@ -194,6 +194,7 @@
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.rTxtGrams = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.txtShortDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.rtxtDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
@@ -1249,6 +1250,7 @@
             this.btnAddRest.UseVisualStyleBackColor = false;
             this.btnAddRest.Visible = false;
             this.btnAddRest.Click += new System.EventHandler(this.btnAddRest_Click);
+            this.btnAddRest.MouseEnter += new System.EventHandler(this.btnAddRest_MouseEnter);
             // 
             // contextShortDesription
             // 
@@ -1331,6 +1333,7 @@
             this.rtxtAmountsOfFood.TabIndex = 2;
             this.rtxtAmountsOfFood.Text = "";
             this.rtxtAmountsOfFood.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtAmountsOfFood_KeyDown);
+            this.rtxtAmountsOfFood.MouseEnter += new System.EventHandler(this.rtxtAmountsOfFood_MouseEnter);
             // 
             // pb9
             // 
@@ -1563,6 +1566,7 @@
             this.btnConvert.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnConvert.UseVisualStyleBackColor = false;
             this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
+            this.btnConvert.MouseEnter += new System.EventHandler(this.btnConvert_MouseEnter);
             // 
             // lblCuisine
             // 
@@ -2032,6 +2036,10 @@
             this.printDialog1.Document = this.printDocument1;
             this.printDialog1.UseEXDialog = true;
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 900;
+            // 
             // rTxtGrams
             // 
             this.rTxtGrams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -2042,7 +2050,7 @@
             this.rTxtGrams.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rTxtGrams.ForeColor = System.Drawing.Color.White;
             this.rTxtGrams.Location = new System.Drawing.Point(58, 74);
-            this.rTxtGrams.MaxLength = 8;
+            this.rTxtGrams.MaxLength = 20;
             this.rTxtGrams.Name = "rTxtGrams";
             this.rTxtGrams.ReadOnly = true;
             this.rTxtGrams.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
@@ -2065,6 +2073,7 @@
             this.txtShortDescription.Size = new System.Drawing.Size(210, 130);
             this.txtShortDescription.TabIndex = 5;
             this.txtShortDescription.Text = "";
+            this.txtShortDescription.MouseEnter += new System.EventHandler(this.txtShortDescription_MouseEnter);
             // 
             // rtxtDescription
             // 
@@ -2382,5 +2391,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.CheckBox chcVegetarian;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

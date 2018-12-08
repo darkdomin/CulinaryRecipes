@@ -153,9 +153,11 @@
             this.lblCleanDgGrid = new System.Windows.Forms.Label();
             this.lblLineOne = new System.Windows.Forms.Label();
             this.lblLineTwo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.chcVegetarian = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.lblClearCheckBox = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.cMenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1166,6 +1168,7 @@
             this.txtSeek.Size = new System.Drawing.Size(453, 37);
             this.txtSeek.TabIndex = 0;
             this.txtSeek.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSeek.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSeek_KeyDown);
             // 
             // dgGrid
             // 
@@ -1198,7 +1201,6 @@
             this.dgGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGrid_CellClick);
             this.dgGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGrid_CellDoubleClick);
             this.dgGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgGrid_KeyDown);
-           
             // 
             // txtLittleName
             // 
@@ -1481,6 +1483,7 @@
             this.btnSeek.Name = "btnSeek";
             this.btnSeek.Size = new System.Drawing.Size(38, 38);
             this.btnSeek.TabIndex = 1;
+            this.btnSeek.TabStop = false;
             this.btnSeek.UseVisualStyleBackColor = false;
             this.btnSeek.Click += new System.EventHandler(this.btnSeek_Click);
             this.btnSeek.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnSeek_KeyDown);
@@ -1538,11 +1541,11 @@
             this.lblCleanDgGrid.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCleanDgGrid.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblCleanDgGrid.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblCleanDgGrid.Location = new System.Drawing.Point(420, 461);
+            this.lblCleanDgGrid.Location = new System.Drawing.Point(317, 461);
             this.lblCleanDgGrid.Name = "lblCleanDgGrid";
-            this.lblCleanDgGrid.Size = new System.Drawing.Size(79, 13);
+            this.lblCleanDgGrid.Size = new System.Drawing.Size(73, 13);
             this.lblCleanDgGrid.TabIndex = 53;
-            this.lblCleanDgGrid.Text = "wyczyść siatkę";
+            this.lblCleanDgGrid.Text = "wyczyść Listę";
             this.lblCleanDgGrid.Visible = false;
             this.lblCleanDgGrid.Click += new System.EventHandler(this.lblCleanDgGrid_Click);
             // 
@@ -1550,7 +1553,7 @@
             // 
             this.lblLineOne.AutoSize = true;
             this.lblLineOne.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblLineOne.Location = new System.Drawing.Point(401, 460);
+            this.lblLineOne.Location = new System.Drawing.Point(298, 460);
             this.lblLineOne.Name = "lblLineOne";
             this.lblLineOne.Size = new System.Drawing.Size(10, 14);
             this.lblLineOne.TabIndex = 54;
@@ -1561,28 +1564,12 @@
             // 
             this.lblLineTwo.AutoSize = true;
             this.lblLineTwo.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblLineTwo.Location = new System.Drawing.Point(507, 460);
+            this.lblLineTwo.Location = new System.Drawing.Point(404, 460);
             this.lblLineTwo.Name = "lblLineTwo";
             this.lblLineTwo.Size = new System.Drawing.Size(10, 14);
             this.lblLineTwo.TabIndex = 55;
             this.lblLineTwo.Text = "|";
             this.lblLineTwo.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(458, 256);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 20);
-            this.button1.TabIndex = 56;
-            this.button1.TabStop = false;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
-            
             // 
             // chcVegetarian
             // 
@@ -1610,6 +1597,42 @@
             this.label12.Text = "WEGETARIAŃSKIE";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblClearCheckBox
+            // 
+            this.lblClearCheckBox.AutoSize = true;
+            this.lblClearCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblClearCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblClearCheckBox.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblClearCheckBox.Location = new System.Drawing.Point(505, 460);
+            this.lblClearCheckBox.Name = "lblClearCheckBox";
+            this.lblClearCheckBox.Size = new System.Drawing.Size(101, 13);
+            this.lblClearCheckBox.TabIndex = 57;
+            this.lblClearCheckBox.Text = "wyczyść checkboxy";
+            this.lblClearCheckBox.Visible = false;
+            this.lblClearCheckBox.Click += new System.EventHandler(this.label13_Click_1);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Location = new System.Drawing.Point(613, 459);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(10, 14);
+            this.label16.TabIndex = 59;
+            this.label16.Text = "|";
+            this.label16.Visible = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label17.Location = new System.Drawing.Point(486, 459);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(10, 14);
+            this.label17.TabIndex = 58;
+            this.label17.Text = "|";
+            this.label17.Visible = false;
+            // 
             // Form1
             // 
             this.AcceptButton = this.btnSeek;
@@ -1617,9 +1640,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.ClientSize = new System.Drawing.Size(904, 769);
+            this.Controls.Add(this.lblClearCheckBox);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.chcVegetarian);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblCleanDgGrid);
             this.Controls.Add(this.lblLineTwo);
             this.Controls.Add(this.lblLineOne);
@@ -1875,9 +1900,11 @@
         private System.Windows.Forms.Label lblLineTwo;
         private System.Windows.Forms.ToolStripMenuItem importujCalaBazęDanychToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eksportujCalaBazeDanychToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox chcVegetarian;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblClearCheckBox;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }
 

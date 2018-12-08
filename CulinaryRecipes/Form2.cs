@@ -38,7 +38,9 @@ namespace CulinaryRecipes
         public char stringOfCharacters1 = '[';
         double converted;
         public bool cancel = false;
-
+        public bool[] checkBoxesCancelForm2Ing = new bool[8];
+        public bool[] checkBoxesCancelForm2Meal = new bool[7];
+        public bool seekUnsubscribeForm2;
         #region Funkcje
 
         private void ClearLabelText()
@@ -256,10 +258,25 @@ namespace CulinaryRecipes
                 txtShortDescription.TabStop = true;
             }
         }
+        public void RememberCheckBox(Form1 name)
+        {
+           
+            for (int i = 0; i < checkBoxesCancelForm2Ing.Length; i++)
+            {
+                name.ingridients[i] = Convert.ToInt16(checkBoxesCancelForm2Ing[i]);
+            }
+            for (int i = 0; i < checkBoxesCancelForm2Meal.Length; i++)
+            {
+                name.idMeal[i] = Convert.ToInt16(checkBoxesCancelForm2Meal[i]);
+            }
+
+      
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
             if (titleForm2 == null)
             {
+                
                 btnClose.Text = "Anuluj";
                 // changeColorPbUnblock(panelMain);
                 Color(panelMain, Function.CreateBrightColor());
@@ -335,7 +352,7 @@ namespace CulinaryRecipes
             }
             else
             {
-
+                
                 StopTabAndRuN();
                 linkForm22 = linkForm2;
                 txtName.Text = titleForm2;
@@ -391,6 +408,7 @@ namespace CulinaryRecipes
             AssignmentMainFields();
             if (txtName.ReadOnly == true)
             {
+
                 
                 chcVegetarian.Enabled = true;
                 
@@ -1153,6 +1171,7 @@ namespace CulinaryRecipes
         {
             this.Hide();
             Form1 form1 = new Form1();
+            RememberCheckBox(form1);
             form1.ShowDialog();
         }
 
@@ -1280,7 +1299,12 @@ namespace CulinaryRecipes
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
+            
             Form1 form1 = new Form1();
+            RememberCheckBox(form1);
+            form1.seekUnsubscribe = seekUnsubscribeForm2;
+
+
             form1.counter = counterForm2;
             form1.ShowDialog();
             
@@ -1291,6 +1315,7 @@ namespace CulinaryRecipes
         public int portions;
         public int[] NewingridientsForm2 = new int[8];
         bool[] checkBoxesCancel = new bool[15];
+        string photo;
        
 
         private void AssignmentMainFields()
@@ -1298,7 +1323,7 @@ namespace CulinaryRecipes
             cancel = true;
             title1 = txtName.Text;
             amounts = rtxtAmountsOfFood.Text;
-            grams = gramsForm2;
+            grams = rTxtGrams.Text;
             ingrediet = rTxtIngredients.Text;
             shortDes = txtShortDescription.Text;
             longDes = rtxtDescription.Text;
@@ -1308,6 +1333,7 @@ namespace CulinaryRecipes
             level = lblLevel.Text;
             time = lblTime.Text;
             rating = idRatingForm2;
+
             checkBoxesCancel[0]= chcFish.Checked;
             checkBoxesCancel[1] = chcPasta.Checked;
             checkBoxesCancel[2] = chcFruits.Checked;
@@ -1324,9 +1350,11 @@ namespace CulinaryRecipes
             checkBoxesCancel[12] = chcDrink.Checked;
             checkBoxesCancel[13] = chcPreserves.Checked;
             checkBoxesCancel[14] = chcSalad.Checked;
+            photo=linkForm2;
+
         }
-      
-           
+
+
         public string linkForm22;
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -1334,7 +1362,9 @@ namespace CulinaryRecipes
             if (cancel == true)
             {
 
-
+               linkForm2 = photo;
+                pbLittlePhoto.ImageLocation = linkForm2;
+            
                 chcFish.Checked = checkBoxesCancel[0];
                 chcPasta.Checked = checkBoxesCancel[1];
                 chcFruits.Checked = checkBoxesCancel[2];
@@ -1344,7 +1374,7 @@ namespace CulinaryRecipes
                 chcEggs.Checked = checkBoxesCancel[6];
                 chcVegetarian.Checked = checkBoxesCancel[7];
 
-                        chcSnack.Checked = checkBoxesCancel[8];
+                chcSnack.Checked = checkBoxesCancel[8];
                 chcDinner.Checked = checkBoxesCancel[9];
                 chcSoup.Checked = checkBoxesCancel[10];
                 chcDessert.Checked = checkBoxesCancel[11];
@@ -1379,7 +1409,7 @@ namespace CulinaryRecipes
             btnAdd.Visible = true;
             btnDelete.Visible = true;
             btnModify.Visible = true;
-            pbLittlePhoto.ImageLocation = linkForm22;
+         
 
             cancel = false;
         }
@@ -1456,7 +1486,7 @@ namespace CulinaryRecipes
         private void ChangeFocusNewProject(RichTextBox first, RichTextBox second, KeyEventArgs e)
         {
             int i = first.SelectionStart;
-            if (first.Lines.Length == 1 && e.KeyCode== Keys.PageDown)
+            if (first.Lines.Length <=1 && e.KeyCode== Keys.PageDown)
             {
                 second.Focus();
                 e.Handled = true;
@@ -1484,6 +1514,26 @@ namespace CulinaryRecipes
                 chcVegetarian.Checked = true;
             }
           
+        }
+
+        private void btnConvert_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(btnConvert, "Przelicza przepis na wybraną ilość osób");
+        }
+
+        private void txtShortDescription_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(txtShortDescription,"Streszczenie przepisu");
+        }
+
+        private void rtxtAmountsOfFood_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(rtxtAmountsOfFood, "Ilości składników - tylko i wyłącznie Liczby można wpisywać");
+        }
+
+        private void btnAddRest_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(btnAddRest, "Dodaj - Zdjęcie, czas przygotowania,\n stopień trudności i rodzaj kuchni");
         }
 
         private void rtxtAmountsOfFood_KeyDown(object sender, KeyEventArgs e)
