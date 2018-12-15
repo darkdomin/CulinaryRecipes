@@ -20,8 +20,9 @@ namespace CulinaryRecipes
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
-            if (this.ReadOnly == true) HideCaret(this.Handle);
-            else ShowCaret(this.Handle);
+            if (this.ReadOnly == false) ShowCaret(this.Handle);
+            else HideCaret(this.Handle);
+           
         }
     }
 }

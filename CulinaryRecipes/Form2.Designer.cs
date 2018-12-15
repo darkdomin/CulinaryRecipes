@@ -107,6 +107,8 @@
             this.kopiujToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.wklejToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuńToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
+            this.CMIngridientsEnter = new System.Windows.Forms.ToolStripMenuItem();
             this.pbConvert = new System.Windows.Forms.PictureBox();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.pictureBox27 = new System.Windows.Forms.PictureBox();
@@ -120,6 +122,15 @@
             this.usuńToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.rtxtPortion = new System.Windows.Forms.RichTextBox();
             this.rtxtAmountsOfFood = new System.Windows.Forms.RichTextBox();
+            this.contextAmounts = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cofnijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.wytnijToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.kopiujToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.wklejToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuńToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.CMAmountsEnter = new System.Windows.Forms.ToolStripMenuItem();
             this.pb9 = new System.Windows.Forms.PictureBox();
             this.pb1 = new System.Windows.Forms.PictureBox();
             this.pb2 = new System.Windows.Forms.PictureBox();
@@ -175,13 +186,6 @@
             this.kopiujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wklejToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextAmounts = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cofnijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.wytnijToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.kopiujToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.wklejToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuńToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -195,6 +199,13 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.ContextMenuGrams = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cofnijToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.wytnijToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.wklejToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuńToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
+            this.CMGramsEnter = new System.Windows.Forms.ToolStripMenuItem();
             this.rTxtGrams = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.txtShortDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.rtxtDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
@@ -238,6 +249,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.contextShortDesription.SuspendLayout();
+            this.contextAmounts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
@@ -265,8 +277,8 @@
             this.contextLongDescription.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.contextName.SuspendLayout();
-            this.contextAmounts.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            this.ContextMenuGrams.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1163,49 +1175,64 @@
             this.wytnijToolStripMenuItem1,
             this.kopiujToolStripMenuItem1,
             this.wklejToolStripMenuItem1,
-            this.usuńToolStripMenuItem1});
+            this.usuńToolStripMenuItem1,
+            this.toolStripMenuItem8,
+            this.CMIngridientsEnter});
             this.contextIngridients.Name = "contextMenuStrip2";
-            this.contextIngridients.Size = new System.Drawing.Size(109, 120);
+            this.contextIngridients.Size = new System.Drawing.Size(181, 170);
             // 
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.undoToolStripMenuItem.Text = "Cofnij";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(105, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // wytnijToolStripMenuItem1
             // 
             this.wytnijToolStripMenuItem1.Name = "wytnijToolStripMenuItem1";
-            this.wytnijToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
+            this.wytnijToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.wytnijToolStripMenuItem1.Text = "Wytnij";
             this.wytnijToolStripMenuItem1.Click += new System.EventHandler(this.wytnijToolStripMenuItem1_Click);
             // 
             // kopiujToolStripMenuItem1
             // 
             this.kopiujToolStripMenuItem1.Name = "kopiujToolStripMenuItem1";
-            this.kopiujToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
+            this.kopiujToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.kopiujToolStripMenuItem1.Text = "Kopiuj";
             this.kopiujToolStripMenuItem1.Click += new System.EventHandler(this.kopiujToolStripMenuItem1_Click);
             // 
             // wklejToolStripMenuItem1
             // 
             this.wklejToolStripMenuItem1.Name = "wklejToolStripMenuItem1";
-            this.wklejToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
+            this.wklejToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.wklejToolStripMenuItem1.Text = "Wklej";
             this.wklejToolStripMenuItem1.Click += new System.EventHandler(this.wklejToolStripMenuItem1_Click);
             // 
             // usuńToolStripMenuItem1
             // 
             this.usuńToolStripMenuItem1.Name = "usuńToolStripMenuItem1";
-            this.usuńToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
+            this.usuńToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.usuńToolStripMenuItem1.Text = "Usuń";
             this.usuńToolStripMenuItem1.Click += new System.EventHandler(this.usuńToolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(177, 6);
+            // 
+            // CMIngridientsEnter
+            // 
+            this.CMIngridientsEnter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.CMIngridientsEnter.Name = "CMIngridientsEnter";
+            this.CMIngridientsEnter.Size = new System.Drawing.Size(180, 22);
+            this.CMIngridientsEnter.Text = "ENTER - Wył";
+            this.CMIngridientsEnter.Click += new System.EventHandler(this.CMIngridientsEnter_Click);
             // 
             // pbConvert
             // 
@@ -1323,6 +1350,7 @@
             // 
             this.rtxtAmountsOfFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.rtxtAmountsOfFood.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtxtAmountsOfFood.ContextMenuStrip = this.contextAmounts;
             this.rtxtAmountsOfFood.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtxtAmountsOfFood.ForeColor = System.Drawing.Color.White;
             this.rtxtAmountsOfFood.Location = new System.Drawing.Point(13, 74);
@@ -1332,8 +1360,76 @@
             this.rtxtAmountsOfFood.Size = new System.Drawing.Size(38, 683);
             this.rtxtAmountsOfFood.TabIndex = 2;
             this.rtxtAmountsOfFood.Text = "";
+            this.rtxtAmountsOfFood.SelectionChanged += new System.EventHandler(this.rtxtAmountsOfFood_SelectionChanged);
             this.rtxtAmountsOfFood.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtAmountsOfFood_KeyDown);
             this.rtxtAmountsOfFood.MouseEnter += new System.EventHandler(this.rtxtAmountsOfFood_MouseEnter);
+            // 
+            // contextAmounts
+            // 
+            this.contextAmounts.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cofnijToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.wytnijToolStripMenuItem2,
+            this.kopiujToolStripMenuItem2,
+            this.wklejToolStripMenuItem2,
+            this.usuńToolStripMenuItem2,
+            this.toolStripMenuItem1,
+            this.CMAmountsEnter});
+            this.contextAmounts.Name = "contextMenuStrip3";
+            this.contextAmounts.Size = new System.Drawing.Size(144, 148);
+            // 
+            // cofnijToolStripMenuItem
+            // 
+            this.cofnijToolStripMenuItem.Name = "cofnijToolStripMenuItem";
+            this.cofnijToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.cofnijToolStripMenuItem.Text = "Cofnij";
+            this.cofnijToolStripMenuItem.Click += new System.EventHandler(this.cofnijToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(140, 6);
+            // 
+            // wytnijToolStripMenuItem2
+            // 
+            this.wytnijToolStripMenuItem2.Name = "wytnijToolStripMenuItem2";
+            this.wytnijToolStripMenuItem2.Size = new System.Drawing.Size(143, 22);
+            this.wytnijToolStripMenuItem2.Text = "Wytnij";
+            // 
+            // kopiujToolStripMenuItem2
+            // 
+            this.kopiujToolStripMenuItem2.Name = "kopiujToolStripMenuItem2";
+            this.kopiujToolStripMenuItem2.Size = new System.Drawing.Size(143, 22);
+            this.kopiujToolStripMenuItem2.Text = "Kopiuj";
+            this.kopiujToolStripMenuItem2.Click += new System.EventHandler(this.kopiujToolStripMenuItem2_Click);
+            // 
+            // wklejToolStripMenuItem2
+            // 
+            this.wklejToolStripMenuItem2.Name = "wklejToolStripMenuItem2";
+            this.wklejToolStripMenuItem2.Size = new System.Drawing.Size(143, 22);
+            this.wklejToolStripMenuItem2.Text = "Wklej";
+            this.wklejToolStripMenuItem2.Click += new System.EventHandler(this.wklejToolStripMenuItem2_Click);
+            // 
+            // usuńToolStripMenuItem2
+            // 
+            this.usuńToolStripMenuItem2.Name = "usuńToolStripMenuItem2";
+            this.usuńToolStripMenuItem2.Size = new System.Drawing.Size(143, 22);
+            this.usuńToolStripMenuItem2.Text = "Usuń";
+            this.usuńToolStripMenuItem2.Click += new System.EventHandler(this.usuńToolStripMenuItem2_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(140, 6);
+            // 
+            // CMAmountsEnter
+            // 
+            this.CMAmountsEnter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.CMAmountsEnter.ForeColor = System.Drawing.Color.Red;
+            this.CMAmountsEnter.Name = "CMAmountsEnter";
+            this.CMAmountsEnter.Size = new System.Drawing.Size(143, 22);
+            this.CMAmountsEnter.Text = "ENTER - Wył";
+            this.CMAmountsEnter.Click += new System.EventHandler(this.eNTERToolStripMenuItem_Click);
             // 
             // pb9
             // 
@@ -1863,57 +1959,6 @@
             this.usuńToolStripMenuItem.Text = "Usuń";
             this.usuńToolStripMenuItem.Click += new System.EventHandler(this.usuńToolStripMenuItem_Click);
             // 
-            // contextAmounts
-            // 
-            this.contextAmounts.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cofnijToolStripMenuItem,
-            this.toolStripMenuItem2,
-            this.wytnijToolStripMenuItem2,
-            this.kopiujToolStripMenuItem2,
-            this.wklejToolStripMenuItem2,
-            this.usuńToolStripMenuItem2});
-            this.contextAmounts.Name = "contextMenuStrip3";
-            this.contextAmounts.Size = new System.Drawing.Size(109, 120);
-            // 
-            // cofnijToolStripMenuItem
-            // 
-            this.cofnijToolStripMenuItem.Name = "cofnijToolStripMenuItem";
-            this.cofnijToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
-            this.cofnijToolStripMenuItem.Text = "Cofnij";
-            this.cofnijToolStripMenuItem.Click += new System.EventHandler(this.cofnijToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(105, 6);
-            // 
-            // wytnijToolStripMenuItem2
-            // 
-            this.wytnijToolStripMenuItem2.Name = "wytnijToolStripMenuItem2";
-            this.wytnijToolStripMenuItem2.Size = new System.Drawing.Size(108, 22);
-            this.wytnijToolStripMenuItem2.Text = "Wytnij";
-            // 
-            // kopiujToolStripMenuItem2
-            // 
-            this.kopiujToolStripMenuItem2.Name = "kopiujToolStripMenuItem2";
-            this.kopiujToolStripMenuItem2.Size = new System.Drawing.Size(108, 22);
-            this.kopiujToolStripMenuItem2.Text = "Kopiuj";
-            this.kopiujToolStripMenuItem2.Click += new System.EventHandler(this.kopiujToolStripMenuItem2_Click);
-            // 
-            // wklejToolStripMenuItem2
-            // 
-            this.wklejToolStripMenuItem2.Name = "wklejToolStripMenuItem2";
-            this.wklejToolStripMenuItem2.Size = new System.Drawing.Size(108, 22);
-            this.wklejToolStripMenuItem2.Text = "Wklej";
-            this.wklejToolStripMenuItem2.Click += new System.EventHandler(this.wklejToolStripMenuItem2_Click);
-            // 
-            // usuńToolStripMenuItem2
-            // 
-            this.usuńToolStripMenuItem2.Name = "usuńToolStripMenuItem2";
-            this.usuńToolStripMenuItem2.Size = new System.Drawing.Size(108, 22);
-            this.usuńToolStripMenuItem2.Text = "Usuń";
-            this.usuńToolStripMenuItem2.Click += new System.EventHandler(this.usuńToolStripMenuItem2_Click);
-            // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
@@ -2040,17 +2085,66 @@
             // 
             this.toolTip1.AutomaticDelay = 900;
             // 
+            // ContextMenuGrams
+            // 
+            this.ContextMenuGrams.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ContextMenuGrams.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cofnijToolStripMenuItem3,
+            this.wytnijToolStripMenuItem5,
+            this.wklejToolStripMenuItem5,
+            this.usuńToolStripMenuItem5,
+            this.toolStripMenuItem7,
+            this.CMGramsEnter});
+            this.ContextMenuGrams.Name = "Context";
+            this.ContextMenuGrams.Size = new System.Drawing.Size(144, 120);
+            // 
+            // cofnijToolStripMenuItem3
+            // 
+            this.cofnijToolStripMenuItem3.Name = "cofnijToolStripMenuItem3";
+            this.cofnijToolStripMenuItem3.Size = new System.Drawing.Size(143, 22);
+            this.cofnijToolStripMenuItem3.Text = "Cofnij";
+            // 
+            // wytnijToolStripMenuItem5
+            // 
+            this.wytnijToolStripMenuItem5.Name = "wytnijToolStripMenuItem5";
+            this.wytnijToolStripMenuItem5.Size = new System.Drawing.Size(143, 22);
+            this.wytnijToolStripMenuItem5.Text = "Wytnij";
+            // 
+            // wklejToolStripMenuItem5
+            // 
+            this.wklejToolStripMenuItem5.Name = "wklejToolStripMenuItem5";
+            this.wklejToolStripMenuItem5.Size = new System.Drawing.Size(143, 22);
+            this.wklejToolStripMenuItem5.Text = "Wklej";
+            // 
+            // usuńToolStripMenuItem5
+            // 
+            this.usuńToolStripMenuItem5.Name = "usuńToolStripMenuItem5";
+            this.usuńToolStripMenuItem5.Size = new System.Drawing.Size(143, 22);
+            this.usuńToolStripMenuItem5.Text = "Usuń";
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(140, 6);
+            // 
+            // CMGramsEnter
+            // 
+            this.CMGramsEnter.Name = "CMGramsEnter";
+            this.CMGramsEnter.Size = new System.Drawing.Size(143, 22);
+            this.CMGramsEnter.Text = "ENTER - Wył";
+            this.CMGramsEnter.Click += new System.EventHandler(this.CMGramsEnter_Click);
+            // 
             // rTxtGrams
             // 
             this.rTxtGrams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.rTxtGrams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.rTxtGrams.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rTxtGrams.ContextMenuStrip = this.contextIngridients;
+            this.rTxtGrams.ContextMenuStrip = this.ContextMenuGrams;
             this.rTxtGrams.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rTxtGrams.ForeColor = System.Drawing.Color.White;
             this.rTxtGrams.Location = new System.Drawing.Point(58, 74);
-            this.rTxtGrams.MaxLength = 20;
+            this.rTxtGrams.MaxLength = 300;
             this.rTxtGrams.Name = "rTxtGrams";
             this.rTxtGrams.ReadOnly = true;
             this.rTxtGrams.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
@@ -2058,6 +2152,7 @@
             this.rTxtGrams.TabIndex = 3;
             this.rTxtGrams.Text = "";
             this.rTxtGrams.WordWrap = false;
+            this.rTxtGrams.SelectionChanged += new System.EventHandler(this.rTxtGrams_SelectionChanged);
             this.rTxtGrams.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtGrams_KeyDown);
             // 
             // txtShortDescription
@@ -2109,6 +2204,7 @@
             this.rTxtIngredients.TabIndex = 4;
             this.rTxtIngredients.Text = "";
             this.rTxtIngredients.WordWrap = false;
+            this.rTxtIngredients.SelectionChanged += new System.EventHandler(this.rTxtIngredients_SelectionChanged);
             this.rTxtIngredients.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtIngredients_KeyDown);
             // 
             // txtName
@@ -2187,6 +2283,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.contextShortDesription.ResumeLayout(false);
+            this.contextAmounts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
@@ -2214,8 +2311,8 @@
             this.contextLongDescription.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.contextName.ResumeLayout(false);
-            this.contextAmounts.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
+            this.ContextMenuGrams.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2392,5 +2489,16 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.CheckBox chcVegetarian;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem CMAmountsEnter;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuGrams;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
+        private System.Windows.Forms.ToolStripMenuItem CMIngridientsEnter;
+        private System.Windows.Forms.ToolStripMenuItem cofnijToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem wytnijToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem wklejToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripMenuItem CMGramsEnter;
     }
 }
