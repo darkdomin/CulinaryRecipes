@@ -1400,8 +1400,9 @@ namespace CulinaryRecipes
 
         private void NewForm()
         {
+            bool add = true;
             Form2 NewForm = new Form2();
-            NewForm.addRecipeForm2 = true;
+            NewForm.addRecipeForm2 = add;
             filldgGrid();
             this.Visible = false;
 

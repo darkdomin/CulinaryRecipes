@@ -46,6 +46,9 @@ namespace CulinaryRecipes
         public string rating3 { get; set; }
 
         public bool cancel3 { get; set; }
+
+        public bool addRecipeForm3 { get; set; }
+
         string add = "add";
 
         private void button2_Click(object sender, EventArgs e)
@@ -308,6 +311,7 @@ namespace CulinaryRecipes
             model.executionTimeForm2 = executionTimeForm3;
             model.unlockFieldsForm2 = unlockFieldsForm3;
             model.linkForm22 = LinkForm23;
+            model.addRecipeForm2 = addRecipeForm3;
             #region MealAdd
              model.IdMealForm2[0] = IdMealForm3[0];
              model.IdMealForm2[1] = IdMealForm3[1];
