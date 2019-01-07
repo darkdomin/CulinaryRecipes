@@ -19,7 +19,7 @@ namespace CulinaryRecipes
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            Function.StartPositionFromZero(txt);
+            Function.UncheckText(txt);
             if (txt.SelectedText.Length >= 0) txt.SelectionStart = 0;
         }
     }

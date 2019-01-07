@@ -153,7 +153,7 @@ namespace CulinaryRecipes
             }
         }
 
-        public static void StartPositionFromZero(TextBox name)
+        public static void UncheckText(TextBox name)
         {
             if (name.SelectedText.Length >= 0) name.SelectionStart = 0;
         }
@@ -174,6 +174,12 @@ namespace CulinaryRecipes
                 i++;
             }
         }
-      
+        //Podmienia funkcje prawego przycisku
+        public static void ChangeContextMenu(RichTextBox nameRich, ContextMenuStrip copyTool, ContextMenuStrip nameTool)
+        {
+            if (nameRich.ReadOnly == false) nameRich.ContextMenuStrip = copyTool;
+            else nameRich.ContextMenuStrip = nameTool;
+        }
+
     }
 }

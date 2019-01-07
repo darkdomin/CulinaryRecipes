@@ -13,6 +13,7 @@ namespace CulinaryRecipes
         [DllImport("user32.dll")]
         static extern bool HideCaret(IntPtr hWnd);
         [DllImport("user32.dll")] static extern bool ShowCaret(IntPtr hWnd);
+        
         public ReadOnlyRichTextBox()
         {
             this.ReadOnly = true;
@@ -24,5 +25,6 @@ namespace CulinaryRecipes
             else HideCaret(this.Handle);
            
         }
+
     }
 }

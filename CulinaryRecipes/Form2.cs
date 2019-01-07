@@ -43,11 +43,13 @@ namespace CulinaryRecipes
         public bool[] checkBoxesCancelForm2Ing = new bool[8];
         public bool[] checkBoxesCancelForm2Meal = new bool[7];
         public bool seekUnsubscribeForm2;
-        public bool addRecipeForm2 ;
-  
+        public bool addRecipeForm2;
+        public bool addRecipe;
+
 
         #region Funkcje
 
+        //Czysci Labele i wstawia myślniki
         private void ClearLabelText()
         {
             lblLevel.Text = dash;
@@ -73,6 +75,7 @@ namespace CulinaryRecipes
             return rtxtDescription.Text;
         }
 
+
         // Funkcja zbiorcza dla changeColorPbblock, changeColorPbUnblock
         private void Color(Control set, Color color)
         {
@@ -92,6 +95,7 @@ namespace CulinaryRecipes
             var s = from p in Rating.categoryRating
                     where p.Id == id
                     select p;
+
             foreach (var c in s)
             {
                 if (variableName == c.Id.ToString() && id == 1)
@@ -113,6 +117,7 @@ namespace CulinaryRecipes
             }
         }
 
+        //Ukrywa gwiazdki
         private void HideStars()
         {
             pbStar1.Visible = false;
@@ -123,11 +128,12 @@ namespace CulinaryRecipes
         //wstawia znak jezeli textbox jest pusty
         private string IfTextBoxIsEmpty(string namebox)
         {
-            if (namebox == string.Empty || namebox == "" || namebox == "  ") namebox = stringOfCharacters + stringOfCharacters1.ToString();
+            if (string.IsNullOrWhiteSpace(namebox)) namebox = stringOfCharacters + stringOfCharacters1.ToString();//namebox ==|| namebox == "" || namebox == "  "
             else { }
             return namebox;
         }
 
+        //sprawdza czy checkbox jest zaznaczony (1) czy nie (0)
         private void CheckingCheckbox(CheckBox name, int number, int[] snc)
         {
             if (name.Checked) snc[number - 1] = 1;
@@ -143,9 +149,7 @@ namespace CulinaryRecipes
 
             for (int i = 0; i < name.Lines.Length; i++)
             {
-
-                if (name.Lines[i] == "" || name.Lines[i] == " " || name.Lines[i] == "  " || name.Lines[i] == "   " || name.Lines[i] == "    " || name.Lines[i] == null) continue;
-
+                if (string.IsNullOrWhiteSpace(name.Lines[i])) continue;//name.Lines[i] == "" || name.Lines[i] == " " || name.Lines[i] == "  " || name.Lines[i] == "   " || name.Lines[i] == "    " || name.Lines[i] == null
                 else if (name.Lines[i] == "0")
                 {
                     name.Lines[i] = " ";
@@ -153,12 +157,13 @@ namespace CulinaryRecipes
 
                     string[] kopialiczba = new string[name.Lines.Length];
                     kopialiczba = name.Lines;
-                    //check = true;
+
                     for (int j = 0; j < kopialiczba.Length; j++)
                     {
                         if (kopialiczba[j] == "0")
                             kopialiczba[j] = "";
                     }
+
                     name.Lines = kopialiczba;
                 }
                 else if (double.TryParse(name.Lines[i], out liczba[i])) { }
@@ -168,6 +173,7 @@ namespace CulinaryRecipes
                     string[] kopialiczba = new string[name.Lines.Length];
                     kopialiczba = name.Lines;
                     check = true;
+
                     for (int j = 0; j < kopialiczba.Length; j++)
                     {
                         if (!(double.TryParse(name.Lines[j], out liczba[j]))) kopialiczba[j] = "";
@@ -175,23 +181,6 @@ namespace CulinaryRecipes
                         name.Lines = kopialiczba;
                     }
                 }
-
-                //    string wzorzec = @"(\d+)";
-                //    string wzorzec2 = @"";
-                //var MyRegex = new Regex(wzorzec);
-                //    var MyRegex2 = new Regex(wzorzec2);
-                //if (MyRegex.IsMatch(txtAmountsOfFood.Lines[i])||MyRegex2.IsMatch( txtAmountsOfFood.Lines[i]))
-                //{ }
-                //else MessageBox.Show("W Rubryce składniki i Porcje można wpisywać tylko liczby! ", "Uwaga!!!");
-                //}
-            }
-        }
-
-        private void zabez()
-        {
-            if (Convert.ToDouble(rtxtPortion.Text) < 1)
-            {
-                rtxtPortion.Text = "";
             }
         }
 
@@ -204,26 +193,32 @@ namespace CulinaryRecipes
             {
                 table[j] = name.Lines[j].Replace(".", ",");
             }
+
             name.Lines = table;
             return name.Text;
         }
+
         //dodaje znak w pustym polu (zapobiegając przesuwaniu się do góry) stringOfCharacters
         private string[] AddStamp(string[] name)
         {
             string[] table = new string[name.Length];
             table = name;
+
             for (int i = 0; i < name.Length; i++)
             {
-                if (name[i] == "" || name[i] == " ") table[i] = stringOfCharacters + stringOfCharacters1.ToString();
+                if (string.IsNullOrWhiteSpace(name[i])) table[i] = stringOfCharacters + stringOfCharacters1.ToString();// == "" || name[i] == " "
                 else { continue; }
             }
+
             return name = table;
         }
+
         //usuwa dodatkowe znaki (stringOfCharacters) po dodaniu czy modyfikacji
         private string SecuringAmountOffood3(RichTextBox name)
         {
             string[] table = new string[name.Lines.Length];
             table = name.Lines;
+
             for (int i = 0; i < name.Lines.Length; i++)
             {
                 if (table[i] == stringOfCharacters + stringOfCharacters1.ToString())
@@ -231,6 +226,7 @@ namespace CulinaryRecipes
                     table[i] = "";
                 }
             }
+
             name.Lines = table;
             return name.Text;
         }
@@ -239,30 +235,10 @@ namespace CulinaryRecipes
         public Form2()
         {
             InitializeComponent();
+         
         }
-        public void StopTabAndRuN()
-        {
-            if (txtName.ReadOnly == true)
-            {
-                txtName.TabStop = false;
-                rTxtIngredients.TabStop = false;
-                rTxtGrams.TabStop = false;
-                rtxtAmountsOfFood.TabStop = false;
-                rtxtDescription.TabStop = false;
-                rtxtPortion.TabStop = false;
-                txtShortDescription.TabStop = false;
-            }
-            else
-            {
-                txtName.TabStop = true;
-                rTxtIngredients.TabStop = true;
-                rTxtGrams.TabStop = true;
-                rtxtAmountsOfFood.TabStop = true;
-                rtxtDescription.TabStop = true;
-                rtxtPortion.TabStop = true;
-                txtShortDescription.TabStop = true;
-            }
-        }
+
+        //Funkcja pamięciowa (chceckboxy) będą zaznaczone jak zamknie się formę 2 a otworzy 1
         public void RememberCheckBox(Form1 name)
         {
 
@@ -270,53 +246,113 @@ namespace CulinaryRecipes
             {
                 name.ingridients[i] = Convert.ToInt16(checkBoxesCancelForm2Ing[i]);
             }
+
             for (int i = 0; i < checkBoxesCancelForm2Meal.Length; i++)
             {
                 name.idMeal[i] = Convert.ToInt16(checkBoxesCancelForm2Meal[i]);
             }
 
+        }
+        private void ChangeColorToRed()
+        {
+            CMAmountsEnter.ForeColor = System.Drawing.Color.Red;
+            CMGramsEnter.ForeColor = System.Drawing.Color.Red;
+            CMIngridientsEnter.ForeColor = System.Drawing.Color.Red;
+        }
+
+        private void ChangeColorToGreen()
+        {
+            CMAmountsEnter.ForeColor = System.Drawing.Color.Green;
+            CMGramsEnter.ForeColor = System.Drawing.Color.Green;
+            CMIngridientsEnter.ForeColor = System.Drawing.Color.Green;
+        }
+
+        private void ChangeNameEnterInMeunuStrip()
+        {
+            if (addRecipe == true)
+            {
+                CMAmountsEnter.Text = enterOff;
+                CMGramsEnter.Text = enterOff;
+                CMIngridientsEnter.Text = enterOff;
+
+                ChangeColorToRed();
+            }
+            else
+            {
+                CMAmountsEnter.Text = enterOn;
+                CMGramsEnter.Text = enterOn;
+                CMIngridientsEnter.Text = enterOn;
+
+                ChangeColorToGreen();
+            }
 
         }
+
         private void Form2_Load(object sender, EventArgs e)
         {
+
             if (titleForm2 == null)
             {
+                ContextMenuBlock();
+                ChangeNameEnterInMeunuStrip();
 
-              
-                
-                btnClose.Text = "Anuluj";
-                // changeColorPbUnblock(panelMain);
-                Color(panelMain, Function.CreateBrightColor());
-                btnDelete.Visible = false;
-                btnModify.Visible = false;
                 Function.UnblockingFields(panelMain);
                 Function.ColorAreaAfterUnblocking(panelMain);
                 Function.UnblockCheckbox(panelLeft);
                 Function.UnblockCheckbox(panelRight);
-                clear = add;
+
+                Color(panelMain, Function.CreateBrightColor());
+
+                btnClose.Text = "Anuluj";
+
+                btnDelete.Visible = false;
+                btnModify.Visible = false;
                 btnAddRest.Visible = true;
                 lblTime.Visible = true;
-                chcVegetarian.Enabled = true;
+
+                clear = add;
                 addRecipeForm2 = true;
+
+                chcVegetarian.Enabled = true;
             }
             else if (unlockFieldsForm2 == "1" && txtName.ReadOnly == true)
             {
-                StopTabAndRuN();
-                chcVegetarian.Enabled = true;
-                if (ingridientsForm2[7] == 1) chcVegetarian.Checked = true;
-                rTxtGrams.Text = gramsForm2;
-                //changeColorPbUnblock(panelMain);
-                Color(panelMain, Function.CreateBrightColor());
+                ContextMenuBlock();
+                ChangeNameEnterInMeunuStrip();
+
+                Function.UncheckText(txtName);
                 Function.ColorAreaAfterUnblocking(panelMain);
                 Function.UnblockingFields(panelMain);
                 Function.UnblockCheckbox(panelLeft);
                 Function.UnblockCheckbox(panelRight);
+
+                Function.DisplaySelectionRightPanel(panelRight, IdMealForm2);
+                Function.DisplaySelectionRightPanel(panelLeft, ingridientsForm2);
+
+                Color(panelMain, Function.CreateBrightColor());
+
                 txtName.Text = titleForm2;
-                Function.StartPositionFromZero(txtName);
+                rtxtPortion.Text = numberOfPortionsForm2.ToString();
                 rtxtAmountsOfFood.Text = amountsOfIngredientsForm2;
+                rTxtGrams.Text = gramsForm2;
                 rTxtIngredients.Text = ingredientForm2;
                 txtShortDescription.Text = ShortDescriptionForm2;
                 rtxtDescription.Text = instructionForm2;
+
+                lblCuisine.Text = listOfCuisinesForm2;
+                lblLevel.Text = difficultLevelForm2;
+                lblTime.Text = executionTimeForm2;
+
+                ShowStar(1, pbStar1, idRatingForm2);
+                ShowStar(2, pbStar2, idRatingForm2);
+                ShowStar(3, pbStar3, idRatingForm2);
+
+                if (linkForm2 == dash) pbLittlePhoto.Image = Resources.przepisy;
+                else pbLittlePhoto.ImageLocation = linkForm2;
+
+                chcVegetarian.Enabled = true;
+                if (ingridientsForm2[7] == 1) chcVegetarian.Checked = true;
+
                 if (clear == add)
                 {
                     btnAddRest.Text = addRest;
@@ -341,32 +377,19 @@ namespace CulinaryRecipes
                     btnDelete.Visible = true;
                     btnCancel.Visible = false;
                 }
-
-                if (linkForm2 == dash) pbLittlePhoto.Image = Resources.przepisy;
-                else pbLittlePhoto.ImageLocation = linkForm2;
-
-                rtxtPortion.Text = numberOfPortionsForm2.ToString();
-                lblCuisine.Text = listOfCuisinesForm2;
-
-                ShowStar(1, pbStar1, idRatingForm2);
-                ShowStar(2, pbStar2, idRatingForm2);
-                ShowStar(3, pbStar3, idRatingForm2);
-
-                lblLevel.Text = difficultLevelForm2;
-                lblTime.Text = executionTimeForm2;
-
-                Function.DisplaySelectionRightPanel(panelRight, IdMealForm2);
-                Function.DisplaySelectionRightPanel(panelLeft, ingridientsForm2);
             }
             else
             {
+                ChangeNameEnterInMeunuStrip();
 
-                StopTabAndRuN();
-                linkForm22 = linkForm2;
+
+                Function.DisplaySelectionRightPanel(panelRight, IdMealForm2);
+                Function.DisplaySelectionRightPanel(panelLeft, ingridientsForm2);
+
                 txtName.Text = titleForm2;
+                Function.UncheckText(txtName);
 
-                Function.StartPositionFromZero(txtName);
-                if (txtName.SelectedText.Length >= 0) txtName.SelectionStart = 0;
+                rtxtPortion.Text = numberOfPortionsForm2.ToString();
 
                 rtxtAmountsOfFood.Text = amountsOfIngredientsForm2;
                 int i = 0;
@@ -378,58 +401,61 @@ namespace CulinaryRecipes
                     }
                     i++;
                 }
+
                 rTxtGrams.Text = gramsForm2;
                 rTxtIngredients.Text = ingredientForm2;
                 txtShortDescription.Text = ShortDescriptionForm2;
                 rtxtDescription.Text = instructionForm2;
-                Interval();
+
                 if (linkForm2 == dash) pbLittlePhoto.Image = Resources.przepisy;
                 else pbLittlePhoto.ImageLocation = linkForm2;
-                rtxtPortion.Text = numberOfPortionsForm2.ToString();
-                lblCuisine.Text = listOfCuisinesForm2;
 
+                lblCuisine.Text = listOfCuisinesForm2;
                 lblLevel.Text = difficultLevelForm2;
                 lblTime.Text = executionTimeForm2;
-
-                Function.DisplaySelectionRightPanel(panelRight, IdMealForm2);
-                Function.DisplaySelectionRightPanel(panelLeft, ingridientsForm2);
-                if (ingridientsForm2[7] == 1) chcVegetarian.Checked = true;
-                else chcVegetarian.Checked = false;
+                linkForm22 = linkForm2;
 
                 ShowStar(1, pbStar1, idRatingForm2);
                 ShowStar(2, pbStar2, idRatingForm2);
                 ShowStar(3, pbStar3, idRatingForm2);
+
+                if (ingridientsForm2[7] == 1) chcVegetarian.Checked = true;
+                else chcVegetarian.Checked = false;
+
                 SecuringBlock();
+                Interval();
             }
         }
 
+
         public RecipesBase Model(RecipesBase model)
         {
-            //   RecipesBase model = new RecipesBase();
             if (rtxtPortion.Text == "") model.NumberPortions = 1;
             else model.NumberPortions = int.Parse(rtxtPortion.Text);
             return model;
         }
 
+        //Dodaj do bazy danych
         private void AddRecipes()
         {
             btnCancel.Visible = true;
             AssignmentMainFields();
+
             if (txtName.ReadOnly == true)
             {
-
-
                 chcVegetarian.Enabled = true;
 
                 if (pbStar1.Visible == true)
                 {
                     HideStars();
                 }
+
                 Function.UnblockCheckbox(panelLeft);
                 Function.UnblockCheckbox(panelRight);
                 Function.UnblockingFields(panelMain);
                 Function.ColorAreaAfterUnblocking(panelMain);
                 Function.ClearFields(panelMain);
+
                 WinForm.UncheckedCheckBox(panelRight);
                 WinForm.UncheckedCheckBox(panelLeft);
 
@@ -443,25 +469,31 @@ namespace CulinaryRecipes
                 btnDelete.Visible = false;
 
                 Color(panelMain, Function.CreateBrightColor());
+
                 linkForm22 = linkForm2;
-                addRecipeForm2 = true;
+                addRecipeForm2 = false;
+                addRecipe = true;
             }
             else
             {
+                numberLine = 0;
                 ConvertAmountsOfFood();
                 ChangeDotToComma(rtxtAmountsOfFood);
                 ChangeDotToComma(rtxtPortion);
                 SecuringAmountOffood(rtxtAmountsOfFood);
                 SecuringAmountOffood(rtxtPortion);
+
                 if (Function.CheckName(txtName) == false)
                 {
                     if (check == false)
                     {
                         txtName.Text = txtName.Text.ToUpper();
+
                         if (txtName.Text != "")
                         {
                             AddStampBlock();
                             IfTextBoxIsEmptyBlock();
+
                             try
                             {
                                 RecipesBase model = new RecipesBase();
@@ -479,8 +511,14 @@ namespace CulinaryRecipes
                                 model.CategoryRating = idRatingForm2;
                                 model.CategoryDifficultLevel = lblLevel.Text;
                                 model.CategoryPreparationTime = lblTime.Text;
-                                if (linkForm2 == null || linkForm2 == "") linkForm2 = stringOfCharacters.ToString();
-                                else model.PhotoLinkLocation = linkForm2;
+                                if (string.IsNullOrWhiteSpace(linkForm2))
+                                {
+                                    linkForm2 = stringOfCharacters.ToString();
+                                }
+                                else
+                                {
+                                    model.PhotoLinkLocation = linkForm2;
+                                }
 
                                 #region MealAdd
                                 model.SnackMeal = IdMealForm2[0];
@@ -503,11 +541,18 @@ namespace CulinaryRecipes
                                 #endregion
 
                                 RecipesBase.add(model);
+
                                 chcVegetarian.Enabled = false;
-                                rtxtPortion.Text = 1.ToString();
+
+                                if (string.IsNullOrEmpty(rtxtPortion.Text))
+                                {
+                                    rtxtPortion.Text = 1.ToString();
+                                }
+
                                 titleForm2 = txtName.Text;
                                 idDgGridForm2 = model.Id;
                                 SecuringBlock();
+
                                 MessageBox.Show("Dodano przedmiot");
 
                                 btnAddRest.Visible = false;
@@ -521,10 +566,12 @@ namespace CulinaryRecipes
                                 ShowStar(1, pbStar1, idRatingForm2);
                                 ShowStar(2, pbStar2, idRatingForm2);
                                 ShowStar(3, pbStar3, idRatingForm2);
+
                                 btnCancel.Visible = false;
                                 clear = "0";
                                 Color(panelMain, Function.CreateColorBlockingFields());
-                                addRecipeForm2 = false;
+                                addRecipeForm2 = true;
+                                addRecipe = false;
                             }
                             catch (Exception ex)
                             {
@@ -532,6 +579,7 @@ namespace CulinaryRecipes
                                     MessageBox.Show(ex.Message);
                                 }
                             }
+
                             btnModify.Visible = true;
                             btnDelete.Visible = true;
                         }
@@ -552,21 +600,45 @@ namespace CulinaryRecipes
 
         #region Przelicz
 
+        //konwertuje na liczby
         public void ConvertAmountsOfFood()
         {
             string[] tab = new string[rtxtAmountsOfFood.Lines.Length];
             tab = rtxtAmountsOfFood.Lines;
 
-            for (int i = 0; i < rtxtAmountsOfFood.Lines.Length; i++)
+            for (int i = 0; i < tab.Length; i++)
             {
-                if (tab[i] == "1/5") tab[i] = "0,2";
-                if (tab[i] == "1/4") tab[i] = "0,25";
-                if (tab[i] == "1/3") tab[i] = "0,33";
-                if (tab[i] == "1/2") tab[i] = "0,5";
+                tab[i] = tab[i].Trim();
             }
+
+            for (int i = 0; i < tab.Length; i++)
+            {
+                if (tab[i] == "1/1")
+                {
+                    tab[i] = "1";
+                }
+                else if (tab[i] == "1/5")
+                {
+                    tab[i] = "0,2";
+                }
+                else if (tab[i] == "1/4")
+                {
+                    tab[i] = "0,25";
+                }
+                else if (tab[i] == "1/3")
+                {
+                    tab[i] = "0,33";
+                }
+                else if (tab[i] == "1/2")
+                {
+                    tab[i] = "0,5";
+                }
+            }
+
             rtxtAmountsOfFood.Lines = tab;
         }
 
+        //funkcja przeliczająca ilości porcji
         double convertNumbers;
         string convertportions = "Przelicz Porcje";
         string convert = "Przelicz";
@@ -591,7 +663,6 @@ namespace CulinaryRecipes
                     convertNumbers = Convert.ToDouble(rtxtPortion.Text);
                     btnConvert.Text = convert;
                 }
-
                 else
                 {
                     if (rtxtAmountsOfFood.ReadOnly == true && rtxtPortion.ReadOnly == false)
@@ -605,7 +676,6 @@ namespace CulinaryRecipes
                         if (rtxtPortion.Text == "")
                         {
                             rtxtPortion.BackColor = Function.CreateBrightColor();
-
                             rtxtPortion.ReadOnly = false;
                         }
                         else
@@ -692,12 +762,12 @@ namespace CulinaryRecipes
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rTxtIngredients.Undo();
+                rTxtIngredients.Undo(); 
         }
 
         private void wytnijToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            rTxtIngredients.Cut();
+        { 
+                rTxtIngredients.Cut(); 
         }
 
         private void kopiujToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -735,30 +805,29 @@ namespace CulinaryRecipes
             rtxtAmountsOfFood.SelectedText = "";
         }
 
-        //string[] tekst = new string[9];
-        //int j = 1;
-       
-
-        private void Separator(RichTextBox name,int quantityStar)
+        private void Separator(RichTextBox name, int quantityStar)
         {
             string tekst = "           *";
-            string prefix =  "           " ;
+            string prefix = "           ";
             int i = name.SelectionStart;
 
-           
             for (int j = 0; j < quantityStar; j++)
             {
-                name.Text = name.Text.Insert(i,prefix+ tekst + "      ");
+                name.Text = name.Text.Insert(i, prefix + tekst + "      ");
             }
 
             name.Text = name.Text.Insert(i, "\n");
             name.SelectionStart = name.TextLength;
+
+            i = name.SelectionStart;
+            name.Text = name.Text.Insert(i, "\n " + " " + interval + " ");
+            name.SelectionStart = 4 + i;
         }
-   
+
 
         private void separatorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Separator(rtxtDescription,5);
+            Separator(rtxtDescription, 5);
         }
         private void cofnijToolStripMenuItem2_Click(object sender, EventArgs e)
         {
@@ -777,7 +846,16 @@ namespace CulinaryRecipes
 
         private void wklejToolStripMenuItem4_Click(object sender, EventArgs e)
         {
+
             rtxtDescription.Paste();
+            // ta funkcję zostawić 
+
+            //if (Clipboard.ContainsText(TextDataFormat.Text))
+            //{
+            //    string clipboardText = Clipboard.GetText(TextDataFormat.Text); 
+            //    txtName.Text = clipboardText.Length.ToString();
+            //}
+
         }
 
         private void usuńToolStripMenuItem4_Click(object sender, EventArgs e)
@@ -785,24 +863,46 @@ namespace CulinaryRecipes
             rtxtDescription.SelectedText = "";
         }
 
-        private void włToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Punktor(KeyEventArgs e)
         {
             char sign = '•';
 
             int i = rtxtDescription.SelectionStart;
-            rtxtDescription.Text = rtxtDescription.Text.Insert(i, "\n " + " " + sign + "     ");
-            //e.Handled = true;
+            rtxtDescription.Text = rtxtDescription.Text.Insert(i, Environment.NewLine + " " + sign + "       ");
+            e.Handled = true;
             rtxtDescription.SelectionStart = 6 + i;
         }
 
+        private void włToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (cmList.Text == PunktorOn)
+            {
+                cmList.Text = PunktorOff;
+            }
+            else cmList.Text = PunktorOn;
+
+        }
+        string PunktorOn = "Punktor Wł";
+        string PunktorOff = "Punktor Wył";
+
         private void rtxtDescription_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Escape && txtName.ReadOnly == false)
+            {
+                UndoChanges();
+            }
+
+            if (e.KeyCode == Keys.Enter && cmList.Text == PunktorOn)
             {
                 int i = rtxtDescription.SelectionStart;
                 rtxtDescription.Text = rtxtDescription.Text.Insert(i, "\n " + " " + interval + " ");
                 e.Handled = true;
                 rtxtDescription.SelectionStart = 4 + i;
+            }
+
+            if (e.KeyCode == Keys.Enter && cmList.Text == PunktorOff)
+            {
+                Punktor(e);
             }
         }
 
@@ -830,7 +930,7 @@ namespace CulinaryRecipes
         {
             DeleteRecipes();
         }
-
+        //funkcja- blok- przypisanie jednej funkcji do kilku textboxów
         private void SecuringBlock()
         {
             rtxtAmountsOfFood.Text = SecuringAmountOffood3(rtxtAmountsOfFood);
@@ -839,6 +939,7 @@ namespace CulinaryRecipes
             txtShortDescription.Text = SecuringAmountOffood3(txtShortDescription);
             rtxtDescription.Text = SecuringAmountOffood3(rtxtDescription);
         }
+        //to samo
         private void IfTextBoxIsEmptyBlock()
         {
             rtxtAmountsOfFood.Text = IfTextBoxIsEmpty(rtxtAmountsOfFood.Text);
@@ -847,7 +948,7 @@ namespace CulinaryRecipes
             txtShortDescription.Text = IfTextBoxIsEmpty(txtShortDescription.Text);
             rtxtDescription.Text = IfTextBoxIsEmpty(rtxtDescription.Text);
         }
-
+        // to samo
         private void AddStampBlock()
         {
             rtxtAmountsOfFood.Lines = AddStamp(rtxtAmountsOfFood.Lines);
@@ -856,18 +957,18 @@ namespace CulinaryRecipes
             txtShortDescription.Lines = AddStamp(txtShortDescription.Lines);
             rtxtDescription.Lines = AddStamp(rtxtDescription.Lines);
         }
-
+        //wyróenuje ilość linii w 3 textboxach, tak zeby nie było czegos takiego ze jeden ma więcej lub mniej
         private void ReballanceToFullLineExternal(RichTextBox Amounts, RichTextBox Grams, RichTextBox Ingridient)
         {
-            if (Ingridient.Lines.Length > Amounts.Lines.Length|| Ingridient.Lines.Length> Grams.Lines.Length)
+            if (Ingridient.Lines.Length > Amounts.Lines.Length || Ingridient.Lines.Length > Grams.Lines.Length)
             {
-                ReballanceToFullLineCenter(Ingridient,Amounts);
-                ReballanceToFullLineCenter(Ingridient,Grams);
+                ReballanceToFullLineCenter(Ingridient, Amounts);
+                ReballanceToFullLineCenter(Ingridient, Grams);
             }
             if (Amounts.Lines.Length > Ingridient.Lines.Length || Amounts.Lines.Length > Grams.Lines.Length)
             {
-                ReballanceToFullLineCenter(Amounts,Ingridient);
-                ReballanceToFullLineCenter(Amounts,Grams);
+                ReballanceToFullLineCenter(Amounts, Ingridient);
+                ReballanceToFullLineCenter(Amounts, Grams);
             }
             if (Grams.Lines.Length > Ingridient.Lines.Length || Grams.Lines.Length > Amounts.Lines.Length)
             {
@@ -876,26 +977,28 @@ namespace CulinaryRecipes
             }
         }
 
+        //dodawanie linii do textboxa ktory ma mniej linii- funkcja uzupelniająca poprzednia
         private void ReballanceToFullLineCenter(RichTextBox longName, RichTextBox shortName)
         {
             while (longName.Lines.Length > shortName.Lines.Length)
             {
                 int i = shortName.Text.Length;
                 shortName.Focus();
-                shortName.Text = shortName.Text.Insert(i, "\n ");;
+                shortName.Text = shortName.Text.Insert(i, "\n "); ;
                 shortName.SelectionStart = 1 + i;
             }
         }
 
-
+        //ustaw focus w w najdalszym miejscu (np. gdy wlacza sie modyfikacje)
         private void SetFocus(RichTextBox name1, RichTextBox name2, RichTextBox name3)
         {
             int quantityChar = name1.Lines[name1.Lines.Length - 1].Length;
+
             if (name1.TextLength > name2.TextLength && name1.TextLength > name3.TextLength)
             {
                 i = name1.TextLength;
-                if (name1.Text.Last() == ' ') i = i-2;
-               
+                if (name1.Text.Last() == ' ') i = i - 2;
+
                 name1.Focus();
                 name1.SelectionStart = i;
             }
@@ -906,8 +1009,10 @@ namespace CulinaryRecipes
 
             clear = "modification";
             btnCancel.Text = "Anuluj";
+
             if (txtName.ReadOnly == true)
             {
+                ContextMenuBlock();
                 chcVegetarian.Enabled = true;
                 AssignmentMainFields();
                 linkForm22 = linkForm2;
@@ -923,7 +1028,7 @@ namespace CulinaryRecipes
 
                 Color(panelMain, Function.CreateBrightColor());
 
-                addRecipeForm2 = false;
+                addRecipeForm2 = true;
                 rTxtIngredients.Focus();
                 rTxtIngredients.SelectionStart = rTxtIngredients.TextLength;
                 IndexChar(rTxtIngredients);
@@ -935,12 +1040,18 @@ namespace CulinaryRecipes
 
                 ReballanceToFullLineExternal(rtxtAmountsOfFood, rTxtGrams, rTxtIngredients);
 
-                SetFocus(rtxtAmountsOfFood, rTxtGrams, rTxtIngredients);
-                SetFocus(rTxtGrams, rtxtAmountsOfFood, rTxtIngredients);
-                SetFocus(rTxtIngredients, rtxtAmountsOfFood, rTxtGrams);
+                if (!string.IsNullOrEmpty(rtxtAmountsOfFood.Text) && !string.IsNullOrEmpty(rTxtGrams.Text) && !string.IsNullOrEmpty(rTxtIngredients.Text))
+                {
+                    SetFocus(rtxtAmountsOfFood, rTxtGrams, rTxtIngredients);
+                    SetFocus(rTxtGrams, rtxtAmountsOfFood, rTxtIngredients);
+                    SetFocus(rTxtIngredients, rtxtAmountsOfFood, rTxtGrams);
+                }
+
+                
             }
             else
             {
+                ContextMenuBlock();
                 ConvertAmountsOfFood();
                 ChangeDotToComma(rtxtAmountsOfFood);
                 ChangeDotToComma(rtxtPortion);
@@ -949,6 +1060,7 @@ namespace CulinaryRecipes
 
                 AddStampBlock();
                 IfTextBoxIsEmptyBlock();
+
                 if (check == false)
                 {
                     if (txtName.Text == titleForm2) { }
@@ -1043,11 +1155,26 @@ namespace CulinaryRecipes
                 }
                 check = false;
                 SecuringBlock();
+                
             }
+           
         }
+
+        public void ContextMenuBlock()
+        {
+            if (txtName.ReadOnly == false) txtName.ContextMenuStrip = contextCopy;
+            else txtName.ContextMenuStrip = contextName;
+            Function.ChangeContextMenu(rtxtAmountsOfFood,  contextCopy,  contextAmounts);
+            Function.ChangeContextMenu(rTxtGrams, contextCopy, ContextMenuGrams);
+            Function.ChangeContextMenu(rTxtIngredients, contextCopy, contextIngridients);
+            Function.ChangeContextMenu(txtShortDescription, contextCopy, contextShortDesription);
+            Function.ChangeContextMenu(rtxtDescription, contextCopy, contextLongDescription);
+        }
+      
 
         private void btnModify_Click(object sender, EventArgs e)
         {
+
             ModifyRecipes();
         }
 
@@ -1064,14 +1191,22 @@ namespace CulinaryRecipes
             OpenForm.gramsForm3 = rTxtGrams.Text;
 
             if (rtxtAmountsOfFood.Text == "") { }
-            else OpenForm.AmountsOfFoodForm3 = rtxtAmountsOfFood.Text;
+            else
+            {
+                OpenForm.AmountsOfFoodForm3 = rtxtAmountsOfFood.Text;
+            }
 
             OpenForm.shortDescriptionForm3 = txtShortDescription.Text;
             OpenForm.InstructionForm3 = rtxtDescription.Text;
 
-            if (rtxtPortion.Text == "") { OpenForm.numberOfPortionsForm3 = 1; }
-            else OpenForm.numberOfPortionsForm3 = int.Parse(rtxtPortion.Text);
-
+            if (rtxtPortion.Text == "")
+            {
+                OpenForm.numberOfPortionsForm3 = 1;
+            }
+            else
+            {
+                OpenForm.numberOfPortionsForm3 = int.Parse(rtxtPortion.Text);
+            }
             OpenForm.RatingForm3 = idRatingForm2;
             OpenForm.difficultLevelForm3 = difficultLevelForm2;
             OpenForm.executionTimeForm3 = executionTimeForm2;
@@ -1079,6 +1214,7 @@ namespace CulinaryRecipes
             OpenForm.listOfCuisinesForm3 = listOfCuisinesForm2;
             OpenForm.LinkForm23 = linkForm22;
             OpenForm.addRecipeForm3 = addRecipeForm2;
+            OpenForm.addRecipe = addRecipe;
 
             #region MealAdd
             for (int i = 0; i < IdMealForm2.Length; i++)
@@ -1117,9 +1253,7 @@ namespace CulinaryRecipes
         {
 
             Font czcionka2 = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-
             int wysokoscWiersza2 = (int)czcionka2.GetHeight(e.Graphics);
-
             int iloscLinii2 = e.MarginBounds.Height / wysokoscWiersza2;
 
             if (sr == null)
@@ -1131,6 +1265,7 @@ namespace CulinaryRecipes
                 foreach (string wiersz in table)
                 {
                     float szerokosc = e.Graphics.MeasureString(wiersz, czcionka2).Width;
+
                     if (szerokosc < e.MarginBounds.Width)
                     {
                         textAll += wiersz + "\n";
@@ -1147,12 +1282,14 @@ namespace CulinaryRecipes
                             textAll += skracanyWiersz.Substring(0, iloscLiter) + "\n";
                             skracanyWiersz = skracanyWiersz.Substring(iloscLiter).TrimStart(' ');
                         } while (skracanyWiersz.Length > ileLiterWWierszu);
+
                         textAll += skracanyWiersz + "\n";
                     }
                 }
                 foreach (string wiersz in txtName.Lines)
                 {
                     float szerokosc = e.Graphics.MeasureString(wiersz, czcionka2).Width;
+
                     if (szerokosc < e.MarginBounds.Width)
                     {
                         textName += wiersz + "\n";
@@ -1162,6 +1299,7 @@ namespace CulinaryRecipes
                         float sredniaSerokoscLitery = szerokosc / wiersz.Length;
                         int ileLiterWWierszu = (int)(e.MarginBounds.Width / sredniaSerokoscLitery);
                         string skracanyWiersz = wiersz;
+
                         do
                         {
                             int ostatniaSpacja = skracanyWiersz.Substring(0, ileLiterWWierszu).LastIndexOf(' ');
@@ -1169,6 +1307,7 @@ namespace CulinaryRecipes
                             textName += skracanyWiersz.Substring(0, iloscLiter) + "\n";
                             skracanyWiersz = skracanyWiersz.Substring(iloscLiter).TrimStart(' ');
                         } while (skracanyWiersz.Length > ileLiterWWierszu);
+
                         textName += skracanyWiersz + "\n";
                     }
                 }
@@ -1176,6 +1315,7 @@ namespace CulinaryRecipes
                 foreach (string wiersz in rtxtDescription.Lines)
                 {
                     float szerokosc = e.Graphics.MeasureString(wiersz, czcionka2).Width;
+
                     if (szerokosc < e.MarginBounds.Width)
                     {
                         textDescription += wiersz + "\n";
@@ -1192,15 +1332,18 @@ namespace CulinaryRecipes
                             textDescription += skracanyWiersz.Substring(0, iloscLiter) + "\n";
                             skracanyWiersz = skracanyWiersz.Substring(iloscLiter).TrimStart(' ');
                         } while (skracanyWiersz.Length > ileLiterWWierszu);
+
                         textDescription += skracanyWiersz + "\n";
                     }
                 }
                 sr = new StringReader(textName + "\n" + textAll + "\n" + textDescription);
             }
             e.HasMorePages = true;
+
             for (int i = 0; i < iloscLinii2; i++)
             {
                 string wiersz = sr.ReadLine();
+
                 if (wiersz == null)
                 {
                     e.HasMorePages = false;
@@ -1230,7 +1373,7 @@ namespace CulinaryRecipes
         }
 
         string[] table;
-        string[] tablelka;
+        //string[] tablelka;
         private void podglToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int number = rtxtAmountsOfFood.Lines.Length;
@@ -1243,13 +1386,18 @@ namespace CulinaryRecipes
 
             string space = " ";
             string space2 = " ";
+
             for (int i = 0; i < rTxtIngredients.Lines.Length * 3; i = i + 3)
             {
-
-                if (rtxtAmountsOfFood.Lines[k] == string.Empty) { table[i] = space; }
-                else table[i] = rtxtAmountsOfFood.Lines[k] + space + rTxtGrams.Lines[k] + space2 + rTxtIngredients.Lines[k];
+                if (rtxtAmountsOfFood.Lines[k] == string.Empty)
+                {
+                    table[i] = space;
+                }
+                else
+                {
+                    table[i] = rtxtAmountsOfFood.Lines[k] + space + rTxtGrams.Lines[k] + space2 + rTxtIngredients.Lines[k];
+                }
                 k++;
-
             }
 
             printPreviewDialog1.ShowDialog();
@@ -1266,7 +1414,6 @@ namespace CulinaryRecipes
         private void printDocument2_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             Font czcionka2 = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-
             int wysokoscWiersza2 = (int)czcionka2.GetHeight(e.Graphics);
             int iloscLinii2 = e.MarginBounds.Height / wysokoscWiersza2;
 
@@ -1278,6 +1425,7 @@ namespace CulinaryRecipes
                 foreach (string wiersz in table)
                 {
                     float szerokosc = e.Graphics.MeasureString(wiersz, czcionka2).Width;
+
                     if (szerokosc < e.MarginBounds.Width)
                     {
                         tekstAll += wiersz + "\n";
@@ -1294,12 +1442,14 @@ namespace CulinaryRecipes
                             tekstAll += skracanyWiersz.Substring(0, iloscLiter) + "\n";
                             skracanyWiersz = skracanyWiersz.Substring(iloscLiter).TrimStart(' ');
                         } while (skracanyWiersz.Length > ileLiterWWierszu);
+
                         tekstAll += skracanyWiersz + "\n";
                     }
                 }
                 foreach (string wiersz in txtName.Lines)
                 {
                     float szerokosc = e.Graphics.MeasureString(wiersz, czcionka2).Width;
+
                     if (szerokosc < e.MarginBounds.Width)
                     {
                         tekstName += wiersz + "\n";
@@ -1316,6 +1466,7 @@ namespace CulinaryRecipes
                             tekstName += skracanyWiersz.Substring(0, iloscLiter) + "\n";
                             skracanyWiersz = skracanyWiersz.Substring(iloscLiter).TrimStart(' ');
                         } while (skracanyWiersz.Length > ileLiterWWierszu);
+
                         tekstName += skracanyWiersz + "\n";
                     }
                 }
@@ -1323,9 +1474,11 @@ namespace CulinaryRecipes
                 sr = new StringReader(tekstName + "\n" + tekstAll + "\n");
             }
             e.HasMorePages = true;
+
             for (int i = 0; i < iloscLinii2; i++)
             {
                 string wiersz = sr.ReadLine();
+
                 if (wiersz == null)
                 {
                     e.HasMorePages = false;
@@ -1387,15 +1540,13 @@ namespace CulinaryRecipes
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             Form1 form1 = new Form1();
+
             RememberCheckBox(form1);
             form1.seekUnsubscribe = seekUnsubscribeForm2;
 
-
             form1.counter = counterForm2;
             form1.ShowDialog();
-
         }
 
         //zmienne pamięciowe- Anuluj//
@@ -1405,7 +1556,7 @@ namespace CulinaryRecipes
         bool[] checkBoxesCancel = new bool[15];
         string photo;
 
-
+        //Przypisz zmienne główych pól
         private void AssignmentMainFields()
         {
             cancel = true;
@@ -1441,7 +1592,6 @@ namespace CulinaryRecipes
             photo = linkForm2;
 
         }
-
 
         public string linkForm22;
 
@@ -1486,22 +1636,27 @@ namespace CulinaryRecipes
                 ShowStar(1, pbStar1, rating);
                 ShowStar(2, pbStar2, rating);
                 ShowStar(3, pbStar3, rating);
+
+                ContextMenuBlock();
             }
             Function.ColorFieldsAfterBlocking(panelMain, rtxtPortion);
             Function.BlockingFields(panelMain);
             Function.BlockCheckbox(panelLeft);
             Function.BlockCheckbox(panelRight);
             btnAddRest.Visible = false;
-            // changeColorPbblock(panelMain);
             Color(panelMain, Function.CreateColorBlockingFields());
             btnCancel.Visible = false;
             btnAdd.Visible = true;
             btnDelete.Visible = true;
             btnModify.Visible = true;
-
+            addRecipe = false;
+            CMGramsEnter.Text = enterOn;
+            CMAmountsEnter.Text = enterOn;
+            CMIngridientsEnter.Text = enterOn;
 
             cancel = false;
         }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             UndoChanges();
@@ -1532,10 +1687,12 @@ namespace CulinaryRecipes
         {
             CheckingCheckbox(chcDrink, 5, IdMealForm2);
         }
+
         int lenght = 38;
         private void NumberOfLines(KeyEventArgs e, RichTextBox _name)
         {
             int start = _name.SelectionStart;
+
             if (e.KeyCode == Keys.Enter && _name.Lines.Length >= lenght)
             {
                 MessageBox.Show("Program nie może mieć więcej już linii");
@@ -1547,22 +1704,39 @@ namespace CulinaryRecipes
             }
         }
 
-        private void NewLine(RichTextBox name,KeyEventArgs e,  int i)
+        //Nowa linia (dodanie nowej linii- jezeli jej nie ma i przesuniecie tam focusa)
+        private void NewLine(RichTextBox name, int i)//KeyEventArgs e,
         {
-             i = name.Text.Length;
+            // Uwaga!!! wyciete z funkcji KeyEventArgs e- jakby zle chodzilo bez e.Handled to trzeba bedzie przywrócić
+            i = name.Text.Length;
             name.Focus();
             name.Text = name.Text.Insert(i, "\n ");
-            e.Handled = true;
+            //e.Handled = true;
             name.SelectionStart = 1 + i;
         }
-        private void rTxtIngredients_KeyDown(object sender, KeyEventArgs e)
+
+        private void trzy(KeyEventArgs e, RichTextBox name, RichTextBox second, RichTextBox third )//, RichTextBox grams, RichTextBox ingre 
         {
-            if (e.KeyCode == Keys.Enter && CMIngridientsEnter.Text == "ENTER - Wł")
+            if (e.KeyCode == Keys.Enter && CMIngridientsEnter.Text == enterOn )//(e.KeyCode == Keys.Enter  && addRecipe == true&&blok==true)
             {
 
-                Enter(e, CMIngridientsEnter, rTxtIngredients);
+                //NewLine(amounts, i);
+                NewLine(third, i);
+                NewLine(second, i);
+                name.Focus();
+               // Enter(e, ingre);
             }
-            else
+        }
+
+
+        private void rTxtIngredients_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape && txtName.ReadOnly == false)
+            {
+                UndoChanges();
+            }
+
+            if (e.KeyCode == Keys.Enter)
             {
                 NumberOfLines(e, rTxtIngredients);
 
@@ -1575,16 +1749,32 @@ namespace CulinaryRecipes
                     addRecipeForm2 = false;
                 }
 
-                if (e.KeyCode == Keys.Enter && addRecipeForm2 == true)
+                if (e.KeyCode == Keys.Enter && CMIngridientsEnter.Text == enterOn )//(e.KeyCode == Keys.Enter  && addRecipe == true&&blok==true)
                 {
-                    NewLine(rtxtAmountsOfFood, e, i);
-                    NewLine(rTxtIngredients, e, i);
-                    NewLine(rTxtGrams, e, i);
-              
+
+                    NewLine(rtxtAmountsOfFood, i);
+                    NewLine(rTxtGrams, i);
+                   // NewLine(rTxtIngredients, i);
+                    rTxtIngredients.Focus();
+                    // Enter(e, rTxtIngredients);
+                   
+                }
+
+
+                // trzy(e,  rTxtIngredients, rtxtAmountsOfFood, rTxtGrams);//rtxtAmountsOfFood, rTxtGrams,
+
+                if (e.KeyCode == Keys.Enter && CMIngridientsEnter.Text== enterOff)
+                {
+                    NewLine(rtxtAmountsOfFood, i);
+                    NewLine(rTxtGrams, i);
+                    NewLine(rTxtIngredients, i);
+
+
                     i = rtxtAmountsOfFood.Text.Length;
                     rtxtAmountsOfFood.Focus();
                     e.Handled = true;
                     rtxtAmountsOfFood.SelectionStart = i - 1;
+
                     addRecipeForm2 = false;
                 }
                 else
@@ -1592,31 +1782,62 @@ namespace CulinaryRecipes
                     ChangeFocusNewProject(rTxtIngredients, rtxtAmountsOfFood, e);
                 }
             }
+
+            // Przeskok(rTxtIngredients, rTxtGrams, 0, e);
+
+
+        }
+        // niedokonczone usuwanie
+        private void Przeskok(RichTextBox first, RichTextBox second, int shift, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back && first.Lines[numberLine].Length != 0)
+            {
+                first.SelectionStart = IloscZnakow(first) + 1;
+            }
+            else if (e.KeyCode == Keys.Back && string.IsNullOrWhiteSpace(first.Lines[numberLine]) && rtxtAmountsOfFood == first)
+            {
+                //przeskok do drugiej formy, przeliczenie ilości znaków i dodanie ilości znaków z linii obecnie znajdującej
+                second.Focus();
+                e.Handled = true;
+                int start = IloscZnakow2(second) - 1;
+                second.SelectionStart = start;
+            }
+            else if (e.KeyCode == Keys.Back && string.IsNullOrWhiteSpace(first.Lines[numberLine]))
+            {
+                //przeskok do drugiej formy, przeliczenie ilości znaków i dodanie ilości znaków z linii obecnie znajdującej
+                second.Focus();
+                e.Handled = true;
+                second.SelectionStart = IloscZnakow2(second) + second.Lines[numberLine].Length;
+            }
         }
 
 
         private void rTxtGrams_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && CMGramsEnter.Text == "ENTER - Wł")
+            if (e.KeyCode == Keys.Escape && txtName.ReadOnly == false)
             {
-                Enter(e, CMGramsEnter, rTxtGrams);
+                UndoChanges();
             }
-            else
+            //if ((e.KeyCode == Keys.Enter) && (CMIngridientsEnter.Text == enterOn || CMAmountsEnter.Text == enterOn || CMGramsEnter.Text == enterOn))//(e.KeyCode == Keys.Enter  && addRecipe == true&&blok==true)
+            //{
+
+            //    NewLine(rtxtAmountsOfFood, i);
+            //    NewLine(rTxtIngredients, i);
+            //    rTxtGrams.Focus();
+            //    Enter(e, rTxtGrams);
+
+            //} 
+             trzy(e,  rTxtGrams, rTxtIngredients, rtxtAmountsOfFood);// rtxtAmountsOfFood, rTxtIngredients,
+            if (e.KeyCode == Keys.Enter)
             {
                 NumberOfLines(e, rTxtGrams);
                 ChangeFocusNewProject(rTxtGrams, rTxtIngredients, e);
             }
 
+            //  Przeskok(rTxtGrams, rtxtAmountsOfFood, 0, e);
         }
 
-        private void rtxtPortion_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter && btnConvert.Text == convert)
-            {
-                ConvertFunction();
-            }
-        }
-
+        //zliczanie znaków i "\n" zeby odpowiednio ustawić focus
         int numberLine;
         private int IloscZnakow(RichTextBox second)
         {
@@ -1639,7 +1860,10 @@ namespace CulinaryRecipes
 
                 else if (item == '\n')
                 {
-                    if (numberLinePomocnicza == -1) { numberLinePomocnicza++; }
+                    if (numberLinePomocnicza == -1)
+                    {
+                        numberLinePomocnicza++;
+                    }
                     else
                     {
                         iloscZnakow++;
@@ -1656,14 +1880,52 @@ namespace CulinaryRecipes
             return iloscZnakow;
         }
 
+        //podobna funkcja jak popzednia z małą modyfikacją
+        private int IloscZnakow2(RichTextBox name)
+        {
+            int numberLinePomocnicza;
+            int iloscZnakow;
+
+            if (0 == numberLine) numberLinePomocnicza = -1;
+            else numberLinePomocnicza = 0;
+
+
+            iloscZnakow = 0;
+            string tekst = string.Empty;
+
+            foreach (char item in name.Text)
+            {
+                if (numberLinePomocnicza == numberLine) break;
+
+                else if (item == '\n')
+                {
+                    if (numberLinePomocnicza == -1)
+                    {
+                        numberLinePomocnicza++;
+                    }
+                    else
+                    {
+                        iloscZnakow++;
+                        numberLinePomocnicza++;
+                    }
+                }
+                else
+                {
+                    tekst += item;
+                    iloscZnakow++;
+                }
+            }
+
+            return iloscZnakow;
+        }
 
         int i;
         private void ChangeFocusNewProject(RichTextBox first, RichTextBox second, KeyEventArgs e)
         {
             int j;
             i = 0;
-          
-           if (addRecipeForm2 == true)
+
+            if (addRecipeForm2 == true)
             {
                 if (first.Lines.Length <= 1 && e.KeyCode == Keys.Enter)
                 {
@@ -1681,15 +1943,15 @@ namespace CulinaryRecipes
                     second.SelectionStart = j - 1;
                 }
             }
-            else if (e.KeyCode == Keys.Enter&&addRecipeForm2==false)
+            else if (e.KeyCode == Keys.Enter && addRecipeForm2 == false && addRecipe == true)
             {
                 second.Focus();
                 e.Handled = true;
-                if (numberLine == 0&&rtxtAmountsOfFood.SelectionStart!=0)
-                    second.SelectionStart = IloscZnakow(second) - second.Lines[numberLine].Length;
-                else second.SelectionStart = IloscZnakow(second);
+
+                second.SelectionStart = IloscZnakow(second);
             }
         }
+
 
         private void chcVegetarian_CheckedChanged(object sender, EventArgs e)
         {
@@ -1725,16 +1987,19 @@ namespace CulinaryRecipes
         private void rtxtAmountsOfFood_SelectionChanged(object sender, EventArgs e)
         {
             IndexChar(rtxtAmountsOfFood);
-
         }
+
         private void IndexChar(RichTextBox name)
         {
             int index = name.SelectionStart;
             numberLine = name.GetLineFromCharIndex(index);
+
             if (numberLine >= maxLine) maxLine = numberLine;
             else addRecipeForm2 = false;
 
+            // txtShortDescription.Text = numberLine.ToString();
         }
+
         private void rTxtGrams_SelectionChanged(object sender, EventArgs e)
         {
             IndexChar(rTxtGrams);
@@ -1745,13 +2010,41 @@ namespace CulinaryRecipes
             IndexChar(rTxtIngredients);
         }
 
-        private void ContextEnter(RichTextBox name)
+      
+        string enterOn = "ENTER ON";
+        string enterOff = "ENTER OFF";
+        //Przelaczenie między Enterem a przeskakiwaniem miedzy polami
+        private void ContextEnter(ToolStripMenuItem first, ToolStripMenuItem second, ToolStripMenuItem third)
         {
-            int i = name.SelectionStart;
-            name.Text = name.Text.Insert(i, "\n" + "");
-            name.SelectionStart = i + 1;
+
+            if (first.Text == enterOn)
+            {
+                addRecipe = true;
+
+                first.Text = enterOff;
+                second.Text = enterOff;
+                third.Text = enterOff;
+
+                first.ForeColor = System.Drawing.Color.Red;
+                second.ForeColor = System.Drawing.Color.Red;
+                third.ForeColor = System.Drawing.Color.Red;
+
+            }
+            else
+            {
+                addRecipe = false;
+
+                first.Text = enterOn;
+                second.Text = enterOn;
+                third.Text = enterOn;
+
+                first.ForeColor = System.Drawing.Color.Green;
+                second.ForeColor = System.Drawing.Color.Green;
+                third.ForeColor = System.Drawing.Color.Green;
+            }
         }
-        private void Enter(KeyEventArgs e, ToolStripMenuItem ToolName, RichTextBox RichName)
+
+        private void Enter(KeyEventArgs e, RichTextBox RichName)
         {
             int i = RichName.SelectionStart;
             RichName.Text = RichName.Text.Insert(i, "\n" + "");
@@ -1759,19 +2052,28 @@ namespace CulinaryRecipes
             RichName.SelectionStart = i + 1;
         }
 
+        private void BlockRightButton(ToolStripMenuItem name )
+        {
+            if (txtName.ReadOnly)
+            {
+                name.Enabled = false;
+            }
+            
+        }
+
         private void eNTERToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ContextEnter(rtxtAmountsOfFood);
+            ContextEnter(CMAmountsEnter, CMGramsEnter, CMIngridientsEnter);
         }
 
         private void CMGramsEnter_Click(object sender, EventArgs e)
         {
-            ContextEnter(rTxtGrams);
+            ContextEnter(CMGramsEnter, CMAmountsEnter, CMIngridientsEnter);
         }
 
         private void CMIngridientsEnter_Click(object sender, EventArgs e)
         {
-            ContextEnter(rTxtIngredients);
+            ContextEnter(CMIngridientsEnter, CMAmountsEnter, CMGramsEnter);
         }
 
         private void wytnijToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -1821,22 +2123,107 @@ namespace CulinaryRecipes
 
         private void separatorToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Separator(rTxtIngredients, 3);
-        }
 
-        private void rtxtAmountsOfFood_KeyDown(object sender, KeyEventArgs e)
-        {
-
-            if (e.KeyCode == Keys.Enter && CMAmountsEnter.Text == "ENTER - Wł")
+            if(txtName.ReadOnly)
             {
-                Enter(e, CMAmountsEnter, rtxtAmountsOfFood);
+                separatorToolStripMenuItem1.Enabled = false;
             }
             else
+            {
+                NewLine(rtxtAmountsOfFood, i);
+                NewLine(rTxtGrams, i);
+
+                Separator(rTxtIngredients, 3);
+
+                NewLine(rtxtAmountsOfFood, i);
+                NewLine(rTxtGrams, i);
+                rTxtIngredients.Focus();
+            }
+            
+        }
+
+        private void txtName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) rtxtPortion.Focus();
+            if (e.KeyCode == Keys.Escape && txtName.ReadOnly == false) UndoChanges();
+        }
+
+        private void rtxtPortion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape && txtName.ReadOnly == false)
+            {
+                UndoChanges();
+            }
+
+            if (e.KeyCode == Keys.Enter && txtName.ReadOnly == true && rtxtPortion.ReadOnly == false)
+            {
+                ConvertFunction();
+            }
+            else if (e.KeyCode == Keys.Enter && txtName.ReadOnly == false)
+            {
+                rtxtAmountsOfFood.Focus();
+            }
+
+        }
+
+        private void txtShortDescription_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape && txtName.ReadOnly == false)
+            {
+                UndoChanges();
+            }
+        }
+
+
+        public String SwapClipboardHtmlText(String replacementHtmlText)
+        {
+            String returnHtmlText = null;
+            if (Clipboard.ContainsText(TextDataFormat.Html))
+            {
+                returnHtmlText = Clipboard.GetText(TextDataFormat.Html);
+                Clipboard.SetText(replacementHtmlText, TextDataFormat.Html);
+            }
+            return returnHtmlText;
+        }
+
+        private void rtxtDescription_SelectionChanged(object sender, EventArgs e)
+        {
+            IndexChar(rtxtDescription);
+        }
+
+        private void kopiujToolStripMenu_Click(object sender, EventArgs e)
+        {
+            if(txtName.SelectionLength>0) txtName.Copy();
+            else if (rtxtAmountsOfFood.SelectionLength > 0) rtxtAmountsOfFood.Copy();
+            else if (rTxtGrams.SelectionLength > 0) rTxtGrams.Copy();
+            else if(rTxtIngredients.SelectionLength > 0) rTxtIngredients.Copy();
+            else if (txtShortDescription.SelectionLength > 0) txtShortDescription.Copy();
+            else if (rtxtDescription.SelectionLength > 0) rtxtDescription.Copy();
+        }
+        
+        private void rtxtAmountsOfFood_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape && txtName.ReadOnly == false)
+            {
+                UndoChanges();
+            }
+            //if ((e.KeyCode == Keys.Enter) && (CMIngridientsEnter.Text == enterOn || CMAmountsEnter.Text == enterOn || CMGramsEnter.Text == enterOn))
+            //{
+
+            //    NewLine(rTxtGrams, i);
+            //    NewLine(rTxtIngredients, i);
+            //    rtxtAmountsOfFood.Focus();
+            //    Enter(e, rtxtAmountsOfFood);
+            //}
+            //else 
+            trzy(e, rtxtAmountsOfFood, rTxtGrams, rTxtIngredients);// rTxtGrams, rTxtIngredients,
+            if (e.KeyCode == Keys.Enter)
             {
                 NumberOfLines(e, rtxtAmountsOfFood);
                 ChangeFocusNewProject(rtxtAmountsOfFood, rTxtGrams, e);
             }
 
+            //   Przeskok(rtxtAmountsOfFood, rTxtIngredients, 0, e);
         }
 
         private void chcPreserves_CheckedChanged(object sender, EventArgs e)

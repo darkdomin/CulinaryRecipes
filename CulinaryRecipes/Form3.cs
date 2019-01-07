@@ -48,6 +48,7 @@ namespace CulinaryRecipes
         public bool cancel3 { get; set; }
 
         public bool addRecipeForm3 { get; set; }
+        public bool addRecipe { get; set; }
 
         string add = "add";
 
@@ -73,6 +74,7 @@ namespace CulinaryRecipes
         private void rbAsian_CheckedChanged(object sender, EventArgs e)
         {
             listOfCuisinesForm3 = rbAsian.Tag.ToString();
+           
         }
 
         private void rbCeska_CheckedChanged(object sender, EventArgs e)
@@ -312,6 +314,7 @@ namespace CulinaryRecipes
             model.unlockFieldsForm2 = unlockFieldsForm3;
             model.linkForm22 = LinkForm23;
             model.addRecipeForm2 = addRecipeForm3;
+            model.addRecipe = addRecipe;
             #region MealAdd
              model.IdMealForm2[0] = IdMealForm3[0];
              model.IdMealForm2[1] = IdMealForm3[1];
@@ -399,6 +402,143 @@ namespace CulinaryRecipes
             {
                 RatingForm3 = c.Id.ToString();
             }
+        }
+
+        private void zaznaczWszystkoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+         
+                rtxtLinkForm3.SelectAll();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            rtxtLinkForm3.Focus();
+            rtxtLinkForm3.SelectionStart = 0;
+        }
+
+        private void ClearLink(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape) rtxtLinkForm3.Text = "";
+        }
+        private void Form3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape) rtxtLinkForm3.Text = "";
+        }
+
+        private void rtxtLinkForm3_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void rbAsian_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void btnThreeStar_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void btnTwoStar_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void btnOneStar_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void rbAmerican_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void rbCeska_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void rbFrench_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void rbSpanish_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void rbGreece_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void rbPortuguese_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void rbPolish_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void rbItalish_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void rbHungarian_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void btndifficultLevOne_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void btndifficultLevTwo_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void btndifficultLevThree_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void btnTime30_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void btnTime60_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void btnTime90_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void btnTime100_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void btnPhotoForm3_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
+        }
+
+        private void button4_KeyDown(object sender, KeyEventArgs e)
+        {
+            ClearLink(e);
         }
     }
 }

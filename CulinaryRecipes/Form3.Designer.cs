@@ -68,6 +68,8 @@
             this.kopiujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wklejToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ContextCheckAll = new System.Windows.Forms.ToolStripMenuItem();
             this.button4 = new System.Windows.Forms.Button();
             this.pbLittlePhoto = new System.Windows.Forms.PictureBox();
             this.btnPhotoForm3 = new System.Windows.Forms.Button();
@@ -96,6 +98,7 @@
             this.btnTime30.Text = "30 min";
             this.btnTime30.UseVisualStyleBackColor = false;
             this.btnTime30.Click += new System.EventHandler(this.btnTime30_Click);
+            this.btnTime30.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnTime30_KeyDown);
             // 
             // btnTime60
             // 
@@ -113,6 +116,7 @@
             this.btnTime60.Text = "60 min";
             this.btnTime60.UseVisualStyleBackColor = false;
             this.btnTime60.Click += new System.EventHandler(this.btnTime60_Click);
+            this.btnTime60.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnTime60_KeyDown);
             // 
             // btnTime90
             // 
@@ -130,6 +134,7 @@
             this.btnTime90.Text = "90 min";
             this.btnTime90.UseVisualStyleBackColor = false;
             this.btnTime90.Click += new System.EventHandler(this.btnTime90_Click);
+            this.btnTime90.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnTime90_KeyDown);
             // 
             // btnTime100
             // 
@@ -147,6 +152,7 @@
             this.btnTime100.Text = "pow 90";
             this.btnTime100.UseVisualStyleBackColor = false;
             this.btnTime100.Click += new System.EventHandler(this.btnTime100_Click);
+            this.btnTime100.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnTime100_KeyDown);
             // 
             // btndifficultLevThree
             // 
@@ -164,6 +170,7 @@
             this.btndifficultLevThree.Text = "Trudny";
             this.btndifficultLevThree.UseVisualStyleBackColor = false;
             this.btndifficultLevThree.Click += new System.EventHandler(this.button1_Click);
+            this.btndifficultLevThree.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btndifficultLevThree_KeyDown);
             // 
             // btndifficultLevTwo
             // 
@@ -181,6 +188,7 @@
             this.btndifficultLevTwo.Text = "Średni";
             this.btndifficultLevTwo.UseVisualStyleBackColor = false;
             this.btndifficultLevTwo.Click += new System.EventHandler(this.button2_Click);
+            this.btndifficultLevTwo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btndifficultLevTwo_KeyDown);
             // 
             // btndifficultLevOne
             // 
@@ -198,6 +206,7 @@
             this.btndifficultLevOne.Text = "Łatwy";
             this.btndifficultLevOne.UseVisualStyleBackColor = false;
             this.btndifficultLevOne.Click += new System.EventHandler(this.button3_Click);
+            this.btndifficultLevOne.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btndifficultLevOne_KeyDown);
             // 
             // label1
             // 
@@ -247,6 +256,7 @@
             this.rbAmerican.Text = "amerykanska";
             this.rbAmerican.UseVisualStyleBackColor = true;
             this.rbAmerican.CheckedChanged += new System.EventHandler(this.rbAmerican_CheckedChanged);
+            this.rbAmerican.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rbAmerican_KeyDown);
             // 
             // rbAsian
             // 
@@ -263,6 +273,7 @@
             this.rbAsian.Text = "azjatycka";
             this.rbAsian.UseVisualStyleBackColor = true;
             this.rbAsian.CheckedChanged += new System.EventHandler(this.rbAsian_CheckedChanged);
+            this.rbAsian.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rbAsian_KeyDown);
             // 
             // rbCeska
             // 
@@ -279,6 +290,7 @@
             this.rbCeska.Text = "czeska";
             this.rbCeska.UseVisualStyleBackColor = true;
             this.rbCeska.CheckedChanged += new System.EventHandler(this.rbCeska_CheckedChanged);
+            this.rbCeska.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rbCeska_KeyDown);
             // 
             // rbFrench
             // 
@@ -295,6 +307,7 @@
             this.rbFrench.Text = "francuska";
             this.rbFrench.UseVisualStyleBackColor = true;
             this.rbFrench.CheckedChanged += new System.EventHandler(this.rbFrench_CheckedChanged);
+            this.rbFrench.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rbFrench_KeyDown);
             // 
             // rbGreece
             // 
@@ -311,6 +324,7 @@
             this.rbGreece.Text = "grecka";
             this.rbGreece.UseVisualStyleBackColor = true;
             this.rbGreece.CheckedChanged += new System.EventHandler(this.rbGreece_CheckedChanged);
+            this.rbGreece.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rbGreece_KeyDown);
             // 
             // rbPortuguese
             // 
@@ -327,6 +341,7 @@
             this.rbPortuguese.Text = "portugalska";
             this.rbPortuguese.UseVisualStyleBackColor = true;
             this.rbPortuguese.CheckedChanged += new System.EventHandler(this.rbIberian_CheckedChanged);
+            this.rbPortuguese.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rbPortuguese_KeyDown);
             // 
             // rbPolish
             // 
@@ -343,6 +358,7 @@
             this.rbPolish.Text = "polska";
             this.rbPolish.UseVisualStyleBackColor = true;
             this.rbPolish.CheckedChanged += new System.EventHandler(this.rbPolish_CheckedChanged);
+            this.rbPolish.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rbPolish_KeyDown);
             // 
             // rbItalish
             // 
@@ -359,6 +375,7 @@
             this.rbItalish.Text = "wloska";
             this.rbItalish.UseVisualStyleBackColor = true;
             this.rbItalish.CheckedChanged += new System.EventHandler(this.rbItalish_CheckedChanged);
+            this.rbItalish.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rbItalish_KeyDown);
             // 
             // label4
             // 
@@ -387,6 +404,7 @@
             this.btnOneStar.Text = "*";
             this.btnOneStar.UseVisualStyleBackColor = false;
             this.btnOneStar.Click += new System.EventHandler(this.btnOneStar_Click);
+            this.btnOneStar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnOneStar_KeyDown);
             // 
             // btnTwoStar
             // 
@@ -404,6 +422,7 @@
             this.btnTwoStar.Text = "**";
             this.btnTwoStar.UseVisualStyleBackColor = false;
             this.btnTwoStar.Click += new System.EventHandler(this.btnTwoStar_Click);
+            this.btnTwoStar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnTwoStar_KeyDown);
             // 
             // btnThreeStar
             // 
@@ -421,6 +440,7 @@
             this.btnThreeStar.Text = "***";
             this.btnThreeStar.UseVisualStyleBackColor = false;
             this.btnThreeStar.Click += new System.EventHandler(this.btnThreeStar_Click);
+            this.btnThreeStar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnThreeStar_KeyDown);
             // 
             // gbTime
             // 
@@ -494,6 +514,7 @@
             this.rbHungarian.Text = "węgierska";
             this.rbHungarian.UseVisualStyleBackColor = true;
             this.rbHungarian.CheckedChanged += new System.EventHandler(this.rbWegierska_CheckedChanged);
+            this.rbHungarian.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rbHungarian_KeyDown);
             // 
             // rbSpanish
             // 
@@ -510,6 +531,7 @@
             this.rbSpanish.Text = "hiszpańska";
             this.rbSpanish.UseVisualStyleBackColor = true;
             this.rbSpanish.CheckedChanged += new System.EventHandler(this.rbHiszpanska_CheckedChanged);
+            this.rbSpanish.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rbSpanish_KeyDown);
             // 
             // lbllink
             // 
@@ -539,11 +561,13 @@
             this.rtxtLinkForm3.Location = new System.Drawing.Point(12, 27);
             this.rtxtLinkForm3.Multiline = false;
             this.rtxtLinkForm3.Name = "rtxtLinkForm3";
-            this.rtxtLinkForm3.Size = new System.Drawing.Size(484, 19);
+            this.rtxtLinkForm3.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.rtxtLinkForm3.Size = new System.Drawing.Size(484, 26);
             this.rtxtLinkForm3.TabIndex = 28;
             this.rtxtLinkForm3.Text = "";
             this.rtxtLinkForm3.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
             this.rtxtLinkForm3.TextChanged += new System.EventHandler(this.rtxtLinkForm3_TextChanged);
+            this.rtxtLinkForm3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtLinkForm3_KeyDown);
             // 
             // contextMenuStrip1
             // 
@@ -553,49 +577,64 @@
             this.wytnijToolStripMenuItem,
             this.kopiujToolStripMenuItem,
             this.wklejToolStripMenuItem,
-            this.usuńToolStripMenuItem});
+            this.usuńToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.ContextCheckAll});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(109, 120);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(169, 148);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // cofnijToolStripMenuItem
             // 
             this.cofnijToolStripMenuItem.Name = "cofnijToolStripMenuItem";
-            this.cofnijToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.cofnijToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.cofnijToolStripMenuItem.Text = "Cofnij";
             this.cofnijToolStripMenuItem.Click += new System.EventHandler(this.cofnijToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(105, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(165, 6);
             // 
             // wytnijToolStripMenuItem
             // 
             this.wytnijToolStripMenuItem.Name = "wytnijToolStripMenuItem";
-            this.wytnijToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.wytnijToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.wytnijToolStripMenuItem.Text = "Wytnij";
             this.wytnijToolStripMenuItem.Click += new System.EventHandler(this.wytnijToolStripMenuItem_Click);
             // 
             // kopiujToolStripMenuItem
             // 
             this.kopiujToolStripMenuItem.Name = "kopiujToolStripMenuItem";
-            this.kopiujToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.kopiujToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.kopiujToolStripMenuItem.Text = "Kopiuj";
             this.kopiujToolStripMenuItem.Click += new System.EventHandler(this.kopiujToolStripMenuItem_Click);
             // 
             // wklejToolStripMenuItem
             // 
             this.wklejToolStripMenuItem.Name = "wklejToolStripMenuItem";
-            this.wklejToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.wklejToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.wklejToolStripMenuItem.Text = "Wklej";
             this.wklejToolStripMenuItem.Click += new System.EventHandler(this.wklejToolStripMenuItem_Click);
             // 
             // usuńToolStripMenuItem
             // 
             this.usuńToolStripMenuItem.Name = "usuńToolStripMenuItem";
-            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.usuńToolStripMenuItem.Text = "Usuń";
             this.usuńToolStripMenuItem.Click += new System.EventHandler(this.usuńToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(165, 6);
+            // 
+            // ContextCheckAll
+            // 
+            this.ContextCheckAll.Name = "ContextCheckAll";
+            this.ContextCheckAll.Size = new System.Drawing.Size(168, 22);
+            this.ContextCheckAll.Text = "Zaznacz Wszystko";
+            this.ContextCheckAll.Click += new System.EventHandler(this.zaznaczWszystkoToolStripMenuItem_Click);
             // 
             // button4
             // 
@@ -612,6 +651,7 @@
             this.button4.Text = "Zatwierdź";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button4_KeyDown);
             // 
             // pbLittlePhoto
             // 
@@ -639,6 +679,7 @@
             this.btnPhotoForm3.Text = "Dodaj Zdjęcie";
             this.btnPhotoForm3.UseVisualStyleBackColor = false;
             this.btnPhotoForm3.Click += new System.EventHandler(this.btnPhotoForm3_Click);
+            this.btnPhotoForm3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnPhotoForm3_KeyDown);
             // 
             // Form3
             // 
@@ -662,6 +703,7 @@
             this.Text = "Culinare Recipes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form3_FormClosed);
             this.Load += new System.EventHandler(this.Form3_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form3_KeyDown);
             this.gbTime.ResumeLayout(false);
             this.gbTime.PerformLayout();
             this.gbLevel.ResumeLayout(false);
@@ -721,5 +763,7 @@
         private System.Windows.Forms.ToolStripMenuItem kopiujToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wklejToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem ContextCheckAll;
     }
 }

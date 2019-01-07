@@ -314,6 +314,7 @@ namespace CulinaryRecipes
         int NewId;
         private void importujPojedynczyPlikToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             foreach (var r in RecipesBase.getAll())
             {
                 NewId = r.Id;
@@ -350,8 +351,6 @@ namespace CulinaryRecipes
             lblCleanVisibleFalse();
         }
 
-
-
         private void usuńBazęDanychToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Czy na pewno usunąć Bazę danych? \nOperacja nie do odwrócenia", "Uwaga!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
@@ -385,7 +384,7 @@ namespace CulinaryRecipes
 
         }
 
-        private void AllCheckboxElse(string nameInDataBase,CheckBox nameThis, string nameColumnDgGrid)
+        private void AllCheckboxElse(string nameInDataBase, CheckBox nameThis, string nameColumnDgGrid)
         {
             ClearSeek();
             fillGrid(nameInDataBase, nameThis, nameColumnDgGrid);
@@ -405,7 +404,7 @@ namespace CulinaryRecipes
             CheckCheckBox();
         }
 
-        private void AllCheckboxAfterIf(CheckBox nameThis,string nameColumnDgGrid)
+        private void AllCheckboxAfterIf(CheckBox nameThis, string nameColumnDgGrid)
         {
             ClearCheckBox2(nameThis, nameColumnDgGrid);
             fillGridVege("Vegetarian");
@@ -423,7 +422,7 @@ namespace CulinaryRecipes
             else
             {
                 AllCheckboxElse("DinnerMeal", chcDinner, "Dinnercheckbox");
-               
+
             }
 
             AllCheckboxAfterElse();
@@ -452,7 +451,7 @@ namespace CulinaryRecipes
             else
             {
                 AllCheckboxElse("DessertMeal", chcDessert, "Dessertcheckbox");
-              
+
             }
             AllCheckboxAfterElse();
         }
@@ -468,7 +467,7 @@ namespace CulinaryRecipes
             else
             {
                 AllCheckboxElse("DrinkMeal", chcDrink, "Drinkscheckbox");
-              
+
             }
             AllCheckboxAfterElse();
         }
@@ -481,9 +480,9 @@ namespace CulinaryRecipes
             }
             else
             {
-               
+
                 AllCheckboxElse("PreservesMeal", chcPreserves, "Preservescheckbox");
-               
+
             }
             AllCheckboxAfterElse();
         }
@@ -497,7 +496,7 @@ namespace CulinaryRecipes
             else
             {
                 AllCheckboxElse("SaladMeal", chcSalad, "Saladcheckbox");
-                
+
             }
             AllCheckboxAfterElse();
         }
@@ -529,7 +528,7 @@ namespace CulinaryRecipes
             else
             {
                 AllCheckboxElse("IdPastaIngredients", chcPasta, "Pastacheckbox");
-              
+
             }
             AllCheckboxAfterElse();
         }
@@ -542,8 +541,8 @@ namespace CulinaryRecipes
             }
             else
             {
-                AllCheckboxElse("IdFruitsIngredients", chcFruits, "Fruitscheckbox"); 
-             
+                AllCheckboxElse("IdFruitsIngredients", chcFruits, "Fruitscheckbox");
+
             }
             AllCheckboxAfterElse();
         }
@@ -557,7 +556,7 @@ namespace CulinaryRecipes
             else
             {
                 AllCheckboxElse("IdMuschroomsIngredients", chcMuschrooms, "Mushroomscheckbox");
-              
+
             }
             AllCheckboxAfterElse();
         }
@@ -570,8 +569,8 @@ namespace CulinaryRecipes
             }
             else
             {
-                AllCheckboxElse("IdBirdIngredients", chcBird, "Birdcheckbox");      
-               
+                AllCheckboxElse("IdBirdIngredients", chcBird, "Birdcheckbox");
+
             }
             AllCheckboxAfterElse();
         }
@@ -585,7 +584,7 @@ namespace CulinaryRecipes
             else
             {
                 AllCheckboxElse("IdMeatIngredients", chcMeat, "Meatcheckbox");
-              
+
             }
             AllCheckboxAfterElse();
         }
@@ -599,7 +598,7 @@ namespace CulinaryRecipes
             else
             {
                 AllCheckboxElse("IdEggsIngredients", chcEggs, "Eggscheckbox");
-               
+
             }
             AllCheckboxAfterElse();
         }
@@ -849,37 +848,54 @@ namespace CulinaryRecipes
             dgGrid.Visible = false;
             filldgGrid();
 
-            if (dgGrid.Rows.Count > 0) { MessageBox.Show("Zanim Zaimportujesz plik wyczyść bazę danych. - Plik - Usuń bazę danych"); }
+            if (dgGrid.Rows.Count > 0)
+            {
+                MessageBox.Show("Zanim Zaimportujesz plik wyczyść bazę danych. - Plik - Usuń bazę danych");
+            }
             else
             {
-                openFileDialog1.Filter = "Pliki tekstowe (*.xml)|*.xml";
-
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                try
                 {
-                    string sciezka = openFileDialog1.FileName;
-                    FileStream fs = new FileStream(sciezka, System.IO.FileMode.Open, FileAccess.Read);
-                    ls = (List<RecipesBase>)xs.Deserialize(fs);
+                    openFileDialog1.Filter = "Pliki tekstowe (*.xml)|*.xml";
 
-                    RecipesBase m = new RecipesBase();
-                    if (dgGrid.Rows.Count <= 0)
+                    if (openFileDialog1.ShowDialog() == DialogResult.OK)
                     {
-                        foreach (var r in ls)
+                        string sciezka = openFileDialog1.FileName;
+                        FileStream fs = new FileStream(sciezka, System.IO.FileMode.Open, FileAccess.Read);
+                        ls = (List<RecipesBase>)xs.Deserialize(fs);
+
+                        RecipesBase m = new RecipesBase();
+                        if (dgGrid.Rows.Count <= 0)
                         {
-                            dgGrid.Rows.Add(
-                            m.Id = r.Id, m.RecipesName = r.RecipesName, m.Ingredients = r.Ingredients, m.AmountsMeal = r.AmountsMeal, m.ShortDescription = r.ShortDescription, m.LongDescription = r.LongDescription, m.NumberPortions = r.NumberPortions, m.CategoryCuisines = r.CategoryCuisines, m.CategoryRating = r.CategoryRating, m.CategoryDifficultLevel = r.CategoryDifficultLevel, m.CategoryPreparationTime = r.CategoryPreparationTime, m.SnackMeal = r.SnackMeal, m.DinnerMeal = r.DinnerMeal, m.SoupMeal = r.SoupMeal, m.DessertMeal = r.DessertMeal, m.DrinkMeal = r.DrinkMeal, m.PreservesMeal = r.PreservesMeal, m.SaladMeal = r.SaladMeal, m.IdFishIngredients = r.IdFishIngredients, m.IdPastaIngredients = r.IdPastaIngredients, m.IdFruitsIngredients = r.IdFruitsIngredients, m.IdMuschroomsIngredients = r.IdMuschroomsIngredients, m.IdBirdIngredients = r.IdBirdIngredients, m.IdMeatIngredients = r.IdMeatIngredients, m.IdEggsIngredients = r.IdEggsIngredients, m.PhotoLinkLocation = r.PhotoLinkLocation, m.Vegetarian = r.Vegetarian, m.Grams = r.Grams);
-                            RecipesBase.add(m);
+                            foreach (var r in ls)
+                            {
+                                dgGrid.Rows.Add(
+                                m.Id = r.Id, m.RecipesName = r.RecipesName, m.Ingredients = r.Ingredients, m.AmountsMeal = r.AmountsMeal, m.ShortDescription = r.ShortDescription, m.LongDescription = r.LongDescription, m.NumberPortions = r.NumberPortions, m.CategoryCuisines = r.CategoryCuisines, m.CategoryRating = r.CategoryRating, m.CategoryDifficultLevel = r.CategoryDifficultLevel, m.CategoryPreparationTime = r.CategoryPreparationTime, m.SnackMeal = r.SnackMeal, m.DinnerMeal = r.DinnerMeal, m.SoupMeal = r.SoupMeal, m.DessertMeal = r.DessertMeal, m.DrinkMeal = r.DrinkMeal, m.PreservesMeal = r.PreservesMeal, m.SaladMeal = r.SaladMeal, m.IdFishIngredients = r.IdFishIngredients, m.IdPastaIngredients = r.IdPastaIngredients, m.IdFruitsIngredients = r.IdFruitsIngredients, m.IdMuschroomsIngredients = r.IdMuschroomsIngredients, m.IdBirdIngredients = r.IdBirdIngredients, m.IdMeatIngredients = r.IdMeatIngredients, m.IdEggsIngredients = r.IdEggsIngredients, m.PhotoLinkLocation = r.PhotoLinkLocation, m.Vegetarian = r.Vegetarian, m.Grams = r.Grams);
+                                RecipesBase.add(m);
+                            }
+                            MessageBox.Show("Baza danych została zaimportowana");
+                            dgGrid.Visible = true;
+                            filldgGrid();
                         }
-                        MessageBox.Show("Baza danych została zaimportowana");
-                        dgGrid.Visible = true;
+                        else
+                        {
+                            MessageBox.Show("Baza danych przed importem musi być pusta");
+
+                        }
+                        fs.Close();
+
                     }
-                    else
-                    {
-                        MessageBox.Show("Baza danych przed importem musi być pusta");
-                    }
-                    fs.Close();
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
             lblCleanVisibleFalse();
+            dgGrid.Visible = true;
+
         }
 
         private void eksportujCalaBazeDanychToolStripMenuItem_Click(object sender, EventArgs e)
@@ -980,7 +996,6 @@ namespace CulinaryRecipes
                 {
                     gramsForm1 = dgGrid.Rows[row].Cells[27].Value.ToString();
                 }
-
 
                 pbLittlePhoto.Visible = true;
                 txtLittleName.Visible = true;
@@ -1155,22 +1170,23 @@ namespace CulinaryRecipes
                 if (chcVegetarian.Checked)
                 {
                     if (CheckBoxList[i] == main) continue;
-                    else {
+                    else
+                    {
                         CheckBoxList[i].Checked = false;
                         chcVegetarian.Checked = true;
                         main.Checked = true;
-                    }  
+                    }
                 }
             }
-           
+
         }
 
         private void chcVegetarian_CheckedChanged(object sender, EventArgs e)
         {
-         
+
             if (chcVegetarian.Checked == false)
             {
-               
+
                 ClearCheckBox2(chcVegetarian, "Vegetarian");
 
                 Wypelnij();
@@ -1180,20 +1196,20 @@ namespace CulinaryRecipes
             }
             else
             {
-                int quantity=0;
+                int quantity = 0;
                 bool delete2 = false;
-               
+
                 for (int i = 0; i < CheckBoxList.Count; i++)
                 {
 
                     if (CheckBoxList[i].Checked) quantity++;
-                    if (i==14 && quantity>2) //pamietaj w razie zmiany ilosci checkboxow
+                    if (i == 14 && quantity > 2) //pamietaj w razie zmiany ilosci checkboxow
                     {
-                       
+
                         delete2 = true;
                     }
 
-                 
+
                 }
                 for (int j = 0; j < CheckBoxList.Count; j++)
                 {
@@ -1203,9 +1219,9 @@ namespace CulinaryRecipes
                     quantity = 0;
 
                 }
-                
 
-                if (chcFish.Checked) { VegePoprawka(chcFish, "Fishcheckbox");   }
+
+                if (chcFish.Checked) { VegePoprawka(chcFish, "Fishcheckbox"); }
                 else if (chcPasta.Checked) VegePoprawka(chcPasta, "Pastacheckbox");
                 else if (chcFruits.Checked) VegePoprawka(chcFruits, "Fruitscheckbox");
                 else if (chcMuschrooms.Checked) VegePoprawka(chcMuschrooms, "Mushroomscheckbox");
@@ -1223,8 +1239,8 @@ namespace CulinaryRecipes
                 else if (chcSalad.Checked) fillGrid("SaladMeal", chcSalad, "Saladcheckbox");
 
                 else fillGrid("Vegetarian", chcVegetarian, "Vegetarian");
-                    DeleteDuplicate();
-                }
+                DeleteDuplicate();
+            }
 
             CleanThumbnails();
             CleanFunctionClear();
@@ -1313,10 +1329,10 @@ namespace CulinaryRecipes
         }
 
         bool proba2;
-        private void VegePoprawka(CheckBox main,string nameMain)
+        private void VegePoprawka(CheckBox main, string nameMain)
         {
             delete = false;
-           
+
             if (chcVegetarian.Checked)
             {
                 for (int i = dgGrid.RowCount - 1; i >= 0; i--)
@@ -1335,7 +1351,7 @@ namespace CulinaryRecipes
 
                     }
                     if (delete == true) dgGrid.Rows.Remove(dgGrid.Rows[i]);
-               
+
                 }
             }
         }
@@ -1401,8 +1417,10 @@ namespace CulinaryRecipes
         private void NewForm()
         {
             bool add = true;
+
             Form2 NewForm = new Form2();
             NewForm.addRecipeForm2 = add;
+            NewForm.addRecipe = true;
             filldgGrid();
             this.Visible = false;
 
