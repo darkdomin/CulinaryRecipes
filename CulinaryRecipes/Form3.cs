@@ -540,5 +540,10 @@ namespace CulinaryRecipes
         {
             ClearLink(e);
         }
+
+        private void rtxtLinkForm3_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(rtxtLinkForm3, "Klawisz 'Esc' - Czyści pole");
+        }
     }
 }

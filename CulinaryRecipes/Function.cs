@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace CulinaryRecipes
@@ -83,7 +78,7 @@ namespace CulinaryRecipes
             }
         }
 
-        public static void ColorFieldsAfterBlocking(Control set,RichTextBox name)
+        public static void ColorFieldsAfterBlocking(Control set, RichTextBox name)
         {
             foreach (Control kolorOdblokowania in set.Controls)
             {
@@ -136,7 +131,7 @@ namespace CulinaryRecipes
                     MessageBox.Show("Taka nazwa już istnieje w bazie danych");
                     name.Text = "";
                     break;
-                    
+
                 }
             }
             return variable;
@@ -155,7 +150,11 @@ namespace CulinaryRecipes
 
         public static void UncheckText(TextBox name)
         {
-            if (name.SelectedText.Length >= 0) name.SelectionStart = 0;
+            if (name.SelectedText.Length >= 0)
+            {
+
+                name.SelectionStart = 0;
+            }
         }
 
         public static void DisplaySelectionRightPanel(Control set, int[] PanelLeftOrRight)

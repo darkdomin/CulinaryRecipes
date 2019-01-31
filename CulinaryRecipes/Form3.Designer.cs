@@ -73,6 +73,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.pbLittlePhoto = new System.Windows.Forms.PictureBox();
             this.btnPhotoForm3 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.gbTime.SuspendLayout();
             this.gbLevel.SuspendLayout();
             this.gbRating.SuspendLayout();
@@ -568,6 +569,7 @@
             this.rtxtLinkForm3.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
             this.rtxtLinkForm3.TextChanged += new System.EventHandler(this.rtxtLinkForm3_TextChanged);
             this.rtxtLinkForm3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtLinkForm3_KeyDown);
+            this.rtxtLinkForm3.MouseEnter += new System.EventHandler(this.rtxtLinkForm3_MouseEnter);
             // 
             // contextMenuStrip1
             // 
@@ -765,5 +767,6 @@
         private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem ContextCheckAll;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

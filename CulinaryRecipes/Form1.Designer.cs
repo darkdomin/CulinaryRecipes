@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.cMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -65,25 +65,32 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.chcSnack = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblSnack = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.lblSnackVeg = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDinnerVeg = new System.Windows.Forms.Label();
+            this.lblDinner = new System.Windows.Forms.Label();
             this.chcDinner = new System.Windows.Forms.CheckBox();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSoupVeg = new System.Windows.Forms.Label();
+            this.lblSoup = new System.Windows.Forms.Label();
             this.chcSoup = new System.Windows.Forms.CheckBox();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.lblDessertVeg = new System.Windows.Forms.Label();
             this.chcDessert = new System.Windows.Forms.CheckBox();
-            this.label34 = new System.Windows.Forms.Label();
+            this.lblDessert = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.label = new System.Windows.Forms.Label();
+            this.lblDrinksVeg = new System.Windows.Forms.Label();
+            this.lblDrinks = new System.Windows.Forms.Label();
             this.chcDrink = new System.Windows.Forms.CheckBox();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblPrevervesVeg = new System.Windows.Forms.Label();
+            this.lblPreserves = new System.Windows.Forms.Label();
             this.chcPreserves = new System.Windows.Forms.CheckBox();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblSaladVeg = new System.Windows.Forms.Label();
+            this.lblSalad = new System.Windows.Forms.Label();
             this.chcSalad = new System.Windows.Forms.CheckBox();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -105,22 +112,29 @@
             this.chcMuschrooms = new System.Windows.Forms.CheckBox();
             this.chcMeat = new System.Windows.Forms.CheckBox();
             this.panel24 = new System.Windows.Forms.Panel();
+            this.lblFishVeg = new System.Windows.Forms.Label();
             this.chcFish = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblFish = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
+            this.lblPastaVeg = new System.Windows.Forms.Label();
             this.chcPasta = new System.Windows.Forms.CheckBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblPasta = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
+            this.lblFruitsVeg = new System.Windows.Forms.Label();
             this.chcFruits = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblFruits = new System.Windows.Forms.Label();
             this.panel27 = new System.Windows.Forms.Panel();
-            this.lbl34 = new System.Windows.Forms.Label();
+            this.lblMushroomVeg = new System.Windows.Forms.Label();
+            this.lblMuschrooms = new System.Windows.Forms.Label();
             this.panel28 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblBirdVeg = new System.Windows.Forms.Label();
+            this.lblBird = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblMeatVeg = new System.Windows.Forms.Label();
+            this.lblMeat = new System.Windows.Forms.Label();
             this.panel30 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblEggsVeg = new System.Windows.Forms.Label();
+            this.lblEggs = new System.Windows.Forms.Label();
             this.txtSeek = new System.Windows.Forms.TextBox();
             this.dgGrid = new System.Windows.Forms.DataGridView();
             this.txtLittleName = new System.Windows.Forms.TextBox();
@@ -154,7 +168,7 @@
             this.lblLineOne = new System.Windows.Forms.Label();
             this.lblLineTwo = new System.Windows.Forms.Label();
             this.chcVegetarian = new System.Windows.Forms.CheckBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblVegetarian = new System.Windows.Forms.Label();
             this.lblClearCheckBox = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -518,20 +532,21 @@
             this.chcSnack.UseVisualStyleBackColor = true;
             this.chcSnack.CheckedChanged += new System.EventHandler(this.chcSnack_CheckedChanged);
             // 
-            // label2
+            // lblSnack
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(5, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "PRZEKĄSKI";
+            this.lblSnack.AutoSize = true;
+            this.lblSnack.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSnack.ForeColor = System.Drawing.Color.White;
+            this.lblSnack.Location = new System.Drawing.Point(5, 36);
+            this.lblSnack.Name = "lblSnack";
+            this.lblSnack.Size = new System.Drawing.Size(62, 13);
+            this.lblSnack.TabIndex = 7;
+            this.lblSnack.Text = "PRZEKĄSKI";
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.label2);
+            this.panel7.Controls.Add(this.lblSnackVeg);
+            this.panel7.Controls.Add(this.lblSnack);
             this.panel7.Controls.Add(this.chcSnack);
             this.panel7.Location = new System.Drawing.Point(737, 136);
             this.panel7.Margin = new System.Windows.Forms.Padding(10);
@@ -539,9 +554,21 @@
             this.panel7.Size = new System.Drawing.Size(70, 70);
             this.panel7.TabIndex = 8;
             // 
+            // lblSnackVeg
+            // 
+            this.lblSnackVeg.AutoSize = true;
+            this.lblSnackVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSnackVeg.Location = new System.Drawing.Point(19, 15);
+            this.lblSnackVeg.Name = "lblSnackVeg";
+            this.lblSnackVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblSnackVeg.TabIndex = 14;
+            this.lblSnackVeg.Text = "Veg";
+            this.lblSnackVeg.Visible = false;
+            // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.label1);
+            this.panel10.Controls.Add(this.lblDinnerVeg);
+            this.panel10.Controls.Add(this.lblDinner);
             this.panel10.Controls.Add(this.chcDinner);
             this.panel10.Location = new System.Drawing.Point(737, 226);
             this.panel10.Margin = new System.Windows.Forms.Padding(10);
@@ -549,17 +576,28 @@
             this.panel10.Size = new System.Drawing.Size(70, 70);
             this.panel10.TabIndex = 8;
             // 
-            // label1
+            // lblDinnerVeg
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(5, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 26);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "DANIE\r\nGŁÓWNE";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDinnerVeg.AutoSize = true;
+            this.lblDinnerVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDinnerVeg.Location = new System.Drawing.Point(20, 7);
+            this.lblDinnerVeg.Name = "lblDinnerVeg";
+            this.lblDinnerVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblDinnerVeg.TabIndex = 15;
+            this.lblDinnerVeg.Text = "Veg";
+            this.lblDinnerVeg.Visible = false;
+            // 
+            // lblDinner
+            // 
+            this.lblDinner.AutoSize = true;
+            this.lblDinner.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDinner.ForeColor = System.Drawing.Color.White;
+            this.lblDinner.Location = new System.Drawing.Point(5, 23);
+            this.lblDinner.Name = "lblDinner";
+            this.lblDinner.Size = new System.Drawing.Size(52, 26);
+            this.lblDinner.TabIndex = 8;
+            this.lblDinner.Text = "DANIE\r\nGŁÓWNE";
+            this.lblDinner.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // chcDinner
             // 
@@ -577,7 +615,8 @@
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.label3);
+            this.panel11.Controls.Add(this.lblSoupVeg);
+            this.panel11.Controls.Add(this.lblSoup);
             this.panel11.Controls.Add(this.chcSoup);
             this.panel11.Location = new System.Drawing.Point(737, 318);
             this.panel11.Margin = new System.Windows.Forms.Padding(10);
@@ -585,17 +624,28 @@
             this.panel11.Size = new System.Drawing.Size(70, 70);
             this.panel11.TabIndex = 6;
             // 
-            // label3
+            // lblSoupVeg
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(4, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "ZUPY";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSoupVeg.AutoSize = true;
+            this.lblSoupVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSoupVeg.Location = new System.Drawing.Point(19, 13);
+            this.lblSoupVeg.Name = "lblSoupVeg";
+            this.lblSoupVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblSoupVeg.TabIndex = 16;
+            this.lblSoupVeg.Text = "Veg";
+            this.lblSoupVeg.Visible = false;
+            // 
+            // lblSoup
+            // 
+            this.lblSoup.AutoSize = true;
+            this.lblSoup.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSoup.ForeColor = System.Drawing.Color.White;
+            this.lblSoup.Location = new System.Drawing.Point(4, 32);
+            this.lblSoup.Name = "lblSoup";
+            this.lblSoup.Size = new System.Drawing.Size(33, 13);
+            this.lblSoup.TabIndex = 10;
+            this.lblSoup.Text = "ZUPY";
+            this.lblSoup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // chcSoup
             // 
@@ -613,13 +663,25 @@
             // 
             // panel12
             // 
+            this.panel12.Controls.Add(this.lblDessertVeg);
             this.panel12.Controls.Add(this.chcDessert);
-            this.panel12.Controls.Add(this.label34);
+            this.panel12.Controls.Add(this.lblDessert);
             this.panel12.Location = new System.Drawing.Point(737, 408);
             this.panel12.Margin = new System.Windows.Forms.Padding(10);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(70, 70);
             this.panel12.TabIndex = 9;
+            // 
+            // lblDessertVeg
+            // 
+            this.lblDessertVeg.AutoSize = true;
+            this.lblDessertVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDessertVeg.Location = new System.Drawing.Point(24, 7);
+            this.lblDessertVeg.Name = "lblDessertVeg";
+            this.lblDessertVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblDessertVeg.TabIndex = 17;
+            this.lblDessertVeg.Text = "Veg";
+            this.lblDessertVeg.Visible = false;
             // 
             // chcDessert
             // 
@@ -635,21 +697,22 @@
             this.chcDessert.UseVisualStyleBackColor = true;
             this.chcDessert.CheckedChanged += new System.EventHandler(this.chcDessert_CheckedChanged);
             // 
-            // label34
+            // lblDessert
             // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label34.ForeColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(4, 23);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(46, 26);
-            this.label34.TabIndex = 10;
-            this.label34.Text = "CIASTA,\r\nDESERY";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDessert.AutoSize = true;
+            this.lblDessert.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDessert.ForeColor = System.Drawing.Color.White;
+            this.lblDessert.Location = new System.Drawing.Point(4, 23);
+            this.lblDessert.Name = "lblDessert";
+            this.lblDessert.Size = new System.Drawing.Size(46, 26);
+            this.lblDessert.TabIndex = 10;
+            this.lblDessert.Text = "CIASTA,\r\nDESERY";
+            this.lblDessert.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel13
             // 
-            this.panel13.Controls.Add(this.label);
+            this.panel13.Controls.Add(this.lblDrinksVeg);
+            this.panel13.Controls.Add(this.lblDrinks);
             this.panel13.Controls.Add(this.chcDrink);
             this.panel13.Location = new System.Drawing.Point(737, 498);
             this.panel13.Margin = new System.Windows.Forms.Padding(10);
@@ -657,17 +720,28 @@
             this.panel13.Size = new System.Drawing.Size(70, 70);
             this.panel13.TabIndex = 10;
             // 
-            // label
+            // lblDrinksVeg
             // 
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label.ForeColor = System.Drawing.Color.White;
-            this.label.Location = new System.Drawing.Point(3, 27);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(46, 26);
-            this.label.TabIndex = 12;
-            this.label.Text = "DRINKI,\r\nNAPOJE";
-            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDrinksVeg.AutoSize = true;
+            this.lblDrinksVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDrinksVeg.Location = new System.Drawing.Point(22, 10);
+            this.lblDrinksVeg.Name = "lblDrinksVeg";
+            this.lblDrinksVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblDrinksVeg.TabIndex = 18;
+            this.lblDrinksVeg.Text = "Veg";
+            this.lblDrinksVeg.Visible = false;
+            // 
+            // lblDrinks
+            // 
+            this.lblDrinks.AutoSize = true;
+            this.lblDrinks.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDrinks.ForeColor = System.Drawing.Color.White;
+            this.lblDrinks.Location = new System.Drawing.Point(3, 27);
+            this.lblDrinks.Name = "lblDrinks";
+            this.lblDrinks.Size = new System.Drawing.Size(46, 26);
+            this.lblDrinks.TabIndex = 12;
+            this.lblDrinks.Text = "DRINKI,\r\nNAPOJE";
+            this.lblDrinks.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // chcDrink
             // 
@@ -685,7 +759,8 @@
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.label5);
+            this.panel14.Controls.Add(this.lblPrevervesVeg);
+            this.panel14.Controls.Add(this.lblPreserves);
             this.panel14.Controls.Add(this.chcPreserves);
             this.panel14.Location = new System.Drawing.Point(737, 588);
             this.panel14.Margin = new System.Windows.Forms.Padding(10);
@@ -693,16 +768,27 @@
             this.panel14.Size = new System.Drawing.Size(70, 70);
             this.panel14.TabIndex = 11;
             // 
-            // label5
+            // lblPrevervesVeg
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(2, 33);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "PRZETWORY";
+            this.lblPrevervesVeg.AutoSize = true;
+            this.lblPrevervesVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPrevervesVeg.Location = new System.Drawing.Point(20, 11);
+            this.lblPrevervesVeg.Name = "lblPrevervesVeg";
+            this.lblPrevervesVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblPrevervesVeg.TabIndex = 19;
+            this.lblPrevervesVeg.Text = "Veg";
+            this.lblPrevervesVeg.Visible = false;
+            // 
+            // lblPreserves
+            // 
+            this.lblPreserves.AutoSize = true;
+            this.lblPreserves.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPreserves.ForeColor = System.Drawing.Color.White;
+            this.lblPreserves.Location = new System.Drawing.Point(2, 33);
+            this.lblPreserves.Name = "lblPreserves";
+            this.lblPreserves.Size = new System.Drawing.Size(70, 13);
+            this.lblPreserves.TabIndex = 12;
+            this.lblPreserves.Text = "PRZETWORY";
             // 
             // chcPreserves
             // 
@@ -720,7 +806,8 @@
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.label6);
+            this.panel15.Controls.Add(this.lblSaladVeg);
+            this.panel15.Controls.Add(this.lblSalad);
             this.panel15.Controls.Add(this.chcSalad);
             this.panel15.Location = new System.Drawing.Point(737, 676);
             this.panel15.Margin = new System.Windows.Forms.Padding(10);
@@ -728,17 +815,28 @@
             this.panel15.Size = new System.Drawing.Size(70, 70);
             this.panel15.TabIndex = 12;
             // 
-            // label6
+            // lblSaladVeg
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 26);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "SAŁATKI,\r\nSURÓWKI";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSaladVeg.AutoSize = true;
+            this.lblSaladVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSaladVeg.Location = new System.Drawing.Point(20, 7);
+            this.lblSaladVeg.Name = "lblSaladVeg";
+            this.lblSaladVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblSaladVeg.TabIndex = 20;
+            this.lblSaladVeg.Text = "Veg";
+            this.lblSaladVeg.Visible = false;
+            // 
+            // lblSalad
+            // 
+            this.lblSalad.AutoSize = true;
+            this.lblSalad.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSalad.ForeColor = System.Drawing.Color.White;
+            this.lblSalad.Location = new System.Drawing.Point(3, 24);
+            this.lblSalad.Name = "lblSalad";
+            this.lblSalad.Size = new System.Drawing.Size(55, 26);
+            this.lblSalad.TabIndex = 12;
+            this.lblSalad.Text = "SAŁATKI,\r\nSURÓWKI";
+            this.lblSalad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // chcSalad
             // 
@@ -968,13 +1066,25 @@
             // 
             // panel24
             // 
+            this.panel24.Controls.Add(this.lblFishVeg);
             this.panel24.Controls.Add(this.chcFish);
-            this.panel24.Controls.Add(this.label4);
+            this.panel24.Controls.Add(this.lblFish);
             this.panel24.Location = new System.Drawing.Point(96, 136);
             this.panel24.Margin = new System.Windows.Forms.Padding(10);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(92, 70);
             this.panel24.TabIndex = 14;
+            // 
+            // lblFishVeg
+            // 
+            this.lblFishVeg.AutoSize = true;
+            this.lblFishVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblFishVeg.Location = new System.Drawing.Point(24, 14);
+            this.lblFishVeg.Name = "lblFishVeg";
+            this.lblFishVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblFishVeg.TabIndex = 15;
+            this.lblFishVeg.Text = "Veg";
+            this.lblFishVeg.Visible = false;
             // 
             // chcFish
             // 
@@ -990,27 +1100,39 @@
             this.chcFish.UseVisualStyleBackColor = true;
             this.chcFish.CheckedChanged += new System.EventHandler(this.chcFish_CheckedChanged);
             // 
-            // label4
+            // lblFish
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(5, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 26);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "      RYBY\r\nOWOCE MORZA\r\n";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblFish.AutoSize = true;
+            this.lblFish.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblFish.ForeColor = System.Drawing.Color.White;
+            this.lblFish.Location = new System.Drawing.Point(5, 26);
+            this.lblFish.Name = "lblFish";
+            this.lblFish.Size = new System.Drawing.Size(84, 26);
+            this.lblFish.TabIndex = 6;
+            this.lblFish.Text = "      RYBY\r\nOWOCE MORZA\r\n";
+            this.lblFish.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel25
             // 
+            this.panel25.Controls.Add(this.lblPastaVeg);
             this.panel25.Controls.Add(this.chcPasta);
-            this.panel25.Controls.Add(this.label7);
+            this.panel25.Controls.Add(this.lblPasta);
             this.panel25.Location = new System.Drawing.Point(96, 226);
             this.panel25.Margin = new System.Windows.Forms.Padding(10);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(92, 70);
             this.panel25.TabIndex = 9;
+            // 
+            // lblPastaVeg
+            // 
+            this.lblPastaVeg.AutoSize = true;
+            this.lblPastaVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPastaVeg.Location = new System.Drawing.Point(23, 9);
+            this.lblPastaVeg.Name = "lblPastaVeg";
+            this.lblPastaVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblPastaVeg.TabIndex = 16;
+            this.lblPastaVeg.Text = "Veg";
+            this.lblPastaVeg.Visible = false;
             // 
             // chcPasta
             // 
@@ -1026,27 +1148,39 @@
             this.chcPasta.UseVisualStyleBackColor = true;
             this.chcPasta.CheckedChanged += new System.EventHandler(this.chcPasta_CheckedChanged);
             // 
-            // label7
+            // lblPasta
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(4, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 26);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "  KASZA\r\nRYŻ, MAKARON\r\n";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPasta.AutoSize = true;
+            this.lblPasta.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPasta.ForeColor = System.Drawing.Color.White;
+            this.lblPasta.Location = new System.Drawing.Point(4, 22);
+            this.lblPasta.Name = "lblPasta";
+            this.lblPasta.Size = new System.Drawing.Size(85, 26);
+            this.lblPasta.TabIndex = 10;
+            this.lblPasta.Text = "  KASZA\r\nRYŻ, MAKARON\r\n";
+            this.lblPasta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel26
             // 
+            this.panel26.Controls.Add(this.lblFruitsVeg);
             this.panel26.Controls.Add(this.chcFruits);
-            this.panel26.Controls.Add(this.label8);
+            this.panel26.Controls.Add(this.lblFruits);
             this.panel26.Location = new System.Drawing.Point(96, 318);
             this.panel26.Margin = new System.Windows.Forms.Padding(10);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(89, 70);
             this.panel26.TabIndex = 9;
+            // 
+            // lblFruitsVeg
+            // 
+            this.lblFruitsVeg.AutoSize = true;
+            this.lblFruitsVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblFruitsVeg.Location = new System.Drawing.Point(20, 14);
+            this.lblFruitsVeg.Name = "lblFruitsVeg";
+            this.lblFruitsVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblFruitsVeg.TabIndex = 17;
+            this.lblFruitsVeg.Text = "Veg";
+            this.lblFruitsVeg.Visible = false;
             // 
             // chcFruits
             // 
@@ -1062,103 +1196,151 @@
             this.chcFruits.UseVisualStyleBackColor = true;
             this.chcFruits.CheckedChanged += new System.EventHandler(this.chcFruits_CheckedChanged);
             // 
-            // label8
+            // lblFruits
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(19, 25);
-            this.label8.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 26);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "OWOCE \r\nI  WARZYWA\r\n";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblFruits.AutoSize = true;
+            this.lblFruits.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblFruits.ForeColor = System.Drawing.Color.White;
+            this.lblFruits.Location = new System.Drawing.Point(19, 25);
+            this.lblFruits.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.lblFruits.Name = "lblFruits";
+            this.lblFruits.Size = new System.Drawing.Size(67, 26);
+            this.lblFruits.TabIndex = 12;
+            this.lblFruits.Text = "OWOCE \r\nI  WARZYWA\r\n";
+            this.lblFruits.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel27
             // 
+            this.panel27.Controls.Add(this.lblMushroomVeg);
             this.panel27.Controls.Add(this.chcMuschrooms);
-            this.panel27.Controls.Add(this.lbl34);
+            this.panel27.Controls.Add(this.lblMuschrooms);
             this.panel27.Location = new System.Drawing.Point(96, 408);
             this.panel27.Margin = new System.Windows.Forms.Padding(10);
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(89, 70);
             this.panel27.TabIndex = 9;
             // 
-            // lbl34
+            // lblMushroomVeg
             // 
-            this.lbl34.AutoSize = true;
-            this.lbl34.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbl34.ForeColor = System.Drawing.Color.White;
-            this.lbl34.Location = new System.Drawing.Point(39, 32);
-            this.lbl34.Name = "lbl34";
-            this.lbl34.Size = new System.Drawing.Size(48, 13);
-            this.lbl34.TabIndex = 14;
-            this.lbl34.Text = "GRZYBY";
+            this.lblMushroomVeg.AutoSize = true;
+            this.lblMushroomVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblMushroomVeg.Location = new System.Drawing.Point(24, 13);
+            this.lblMushroomVeg.Name = "lblMushroomVeg";
+            this.lblMushroomVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblMushroomVeg.TabIndex = 18;
+            this.lblMushroomVeg.Text = "Veg";
+            this.lblMushroomVeg.Visible = false;
+            // 
+            // lblMuschrooms
+            // 
+            this.lblMuschrooms.AutoSize = true;
+            this.lblMuschrooms.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblMuschrooms.ForeColor = System.Drawing.Color.White;
+            this.lblMuschrooms.Location = new System.Drawing.Point(39, 32);
+            this.lblMuschrooms.Name = "lblMuschrooms";
+            this.lblMuschrooms.Size = new System.Drawing.Size(48, 13);
+            this.lblMuschrooms.TabIndex = 14;
+            this.lblMuschrooms.Text = "GRZYBY";
             // 
             // panel28
             // 
+            this.panel28.Controls.Add(this.lblBirdVeg);
             this.panel28.Controls.Add(this.chcBird);
-            this.panel28.Controls.Add(this.label11);
+            this.panel28.Controls.Add(this.lblBird);
             this.panel28.Location = new System.Drawing.Point(96, 498);
             this.panel28.Margin = new System.Windows.Forms.Padding(10);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(89, 70);
             this.panel28.TabIndex = 9;
             // 
-            // label11
+            // lblBirdVeg
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(-1, 25);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(89, 26);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "DRÓB\r\nDZIKIE PTACTWO";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblBirdVeg.AutoSize = true;
+            this.lblBirdVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblBirdVeg.Location = new System.Drawing.Point(23, 12);
+            this.lblBirdVeg.Name = "lblBirdVeg";
+            this.lblBirdVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblBirdVeg.TabIndex = 19;
+            this.lblBirdVeg.Text = "Veg";
+            this.lblBirdVeg.Visible = false;
+            // 
+            // lblBird
+            // 
+            this.lblBird.AutoSize = true;
+            this.lblBird.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblBird.ForeColor = System.Drawing.Color.White;
+            this.lblBird.Location = new System.Drawing.Point(-1, 25);
+            this.lblBird.Name = "lblBird";
+            this.lblBird.Size = new System.Drawing.Size(89, 26);
+            this.lblBird.TabIndex = 16;
+            this.lblBird.Text = "DRÓB\r\nDZIKIE PTACTWO";
+            this.lblBird.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel29
             // 
+            this.panel29.Controls.Add(this.lblMeatVeg);
             this.panel29.Controls.Add(this.chcMeat);
-            this.panel29.Controls.Add(this.label9);
+            this.panel29.Controls.Add(this.lblMeat);
             this.panel29.Location = new System.Drawing.Point(96, 588);
             this.panel29.Margin = new System.Windows.Forms.Padding(10);
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(88, 70);
             this.panel29.TabIndex = 15;
             // 
-            // label9
+            // lblMeatVeg
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(39, 39);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 13);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "MIĘSO";
+            this.lblMeatVeg.AutoSize = true;
+            this.lblMeatVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblMeatVeg.Location = new System.Drawing.Point(21, 19);
+            this.lblMeatVeg.Name = "lblMeatVeg";
+            this.lblMeatVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblMeatVeg.TabIndex = 20;
+            this.lblMeatVeg.Text = "Veg";
+            this.lblMeatVeg.Visible = false;
+            // 
+            // lblMeat
+            // 
+            this.lblMeat.AutoSize = true;
+            this.lblMeat.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblMeat.ForeColor = System.Drawing.Color.White;
+            this.lblMeat.Location = new System.Drawing.Point(39, 39);
+            this.lblMeat.Name = "lblMeat";
+            this.lblMeat.Size = new System.Drawing.Size(39, 13);
+            this.lblMeat.TabIndex = 16;
+            this.lblMeat.Text = "MIĘSO";
             // 
             // panel30
             // 
+            this.panel30.Controls.Add(this.lblEggsVeg);
             this.panel30.Controls.Add(this.chcEggs);
-            this.panel30.Controls.Add(this.label10);
+            this.panel30.Controls.Add(this.lblEggs);
             this.panel30.Location = new System.Drawing.Point(96, 675);
             this.panel30.Margin = new System.Windows.Forms.Padding(10);
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(88, 70);
             this.panel30.TabIndex = 16;
             // 
-            // label10
+            // lblEggsVeg
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(49, 33);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(29, 13);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "JAJA";
+            this.lblEggsVeg.AutoSize = true;
+            this.lblEggsVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEggsVeg.Location = new System.Drawing.Point(21, 12);
+            this.lblEggsVeg.Name = "lblEggsVeg";
+            this.lblEggsVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblEggsVeg.TabIndex = 21;
+            this.lblEggsVeg.Text = "Veg";
+            this.lblEggsVeg.Visible = false;
+            // 
+            // lblEggs
+            // 
+            this.lblEggs.AutoSize = true;
+            this.lblEggs.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEggs.ForeColor = System.Drawing.Color.White;
+            this.lblEggs.Location = new System.Drawing.Point(49, 33);
+            this.lblEggs.Name = "lblEggs";
+            this.lblEggs.Size = new System.Drawing.Size(29, 13);
+            this.lblEggs.TabIndex = 16;
+            this.lblEggs.Text = "JAJA";
             // 
             // txtSeek
             // 
@@ -1180,14 +1362,14 @@
             this.dgGrid.ColumnHeadersVisible = false;
             this.dgGrid.ContextMenuStrip = this.cMenuStrip;
             this.dgGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgGrid.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.dgGrid.Location = new System.Drawing.Point(207, 480);
             this.dgGrid.Name = "dgGrid";
@@ -1196,7 +1378,7 @@
             this.dgGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.dgGrid.RowTemplate.Height = 25;
             this.dgGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgGrid.Size = new System.Drawing.Size(492, 265);
+            this.dgGrid.Size = new System.Drawing.Size(492, 257);
             this.dgGrid.TabIndex = 2;
             this.dgGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGrid_CellClick);
             this.dgGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGrid_CellDoubleClick);
@@ -1362,7 +1544,7 @@
             this.lblNameSeek.AutoSize = true;
             this.lblNameSeek.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblNameSeek.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNameSeek.Location = new System.Drawing.Point(558, 140);
+            this.lblNameSeek.Location = new System.Drawing.Point(492, 140);
             this.lblNameSeek.Name = "lblNameSeek";
             this.lblNameSeek.Size = new System.Drawing.Size(50, 14);
             this.lblNameSeek.TabIndex = 43;
@@ -1374,7 +1556,7 @@
             this.lblAmountsSeek.AutoSize = true;
             this.lblAmountsSeek.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblAmountsSeek.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblAmountsSeek.Location = new System.Drawing.Point(447, 140);
+            this.lblAmountsSeek.Location = new System.Drawing.Point(381, 140);
             this.lblAmountsSeek.Name = "lblAmountsSeek";
             this.lblAmountsSeek.Size = new System.Drawing.Size(61, 13);
             this.lblAmountsSeek.TabIndex = 45;
@@ -1385,7 +1567,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.Location = new System.Drawing.Point(249, 140);
+            this.label14.Location = new System.Drawing.Point(226, 140);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(101, 14);
             this.label14.TabIndex = 46;
@@ -1395,7 +1577,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(528, 138);
+            this.label15.Location = new System.Drawing.Point(462, 138);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(10, 14);
             this.label15.TabIndex = 47;
@@ -1577,7 +1759,7 @@
             this.chcVegetarian.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcVegetarian.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcVegetarian.ForeColor = System.Drawing.Color.White;
-            this.chcVegetarian.Location = new System.Drawing.Point(423, 95);
+            this.chcVegetarian.Location = new System.Drawing.Point(688, 138);
             this.chcVegetarian.Name = "chcVegetarian";
             this.chcVegetarian.Size = new System.Drawing.Size(15, 14);
             this.chcVegetarian.TabIndex = 7;
@@ -1585,17 +1767,17 @@
             this.chcVegetarian.UseVisualStyleBackColor = true;
             this.chcVegetarian.CheckedChanged += new System.EventHandler(this.chcVegetarian_CheckedChanged);
             // 
-            // label12
+            // lblVegetarian
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(444, 97);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 13);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "WEGETARIAŃSKIE";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblVegetarian.AutoSize = true;
+            this.lblVegetarian.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblVegetarian.ForeColor = System.Drawing.Color.White;
+            this.lblVegetarian.Location = new System.Drawing.Point(592, 141);
+            this.lblVegetarian.Name = "lblVegetarian";
+            this.lblVegetarian.Size = new System.Drawing.Size(95, 13);
+            this.lblVegetarian.TabIndex = 7;
+            this.lblVegetarian.Text = "WEGETARIAŃSKIE";
+            this.lblVegetarian.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblClearCheckBox
             // 
@@ -1643,7 +1825,7 @@
             this.Controls.Add(this.lblClearCheckBox);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.lblVegetarian);
             this.Controls.Add(this.chcVegetarian);
             this.Controls.Add(this.lblCleanDgGrid);
             this.Controls.Add(this.lblLineTwo);
@@ -1800,7 +1982,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.CheckBox chcSnack;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSnack;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel11;
@@ -1827,22 +2009,22 @@
         private System.Windows.Forms.PictureBox pbFrame;
         private System.Windows.Forms.DataGridView dgGrid;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDinner;
         private System.Windows.Forms.CheckBox chcDinner;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSoup;
         private System.Windows.Forms.CheckBox chcSoup;
-        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label lblDessert;
         private System.Windows.Forms.CheckBox chcDessert;
-        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label lblDrinks;
         private System.Windows.Forms.CheckBox chcDrink;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblPreserves;
         private System.Windows.Forms.CheckBox chcPreserves;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblSalad;
         private System.Windows.Forms.CheckBox chcSalad;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox11;
@@ -1851,19 +2033,19 @@
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox15;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblFish;
         private System.Windows.Forms.CheckBox chcFish;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPasta;
         private System.Windows.Forms.CheckBox chcPasta;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblFruits;
         private System.Windows.Forms.CheckBox chcFruits;
-        private System.Windows.Forms.Label lbl34;
+        private System.Windows.Forms.Label lblMuschrooms;
         private System.Windows.Forms.CheckBox chcMuschrooms;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblBird;
         private System.Windows.Forms.CheckBox chcBird;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblMeat;
         private System.Windows.Forms.CheckBox chcMeat;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblEggs;
         private System.Windows.Forms.CheckBox chcEggs;
         private System.Windows.Forms.Button btnSeek;
         private System.Windows.Forms.PictureBox pbLittlePhoto;
@@ -1901,10 +2083,24 @@
         private System.Windows.Forms.ToolStripMenuItem importujCalaBazęDanychToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eksportujCalaBazeDanychToolStripMenuItem;
         private System.Windows.Forms.CheckBox chcVegetarian;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblVegetarian;
         private System.Windows.Forms.Label lblClearCheckBox;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblSnackVeg;
+        private System.Windows.Forms.Label lblDinnerVeg;
+        private System.Windows.Forms.Label lblSoupVeg;
+        private System.Windows.Forms.Label lblDessertVeg;
+        private System.Windows.Forms.Label lblDrinksVeg;
+        private System.Windows.Forms.Label lblPrevervesVeg;
+        private System.Windows.Forms.Label lblSaladVeg;
+        private System.Windows.Forms.Label lblFishVeg;
+        private System.Windows.Forms.Label lblPastaVeg;
+        private System.Windows.Forms.Label lblFruitsVeg;
+        private System.Windows.Forms.Label lblMushroomVeg;
+        private System.Windows.Forms.Label lblBirdVeg;
+        private System.Windows.Forms.Label lblMeatVeg;
+        private System.Windows.Forms.Label lblEggsVeg;
     }
 }
 

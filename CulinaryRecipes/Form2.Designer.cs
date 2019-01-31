@@ -1294,6 +1294,7 @@
             this.rtxtPortion.Size = new System.Drawing.Size(20, 20);
             this.rtxtPortion.TabIndex = 1;
             this.rtxtPortion.Text = "";
+            this.rtxtPortion.Click += new System.EventHandler(this.rtxtPortion_Click);
             this.rtxtPortion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtPortion_KeyDown);
             // 
             // rtxtAmountsOfFood
@@ -1306,11 +1307,14 @@
             this.rtxtAmountsOfFood.Location = new System.Drawing.Point(13, 75);
             this.rtxtAmountsOfFood.Name = "rtxtAmountsOfFood";
             this.rtxtAmountsOfFood.ReadOnly = true;
-            this.rtxtAmountsOfFood.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.rtxtAmountsOfFood.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.rtxtAmountsOfFood.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
             this.rtxtAmountsOfFood.Size = new System.Drawing.Size(38, 682);
             this.rtxtAmountsOfFood.TabIndex = 2;
             this.rtxtAmountsOfFood.Text = "";
+            this.rtxtAmountsOfFood.WordWrap = false;
             this.rtxtAmountsOfFood.SelectionChanged += new System.EventHandler(this.rtxtAmountsOfFood_SelectionChanged);
+            this.rtxtAmountsOfFood.Click += new System.EventHandler(this.rtxtAmountsOfFood_Click);
             this.rtxtAmountsOfFood.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtAmountsOfFood_KeyDown);
             this.rtxtAmountsOfFood.MouseEnter += new System.EventHandler(this.rtxtAmountsOfFood_SelectionChanged);
             // 
@@ -1729,6 +1733,7 @@
             this.CMGramsEnter});
             this.ContextMenuGrams.Name = "Context";
             this.ContextMenuGrams.Size = new System.Drawing.Size(203, 126);
+            this.ContextMenuGrams.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuGrams_Opening);
             // 
             // cofnijToolStripMenuItem3
             // 
@@ -2259,6 +2264,7 @@
             // toolTip1
             // 
             this.toolTip1.AutomaticDelay = 900;
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // rTxtGrams
             // 
@@ -2279,6 +2285,7 @@
             this.rTxtGrams.Text = "";
             this.rTxtGrams.WordWrap = false;
             this.rTxtGrams.SelectionChanged += new System.EventHandler(this.rTxtGrams_SelectionChanged);
+            this.rTxtGrams.Click += new System.EventHandler(this.rTxtGrams_Click);
             this.rTxtGrams.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtGrams_KeyDown);
             // 
             // txtShortDescription
@@ -2294,6 +2301,7 @@
             this.txtShortDescription.Size = new System.Drawing.Size(210, 130);
             this.txtShortDescription.TabIndex = 5;
             this.txtShortDescription.Text = "";
+            this.txtShortDescription.Click += new System.EventHandler(this.txtShortDescription_Click);
             this.txtShortDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortDescription_KeyDown);
             this.txtShortDescription.MouseEnter += new System.EventHandler(this.txtShortDescription_MouseEnter);
             // 
@@ -2313,6 +2321,7 @@
             this.rtxtDescription.TabIndex = 6;
             this.rtxtDescription.Text = "";
             this.rtxtDescription.SelectionChanged += new System.EventHandler(this.rtxtDescription_SelectionChanged);
+            this.rtxtDescription.Click += new System.EventHandler(this.rtxtDescription_Click);
             this.rtxtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtDescription_KeyDown);
             // 
             // rTxtIngredients
@@ -2333,6 +2342,7 @@
             this.rTxtIngredients.Text = "";
             this.rTxtIngredients.WordWrap = false;
             this.rTxtIngredients.SelectionChanged += new System.EventHandler(this.rTxtIngredients_SelectionChanged);
+            this.rTxtIngredients.Click += new System.EventHandler(this.rTxtIngredients_Click);
             this.rTxtIngredients.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtIngredients_KeyDown);
             // 
             // txtName
