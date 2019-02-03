@@ -113,6 +113,7 @@
     </Compile>
     <Compile Include="KitchenType.cs" />
     <Compile Include="MealType.cs" />
+    <Compile Include="OtherEnter.cs" />
     <Compile Include="PreparationTime.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

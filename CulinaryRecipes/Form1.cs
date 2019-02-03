@@ -829,7 +829,7 @@ namespace CulinaryRecipes
             BoldAndSlim();
         }
 
-        int seekAmounts;
+       // int seekAmounts;
         private void label13_Click(object sender, EventArgs e)
         {
             searchName = 2;
