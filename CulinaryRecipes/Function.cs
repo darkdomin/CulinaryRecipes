@@ -180,5 +180,17 @@ namespace CulinaryRecipes
             else nameRich.ContextMenuStrip = nameTool;
         }
 
+        public static string RemoveWhiteSpace(string example)
+        {
+            string empty = string.Empty;
+            
+            foreach (char item in example)
+            {
+                if (item == ' ') continue;
+                else empty += item;
+            }
+            return empty;
+        }
+
     }
 }

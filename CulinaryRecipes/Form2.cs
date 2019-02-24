@@ -1,7 +1,6 @@
 ﻿using Common;
 using CulinaryRecipes.Properties;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -635,11 +634,13 @@ namespace CulinaryRecipes
         #region Przelicz
 
         //konwertuje na liczby
+
         public void ConvertAmountsOfFood()
         {
+           
             string[] tab = new string[rtxtAmountsOfFood.Lines.Length];
             tab = rtxtAmountsOfFood.Lines;
-
+           
             for (int i = 0; i < tab.Length; i++)
             {
                 tab[i] = tab[i].Trim();
@@ -647,11 +648,7 @@ namespace CulinaryRecipes
 
             for (int i = 0; i < tab.Length; i++)
             {
-                if (tab[i] == "1/1")
-                {
-                    tab[i] = "1";
-                }
-                else if (tab[i] == "1/5")
+                if (tab[i] == "1/5")
                 {
                     tab[i] = "0,2";
                 }
@@ -663,25 +660,17 @@ namespace CulinaryRecipes
                 {
                     tab[i] = "0,35";
                 }
-                else if (tab[i] == "1/2")
+                else if (tab[i] == "1/2"|| tab[i] =="2/4")
                 {
                     tab[i] = "0,5";
                 }
                 else if (tab[i] == "3/4")
                 {
                     tab[i] = "0,75";
-                }
-                else if (tab[i] == "1/2")
-                {
-                    tab[i] = "0,5";
-                }
+                }             
                 else if (tab[i] == "2/3")
                 {
                     tab[i] = "0,65";
-                }
-                else if (tab[i] == "2/4")
-                {
-                    tab[i] = "0,5";
                 }
                 else if (tab[i] == "2/5")
                 {
@@ -2202,11 +2191,21 @@ namespace CulinaryRecipes
         {
 
         }
-
+        string jeden;
         private void rtxtAmountsOfFood_KeyDown(object sender, KeyEventArgs e)
         {
+            //if(e.KeyCode>=Keys.D1|| e.KeyCode <= Keys.D9)
+            //{
+                
+            //    jeden += e.KeyCode;
+            
+            //}
+            // if(e.KeyCode==Keys.Help)
+            //{
+            //    jeden = "/";
+            //}
 
-            AmountsAndGramsKeyDown(e, rtxtAmountsOfFood, rTxtGrams, rTxtIngredients);
+           AmountsAndGramsKeyDown(e, rtxtAmountsOfFood, rTxtGrams, rTxtIngredients);
 
         }
 

@@ -1,9 +1,9 @@
-﻿using CulinaryRecipes.Properties;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using CulinaryRecipes.Properties;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Windows.Forms;
@@ -23,6 +23,7 @@ namespace CulinaryRecipes
         bool seekUnsubscribeSupport = false;
 
         public List<CheckBox> CheckBoxList = new List<CheckBox>();
+
         string[] nameCheckBox = {
             "Fishcheckbox","Pastacheckbox","Fruitscheckbox",
             "Mushroomscheckbox", "Birdcheckbox", "Meatcheckbox",
@@ -30,8 +31,20 @@ namespace CulinaryRecipes
             "Dinnercheckbox", "Soupcheckbox", "Dessertcheckbox",
             "Drinkscheckbox", "Preservescheckbox", "Saladcheckbox" };
 
-        Form2 stringOfCharactersForm2 = new Form2();
+        string[] nameColumnCheckBox = {
+            "IdFishIngredients","IdPastaIngredients","IdFruitsIngredients",
+            "IdMuschroomsIngredients", "IdBirdIngredients", "IdMeatIngredients",
+            "IdEggsIngredients", "Vegetarian", "SnackMeal",
+            "DinnerMeal", "SoupMeal", "DessertMeal",
+            "DrinkMeal", "PreservesMeal", "SaladMeal" };
 
+        string[] nameColumnsGroup =
+        {
+            "CategoryPreparationTime","CategoryDifficultLevel","CategoryRating","CategoryCuisines"
+        };
+
+        Form2 stringOfCharactersForm2 = new Form2();
+        List<CheckBox> checkBoxFilter = new List<CheckBox>();
         XmlSerializer xs;
         List<RecipesBase> ls;
 
@@ -53,22 +66,22 @@ namespace CulinaryRecipes
         public void CheckboxLabelClear()
         {
             lblClearCheckBox.Visible = false;
-            label16.Visible = false;
-            label17.Visible = false;
+            lblRightTwoLine.Visible = false;
+            lblRightOneLine.Visible = false;
         }
 
         public void CheckboxLabelShow()
         {
             lblClearCheckBox.Visible = true;
-            label16.Visible = true;
-            label17.Visible = true;
+            lblRightTwoLine.Visible = true;
+            lblRightOneLine.Visible = true;
         }
 
         public Form1()
         {
-
             InitializeComponent();
             ls = new List<RecipesBase>();
+
             xs = new XmlSerializer(typeof(List<RecipesBase>));
 
             CheckBoxList.Add(chcFish);
@@ -88,15 +101,20 @@ namespace CulinaryRecipes
             CheckBoxList.Add(chcPreserves);
             CheckBoxList.Add(chcSalad);
 
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             CreateDataGridView();
+            SearchEngine searchEngine = new SearchEngine(txtSeek.Text, dgGrid);
 
             searchName = 1;
             CheckConnection();
             Statistic();
+
+            checkBoxFilter.Add(chcFilterTime30);
+            checkBoxFilter.Add(chcFilterTime60);
 
             #region Przypisanie chackboxów
             if (idMeal[0] == 1) chcSnack.Checked = true;
@@ -119,13 +137,12 @@ namespace CulinaryRecipes
 
             if (seekUnsubscribe == true)
             {
-                Search(searchName);
+                searchEngine.Search(searchName);
                 lblCleanVisibleFalse();
                 unsubscribe = true;
                 seekUnsubscribe = true;
                 seekUnsubscribeSupport = true;
             }
-
         }
 
         #region Buttony
@@ -211,24 +228,6 @@ namespace CulinaryRecipes
 
                 OpenForm.counterForm2 = counter;
 
-
-                OpenForm.checkBoxesCancelForm2Ing[0] = chcFish.Checked;
-                OpenForm.checkBoxesCancelForm2Ing[1] = chcPasta.Checked;
-                OpenForm.checkBoxesCancelForm2Ing[2] = chcFruits.Checked;
-                OpenForm.checkBoxesCancelForm2Ing[3] = chcMuschrooms.Checked;
-                OpenForm.checkBoxesCancelForm2Ing[4] = chcBird.Checked;
-                OpenForm.checkBoxesCancelForm2Ing[5] = chcMeat.Checked;
-                OpenForm.checkBoxesCancelForm2Ing[6] = chcEggs.Checked;
-                OpenForm.checkBoxesCancelForm2Ing[7] = chcVegetarian.Checked;
-
-                OpenForm.checkBoxesCancelForm2Meal[0] = chcSnack.Checked;
-                OpenForm.checkBoxesCancelForm2Meal[1] = chcDinner.Checked;
-                OpenForm.checkBoxesCancelForm2Meal[2] = chcSoup.Checked;
-                OpenForm.checkBoxesCancelForm2Meal[3] = chcDessert.Checked;
-                OpenForm.checkBoxesCancelForm2Meal[4] = chcDrink.Checked;
-                OpenForm.checkBoxesCancelForm2Meal[5] = chcPreserves.Checked;
-                OpenForm.checkBoxesCancelForm2Meal[6] = chcSalad.Checked;
-
                 OpenForm.seekUnsubscribeForm2 = seekUnsubscribe;
 
                 this.Visible = false;
@@ -242,71 +241,36 @@ namespace CulinaryRecipes
             OpenClick();
         }
 
-        private void Search(int number)
-        {
-
-            txtSeek.Text = txtSeek.Text.ToUpper();
-
-            StringBuilder seek = new StringBuilder(txtSeek.Text);
-
-            filldgGrid();
-            string[] CopyDataGrid = new string[dgGrid.RowCount];
-
-
-            for (int j = 0; j < dgGrid.RowCount; j++)
-            {
-                CopyDataGrid[j] = dgGrid.Rows[j].Cells[number].Value.ToString().ToUpper();
-            }
-
-            for (int i = 0; i < dgGrid.RowCount; i++)
-            {
-
-                if (txtSeek.Text == "")
-                {
-                    filldgGrid();
-                }
-                else if (!CopyDataGrid[i].Contains(txtSeek.Text))
-                {
-                    dgGrid.Rows[i].Visible = false;
-                }
-                else if (CopyDataGrid[i].Contains(txtSeek.Text))
-                {
-
-                    continue;
-                }
-                else
-                {
-                    dgGrid.Rows[i].Visible = false;
-                }
-
-            }
-        }
         private void lblCleanVisibleFalse()
         {
             if (dgGrid.Rows.Count > 0)
             {
                 lblCleanDgGrid.Visible = true;
-                lblLineOne.Visible = true;
-                lblLineTwo.Visible = true;
+                lblLeftOneLine.Visible = true;
+                lblLeftTwoLine.Visible = true;
             }
             else
             {
                 lblCleanDgGrid.Visible = false;
-                lblLineOne.Visible = false;
-                lblLineTwo.Visible = false;
+                lblLeftOneLine.Visible = false;
+                lblLeftTwoLine.Visible = false;
             }
         }
         bool unsubscribe = false;
 
         private void btnSeek_Click(object sender, EventArgs e)
         {
+            SearchEngine searchEngine = new SearchEngine(txtSeek.Text, dgGrid);
             if (chcVegetarian.Checked) chcVegetarian.Checked = false;
-            Search(searchName);
+
+            searchEngine.Search(searchName);
 
             lblCleanVisibleFalse();
             unsubscribe = true;
             seekUnsubscribe = true;
             seekUnsubscribeSupport = true;
+
+
 
         }
         #endregion
@@ -351,7 +315,6 @@ namespace CulinaryRecipes
         int NewId;
         private void importujPojedynczyPlikToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             foreach (var r in RecipesBase.getAll())
             {
                 NewId = r.Id;
@@ -374,7 +337,9 @@ namespace CulinaryRecipes
                         m.Id = NewId + 1, m.RecipesName = r.RecipesName, m.Ingredients = r.Ingredients, m.AmountsMeal = r.AmountsMeal, m.ShortDescription = r.ShortDescription, m.LongDescription = r.LongDescription, m.NumberPortions = r.NumberPortions, m.CategoryCuisines = r.CategoryCuisines, m.CategoryRating = r.CategoryRating, m.CategoryDifficultLevel = r.CategoryDifficultLevel, m.CategoryPreparationTime = r.CategoryPreparationTime, m.SnackMeal = r.SnackMeal, m.DinnerMeal = r.DinnerMeal, m.SoupMeal = r.SoupMeal, m.DessertMeal = r.DessertMeal, m.DrinkMeal = r.DrinkMeal, m.PreservesMeal = r.PreservesMeal, m.SaladMeal = r.SaladMeal, m.IdFishIngredients = r.IdFishIngredients, m.IdPastaIngredients = r.IdPastaIngredients, m.IdFruitsIngredients = r.IdFruitsIngredients, m.IdMuschroomsIngredients = r.IdMuschroomsIngredients, m.IdBirdIngredients = r.IdBirdIngredients, m.IdMeatIngredients = r.IdMeatIngredients, m.IdEggsIngredients = r.IdEggsIngredients, m.PhotoLinkLocation = r.PhotoLinkLocation, m.Vegetarian = r.Vegetarian, m.Grams = r.Grams);
                         RecipesBase.add(m);
                     }
-                    filldgGrid();
+
+                    SearchEngine searchEngine = new SearchEngine(txtSeek.Text, dgGrid);
+                    searchEngine.FilldgGrid();
                     MessageBox.Show(m.RecipesName + "\n" + "został zaimportowany.", "PLIK ");
 
                     fs.Close();
@@ -390,11 +355,12 @@ namespace CulinaryRecipes
 
         private void usuńBazęDanychToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SearchEngine search = new SearchEngine(txtSeek.Text, dgGrid);
             if (MessageBox.Show("Czy na pewno usunąć Bazę danych? \nOperacja nie do odwrócenia", "Uwaga!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
                 RecipesBase.ClearDb();
                 MessageBox.Show("Dokument został usunięty");
-                filldgGrid();
+                search.FilldgGrid();
             }
             lblCleanVisibleFalse();
         }
@@ -420,7 +386,6 @@ namespace CulinaryRecipes
                 AllCheckboxElse("SnackMeal", chcSnack, "Snackcheckbox", lblSnackVeg, lblSnack);
             }
             AllCheckboxAfterElse();
-
         }
 
         private void AllCheckboxElse(string nameInDataBase, CheckBox nameThis, string nameColumnDgGrid, Label labelVeg, Label main)
@@ -458,6 +423,7 @@ namespace CulinaryRecipes
             Veg(nameThis, nameVeg, main);
         }
 
+
         private void chcDinner_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -476,6 +442,7 @@ namespace CulinaryRecipes
 
         private void chcSoup_CheckedChanged(object sender, EventArgs e)
         {
+
             if (chcSoup.Checked == false)
             {
                 AllCheckboxAfterIf(chcSoup, "Soupcheckbox", lblSoupVeg, lblSoup);
@@ -486,6 +453,7 @@ namespace CulinaryRecipes
 
             }
             AllCheckboxAfterElse();
+
         }
 
         private void chcDessert_CheckedChanged(object sender, EventArgs e)
@@ -547,7 +515,6 @@ namespace CulinaryRecipes
             AllCheckboxAfterElse();
         }
         #endregion
-
 
         #region CheckBoxIngridients
         private void chcFish_CheckedChanged(object sender, EventArgs e)
@@ -718,8 +685,8 @@ namespace CulinaryRecipes
         private void HideWyczyscSiatke()
         {
             lblCleanDgGrid.Visible = false;
-            lblLineOne.Visible = false;
-            lblLineTwo.Visible = false;
+            lblLeftOneLine.Visible = false;
+            lblLeftTwoLine.Visible = false;
         }
 
         private void CleanThumbnails()
@@ -753,7 +720,7 @@ namespace CulinaryRecipes
             }
         }
 
-        private void CreateDataGridView()
+        public void CreateDataGridView()
         {
             dgGrid.Rows.ToString().ToUpper();
 
@@ -797,15 +764,6 @@ namespace CulinaryRecipes
             }
         }
 
-        private void filldgGrid()
-        {
-            dgGrid.Rows.Clear();
-            foreach (var r in RecipesBase.getAll())
-            {
-                dgGrid.Rows.Add(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian, r.Grams);
-            }
-        }
-
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -818,8 +776,9 @@ namespace CulinaryRecipes
 
         private void usuńToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SearchEngine search = new SearchEngine(txtSeek.Text, dgGrid);
             ClearDataBase(idDgGrid);
-            filldgGrid();
+            search.FilldgGrid();
             Statistic();
         }
 
@@ -829,12 +788,10 @@ namespace CulinaryRecipes
             BoldAndSlim();
         }
 
-       // int seekAmounts;
         private void label13_Click(object sender, EventArgs e)
         {
             searchName = 2;
             BoldAndSlim();
-
         }
 
         private class RowComparer : IComparer
@@ -892,8 +849,10 @@ namespace CulinaryRecipes
 
         private void importujCalaBazęDanychToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SearchEngine search = new SearchEngine(txtSeek.Text, dgGrid);
+
             dgGrid.Visible = false;
-            filldgGrid();
+            search.FilldgGrid();
 
             if (dgGrid.Rows.Count > 0)
             {
@@ -908,6 +867,7 @@ namespace CulinaryRecipes
                     if (openFileDialog1.ShowDialog() == DialogResult.OK)
                     {
                         string sciezka = openFileDialog1.FileName;
+
                         FileStream fs = new FileStream(sciezka, System.IO.FileMode.Open, FileAccess.Read);
                         ls = (List<RecipesBase>)xs.Deserialize(fs);
 
@@ -921,16 +881,15 @@ namespace CulinaryRecipes
                                 RecipesBase.add(m);
                             }
                             MessageBox.Show("Baza danych została zaimportowana");
+
                             dgGrid.Visible = true;
-                            filldgGrid();
+                            search.FilldgGrid();
                         }
                         else
                         {
                             MessageBox.Show("Baza danych przed importem musi być pusta");
-
                         }
                         fs.Close();
-
                     }
                 }
                 catch (Exception ex)
@@ -938,9 +897,9 @@ namespace CulinaryRecipes
                     MessageBox.Show(ex.Message);
                 }
             }
+
             lblCleanVisibleFalse();
             dgGrid.Visible = true;
-
         }
 
         private void eksportujCalaBazeDanychToolStripMenuItem_Click(object sender, EventArgs e)
@@ -958,12 +917,15 @@ namespace CulinaryRecipes
                 }
                 xs.Serialize(fs, ls);
                 fs.Close();
+
                 MessageBox.Show("Eksport bazy danych zakończył się sukcesem");
             }
         }
+
         private void MealAndIngredients()
         {
             int row = dgGrid.CurrentCell.RowIndex;
+
             for (int i = 0; i < idMeal.Length; i++)
             {
                 idMeal[i] = Convert.ToInt32(dgGrid.Rows[row].Cells[i + 11].Value);
@@ -973,11 +935,12 @@ namespace CulinaryRecipes
                 ingridients[i] = Convert.ToInt32(dgGrid.Rows[row].Cells[i + 18].Value);
             }
         }
+
         public void OneCliCK()
         {
-
             deleteCMS.Visible = true;
             int row = dgGrid.CurrentCell.RowIndex;
+
             if (row >= 0)
             {
 
@@ -1061,14 +1024,14 @@ namespace CulinaryRecipes
 
         public void OneCliCK(int id)
         {
-
             deleteCMS.Visible = true;
             int row = dgGrid.CurrentCell.RowIndex;
+
             if (row >= 0)
             {
-
                 idDgGrid = Convert.ToInt32(dgGrid.Rows[id].Cells[0].Value);
                 eksportId = RecipesBase.getById(idDgGrid);
+
                 txtLittleName.Text = dgGrid.Rows[row].Cells[1].Value.ToString();
                 ingredientColumnDgGridForm1 = dgGrid.Rows[row].Cells[2].Value.ToString();
                 amountsOfIngredientsForm1 = dgGrid.Rows[row].Cells[3].Value.ToString();
@@ -1147,9 +1110,10 @@ namespace CulinaryRecipes
 
         private void btnSeek_KeyDown(object sender, KeyEventArgs e)
         {
+            SearchEngine searchEngine = new SearchEngine(txtSeek.Text, dgGrid);
             if (e.KeyCode == Keys.Enter && string.IsNullOrEmpty(txtSeek.Text))
             {
-                Search(searchName);
+                searchEngine.Search(searchName);
 
                 lblCleanVisibleFalse();
             }
@@ -1255,8 +1219,14 @@ namespace CulinaryRecipes
                 fillGrid("SaladMeal", chcSalad, "Saladcheckbox");
                 Veg(chcSalad, lblSaladVeg, lblSalad);
             }
+            else
+            {
+                SearchEngine searchEngine = new SearchEngine(txtSeek.Text, dgGrid);
+                searchEngine.FilldgGrid();
+            }
             //DeleteDuplicate();
         }
+
         private void VegeDlaVege(CheckBox main)
         {
             for (int i = 0; i < CheckBoxList.Count; i++)
@@ -1275,21 +1245,21 @@ namespace CulinaryRecipes
 
         }
         //zwraca prawde lub fałsz czy checkbox jest zaznaczony
-        public bool[] CzyZaznaczonyCheckbox()
-        {
-            bool[] zaznaczony = new bool[14];
-            int i = 0;
+        //public bool[] IsTheCheckboxChecked()
+        //{
+        //    bool[] zaznaczony = new bool[14];
+        //    int i = 0;
 
-            foreach (Control p in Controls)
-            {
-                if (p is CheckBox && ((CheckBox)p).Checked)
-                {
-                    zaznaczony[i] = true;
-                    i++;
-                }
-            }
-            return zaznaczony;
-        }
+        //    foreach (Control p in Controls)
+        //    {
+        //        if (p is CheckBox && ((CheckBox)p).Checked)
+        //        {
+        //            zaznaczony[i] = true;
+        //            i++;
+        //        }
+        //    }
+        //    return zaznaczony;
+        //}
 
         public void Veg(CheckBox name, Label veg, Label main)
         {
@@ -1303,7 +1273,6 @@ namespace CulinaryRecipes
                 veg.Visible = false;
                 Vegetarian.WhiteLabel(name, main);
             }
-
         }
         private void chcVegetarian_CheckedChanged(object sender, EventArgs e)
         {
@@ -1367,7 +1336,6 @@ namespace CulinaryRecipes
                     quantity = 0;
 
                 }
-
 
                 if (chcFish.Checked)
                 {
@@ -1446,14 +1414,12 @@ namespace CulinaryRecipes
                     CleanDgGrid();
                     fillGrid("Vegetarian", chcVegetarian, "Vegetarian");
                 }
-
             }
 
             DeleteDuplicate();
             CleanThumbnails();
             CleanFunctionClear();
             CheckCheckBox();
-            // 
         }
 
         public void CleanDgGrid()
@@ -1464,6 +1430,7 @@ namespace CulinaryRecipes
                 lblCleanVisibleFalse();
             }
         }
+
         private void lblCleanDgGrid_Click(object sender, EventArgs e)
         {
             CleanDgGrid();
@@ -1506,15 +1473,14 @@ namespace CulinaryRecipes
                 if (CheckBoxList[i].Checked)
                 {
                     lblClearCheckBox.Visible = true;
-                    label16.Visible = true;
-                    label17.Visible = true;
+                    lblRightTwoLine.Visible = true;
+                    lblRightOneLine.Visible = true;
                 }
             }
         }
 
         private void label13_Click_1(object sender, EventArgs e)
         {
-
             for (int i = 0; i < CheckBoxList.Count; i++)
             {
                 if (CheckBoxList[i].Checked)
@@ -1524,22 +1490,70 @@ namespace CulinaryRecipes
             }
 
             lblClearCheckBox.Visible = false;
-            label16.Visible = false;
-            label17.Visible = false;
+            lblRightTwoLine.Visible = false;
+            lblRightOneLine.Visible = false;
         }
 
         private void txtSeek_KeyDown(object sender, KeyEventArgs e)
         {
+            SearchEngine searchEngine = new SearchEngine(txtSeek.Text, dgGrid);
+
             if (e.KeyCode == Keys.F1)
             {
-                Search(searchName);
+                searchEngine.Search(searchName);
 
                 lblCleanVisibleFalse();
+
                 unsubscribe = true;
                 seekUnsubscribe = true;
                 seekUnsubscribeSupport = true;
+
                 OneCliCK(1);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelFiltrCuisine.Visible = true;
+            panelFilterLevel.Visible = true;
+            panelFilterRating.Visible = true;
+            panelFilterTime.Visible = true;
+            btnOff.Visible = true;
+            btnFilter.Visible = true;
+            btnFilter.BackColor = Color.Maroon;
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Function.UncheckedCheckBox(panelFiltrCuisine);
+            Function.UncheckedCheckBox(panelFilterLevel);
+            Function.UncheckedCheckBox(panelFilterRating);
+            Function.UncheckedCheckBox(panelFilterTime);
+            //filter = false;
+
+            panelFiltrCuisine.Visible = false;
+            panelFilterLevel.Visible = false;
+            panelFilterRating.Visible = false;
+            panelFilterTime.Visible = false;
+            btnFilter.Visible = false;
+            btnOff.Visible = false;
+        }
+
+
+
+
+
+        private void chcFiltrTime60_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            checkBoxFilterName.Add(chcFilterTime60);
+
+            AddResultNameToList("60 min", chcFilterTime60, panelFilterTime);
+
+           // UncheckedCheckBoxFilter(chcFilterTime60, panelFilterTime);
+
         }
 
 
@@ -1569,25 +1583,472 @@ namespace CulinaryRecipes
             }
         }
 
+    
+
         private void fillGrid(string _propName, CheckBox _name, string nazwa)
         {
-            for (int i = dgGrid.RowCount - 1; i >= 0; i--)
-            {
-                if (Convert.ToInt32(dgGrid.Rows[i].Cells[nazwa].Value) == 1 && dgGrid.Rows[i].Cells[nazwa].ToString() == nazwa)
-                    dgGrid.Rows.Remove(dgGrid.Rows[i]);
-            }
 
             if (_name.Checked)
             {
                 foreach (var r in RecipesBase.getAll())
                 {
-                    if ((int)RecipesBase.GetPropValue(r, _propName) == 1 && _name.Checked)
+                    if ((int)RecipesBase.GetPropValue(r, _propName) == 1)
                     {
                         dgGrid.Rows.Add(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian, r.Grams);
                     }
                 }
             }
-            else { }
+            else
+            {
+                for (int i = dgGrid.RowCount - 1; i >= 0; i--)
+                {
+                    if (Convert.ToInt32(dgGrid.Rows[i].Cells[nazwa].Value) == 1 && dgGrid.Rows[i].Cells[nazwa].ToString() == nazwa)
+                        dgGrid.Rows.Remove(dgGrid.Rows[i]);
+                }
+            }
+        }
+
+        //ew. columnTime do jednej listy ale wtedy nie porownuje
+        private void fillGridFiltr(string _propName, CheckBox _name, string nazwa, List<string> column)
+        {
+            if (_name.Checked)
+            {
+                foreach (var r in RecipesBase.getAll())
+                {
+
+                    for (int i = 0; i < column.Count; i++)
+                    {
+                        if (RecipesBase.GetPropValue(r, _propName) == column[i])
+                        {
+
+                            dgGrid.Rows.Add(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian, r.Grams);
+
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for (int i = dgGrid.RowCount - 1; i >= 0; i--)
+                {
+                    if (dgGrid.Rows[i].Cells[nazwa].Value.ToString() == columnTime[i])
+                        dgGrid.Rows.Remove(dgGrid.Rows[i]);
+                }
+            }
+        }
+
+        List<string> columnTime = new List<string>();
+        List<string> columnLevel = new List<string>();
+        List<string> columnRating = new List<string>();
+
+        List<string> columnCuisine = new List<string>();
+
+        public void AddResultNameToList(string resultName, CheckBox checkBoxName, Control set)
+        {
+
+            if (checkBoxName.Checked)
+            {
+                if (set.Name == "panelFilterTime")
+                    columnTime.Add(resultName);
+                else if (set.Name == "panelFilterLevel")
+                    columnLevel.Add(resultName);
+                else if (set.Name == "panelFilterRating")
+                    columnRating.Add(resultName);
+                else if (set.Name == "panelFiltrCuisine")
+                    columnCuisine.Add(resultName);
+            }
+            else
+            {
+                columnTime.Remove(resultName);
+                columnLevel.Remove(resultName);
+                columnRating.Remove(resultName);
+                columnCuisine.Remove(resultName);
+            }
+        }
+
+
+        public void Filter()
+        {
+
+            bool cusines = false;
+            bool rating = false;
+            bool time = false;
+            bool level = false;
+
+
+            delete = false;
+
+            for (int i = dgGrid.RowCount - 1; i >= 0; i--)
+            {
+
+                if (columnCuisine.Count == 0)
+                {
+                    cusines = true;
+                    columnCuisine.Add(dgGrid.Rows[i].Cells["CategoryCuisines"].Value.ToString());
+                }
+                if (columnRating.Count == 0)
+                {
+                    rating = true;
+                    columnRating.Add(dgGrid.Rows[i].Cells["IdCategoryRating"].Value.ToString());
+                }
+                if (columnLevel.Count == 0)
+                {
+                    level = true;
+                    columnLevel.Add(dgGrid.Rows[i].Cells["IdcategoryDifficultLevel"].Value.ToString());
+                }
+                if (columnTime.Count == 0)
+                {
+                    time = true;
+                    columnTime.Add(dgGrid.Rows[i].Cells["IdcategoryPreparationTime"].Value.ToString());
+                }
+
+                for (int l = 0; l < columnCuisine.Count; l++)
+                {
+                    
+                    for (int k = 0; k < columnRating.Count; k++)
+                    {
+                       
+                       
+                        for (int j = 0; j < columnLevel.Count; j++)
+                        {
+                          
+                            for (int m = 0; m < columnTime.Count; m++)
+                            {
+                                
+
+                                if (dgGrid.Rows[i].Cells["IdcategoryPreparationTime"].Value.ToString() == columnTime[m]
+                        && dgGrid.Rows[i].Cells["IdcategoryDifficultLevel"].Value.ToString() == columnLevel[j]
+                        && dgGrid.Rows[i].Cells["IdCategoryRating"].Value.ToString() == columnRating[k]
+                        && dgGrid.Rows[i].Cells["CategoryCuisines"].Value.ToString() == columnCuisine[l])
+                                {
+                                    delete = false;
+                                    break;
+                                }
+                                else
+                                {
+                                    delete = true;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+
+                if (delete == true) dgGrid.Rows.Remove(dgGrid.Rows[i]);
+
+             
+                if(rating) columnRating.Remove(columnRating[0]);
+                if(level) columnLevel.Remove(columnLevel[0]);
+                if(time) columnTime.Remove(columnTime[0]);
+                if(cusines) columnCuisine.Remove(columnCuisine[0]);
+
+            }
+
+        }
+
+        private void ChangeButtonFilterColor()
+        {
+            btnFilter.BackColor = Color.Green;
+        }
+
+        private void chcFilterTime30_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            checkBoxFilterName.Add(chcFilterTime30);
+
+          //  UncheckedCheckBoxFilter(chcFilterTime30, panelFilterTime);
+            AddResultNameToList("30 min", chcFilterTime30, panelFilterTime);
+
+        }
+
+        private void UncheckedCheckBoxFilter(CheckBox check, Control set)
+        {
+            if (check.Checked==false) check.Checked = false;
+            else
+            {
+                foreach (Control p in set.Controls)
+                {
+                    if (p is CheckBox && p != check)
+                    {
+                        ((CheckBox)p).Checked = false;
+                        check.Checked = true;
+                    }
+                    checkBoxFilterName.Remove(p as CheckBox);
+                }
+              
+            }
+            checkBoxFilterName.Add(check);
+
+
+        }
+
+        private void chcFilterTime90_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            checkBoxFilterName.Add(chcFilterTime90);
+
+            AddResultNameToList("90 min", chcFilterTime90, panelFilterTime);
+          //  UncheckedCheckBoxFilter(chcFilterTime90, panelFilterTime);
+        }
+
+        private void chcFilterTime900_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            checkBoxFilterName.Add(chcFilterTime900);
+
+            AddResultNameToList("pow 90", chcFilterTime900, panelFilterTime);
+            //UncheckedCheckBoxFilter(chcFilterTime900, panelFilterTime);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            btnFilter.BackColor = Color.Maroon;
+            
+
+                int j = 0;
+
+                for (int i = 0; i < CheckBoxList.Count; i++)
+                {
+                    if (CheckBoxList[i].Checked == false) j++;
+
+                }
+                if (j == CheckBoxList.Count)
+                {
+                    DisplayFilter(nameColumnsGroup, checkBoxFilterName, nameColumnCheckBox);
+
+                }
+                else
+                {
+                    DisplayFilterWhenCheckboxMealChecked(nameColumnsGroup, nameColumnCheckBox, CheckBoxList, nameCheckBox);
+                }
+
+                Filter();
+
+
+            //     Wypelnij();
+
+        
+        }
+        List<CheckBox> checkBoxFilterName = new List<CheckBox>();
+
+
+        public void DisplayFilter(string[] columnNameCategory, List<CheckBox> boxes, string[] columnName)
+        {
+            int i = 0;
+
+            dgGrid.Rows.Clear();
+
+            foreach (var item in checkBoxFilterName)
+            {
+                if (item.Checked)
+                {
+                    for (int j = 0; j < columnNameCategory.Length; j++)
+                    {
+                        fillGridFiltr(columnNameCategory[j], boxes[i], columnName[i], columnTime);
+                        fillGridFiltr(columnNameCategory[j], boxes[i], columnName[i], columnLevel);
+                        fillGridFiltr(columnNameCategory[j], boxes[i], columnName[i], columnRating);
+                        fillGridFiltr(columnNameCategory[j], boxes[i], columnName[i], columnCuisine);
+                        DeleteDuplicate();
+                    }
+
+                }
+
+                if (i >= checkBoxFilterName.Count)
+                {
+                    break;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+        }
+
+
+        public void DisplayFilterWhenCheckboxMealChecked(string[] columnNameCategory, string[] columnName, List<CheckBox> boxes, string[] checkBoxName)
+        {
+            int i = 0;
+
+            dgGrid.Rows.Clear();
+
+            foreach (var item in CheckBoxList)
+            {
+                if (item.Checked)
+                {
+                    for (int j = 0; j < columnNameCategory.Length; j++)
+                    {
+                        fillGridFilterMeal(columnNameCategory[j], columnName[i], boxes[i], checkBoxName[i], columnTime);
+                        fillGridFilterMeal(columnNameCategory[j], columnName[i], boxes[i], checkBoxName[i], columnLevel);
+                        fillGridFilterMeal(columnNameCategory[j], columnName[i], boxes[i], checkBoxName[i], columnRating);
+                        fillGridFilterMeal(columnNameCategory[j], columnName[i], boxes[i], checkBoxName[i], columnCuisine);
+                        DeleteDuplicate();
+                    }
+
+                }
+
+                if (i >= CheckBoxList.Count)
+                {
+                    break;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+        }
+
+        private void chcFilterCuisineAmerican_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            checkBoxFilterName.Add(chcFilterCuisineAmerican);
+            AddResultNameToList("amerykańska", chcFilterCuisineAmerican, panelFiltrCuisine);
+        }
+
+        private void chcFilterCuisinePolish_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            if(chcFilterCuisinePolish.Checked)
+            {
+                checkBoxFilterName.Add(chcFilterCuisinePolish);
+            }
+            else
+            {
+                checkBoxFilterName.Remove(chcFilterCuisinePolish);
+            }
+           
+            AddResultNameToList("polska", chcFilterCuisinePolish, panelFiltrCuisine);
+        }
+
+        private void chcFilterCuisineHungarian_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxFilterName.Add(chcFilterCuisineHungarian);
+            AddResultNameToList("węgierska", chcFilterCuisineHungarian, panelFiltrCuisine);
+        }
+
+        private void chcFilterCuisinePortuguese_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            checkBoxFilterName.Add(chcFilterCuisinePortuguese);
+            AddResultNameToList("portugalska", chcFilterCuisinePortuguese, panelFiltrCuisine);
+        }
+
+        private void chcFilterCuisineFrench_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            checkBoxFilterName.Add(chcFilterCuisineFrench);
+            AddResultNameToList("francuska", chcFilterCuisineFrench, panelFiltrCuisine);
+        }
+
+        private void chcFilterCuisineAsian_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            checkBoxFilterName.Add(chcFilterCuisineAsian);
+            AddResultNameToList("azjatycka", chcFilterCuisineAsian, panelFiltrCuisine);
+        }
+
+        private void chcFilterCuisineItalian_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            checkBoxFilterName.Add(chcFilterCuisineItalian);
+            AddResultNameToList("włoska", chcFilterCuisineItalian, panelFiltrCuisine);
+        }
+
+        private void chcFilterCuisineGreek_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+
+            checkBoxFilterName.Add(chcFilterCuisineGreek);
+            AddResultNameToList("grecka", chcFilterCuisineGreek, panelFiltrCuisine);
+        }
+
+        private void chcFilterCuisineSpanish_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            checkBoxFilterName.Add(chcFilterCuisineSpanish);
+            AddResultNameToList("hiszpańska", chcFilterCuisineSpanish, panelFiltrCuisine);
+        }
+
+        private void chcFilterCuisineCzech_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            checkBoxFilterName.Add(chcFilterCuisineSpanish);
+            AddResultNameToList("czeska", chcFilterCuisineSpanish, panelFiltrCuisine);
+        }
+
+        private void chcFilterLevelHard_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            checkBoxFilterName.Add(chcFilterLevelHard);
+            AddResultNameToList("Średni", chcFilterLevelHard, panelFilterLevel);
+        }
+
+        private void chcFilterLevelVeryHard_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            checkBoxFilterName.Add(chcFilterLevelVeryHard);
+            AddResultNameToList("Trudny", chcFilterLevelVeryHard, panelFilterLevel);
+        }
+
+        private void chcFilterRatingOne_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+        }
+
+        private void chcFilterRatingTwo_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+        }
+
+        private void chcFilterRatingThree_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+        }
+
+        private void chcFiltrLevelEasy_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeButtonFilterColor();
+            checkBoxFilterName.Add(chcFiltrLevelEasy);
+            AddResultNameToList("Łatwy", chcFiltrLevelEasy, panelFilterLevel);
+        }
+
+
+
+
+        private void fillGridFilterMeal(string columnBase, string _propName, CheckBox _name, string columnName, List<string> panelColumn)
+        {
+            
+
+            if (_name.Checked)
+            {
+                foreach (var r in RecipesBase.getAll())
+                {
+                    for (int i = 0; i < panelColumn.Count; i++)
+                    {
+
+                        if ((int)RecipesBase.GetPropValue(r, _propName) == 1
+                         && RecipesBase.GetPropValue(r, columnBase) == panelColumn[i])
+                        {
+                            if (panelColumn[i] == RecipesBase.GetPropValue(r, columnBase))
+                            {
+                                dgGrid.Rows.Add(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian, r.Grams);
+                            }
+                        }
+
+
+                    }
+                }
+            }
+            else
+            {
+                for (int i = dgGrid.RowCount - 1; i >= 0; i--)
+                {
+                    if (Convert.ToInt32(dgGrid.Rows[i].Cells[columnName].Value) == 1)
+                        dgGrid.Rows.Remove(dgGrid.Rows[i]);
+                }
+            }
         }
 
         private void fillGridVege(string _propName)
@@ -1631,14 +2092,17 @@ namespace CulinaryRecipes
 
         private void NewForm()
         {
+            SearchEngine searchEngine = new SearchEngine(txtSeek.Text, dgGrid);
             bool add = true;
 
             Form2 NewForm = new Form2();
+
             NewForm.addRecipeForm2 = add;
             NewForm.addRecipe = true;
-            filldgGrid();
-            this.Visible = false;
 
+            searchEngine.FilldgGrid();
+
+            this.Visible = false;
             NewForm.ShowDialog();
         }
 
@@ -1647,8 +2111,8 @@ namespace CulinaryRecipes
             if (dgGrid.Rows.Count < 1)
             {
                 lblCleanDgGrid.Visible = false;
-                lblLineOne.Visible = false;
-                lblLineTwo.Visible = false;
+                lblLeftOneLine.Visible = false;
+                lblLeftTwoLine.Visible = false;
             }
         }
         #endregion

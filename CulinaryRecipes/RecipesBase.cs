@@ -148,18 +148,18 @@ namespace CulinaryRecipes
             col.Update(p);
         }
 
-        public static void Export(string sciezka)
+        public static void Export()
         {
             var db = Db.connect();
             var col = db.GetCollection<RecipesBase>("RecipesBase");
             var json = JsonSerializer.Serialize(new BsonArray(db.Engine.Find("RecipesBase")));
         }
 
-        public static void Import(string sciezka)
+        public static void Import(string path)
         {
             var db = Db.connect();
             var col = db.GetCollection<RecipesBase>("RecipesBase");
-            db.Engine.Insert(col, JsonSerializer.Deserialize(sciezka).AsArray.ToArray());
+            db.Engine.Insert(col, JsonSerializer.Deserialize(path).AsArray.ToArray());
         }
 
         public static void ClearDb()
