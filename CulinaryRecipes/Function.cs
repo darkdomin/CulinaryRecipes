@@ -123,7 +123,7 @@ namespace CulinaryRecipes
         public static bool CheckName(TextBox name)
         {
             bool variable = false;
-            foreach (var r in RecipesBase.getAll())
+            foreach (var r in RecipesBase.getAll("RecipesBase"))
             {
                 if (r.RecipesName == name.Text)
                 {

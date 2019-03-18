@@ -64,6 +64,9 @@
     <Reference Include="LiteDB">
       <HintPath>..\..\..\..\Desktop\LiteDb\LiteDB.dll</HintPath>
     </Reference>
+    <Reference Include="S22.Imap">
+      <HintPath>F:\Dodatki do windows forms\S22.Imap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -77,10 +80,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonMy.cs" />
     <Compile Include="ClassNull.cs" />
     <Compile Include="ComponentsType.cs" />
     <Compile Include="Db.cs" />
     <Compile Include="DifficultLevel.cs" />
+    <Compile Include="Email.cs" />
+    <Compile Include="EmailBase.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,16 +111,25 @@
     <Compile Include="Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Function.cs" />
     <Compile Include="gwiazda.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>gwiazda.resx</DependentUpon>
     </Compile>
-    <Compile Include="KitchenType.cs" />
-    <Compile Include="MealType.cs" />
+    <Compile Include="Logo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logo.Designer.cs">
+      <DependentUpon>Logo.cs</DependentUpon>
+    </Compile>
     <Compile Include="OtherEnter.cs" />
-    <Compile Include="PreparationTime.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rating.cs" />
@@ -126,6 +141,12 @@
     </Compile>
     <Compile Include="RecipesBase.cs" />
     <Compile Include="SearchEngine.cs" />
+    <Compile Include="SingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingForm.Designer.cs">
+      <DependentUpon>SingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vegetarian.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -139,9 +160,15 @@
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gwiazda.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>gwiazda.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logo.resx">
+      <DependentUpon>Logo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -153,6 +180,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SingForm.resx">
+      <DependentUpon>SingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="CulinaryRecipes_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

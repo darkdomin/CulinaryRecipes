@@ -1,23 +1,18 @@
-﻿using CulinaryRecipes.Properties;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CulinaryRecipes
 {
     public partial class Form3 : Form
     {
-        
         public int idDgGridForm3 { get; set; }
         public int numberOfPortionsForm3 { get; set; }
         public int counterForm3 { get; set; }
-        public int portions3{ get; set; }
+        public int portions3 { get; set; }
 
         public string titleForm3 { get; set; }
         public string gramsForm3 { get; set; }
@@ -33,7 +28,7 @@ namespace CulinaryRecipes
         public string RatingForm3 { get; set; }
         public string clearForm3 { get; set; }
         public string LinkForm23 { get; set; }
-        
+
         //zmienne pamięciowe- Anuluj//
         public string title3 { get; set; }
         public string amounts3 { get; set; }
@@ -52,18 +47,91 @@ namespace CulinaryRecipes
 
         string add = "add";
 
+        private void TurnOnAndOffTheButton(GroupBox panelName, Button turnOnOff)
+        {
+            ButtonMy.TurnOFFTheButton(panelName);
+            ButtonMy.TurnOnTheButton(turnOnOff);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            TurnOnAndOffTheButton(gbLevel, btndifficultLevOne);
+            difficultLevelForm3 = btndifficultLevOne.Tag.ToString();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            ChangeColorButtons(gbLevel);
-            SelectedButton(btndifficultLevTwo);
+            TurnOnAndOffTheButton(gbLevel, btndifficultLevTwo);
             difficultLevelForm3 = btndifficultLevTwo.Tag.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ChangeColorButtons(gbLevel);
-            SelectedButton(btndifficultLevThree);
+            TurnOnAndOffTheButton(gbLevel, btndifficultLevThree);
             difficultLevelForm3 = btndifficultLevThree.Tag.ToString();
+        }
+
+        private void btnTime30_Click(object sender, EventArgs e)
+        {
+            TurnOnAndOffTheButton(gbTime, btnTime30);
+            executionTimeForm3 = btnTime30.Tag.ToString();
+        }
+
+        private void btnTime60_Click(object sender, EventArgs e)
+        {
+            TurnOnAndOffTheButton(gbTime, btnTime60);
+            executionTimeForm3 = btnTime60.Tag.ToString();
+        }
+
+        private void btnTime90_Click(object sender, EventArgs e)
+        {
+            TurnOnAndOffTheButton(gbTime, btnTime90);
+            executionTimeForm3 = btnTime90.Tag.ToString();
+        }
+
+        private void btnTime100_Click(object sender, EventArgs e)
+        {
+            TurnOnAndOffTheButton(gbTime, btnTime100);
+            executionTimeForm3 = btnTime100.Tag.ToString();
+        }
+
+        private void btnOneStar_Click(object sender, EventArgs e)
+        {
+            TurnOnAndOffTheButton(gbRating, btnOneStar);
+
+            var s = from p in Rating.categoryRating
+                    where p.Id == 1
+                    select p;
+            foreach (var c in s)
+            {
+                RatingForm3 = c.Id.ToString();
+            }
+        }
+
+        private void btnTwoStar_Click(object sender, EventArgs e)
+        {
+            TurnOnAndOffTheButton(gbRating, btnTwoStar);
+
+            var s = from p in Rating.categoryRating
+                    where p.Id == 2
+                    select p;
+            foreach (var c in s)
+            {
+                RatingForm3 = c.Id.ToString();
+            }
+        }
+
+        private void btnThreeStar_Click(object sender, EventArgs e)
+        {
+            TurnOnAndOffTheButton(gbRating, btnThreeStar);
+
+            var s = from p in Rating.categoryRating
+                    where p.Id == 3
+                    select p;
+            foreach (var c in s)
+            {
+                RatingForm3 = c.Id.ToString();
+            }
         }
 
         private void rbAmerican_CheckedChanged(object sender, EventArgs e)
@@ -74,7 +142,6 @@ namespace CulinaryRecipes
         private void rbAsian_CheckedChanged(object sender, EventArgs e)
         {
             listOfCuisinesForm3 = rbAsian.Tag.ToString();
-           
         }
 
         private void rbCeska_CheckedChanged(object sender, EventArgs e)
@@ -117,46 +184,18 @@ namespace CulinaryRecipes
             listOfCuisinesForm3 = rbHungarian.Tag.ToString();
         }
 
-        private void btnTime30_Click(object sender, EventArgs e)
-        {
-            ChangeColorButtons(gbTime);
-            SelectedButton(btnTime30);
-            executionTimeForm3 = btnTime30.Tag.ToString();
-        }
-
-        private void btnTime60_Click(object sender, EventArgs e)
-        {
-            ChangeColorButtons(gbTime);
-            SelectedButton(btnTime60);
-            executionTimeForm3 = btnTime60.Tag.ToString();
-        }
-
-        private void btnTime90_Click(object sender, EventArgs e)
-        {
-            ChangeColorButtons(gbTime);
-            SelectedButton(btnTime90);
-            executionTimeForm3 = btnTime90.Tag.ToString();
-        }
-
-        private void btnTime100_Click(object sender, EventArgs e)
-        {
-            ChangeColorButtons(gbTime);
-            SelectedButton(btnTime100);
-            executionTimeForm3 = btnTime100.Tag.ToString();
-        }
-
         private void DisplayHighlightedButton(string id, Control set)
         {
             foreach (Control c in set.Controls)
             {
-                if (c is Button )
+                if (c is Button)
                 {
                     if (c.Tag.ToString() == id)
                     {
                         ((Button)c).BackColor = Color.White;
                         ((Button)c).ForeColor = Color.Black;
-                    } 
-                }    
+                    }
+                }
             }
         }
 
@@ -166,23 +205,9 @@ namespace CulinaryRecipes
             pbLittlePhoto.ImageLocation = rtxtLinkForm3.Text;
         }
 
-        private void CheckedKittchen(string name, Control set)
-        {
-            foreach (Control c in set.Controls)
-            {
-                if (c is RadioButton)
-                {
-                    if (c.Tag.ToString() == name)
-                    {
-                        ((RadioButton)c).Checked = true;
-                    }
-                }
-            }
-        }
-        
         private void Form3_Load(object sender, EventArgs e)
         {
-            if(clearForm3==add)
+            if (clearForm3 == add)
             {
                 listOfCuisinesForm3 = "";
                 RatingForm3 = "";
@@ -195,35 +220,10 @@ namespace CulinaryRecipes
                 DisplayHighlightedButton(difficultLevelForm3, gbLevel);
                 DisplayHighlightedButton(executionTimeForm3, gbTime);
                 DisplayPhoto();
-                CheckedKittchen(listOfCuisinesForm3, gbKitchen);
-            }
-        }
-        
-        public void UncheckedRadioButton(Control set)
-        {
-            foreach (Control c in set.Controls)
-            {
-                if (c is RadioButton)
-                {
-                    ((RadioButton)c).Checked = false;
-                }
+                ButtonMy.CheckedTypeOfCuisine(listOfCuisinesForm3, gbKitchen);
             }
         }
 
-        private void ChangeColorButtons(GroupBox _name)
-        {
-            foreach (Control przyciski in _name.Controls)
-            {
-                if (przyciski is Button)
-                {
-
-                    ((Button)przyciski).BackColor = Color.Maroon;
-
-                    ((Button)przyciski).ForeColor = Color.White;
-                }
-            }
-        }
-        
         private void richTextBox1_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start(e.LinkText);
@@ -231,7 +231,6 @@ namespace CulinaryRecipes
 
         private void rtxtLinkForm3_TextChanged(object sender, EventArgs e)
         {
-
             pbLittlePhoto.ImageLocation = rtxtLinkForm3.Text;
         }
 
@@ -243,7 +242,7 @@ namespace CulinaryRecipes
             {
                 pbLittlePhoto.Image = Image.FromFile(otworz_plik.FileName);
                 rtxtLinkForm3.Text = otworz_plik.FileName;
-            }  
+            }
         }
 
         private void cofnijToolStripMenuItem_Click(object sender, EventArgs e)
@@ -276,13 +275,6 @@ namespace CulinaryRecipes
             rtxtLinkForm3.SelectedText = "";
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            ChangeColorButtons(gbLevel);
-            SelectedButton(btndifficultLevOne);
-            difficultLevelForm3 = btndifficultLevOne.Tag.ToString();
-        }
-       
         public string interval = "  ";
         public int[] IdMealForm3 = new int[7];
         public int[] idComponentsForm3 = new int[8];
@@ -290,40 +282,53 @@ namespace CulinaryRecipes
         private void button4_Click(object sender, EventArgs e)
         {
             Form2 model = new Form2();
+
             if (idDgGridForm3 == 0) model.clear = add;
-            else model.clear= clearForm3;
+            else model.clear = clearForm3;
+
             model.idDgGridForm2 = idDgGridForm3;
+
             model.titleForm2 = titleForm3;
+            model.numberOfPortionsForm2 = numberOfPortionsForm3;
+
             model.amountsOfIngredientsForm2 = AmountsOfFoodForm3;
             model.gramsForm2 = gramsForm3;
             model.ingredientForm2 = ingredientForm3;
+
             model.ShortDescriptionForm2 = shortDescriptionForm3;
             model.instructionForm2 = InstructionForm3;
-            model.numberOfPortionsForm2 = numberOfPortionsForm3;
+
             photoForm3 = rtxtLinkForm3.Text;
             if (photoForm3 == null || photoForm3 == "") photoForm3 = "-";
             model.linkForm2 = photoForm3;
+            model.linkForm22 = LinkForm23;
+
             if (listOfCuisinesForm3 == null || listOfCuisinesForm3 == "") listOfCuisinesForm3 = "-";
             model.listOfCuisinesForm2 = listOfCuisinesForm3;
+
             if (RatingForm3 == null || RatingForm3 == "") RatingForm3 = "-";
             model.idRatingForm2 = RatingForm3;
+
             if (difficultLevelForm3 == null || difficultLevelForm3 == "") difficultLevelForm3 = "-";
             model.difficultLevelForm2 = difficultLevelForm3;
+
             if (executionTimeForm3 == null || executionTimeForm3 == "") executionTimeForm3 = "-";
             model.executionTimeForm2 = executionTimeForm3;
+
             model.unlockFieldsForm2 = unlockFieldsForm3;
-            model.linkForm22 = LinkForm23;
             model.addRecipeForm2 = addRecipeForm3;
             model.addRecipe = addRecipe;
+
             #region MealAdd
-             model.IdMealForm2[0] = IdMealForm3[0];
-             model.IdMealForm2[1] = IdMealForm3[1];
-             model.IdMealForm2[2] = IdMealForm3[2];
-             model.IdMealForm2[3] = IdMealForm3[3];
-             model.IdMealForm2[4] = IdMealForm3[4];
-             model.IdMealForm2[5] = IdMealForm3[5];
-             model.IdMealForm2[6] = IdMealForm3[6];
+            model.IdMealForm2[0] = IdMealForm3[0];
+            model.IdMealForm2[1] = IdMealForm3[1];
+            model.IdMealForm2[2] = IdMealForm3[2];
+            model.IdMealForm2[3] = IdMealForm3[3];
+            model.IdMealForm2[4] = IdMealForm3[4];
+            model.IdMealForm2[5] = IdMealForm3[5];
+            model.IdMealForm2[6] = IdMealForm3[6];
             #endregion
+
             #region ComponentAdd
             model.ingridientsForm2[0] = idComponentsForm3[0];
             model.ingridientsForm2[1] = idComponentsForm3[1];
@@ -334,9 +339,11 @@ namespace CulinaryRecipes
             model.ingridientsForm2[6] = idComponentsForm3[6];
             model.ingridientsForm2[7] = idComponentsForm3[7];
             #endregion
+
             model.counterForm2 = counterForm3;
+
             #region Pamięć
-            model.title1=title3;
+            model.title1 = title3;
             model.amounts = amounts3;
             model.ingrediet = ingrediet3;
             model.shortDes = shortDes3;
@@ -348,67 +355,20 @@ namespace CulinaryRecipes
             model.portions = portions3;
             model.cancel = cancel3;
             #endregion
+
             this.Visible = false;
             this.Close();
             model.ShowDialog();
         }
-              
+
         public Form3()
         {
             InitializeComponent();
         }
 
-        public void SelectedButton(Button _name)
-        {
-            _name.BackColor = Color.White;
-            _name.ForeColor = Color.Black;
-        }
-
-        private void btnOneStar_Click(object sender, EventArgs e)
-        {
-            ChangeColorButtons(gbRating);
-            SelectedButton(btnOneStar);
-
-            var s = from p in Rating.categoryRating
-                    where p.Id == 1
-                    select p;
-            foreach (var c in s)
-            {
-                RatingForm3 = c.Id.ToString();
-            }
-        }
-
-        private void btnTwoStar_Click(object sender, EventArgs e)
-        {
-            ChangeColorButtons(gbRating);
-            SelectedButton(btnTwoStar);
-            var s = from p in Rating.categoryRating
-                    where p.Id == 2
-                    select p;
-            foreach (var c in s)
-            {
-                RatingForm3 = c.Id.ToString();
-            }
-        }
-
-        private void btnThreeStar_Click(object sender, EventArgs e)
-        {
-            ChangeColorButtons(gbRating);
-            SelectedButton(btnThreeStar);
-            var s = from p in Rating.categoryRating
-                    where p.Id == 3
-                    select p;
-            foreach (var c in s)
-            {
-                RatingForm3 = c.Id.ToString();
-            }
-        }
-
         private void zaznaczWszystkoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-         
-                rtxtLinkForm3.SelectAll();
+            rtxtLinkForm3.SelectAll();
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -417,10 +377,12 @@ namespace CulinaryRecipes
             rtxtLinkForm3.SelectionStart = 0;
         }
 
+        #region keyDown
         private void ClearLink(KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape) rtxtLinkForm3.Text = "";
         }
+
         private void Form3_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape) rtxtLinkForm3.Text = "";
@@ -545,5 +507,6 @@ namespace CulinaryRecipes
         {
             toolTip1.SetToolTip(rtxtLinkForm3, "Klawisz 'Esc' - Czyści pole");
         }
+        #endregion keyDown
     }
 }

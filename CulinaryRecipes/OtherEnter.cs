@@ -17,7 +17,7 @@ namespace CulinaryRecipes
         }
 
         //kod dla pierwszej linii podczas wpisywania ilosci itd
-        public static void ForTheFirstLine(RichTextBox first, RichTextBox second, KeyEventArgs e)
+        public static void FirstLine(RichTextBox first, RichTextBox second, KeyEventArgs e)
         {
             int j;
             int i = 0;

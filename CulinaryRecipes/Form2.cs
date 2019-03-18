@@ -637,10 +637,10 @@ namespace CulinaryRecipes
 
         public void ConvertAmountsOfFood()
         {
-           
+
             string[] tab = new string[rtxtAmountsOfFood.Lines.Length];
             tab = rtxtAmountsOfFood.Lines;
-           
+
             for (int i = 0; i < tab.Length; i++)
             {
                 tab[i] = tab[i].Trim();
@@ -660,14 +660,14 @@ namespace CulinaryRecipes
                 {
                     tab[i] = "0,35";
                 }
-                else if (tab[i] == "1/2"|| tab[i] =="2/4")
+                else if (tab[i] == "1/2" || tab[i] == "2/4")
                 {
                     tab[i] = "0,5";
                 }
                 else if (tab[i] == "3/4")
                 {
                     tab[i] = "0,75";
-                }             
+                }
                 else if (tab[i] == "2/3")
                 {
                     tab[i] = "0,65";
@@ -949,6 +949,7 @@ namespace CulinaryRecipes
                 rtxtDescription.Text = rtxtDescription.Text.Insert(i, "\n " + " " + interval + " ");
                 e.Handled = true;
                 rtxtDescription.SelectionStart = 4 + i;
+
             }
 
             if (e.KeyCode == Keys.Enter && cmList.Text == PunktorOff)
@@ -1713,7 +1714,7 @@ namespace CulinaryRecipes
             txtName.Text = txtName.Text.ToUpper();
         }
 
-      
+
 
 
 
@@ -2012,7 +2013,6 @@ namespace CulinaryRecipes
 
         #region rtxtAmountsOfFood_rtxtIngredients
 
-
         //zliczanie znaków i "\n" zeby odpowiednio ustawić focus
         OtherEnter Oe = new OtherEnter();
         int numberLine;
@@ -2097,12 +2097,11 @@ namespace CulinaryRecipes
             return iloscZnakow;
         }
 
-        // 
         private void ChangeFocusNewProject(RichTextBox first, RichTextBox second, KeyEventArgs e)
         {
             if (addRecipeForm2 == true)
             {
-                OtherEnter.ForTheFirstLine(first, second, e);
+                OtherEnter.FirstLine(first, second, e);
             }
             else if (e.KeyCode == Keys.Enter && addRecipeForm2 == false && addRecipe == true)
             {
@@ -2176,49 +2175,37 @@ namespace CulinaryRecipes
                     ChangeFocusNewProject(first, second, e);
                 }
             }
-            else if(e.KeyCode == Keys.Escape && txtName.ReadOnly == false)
+            else if (e.KeyCode == Keys.Escape && txtName.ReadOnly == false)
             {
                 UndoChanges();
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pbLittlePhoto_Click(object sender, EventArgs e)
-        {
-
-        }
         string jeden;
+
+        private void toolStripMenuItem14_Click(object sender, EventArgs e)
+        {
+            Logo newEmail = new Logo();
+            newEmail.titleLogo = txtName.Text;
+            newEmail.amountsLogo = rtxtAmountsOfFood.Text;
+            newEmail.gramsLogo = rTxtGrams.Text;
+            newEmail.ingredientLogo = rTxtIngredients.Text;
+            newEmail.descriptionLogo = rtxtDescription.Text;
+        }
+
         private void rtxtAmountsOfFood_KeyDown(object sender, KeyEventArgs e)
         {
-            //if(e.KeyCode>=Keys.D1|| e.KeyCode <= Keys.D9)
-            //{
-                
-            //    jeden += e.KeyCode;
-            
-            //}
-            // if(e.KeyCode==Keys.Help)
-            //{
-            //    jeden = "/";
-            //}
-
-           AmountsAndGramsKeyDown(e, rtxtAmountsOfFood, rTxtGrams, rTxtIngredients);
-
+            AmountsAndGramsKeyDown(e, rtxtAmountsOfFood, rTxtGrams, rTxtIngredients);
         }
 
         private void rTxtGrams_KeyDown(object sender, KeyEventArgs e)
         {
-
             AmountsAndGramsKeyDown(e, rTxtGrams, rTxtIngredients, rtxtAmountsOfFood);
-
         }
 
         private void rTxtIngredients_KeyDown(object sender, KeyEventArgs e)
         {
-           
+
             if (e.KeyCode == Keys.Enter)
             {
                 NumberOfLines(e, rTxtIngredients);
@@ -2235,21 +2222,15 @@ namespace CulinaryRecipes
                 {
 
                     ChangeAddLine(e);
-
                 }
                 else
                 {
-
                     ChangeFocusNewProject(rTxtIngredients, rtxtAmountsOfFood, e);
-
                 }
             }
-           
- else if (e.KeyCode == Keys.Escape && txtName.ReadOnly == false)
+            else if (e.KeyCode == Keys.Escape && txtName.ReadOnly == false)
             {
-
                 UndoChanges();
-
             }
         }
 

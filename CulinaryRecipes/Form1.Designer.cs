@@ -30,11 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.cMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteCMS = new System.Windows.Forms.ToolStripMenuItem();
+            this.CMSdelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.CMSexportOne = new System.Windows.Forms.ToolStripMenuItem();
+            this.CMSSend = new System.Windows.Forms.ToolStripMenuItem();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nowyPrzepisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -153,7 +155,6 @@
             this.lblAmountsSeek = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.lblYouHave = new System.Windows.Forms.Label();
             this.lblStatistic = new System.Windows.Forms.Label();
             this.pbStar3 = new System.Windows.Forms.PictureBox();
             this.pbStar2 = new System.Windows.Forms.PictureBox();
@@ -172,7 +173,7 @@
             this.lblClearCheckBox = new System.Windows.Forms.Label();
             this.lblRightTwoLine = new System.Windows.Forms.Label();
             this.lblRightOneLine = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFilterOpen = new System.Windows.Forms.Button();
             this.chcFilterTime30 = new System.Windows.Forms.CheckBox();
             this.chcFiltrLevelEasy = new System.Windows.Forms.CheckBox();
             this.chcFilterCuisineAmerican = new System.Windows.Forms.CheckBox();
@@ -187,7 +188,6 @@
             this.chcFilterCuisineFrench = new System.Windows.Forms.CheckBox();
             this.chcFilterCuisineCzech = new System.Windows.Forms.CheckBox();
             this.chcFilterCuisineAsian = new System.Windows.Forms.CheckBox();
-            this.btnOff = new System.Windows.Forms.Button();
             this.chcFilterRatingThree = new System.Windows.Forms.CheckBox();
             this.chcFilterRatingTwo = new System.Windows.Forms.CheckBox();
             this.chcFilterLevelVeryHard = new System.Windows.Forms.CheckBox();
@@ -199,6 +199,7 @@
             this.panelFilterLevel = new System.Windows.Forms.Panel();
             this.panelFilterRating = new System.Windows.Forms.Panel();
             this.btnFilter = new System.Windows.Forms.Button();
+            this.btnFilterClose = new System.Windows.Forms.PictureBox();
             this.cMenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -256,23 +257,42 @@
             this.panelFilterTime.SuspendLayout();
             this.panelFilterLevel.SuspendLayout();
             this.panelFilterRating.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFilterClose)).BeginInit();
             this.SuspendLayout();
             // 
             // cMenuStrip
             // 
             this.cMenuStrip.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteCMS});
+            this.CMSdelete,
+            this.CMSexportOne,
+            this.CMSSend});
             this.cMenuStrip.Name = "contextMenuStrip1";
-            this.cMenuStrip.Size = new System.Drawing.Size(100, 26);
+            this.cMenuStrip.Size = new System.Drawing.Size(192, 70);
             // 
-            // deleteCMS
+            // CMSdelete
             // 
-            this.deleteCMS.Name = "deleteCMS";
-            this.deleteCMS.Size = new System.Drawing.Size(99, 22);
-            this.deleteCMS.Text = "Usuń";
-            this.deleteCMS.Visible = false;
-            this.deleteCMS.Click += new System.EventHandler(this.usuńToolStripMenuItem_Click);
+            this.CMSdelete.Name = "CMSdelete";
+            this.CMSdelete.Size = new System.Drawing.Size(191, 22);
+            this.CMSdelete.Text = "Usuń";
+            this.CMSdelete.Visible = false;
+            this.CMSdelete.Click += new System.EventHandler(this.usuńToolStripMenuItem_Click);
+            // 
+            // CMSexportOne
+            // 
+            this.CMSexportOne.Name = "CMSexportOne";
+            this.CMSexportOne.Size = new System.Drawing.Size(191, 22);
+            this.CMSexportOne.Text = "Eksportuj Plik";
+            this.CMSexportOne.Visible = false;
+            this.CMSexportOne.Click += new System.EventHandler(this.eksportujPlikToolStripMenuItem_Click);
+            // 
+            // CMSSend
+            // 
+            this.CMSSend.Name = "CMSSend";
+            this.CMSSend.Size = new System.Drawing.Size(191, 22);
+            this.CMSSend.Text = "Wyślij przepis na E-mail";
+            this.CMSSend.Visible = false;
+            this.CMSSend.Click += new System.EventHandler(this.CMSSend_Click);
             // 
             // plikToolStripMenuItem
             // 
@@ -1376,12 +1396,15 @@
             // 
             // txtSeek
             // 
+            this.txtSeek.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtSeek.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtSeek.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)), true);
             this.txtSeek.Location = new System.Drawing.Point(210, 161);
             this.txtSeek.Name = "txtSeek";
             this.txtSeek.Size = new System.Drawing.Size(453, 37);
             this.txtSeek.TabIndex = 0;
             this.txtSeek.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSeek.TextChanged += new System.EventHandler(this.txtSeek_TextChanged);
             this.txtSeek.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSeek_KeyDown);
             // 
             // dgGrid
@@ -1394,16 +1417,17 @@
             this.dgGrid.ColumnHeadersVisible = false;
             this.dgGrid.ContextMenuStrip = this.cMenuStrip;
             this.dgGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgGrid.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            this.dgGrid.Location = new System.Drawing.Point(207, 480);
+            this.dgGrid.Location = new System.Drawing.Point(210, 488);
+            this.dgGrid.MultiSelect = false;
             this.dgGrid.Name = "dgGrid";
             this.dgGrid.ReadOnly = true;
             this.dgGrid.RowHeadersVisible = false;
@@ -1581,7 +1605,7 @@
             this.lblNameSeek.Size = new System.Drawing.Size(50, 14);
             this.lblNameSeek.TabIndex = 43;
             this.lblNameSeek.Text = "NAZWA";
-            this.lblNameSeek.Click += new System.EventHandler(this.label12_Click);
+            this.lblNameSeek.Click += new System.EventHandler(this.lblNameSeek_Click);
             // 
             // lblAmountsSeek
             // 
@@ -1593,7 +1617,7 @@
             this.lblAmountsSeek.Size = new System.Drawing.Size(61, 13);
             this.lblAmountsSeek.TabIndex = 45;
             this.lblAmountsSeek.Text = "SKŁADNIKI";
-            this.lblAmountsSeek.Click += new System.EventHandler(this.label13_Click);
+            this.lblAmountsSeek.Click += new System.EventHandler(this.lblAmountsSeek_Click);
             // 
             // label14
             // 
@@ -1615,26 +1639,13 @@
             this.label15.TabIndex = 47;
             this.label15.Text = "|";
             // 
-            // lblYouHave
-            // 
-            this.lblYouHave.AutoSize = true;
-            this.lblYouHave.BackColor = System.Drawing.Color.Black;
-            this.lblYouHave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblYouHave.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblYouHave.Location = new System.Drawing.Point(755, 95);
-            this.lblYouHave.Name = "lblYouHave";
-            this.lblYouHave.Size = new System.Drawing.Size(44, 15);
-            this.lblYouHave.TabIndex = 49;
-            this.lblYouHave.Text = "Masz : ";
-            this.lblYouHave.Visible = false;
-            // 
             // lblStatistic
             // 
             this.lblStatistic.AutoSize = true;
             this.lblStatistic.BackColor = System.Drawing.Color.Black;
             this.lblStatistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblStatistic.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblStatistic.Location = new System.Drawing.Point(801, 95);
+            this.lblStatistic.Location = new System.Drawing.Point(805, 71);
             this.lblStatistic.Name = "lblStatistic";
             this.lblStatistic.Size = new System.Drawing.Size(26, 15);
             this.lblStatistic.TabIndex = 50;
@@ -1713,7 +1724,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 24);
@@ -1729,7 +1740,7 @@
             this.lblCulinary.BackColor = System.Drawing.Color.Black;
             this.lblCulinary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblCulinary.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblCulinary.Location = new System.Drawing.Point(833, 95);
+            this.lblCulinary.Location = new System.Drawing.Point(831, 71);
             this.lblCulinary.Name = "lblCulinary";
             this.lblCulinary.Size = new System.Drawing.Size(61, 15);
             this.lblCulinary.TabIndex = 51;
@@ -1740,7 +1751,7 @@
             // 
             this.chcStstistic.AutoSize = true;
             this.chcStstistic.BackColor = System.Drawing.Color.Black;
-            this.chcStstistic.Location = new System.Drawing.Point(822, 68);
+            this.chcStstistic.Location = new System.Drawing.Point(821, 93);
             this.chcStstistic.Name = "chcStstistic";
             this.chcStstistic.Size = new System.Drawing.Size(71, 17);
             this.chcStstistic.TabIndex = 19;
@@ -1823,7 +1834,7 @@
             this.lblClearCheckBox.TabIndex = 57;
             this.lblClearCheckBox.Text = "wyczyść checkboxy";
             this.lblClearCheckBox.Visible = false;
-            this.lblClearCheckBox.Click += new System.EventHandler(this.label13_Click_1);
+            this.lblClearCheckBox.Click += new System.EventHandler(this.lblClearCheckBox_Click_1);
             // 
             // lblRightTwoLine
             // 
@@ -1847,26 +1858,28 @@
             this.lblRightOneLine.Text = "|";
             this.lblRightOneLine.Visible = false;
             // 
-            // button1
+            // btnFilterOpen
             // 
-            this.button1.BackColor = System.Drawing.Color.Maroon;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(430, 202);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 19);
-            this.button1.TabIndex = 61;
-            this.button1.Text = "FILTRY";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnFilterOpen.BackColor = System.Drawing.Color.Maroon;
+            this.btnFilterOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnFilterOpen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilterOpen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFilterOpen.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnFilterOpen.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFilterOpen.Location = new System.Drawing.Point(405, 26);
+            this.btnFilterOpen.Name = "btnFilterOpen";
+            this.btnFilterOpen.Size = new System.Drawing.Size(123, 35);
+            this.btnFilterOpen.TabIndex = 61;
+            this.btnFilterOpen.Text = "FILTROWANIE";
+            this.btnFilterOpen.UseVisualStyleBackColor = false;
+            this.btnFilterOpen.Click += new System.EventHandler(this.btnFilterOpen_Click);
             // 
             // chcFilterTime30
             // 
             this.chcFilterTime30.AutoSize = true;
             this.chcFilterTime30.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterTime30.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterTime30.Location = new System.Drawing.Point(19, 10);
+            this.chcFilterTime30.Location = new System.Drawing.Point(19, 21);
             this.chcFilterTime30.Name = "chcFilterTime30";
             this.chcFilterTime30.Size = new System.Drawing.Size(55, 17);
             this.chcFilterTime30.TabIndex = 62;
@@ -2060,21 +2073,6 @@
             this.chcFilterCuisineAsian.UseVisualStyleBackColor = true;
             this.chcFilterCuisineAsian.CheckedChanged += new System.EventHandler(this.chcFilterCuisineAsian_CheckedChanged);
             // 
-            // btnOff
-            // 
-            this.btnOff.BackColor = System.Drawing.Color.Maroon;
-            this.btnOff.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOff.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOff.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnOff.Location = new System.Drawing.Point(51, 66);
-            this.btnOff.Name = "btnOff";
-            this.btnOff.Size = new System.Drawing.Size(63, 19);
-            this.btnOff.TabIndex = 67;
-            this.btnOff.Text = "WYŁĄCZ";
-            this.btnOff.UseVisualStyleBackColor = false;
-            this.btnOff.Visible = false;
-            this.btnOff.Click += new System.EventHandler(this.button2_Click);
-            // 
             // chcFilterRatingThree
             // 
             this.chcFilterRatingThree.AutoSize = true;
@@ -2132,7 +2130,7 @@
             this.chcFilterTime900.AutoSize = true;
             this.chcFilterTime900.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterTime900.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterTime900.Location = new System.Drawing.Point(87, 34);
+            this.chcFilterTime900.Location = new System.Drawing.Point(87, 45);
             this.chcFilterTime900.Name = "chcFilterTime900";
             this.chcFilterTime900.Size = new System.Drawing.Size(79, 17);
             this.chcFilterTime900.TabIndex = 68;
@@ -2145,7 +2143,7 @@
             this.chcFilterTime90.AutoSize = true;
             this.chcFilterTime90.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterTime90.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterTime90.Location = new System.Drawing.Point(19, 34);
+            this.chcFilterTime90.Location = new System.Drawing.Point(19, 45);
             this.chcFilterTime90.Name = "chcFilterTime90";
             this.chcFilterTime90.Size = new System.Drawing.Size(56, 17);
             this.chcFilterTime90.TabIndex = 67;
@@ -2158,7 +2156,7 @@
             this.chcFilterTime60.AutoSize = true;
             this.chcFilterTime60.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterTime60.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterTime60.Location = new System.Drawing.Point(87, 10);
+            this.chcFilterTime60.Location = new System.Drawing.Point(87, 21);
             this.chcFilterTime60.Name = "chcFilterTime60";
             this.chcFilterTime60.Size = new System.Drawing.Size(56, 17);
             this.chcFilterTime60.TabIndex = 66;
@@ -2206,14 +2204,28 @@
             this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFilter.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnFilter.Location = new System.Drawing.Point(51, 35);
+            this.btnFilter.Location = new System.Drawing.Point(45, 76);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(63, 19);
+            this.btnFilter.Size = new System.Drawing.Size(63, 25);
             this.btnFilter.TabIndex = 71;
             this.btnFilter.Text = "FILTRUJ";
             this.btnFilter.UseVisualStyleBackColor = false;
             this.btnFilter.Visible = false;
-            this.btnFilter.Click += new System.EventHandler(this.button3_Click);
+            this.btnFilter.Click += new System.EventHandler(this.BtnFilter_Click);
+            // 
+            // btnFilterClose
+            // 
+            this.btnFilterClose.BackColor = System.Drawing.Color.Maroon;
+            this.btnFilterClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilterClose.Image = ((System.Drawing.Image)(resources.GetObject("btnFilterClose.Image")));
+            this.btnFilterClose.Location = new System.Drawing.Point(65, 37);
+            this.btnFilterClose.Name = "btnFilterClose";
+            this.btnFilterClose.Size = new System.Drawing.Size(25, 25);
+            this.btnFilterClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnFilterClose.TabIndex = 72;
+            this.btnFilterClose.TabStop = false;
+            this.btnFilterClose.Visible = false;
+            this.btnFilterClose.Click += new System.EventHandler(this.btnFilterClose_Click);
             // 
             // Form1
             // 
@@ -2222,13 +2234,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.ClientSize = new System.Drawing.Size(904, 769);
+            this.Controls.Add(this.btnFilterClose);
+            this.Controls.Add(this.btnFilterOpen);
             this.Controls.Add(this.btnFilter);
-            this.Controls.Add(this.btnOff);
             this.Controls.Add(this.panelFilterRating);
             this.Controls.Add(this.panelFilterLevel);
             this.Controls.Add(this.panelFilterTime);
             this.Controls.Add(this.panelFiltrCuisine);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblClearCheckBox);
             this.Controls.Add(this.lblRightTwoLine);
             this.Controls.Add(this.lblRightOneLine);
@@ -2240,7 +2252,6 @@
             this.Controls.Add(this.chcStstistic);
             this.Controls.Add(this.lblCulinary);
             this.Controls.Add(this.lblStatistic);
-            this.Controls.Add(this.lblYouHave);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.lblAmountsSeek);
@@ -2369,6 +2380,7 @@
             this.panelFilterLevel.PerformLayout();
             this.panelFilterRating.ResumeLayout(false);
             this.panelFilterRating.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFilterClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2481,14 +2493,13 @@
         private System.Windows.Forms.Label lblCuisine;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem zamknijToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteCMS;
+        private System.Windows.Forms.ToolStripMenuItem CMSdelete;
         private System.Windows.Forms.Label lblNameSeek;
         private System.Windows.Forms.Label lblAmountsSeek;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ToolStripMenuItem importujPojedynczyPlikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eksportujPojedynczyPlikToolStripMenuItem;
-        private System.Windows.Forms.Label lblYouHave;
         private System.Windows.Forms.Label lblStatistic;
         private System.Windows.Forms.Label lblCulinary;
         private System.Windows.Forms.CheckBox chcStstistic;
@@ -2516,7 +2527,7 @@
         private System.Windows.Forms.Label lblBirdVeg;
         private System.Windows.Forms.Label lblMeatVeg;
         private System.Windows.Forms.Label lblEggsVeg;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFilterOpen;
         private System.Windows.Forms.CheckBox chcFilterTime30;
         private System.Windows.Forms.CheckBox chcFiltrLevelEasy;
         private System.Windows.Forms.CheckBox chcFilterCuisineAmerican;
@@ -2538,11 +2549,13 @@
         private System.Windows.Forms.CheckBox chcFilterCuisinePortuguese;
         private System.Windows.Forms.CheckBox chcFilterCuisineHungarian;
         private System.Windows.Forms.CheckBox chcFilterCuisineItalian;
-        private System.Windows.Forms.Button btnOff;
         private System.Windows.Forms.Panel panelFilterTime;
         private System.Windows.Forms.Panel panelFilterLevel;
         private System.Windows.Forms.Panel panelFilterRating;
         private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.PictureBox btnFilterClose;
+        private System.Windows.Forms.ToolStripMenuItem CMSexportOne;
+        private System.Windows.Forms.ToolStripMenuItem CMSSend;
     }
 }
 

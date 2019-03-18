@@ -40,6 +40,8 @@
             this.podglToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drukujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaZakupowaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelLeft = new System.Windows.Forms.Panel();
@@ -146,7 +148,6 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.pbLittlePhoto = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.rtxtDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -156,6 +157,7 @@
             this.pbStar1 = new System.Windows.Forms.PictureBox();
             this.pbStar2 = new System.Windows.Forms.PictureBox();
             this.pbStar3 = new System.Windows.Forms.PictureBox();
+            this.pbLittlePhoto = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ContextMenuGrams = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cofnijToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -279,11 +281,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLittlePhoto)).BeginInit();
             this.panelPicture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLittlePhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.ContextMenuGrams.SuspendLayout();
             this.contextShortDesription.SuspendLayout();
@@ -315,6 +317,8 @@
             this.podglToolStripMenuItem,
             this.drukujToolStripMenuItem,
             this.listaZakupowaToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.toolStripMenuItem14,
             this.toolStripMenuItem6,
             this.zamknijToolStripMenuItem});
             this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
@@ -384,6 +388,18 @@
             this.listaZakupowaToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.listaZakupowaToolStripMenuItem.Text = "Lista Zakupowa";
             this.listaZakupowaToolStripMenuItem.Click += new System.EventHandler(this.listaZakupowaToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(239, 6);
+            // 
+            // toolStripMenuItem14
+            // 
+            this.toolStripMenuItem14.Name = "toolStripMenuItem14";
+            this.toolStripMenuItem14.Size = new System.Drawing.Size(242, 22);
+            this.toolStripMenuItem14.Text = "Wyślij Przepis ne Email";
+            this.toolStripMenuItem14.Click += new System.EventHandler(this.toolStripMenuItem14_Click);
             // 
             // toolStripMenuItem6
             // 
@@ -946,11 +962,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(31, 246);
+            this.label3.Location = new System.Drawing.Point(31, 235);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.Size = new System.Drawing.Size(36, 26);
             this.label3.TabIndex = 0;
-            this.label3.Text = "ZUPY";
+            this.label3.Text = "SOSY,\r\nZUPY";
             // 
             // label1
             // 
@@ -1680,18 +1696,6 @@
             this.label14.Text = "Skrót";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pbLittlePhoto
-            // 
-            this.pbLittlePhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbLittlePhoto.Image = global::CulinaryRecipes.Properties.Resources.przepisy;
-            this.pbLittlePhoto.Location = new System.Drawing.Point(17, 45);
-            this.pbLittlePhoto.Name = "pbLittlePhoto";
-            this.pbLittlePhoto.Size = new System.Drawing.Size(289, 194);
-            this.pbLittlePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLittlePhoto.TabIndex = 43;
-            this.pbLittlePhoto.TabStop = false;
-            this.pbLittlePhoto.Click += new System.EventHandler(this.pbLittlePhoto_Click);
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -1741,6 +1745,7 @@
             this.rTxtIngredients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.rTxtIngredients.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rTxtIngredients.ContextMenuStrip = this.contextCopy;
+            this.rTxtIngredients.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.rTxtIngredients.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rTxtIngredients.ForeColor = System.Drawing.Color.White;
             this.rTxtIngredients.Location = new System.Drawing.Point(124, 74);
@@ -1817,6 +1822,17 @@
             this.pbStar3.TabStop = false;
             this.pbStar3.Visible = false;
             // 
+            // pbLittlePhoto
+            // 
+            this.pbLittlePhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbLittlePhoto.Image = global::CulinaryRecipes.Properties.Resources.przepisy;
+            this.pbLittlePhoto.Location = new System.Drawing.Point(17, 45);
+            this.pbLittlePhoto.Name = "pbLittlePhoto";
+            this.pbLittlePhoto.Size = new System.Drawing.Size(289, 194);
+            this.pbLittlePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLittlePhoto.TabIndex = 43;
+            this.pbLittlePhoto.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1826,7 +1842,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(545, 270);
             this.pictureBox2.TabIndex = 46;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // ContextMenuGrams
             // 
@@ -2451,11 +2466,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLittlePhoto)).EndInit();
             this.panelPicture.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbStar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLittlePhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ContextMenuGrams.ResumeLayout(false);
             this.contextShortDesription.ResumeLayout(false);
@@ -2662,5 +2677,7 @@
         private System.Windows.Forms.ToolStripMenuItem kopiujToolStripMenu;
         private System.Windows.Forms.Panel panelPicture;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem14;
     }
 }

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CulinaryRecipes
@@ -21,8 +17,14 @@ namespace CulinaryRecipes
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
-            if (this.ReadOnly == false) ShowCaret(this.Handle);
-            else HideCaret(this.Handle);
+            if (this.ReadOnly == false)
+            {
+                ShowCaret(this.Handle);
+            }
+            else
+            {
+                HideCaret(this.Handle);
+            }
            
         }
 
