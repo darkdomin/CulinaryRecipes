@@ -25,7 +25,6 @@ namespace CulinaryRecipes
             {
                 HideCaret(this.Handle);
             }
-           
         }
 
     }

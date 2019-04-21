@@ -103,16 +103,17 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.chcVegetarian = new System.Windows.Forms.CheckBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.pictureBox29 = new System.Windows.Forms.PictureBox();
+            this.pb29 = new System.Windows.Forms.PictureBox();
             this.rTxtGrams = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.contextCopy = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.kopiujToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.pbConvert = new System.Windows.Forms.PictureBox();
-            this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
+            this.pb28 = new System.Windows.Forms.PictureBox();
+            this.pb27 = new System.Windows.Forms.PictureBox();
             this.btnAddRest = new System.Windows.Forms.Button();
             this.txtShortDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.rtxtPortion = new System.Windows.Forms.RichTextBox();
@@ -256,11 +257,11 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb29)).BeginInit();
             this.contextCopy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbConvert)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
@@ -1134,14 +1135,15 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            this.panelMain.Controls.Add(this.label23);
             this.panelMain.Controls.Add(this.label22);
             this.panelMain.Controls.Add(this.chcVegetarian);
             this.panelMain.Controls.Add(this.label21);
-            this.panelMain.Controls.Add(this.pictureBox29);
+            this.panelMain.Controls.Add(this.pb29);
             this.panelMain.Controls.Add(this.rTxtGrams);
             this.panelMain.Controls.Add(this.pbConvert);
-            this.panelMain.Controls.Add(this.pictureBox28);
-            this.panelMain.Controls.Add(this.pictureBox27);
+            this.panelMain.Controls.Add(this.pb28);
+            this.panelMain.Controls.Add(this.pb27);
             this.panelMain.Controls.Add(this.btnAddRest);
             this.panelMain.Controls.Add(this.txtShortDescription);
             this.panelMain.Controls.Add(this.rtxtPortion);
@@ -1190,6 +1192,19 @@
             this.panelMain.Size = new System.Drawing.Size(1034, 801);
             this.panelMain.TabIndex = 0;
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label23.Location = new System.Drawing.Point(7, 17);
+            this.label23.Margin = new System.Windows.Forms.Padding(0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(43, 14);
+            this.label23.TabIndex = 49;
+            this.label23.Text = "Nazwa";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -1226,14 +1241,14 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "Jednostki";
             // 
-            // pictureBox29
+            // pb29
             // 
-            this.pictureBox29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pictureBox29.Location = new System.Drawing.Point(56, 74);
-            this.pictureBox29.Name = "pictureBox29";
-            this.pictureBox29.Size = new System.Drawing.Size(2, 683);
-            this.pictureBox29.TabIndex = 1;
-            this.pictureBox29.TabStop = false;
+            this.pb29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.pb29.Location = new System.Drawing.Point(56, 74);
+            this.pb29.Name = "pb29";
+            this.pb29.Size = new System.Drawing.Size(2, 683);
+            this.pb29.TabIndex = 1;
+            this.pb29.TabStop = false;
             // 
             // rTxtGrams
             // 
@@ -1280,24 +1295,25 @@
             this.pbConvert.Size = new System.Drawing.Size(3, 20);
             this.pbConvert.TabIndex = 3;
             this.pbConvert.TabStop = false;
+            this.pbConvert.Click += new System.EventHandler(this.pbConvert_Click);
             // 
-            // pictureBox28
+            // pb28
             // 
-            this.pictureBox28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pictureBox28.Location = new System.Drawing.Point(56, 64);
-            this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(58, 10);
-            this.pictureBox28.TabIndex = 4;
-            this.pictureBox28.TabStop = false;
+            this.pb28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.pb28.Location = new System.Drawing.Point(56, 64);
+            this.pb28.Name = "pb28";
+            this.pb28.Size = new System.Drawing.Size(58, 10);
+            this.pb28.TabIndex = 4;
+            this.pb28.TabStop = false;
             // 
-            // pictureBox27
+            // pb27
             // 
-            this.pictureBox27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pictureBox27.Location = new System.Drawing.Point(8, 75);
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(5, 682);
-            this.pictureBox27.TabIndex = 5;
-            this.pictureBox27.TabStop = false;
+            this.pb27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.pb27.Location = new System.Drawing.Point(8, 74);
+            this.pb27.Name = "pb27";
+            this.pb27.Size = new System.Drawing.Size(5, 683);
+            this.pb27.TabIndex = 5;
+            this.pb27.TabStop = false;
             // 
             // btnAddRest
             // 
@@ -1341,7 +1357,7 @@
             this.rtxtPortion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtxtPortion.ForeColor = System.Drawing.Color.White;
             this.rtxtPortion.Location = new System.Drawing.Point(310, 40);
-            this.rtxtPortion.MaxLength = 2;
+            this.rtxtPortion.MaxLength = 3;
             this.rtxtPortion.Multiline = false;
             this.rtxtPortion.Name = "rtxtPortion";
             this.rtxtPortion.Size = new System.Drawing.Size(20, 20);
@@ -1357,12 +1373,12 @@
             this.rtxtAmountsOfFood.ContextMenuStrip = this.contextCopy;
             this.rtxtAmountsOfFood.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtxtAmountsOfFood.ForeColor = System.Drawing.Color.White;
-            this.rtxtAmountsOfFood.Location = new System.Drawing.Point(13, 75);
+            this.rtxtAmountsOfFood.Location = new System.Drawing.Point(13, 74);
             this.rtxtAmountsOfFood.Name = "rtxtAmountsOfFood";
             this.rtxtAmountsOfFood.ReadOnly = true;
             this.rtxtAmountsOfFood.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.rtxtAmountsOfFood.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.rtxtAmountsOfFood.Size = new System.Drawing.Size(38, 682);
+            this.rtxtAmountsOfFood.Size = new System.Drawing.Size(38, 683);
             this.rtxtAmountsOfFood.TabIndex = 2;
             this.rtxtAmountsOfFood.Text = "";
             this.rtxtAmountsOfFood.WordWrap = false;
@@ -1385,7 +1401,7 @@
             this.pb1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.pb1.Location = new System.Drawing.Point(8, 64);
             this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(43, 11);
+            this.pb1.Size = new System.Drawing.Size(43, 10);
             this.pb1.TabIndex = 10;
             this.pb1.TabStop = false;
             // 
@@ -1457,9 +1473,9 @@
             // 
             this.pictureBox26.BackColor = System.Drawing.Color.White;
             this.pictureBox26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox26.Location = new System.Drawing.Point(15, 7);
+            this.pictureBox26.Location = new System.Drawing.Point(54, 7);
             this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(1005, 1);
+            this.pictureBox26.Size = new System.Drawing.Size(965, 1);
             this.pictureBox26.TabIndex = 18;
             this.pictureBox26.TabStop = false;
             // 
@@ -1477,7 +1493,7 @@
             // 
             this.pictureBox24.BackColor = System.Drawing.Color.White;
             this.pictureBox24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox24.Location = new System.Drawing.Point(15, 7);
+            this.pictureBox24.Location = new System.Drawing.Point(54, 7);
             this.pictureBox24.Name = "pictureBox24";
             this.pictureBox24.Size = new System.Drawing.Size(1, 26);
             this.pictureBox24.TabIndex = 20;
@@ -1487,9 +1503,9 @@
             // 
             this.pictureBox23.BackColor = System.Drawing.Color.White;
             this.pictureBox23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox23.Location = new System.Drawing.Point(15, 32);
+            this.pictureBox23.Location = new System.Drawing.Point(54, 32);
             this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(1005, 1);
+            this.pictureBox23.Size = new System.Drawing.Size(965, 1);
             this.pictureBox23.TabIndex = 21;
             this.pictureBox23.TabStop = false;
             // 
@@ -1768,13 +1784,14 @@
             this.txtName.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtName.Font = new System.Drawing.Font("Corbel", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtName.ForeColor = System.Drawing.Color.White;
-            this.txtName.Location = new System.Drawing.Point(16, 7);
+            this.txtName.Location = new System.Drawing.Point(55, 7);
             this.txtName.MaxLength = 85;
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(1004, 25);
+            this.txtName.Size = new System.Drawing.Size(965, 25);
             this.txtName.TabIndex = 0;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtName.Click += new System.EventHandler(this.txtName_Click);
             this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
             // 
             // panelPicture
@@ -2402,7 +2419,6 @@
             this.MaximizeBox = false;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -2441,11 +2457,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb29)).EndInit();
             this.contextCopy.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbConvert)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
@@ -2645,11 +2661,11 @@
         private System.Windows.Forms.RichTextBox rtxtAmountsOfFood;
         private System.Windows.Forms.RichTextBox rtxtPortion;
         private ReadOnlyRichTextBox txtShortDescription;
-        private System.Windows.Forms.PictureBox pictureBox27;
-        private System.Windows.Forms.PictureBox pictureBox28;
+        private System.Windows.Forms.PictureBox pb27;
+        private System.Windows.Forms.PictureBox pb28;
         private System.Windows.Forms.PictureBox pbConvert;
         private ReadOnlyRichTextBox rTxtGrams;
-        private System.Windows.Forms.PictureBox pictureBox29;
+        private System.Windows.Forms.PictureBox pb29;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.CheckBox chcVegetarian;
@@ -2679,5 +2695,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem14;
+        private System.Windows.Forms.Label label23;
     }
 }

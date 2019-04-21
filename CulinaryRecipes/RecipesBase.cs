@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 using LiteDB;
 using System.Xml.Serialization;
+
 
 namespace CulinaryRecipes
 {
     public class RecipesBase
     {
-        [XmlAttribute("Id")]
+       [XmlAttribute("Id")]
         public int Id { get; set; }
-        [XmlElement("NazwaPrzepisu")]
+       [XmlElement("NazwaPrzepisu")]
         public string RecipesName { get; set; }
         [XmlElement("Składniki")]
         public string Ingredients { get; set; }
@@ -119,10 +119,10 @@ namespace CulinaryRecipes
             col.Insert(objekt);
         }
         //wypełnij
-        public static dynamic getAll(string nameBase)
+        public static IEnumerable<RecipesBase> getAll(string nameBase)
         {
             var db = Db.connect();
-            var col = db.GetCollection<RecipesBase>(nameBase);
+            var col = db.GetCollection<RecipesBase> (nameBase);
             return col.FindAll();
 
         }
@@ -132,6 +132,7 @@ namespace CulinaryRecipes
             var db = Db.connect();
             var col = db.GetCollection<RecipesBase>("RecipesBase");
             col.Delete(id);
+           
         }
         //znajdz po numerze ID
         public static RecipesBase getById(int id)
@@ -174,5 +175,25 @@ namespace CulinaryRecipes
         {
             return src.GetType().GetProperty(propName).GetValue(src, null);
         }
+
+        //public static IEnumerable<RecipesBase> ParsujCSV()
+        //{
+        //    var db = Db.connect();
+        //    var col = db.GetCollection<RecipesBase>("RecipesBase");
+
+        //    //var kolumny = linia.Split(',');
+
+        //   yield return new RecipesBase
+        //   {
+        //       RecipesName = kolumny[0],
+        //       Ingredients = kolumny[1],
+        //       AmountsMeal = kolumny[2],
+
+        //   };
+        //}
+
     }
+
+
+    
 }

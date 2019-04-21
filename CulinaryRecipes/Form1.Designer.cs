@@ -44,8 +44,6 @@
             this.importujPojedynczyPlikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importujCalaBazęDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportujBazęDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eksportujPojedynczyPlikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eksportujCalaBazeDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuńBazęDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -330,6 +328,7 @@
             this.importujBazęToolStripMenuItem.Name = "importujBazęToolStripMenuItem";
             this.importujBazęToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.importujBazęToolStripMenuItem.Text = "Import";
+           
             // 
             // importujPojedynczyPlikToolStripMenuItem
             // 
@@ -350,29 +349,10 @@
             // 
             // exportujBazęDanychToolStripMenuItem
             // 
-            this.exportujBazęDanychToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eksportujPojedynczyPlikToolStripMenuItem,
-            this.eksportujCalaBazeDanychToolStripMenuItem});
             this.exportujBazęDanychToolStripMenuItem.Name = "exportujBazęDanychToolStripMenuItem";
             this.exportujBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.exportujBazęDanychToolStripMenuItem.Text = "Eksport";
-            // 
-            // eksportujPojedynczyPlikToolStripMenuItem
-            // 
-            this.eksportujPojedynczyPlikToolStripMenuItem.Name = "eksportujPojedynczyPlikToolStripMenuItem";
-            this.eksportujPojedynczyPlikToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.E)));
-            this.eksportujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
-            this.eksportujPojedynczyPlikToolStripMenuItem.Text = "Eksportuj pojedynczy plik";
-            this.eksportujPojedynczyPlikToolStripMenuItem.Click += new System.EventHandler(this.eksportujPojedynczyPlikToolStripMenuItem_Click);
-            // 
-            // eksportujCalaBazeDanychToolStripMenuItem
-            // 
-            this.eksportujCalaBazeDanychToolStripMenuItem.Name = "eksportujCalaBazeDanychToolStripMenuItem";
-            this.eksportujCalaBazeDanychToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.eksportujCalaBazeDanychToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
-            this.eksportujCalaBazeDanychToolStripMenuItem.Text = "Eksportuj Cala Baze Danych";
-            this.eksportujCalaBazeDanychToolStripMenuItem.Click += new System.EventHandler(this.eksportujCalaBazeDanychToolStripMenuItem_Click);
+            this.exportujBazęDanychToolStripMenuItem.Text = "Eksport Bazy Danych";
+            this.exportujBazęDanychToolStripMenuItem.Click += new System.EventHandler(this.exportujBazęDanychToolStripMenuItem_Click);
             // 
             // usuńBazęDanychToolStripMenuItem
             // 
@@ -2499,7 +2479,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ToolStripMenuItem importujPojedynczyPlikToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eksportujPojedynczyPlikToolStripMenuItem;
         private System.Windows.Forms.Label lblStatistic;
         private System.Windows.Forms.Label lblCulinary;
         private System.Windows.Forms.CheckBox chcStstistic;
@@ -2507,7 +2486,6 @@
         private System.Windows.Forms.Label lblLeftOneLine;
         private System.Windows.Forms.Label lblLeftTwoLine;
         private System.Windows.Forms.ToolStripMenuItem importujCalaBazęDanychToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eksportujCalaBazeDanychToolStripMenuItem;
         private System.Windows.Forms.CheckBox chcVegetarian;
         private System.Windows.Forms.Label lblVegetarian;
         private System.Windows.Forms.Label lblClearCheckBox;

@@ -49,7 +49,7 @@ namespace CulinaryRecipes
 
         private void TurnOnAndOffTheButton(GroupBox panelName, Button turnOnOff)
         {
-            ButtonMy.TurnOFFTheButton(panelName);
+            ButtonMy.TurnOFFAllTheButtons(panelName);
             ButtonMy.TurnOnTheButton(turnOnOff);
         }
 

@@ -19,17 +19,20 @@ namespace CulinaryRecipes
         //kod dla pierwszej linii podczas wpisywania ilosci itd
         public static void FirstLine(RichTextBox first, RichTextBox second, KeyEventArgs e)
         {
+           
             int j;
             int i = 0;
             if (first.Lines.Length <= 1 && e.KeyCode == Keys.Enter)
             {
                 second.Focus();
+          
                 e.Handled = true;
                 second.SelectionStart = 1 + i;
             }
             else if (first.Lines.Length > 1 && e.KeyCode == Keys.Enter)
             {
                 second.Focus();
+          
                 e.Handled = true;
                 second.Text = second.Text + "\n ";
                 i = second.SelectionStart;
@@ -83,6 +86,7 @@ namespace CulinaryRecipes
         public static void SetFocus(RichTextBox name1, RichTextBox name2, RichTextBox name3)
         {
             int i;
+            Form2 dis = new Form2();
             int quantityChar = name1.Lines[name1.Lines.Length - 1].Length;
 
             if (name1.TextLength > name2.TextLength && name1.TextLength > name3.TextLength)
@@ -91,6 +95,9 @@ namespace CulinaryRecipes
                 if (name1.Text.Last() == ' ') i = i - 2;
 
                 name1.Focus();
+
+               // dis.DisplayForm(name1);
+         
                 name1.SelectionStart = i;
             }
         }

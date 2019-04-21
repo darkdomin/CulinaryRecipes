@@ -14,7 +14,6 @@ namespace CulinaryRecipes
             this.dgGrid = dgGrid;
         }
 
-
         public void FilldgGrid()
         {
             dgGrid.Rows.Clear();
@@ -26,6 +25,7 @@ namespace CulinaryRecipes
 
         public void Search(int number)
         {
+            
             txtSeek = txtSeek.ToUpper();
 
             StringBuilder seek = new StringBuilder(txtSeek);

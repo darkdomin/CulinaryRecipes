@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace CulinaryRecipes
 {
-    class Function
+     class Function
     {
         public static void UncheckedCheckBox(Control set)
         {
@@ -37,6 +37,7 @@ namespace CulinaryRecipes
             gray = Color.FromArgb(87, 93, 135);
             return gray;
         }
+
 
         public static void ColorAreaAfterUnblocking(Control set)
         {
@@ -192,5 +193,29 @@ namespace CulinaryRecipes
             return empty;
         }
 
-    }
+
+        //public static void Color(Control set, Color color, Panel panPicture)
+        //{
+        //    foreach (Control c in set.Controls)
+        //    {
+        //        if (c is PictureBox)
+        //        {
+        //            if (c.Name == Star(panPicture)) continue;
+        //            else ((PictureBox)c).BackColor = color;
+        //        }
+        //    }
+        //}
+
+        //////funkcja usprawniająca do funkcji Color
+        //public static string Star(Control set)
+        //{
+        //    string NameofPictureBox = string.Empty;
+        //    foreach (Control c in set.Controls)
+        //    {
+        //        if (c is PictureBox)
+        //            NameofPictureBox = c.Name;
+        //    }
+        //    return NameofPictureBox;
+        //}
+     }
 }

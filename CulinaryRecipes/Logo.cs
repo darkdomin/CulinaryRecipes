@@ -27,7 +27,7 @@ namespace CulinaryRecipes
         private void timer1_Tick(object sender, EventArgs e)
         {
          
-            if (time == 2)
+            if (time == 5)
             {
                 timer1.Stop();
 

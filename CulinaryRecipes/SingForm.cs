@@ -18,6 +18,7 @@ namespace CulinaryRecipes
         public SingForm()
         {
             InitializeComponent();
+          
         }
 
         //przepisuje całe słowa z ciągu do tablicy string
@@ -101,8 +102,10 @@ namespace CulinaryRecipes
             {
 
                 MessageBox.Show("Niestety program w tej chwili obsługuje tylko:\n" +
-                    " wp,onet,o2,interia,  outlook, gmail ");
+                    " wp, onet, o2, interia, outlook, gmail ");
                 nameFrom.Text = "";
+                txtPassword.Text = "";
+
             }
         }
         string[] bodyTable;
@@ -160,6 +163,7 @@ namespace CulinaryRecipes
 
         private void Send()
         {
+            bool mailSent = false;
             SetBodyEmail();
             try
             {
@@ -173,23 +177,32 @@ namespace CulinaryRecipes
                 if (ChcAddDescription.Checked) mail.Body = body + "\n" + DeleteCharInDescription();
                 else mail.Body = body;
 
+                
                 client.Host = host;
-                client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential(txtEmail.Text, txtPassword.Text);
+                if (!string.IsNullOrWhiteSpace(host))
+                {
 
-                client.Port = 587;
-                client.EnableSsl = true;
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new NetworkCredential(txtEmail.Text, txtPassword.Text);
 
-                client.Send(mail);
-                MessageBox.Show("Wiadomość wysłana");
-                Array.Clear(bodyTable, 0, bodyTable.Length);
-                amount.Clear();
-                gram.Clear();
-                ingre.Clear();
+                    client.Port = 587;
+                    client.EnableSsl = true;
+
+
+                    client.Send(mail);
+
+                    MessageBox.Show("E mail został wysłany");
+
+                    Array.Clear(bodyTable, 0, bodyTable.Length);
+                    amount.Clear();
+                    gram.Clear();
+                    ingre.Clear();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                // MessageBox.Show(ex.Message);
+                MessageBox.Show("Hasło lub Email jest nie poprawne!");              
             }
             Array.Clear(bodyTable, 0, bodyTable.Length);
             amount.Clear();
@@ -254,9 +267,12 @@ namespace CulinaryRecipes
             this.Size = new Size(405, 508);
         }
 
+        bool add = false;
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ButtonMy.TurnOnTheButton(btnAdd);
+            btnAdd.TurnOnTheButton();
+            add = true;
 
             if (txtAddEmail.Visible == false)
             {
@@ -269,34 +285,40 @@ namespace CulinaryRecipes
             }
             else
             {
-                EmailBase model = new EmailBase();
+
                 try
                 {
-                    model.Email = txtAddEmail.Text.ToLower();
-                    //model.EmailPassword = txtPassword.Text;
-
-                    if (string.IsNullOrWhiteSpace(txtAddEmail.Text))
-                    {
-                        errorProvider1.SetError(txtAddEmail, "Wpisz Email");
-                    }
-                    else
-                    {
-                        EmailBase.add(model);
-                        DisappearModifyElement();
-                        btnDelete.Enabled = true;
-                        btnModify.Enabled = true;
-                        btnCancel.Visible = false;
-                        ButtonMy.TurnOFFTheButton(panelGroup);
-
-                    }
-
-                    Fill();  
+                    AddEmail();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        public void AddEmail()
+        {
+            EmailBase modelAdd = new EmailBase();
+            modelAdd.Email = txtAddEmail.Text.ToLower();
+
+            if (string.IsNullOrWhiteSpace(txtAddEmail.Text))
+            {
+                errorProvider1.SetError(txtAddEmail, "Wpisz Email");
+            }
+            else
+            {
+                EmailBase.add(modelAdd);
+                DisappearModifyElement();
+                btnDelete.Enabled = true;
+                btnModify.Enabled = true;
+                btnCancel.Visible = false;
+
+                btnAdd.TurnOFFTheButton();
+                add = false;
+            }
+
+            Fill();
         }
 
         public void Fill()
@@ -320,50 +342,64 @@ namespace CulinaryRecipes
 
         static string chooseEmail = "Wybierz Email";
         static string writeEmail = "Wpisz Email";
-
+        bool modify = false;
         private void btnModify_Click(object sender, EventArgs e)
         {
-            ButtonMy.TurnOnTheButton(btnModify);
-
-            btnAdd.Enabled = false;
-            btnDelete.Enabled = false;
-            btnCancel.Visible = true;
-
-            if (txtAddEmail.Visible == true && txtAddEmail.Text != "")
+            if (dgGrid.Rows.Count > 0)
             {
-                try
+                btnModify.TurnOnTheButton();
+                modify = true;
+                btnAdd.Enabled = false;
+                btnDelete.Enabled = false;
+                btnCancel.Visible = true;
+
+                if (txtAddEmail.Visible == true && txtAddEmail.Text != "")
                 {
-                    var mod = EmailBase.getById(id);
-
-                    mod.Email = txtAddEmail.Text;
-
-                    EmailBase.update(mod);
-                    MessageBox.Show("Modyfikacja przebiegła pomyślnie!!!");
-                    ButtonMy.TurnOFFTheButton(panelGroup);
-
-                    Fill();
-
-                    txtAddEmail.Text = "";
+                    try
+                    {
+                        ModifyEmail();
+                        modify = false;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else if (txtAddEmail.Visible == true && txtAddEmail.Text == "")
+                {
                     DisappearModifyElement();
-                    btnAdd.Enabled = true;
-                    btnDelete.Enabled = true;
-                    btnCancel.Visible = false;
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
+                    txtAddEmail.Visible = true;
+                    lblAdd.Visible = true;
+                    lblAdd.Text = chooseEmail;
                 }
-            }
-            else if (txtAddEmail.Visible == true && txtAddEmail.Text == "")
-            {
-                DisappearModifyElement();
             }
             else
             {
-                txtAddEmail.Visible = true;
-                lblAdd.Visible = true;
-                lblAdd.Text = chooseEmail;
+                MessageBox.Show("Brak adresów Email do edycji.");
+                Cancel();
             }
+        }
+
+        public void ModifyEmail()
+        {
+            var mod = EmailBase.getById(id);
+
+            mod.Email = txtAddEmail.Text;
+
+            EmailBase.update(mod);
+            MessageBox.Show("Modyfikacja przebiegła pomyślnie!!!");
+            btnModify.TurnOFFTheButton();
+
+            Fill();
+
+            txtAddEmail.Text = "";
+            DisappearModifyElement();
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
+            btnCancel.Visible = false;
         }
 
         private void DisappearModifyElement()
@@ -380,9 +416,10 @@ namespace CulinaryRecipes
             txtAddEmail.Enabled = true;
             if (txtAddEmail.Visible == true)
             {
-                
+
                 txtAddEmail.Text = dgGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-           
+            
+
             }
             else
             {
@@ -392,51 +429,69 @@ namespace CulinaryRecipes
                 {
                     txtEmail.Text = dgGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
                 }
-                else  txtTo.Text = dgGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+                else txtTo.Text = dgGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
 
                 dgGrid.DefaultCellStyle.SelectionBackColor = Color.SlateGray;
+                errorProvider1.Clear();
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            ButtonMy.TurnOnTheButton(btnDelete);
-            if (id == 0) 
+            if (dgGrid.Rows.Count > 0)
             {
-                MessageBox.Show("Wybierz kontakt do usunięcia");
-            }
-            else if (MessageBox.Show("Czy na pewno usunąć Plik? \nOperacja nie do odwrócenia", "Uwaga!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-            {
-                try
+                btnCancel.Visible = true;
+                btnDeleteAll.Visible = true;
+                btnDelete.TurnOnTheButton();
+                if (id == 0)
                 {
-                    var s = EmailBase.getById(id);
-                    EmailBase.del(s.Id);
-                    MessageBox.Show("Email został usunięty");
-                    ButtonMy.TurnOFFTheButton(panelGroup);
+                    MessageBox.Show("Wybierz kontakt do usunięcia");
+                }
+                else if (MessageBox.Show("Czy na pewno usunąć Plik? \nOperacja nie do odwrócenia", "Uwaga!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    try
+                    {
+                        var s = EmailBase.getById(id);
+                        EmailBase.del(s.Id);
+                        MessageBox.Show("Email został usunięty");
 
+                        btnDelete.TurnOFFTheButton();
+                        btnDeleteAll.Visible = false;
+                        btnCancel.Visible = false;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                Fill();
             }
-            Fill();
+            else
+            {
+                MessageBox.Show("Brak adresów Email Do skasowania");
+                Cancel();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            btnCancel.Visible = true;
+            btnDeleteAll.TurnOnTheButton();
             EmailBase search = new EmailBase();
             if (MessageBox.Show("Czy na pewno usunąć Bazę danych? \nOperacja nie do odwrócenia", "Uwaga!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
                 EmailBase.ClearDb();
                 MessageBox.Show("Dokument został usunięty");
                 Fill();
+                btnCancel.Visible = false;
             }
+            btnDeleteAll.TurnOFFTheButton();
         }
 
         private void txtEmail_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode!=Keys.Space)
+            if (e.KeyCode != Keys.Space)
             {
                 errorProvider1.Clear();
             }
@@ -466,9 +521,18 @@ namespace CulinaryRecipes
             {
                 errorProvider1.Clear();
             }
-        }
+            if (e.KeyCode == Keys.Enter && add)
+            {
 
-        private void btnCancel_Click(object sender, EventArgs e)
+                AddEmail();
+
+            }
+            if (e.KeyCode == Keys.Enter && modify)
+            {
+                ModifyEmail();
+            }
+        }
+        private void Cancel()
         {
             btnCancel.Visible = false;
             btnAdd.Enabled = true;
@@ -476,7 +540,13 @@ namespace CulinaryRecipes
             btnModify.Enabled = true;
             lblAdd.Visible = false;
             txtAddEmail.Visible = false;
-            ButtonMy.TurnOFFTheButton(panelGroup);
+            txtAddEmail.Text = "";
+            ButtonMy.TurnOFFAllTheButtons(panelGroup);
+            btnDeleteAll.Visible = false;
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Cancel();
         }
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
