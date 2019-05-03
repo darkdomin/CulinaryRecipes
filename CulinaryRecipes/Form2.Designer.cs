@@ -1357,7 +1357,7 @@
             this.rtxtPortion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtxtPortion.ForeColor = System.Drawing.Color.White;
             this.rtxtPortion.Location = new System.Drawing.Point(310, 40);
-            this.rtxtPortion.MaxLength = 3;
+            this.rtxtPortion.MaxLength = 2;
             this.rtxtPortion.Multiline = false;
             this.rtxtPortion.Name = "rtxtPortion";
             this.rtxtPortion.Size = new System.Drawing.Size(20, 20);
@@ -1873,6 +1873,7 @@
             this.CMGramsEnter});
             this.ContextMenuGrams.Name = "Context";
             this.ContextMenuGrams.Size = new System.Drawing.Size(203, 126);
+            this.ContextMenuGrams.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuGrams_Opening);
             // 
             // cofnijToolStripMenuItem3
             // 
@@ -1995,6 +1996,7 @@
             this.CMAmountsEnter});
             this.contextAmounts.Name = "contextMenuStrip3";
             this.contextAmounts.Size = new System.Drawing.Size(203, 148);
+            this.contextAmounts.Opening += new System.ComponentModel.CancelEventHandler(this.contextAmounts_Opening);
             // 
             // cofnijToolStripMenuItem
             // 

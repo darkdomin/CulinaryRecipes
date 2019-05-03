@@ -106,8 +106,13 @@ namespace CulinaryRecipes
             fore.ForeColor = Color.Black; 
         }
 
+        public static void ChangeForeColorToBlack(this TextBox fore)
+        {
+            fore.ForeColor = Color.Black;
+        }
 
-          public static void ChangeForeColorToWhite(Control set)
+
+        public static void ChangeForeColorToWhite(Control set)
           {
             
             foreach (Control fore in set.Controls)
@@ -200,9 +205,18 @@ namespace CulinaryRecipes
                 if (c is RichTextBox)
                 {
                     if (c.Name == rich.Name) continue;
-                    else ((RichTextBox)c).BackColor = Function.CreateBrightColor();
+                    else
+                    {
+                        ((RichTextBox)c).BackColor = Function.CreateBrightColor();
+                        ((RichTextBox)c).ForeColor = Color.White;
+                    }
                 }
-             
+                //if (c is TextBox)
+                //{
+
+                //    ((TextBox)c).BackColor = Function.CreateBrightColor();
+                //    ((TextBox)c).ForeColor = Color.White;
+                //}
 
             }
         }

@@ -119,7 +119,7 @@ namespace CulinaryRecipes
             col.Insert(objekt);
         }
         //wypełnij
-        public static IEnumerable<RecipesBase> getAll(string nameBase)
+        public static dynamic getAll(string nameBase)  ///IEnumerable<RecipesBase>
         {
             var db = Db.connect();
             var col = db.GetCollection<RecipesBase> (nameBase);

@@ -74,12 +74,18 @@ namespace CulinaryRecipes
         }
 
         //Enter + dodatkowo nowa linia w pozostalych textboxach
-        public void ClassicEnterPlusNewLine(KeyEventArgs e, RichTextBox name, RichTextBox second, RichTextBox third)
+       
+        public void ClassicEnterPlusNewLine(KeyEventArgs e, RichTextBox name, RichTextBox second, RichTextBox third,int numberLine)
         {
+            int temporaryNumberLines = numberLine;
+
+            OtherEnter.AlignTheNumberOfLines(name, second, third);
+            numberLine = temporaryNumberLines;
             NewLine(second);
             NewLine(third);
-
+           
             name.Focus();
+           
         }
 
         //ustaw focus w w najdalszym miejscu (np. gdy wlacza sie modyfikacje)

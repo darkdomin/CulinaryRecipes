@@ -120,13 +120,15 @@ namespace CulinaryRecipes
                 }
             }
         }
-
-        public static bool CheckName(TextBox name)
+       
+        public static bool CheckName(TextBox name,string correctName)
         {
+            
+           
             bool variable = false;
             foreach (var r in RecipesBase.getAll("RecipesBase"))
             {
-                if (r.RecipesName == name.Text)
+                if (r.RecipesName == name.Text&& r.RecipesName!= correctName)
                 {
                     variable = true;
                     MessageBox.Show("Taka nazwa już istnieje w bazie danych");
