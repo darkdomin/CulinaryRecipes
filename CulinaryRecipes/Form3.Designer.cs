@@ -338,7 +338,7 @@
             this.rbPortuguese.Size = new System.Drawing.Size(83, 18);
             this.rbPortuguese.TabIndex = 6;
             this.rbPortuguese.TabStop = true;
-            this.rbPortuguese.Tag = "Portugalska";
+            this.rbPortuguese.Tag = "portugalska";
             this.rbPortuguese.Text = "portugalska";
             this.rbPortuguese.UseVisualStyleBackColor = true;
             this.rbPortuguese.CheckedChanged += new System.EventHandler(this.rbIberian_CheckedChanged);

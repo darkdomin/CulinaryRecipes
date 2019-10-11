@@ -178,9 +178,7 @@
             this.contextAmounts = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cofnijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.wytnijToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.kopiujToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.wklejToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuńToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.CMAmountsEnter = new System.Windows.Forms.ToolStripMenuItem();
@@ -622,12 +620,12 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(9, 120);
+            this.label7.Location = new System.Drawing.Point(3, 120);
             this.label7.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 26);
+            this.label7.Size = new System.Drawing.Size(98, 26);
             this.label7.TabIndex = 0;
-            this.label7.Text = "KASZA\r\nRYŻ,MAKARON";
+            this.label7.Text = "KASZA,PIECZYWO\r\nRYŻ,MAKARON";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -1244,9 +1242,9 @@
             // pb29
             // 
             this.pb29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb29.Location = new System.Drawing.Point(56, 74);
+            this.pb29.Location = new System.Drawing.Point(57, 74);
             this.pb29.Name = "pb29";
-            this.pb29.Size = new System.Drawing.Size(2, 683);
+            this.pb29.Size = new System.Drawing.Size(5, 683);
             this.pb29.TabIndex = 1;
             this.pb29.TabStop = false;
             // 
@@ -1259,18 +1257,19 @@
             this.rTxtGrams.ContextMenuStrip = this.contextCopy;
             this.rTxtGrams.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rTxtGrams.ForeColor = System.Drawing.Color.White;
-            this.rTxtGrams.Location = new System.Drawing.Point(58, 74);
-            this.rTxtGrams.MaxLength = 300;
+            this.rTxtGrams.Location = new System.Drawing.Point(62, 74);
+            this.rTxtGrams.MaxLength = 400;
             this.rTxtGrams.Name = "rTxtGrams";
             this.rTxtGrams.ReadOnly = true;
             this.rTxtGrams.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.rTxtGrams.Size = new System.Drawing.Size(56, 683);
+            this.rTxtGrams.Size = new System.Drawing.Size(57, 683);
             this.rTxtGrams.TabIndex = 3;
             this.rTxtGrams.Text = "";
             this.rTxtGrams.WordWrap = false;
             this.rTxtGrams.SelectionChanged += new System.EventHandler(this.rTxtGrams_SelectionChanged);
             this.rTxtGrams.Click += new System.EventHandler(this.rTxtGrams_Click);
             this.rTxtGrams.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtGrams_KeyDown);
+            this.rTxtGrams.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rTxtGrams_KeyUp);
             // 
             // contextCopy
             // 
@@ -1295,14 +1294,13 @@
             this.pbConvert.Size = new System.Drawing.Size(3, 20);
             this.pbConvert.TabIndex = 3;
             this.pbConvert.TabStop = false;
-            this.pbConvert.Click += new System.EventHandler(this.pbConvert_Click);
             // 
             // pb28
             // 
             this.pb28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb28.Location = new System.Drawing.Point(56, 64);
+            this.pb28.Location = new System.Drawing.Point(57, 64);
             this.pb28.Name = "pb28";
-            this.pb28.Size = new System.Drawing.Size(58, 10);
+            this.pb28.Size = new System.Drawing.Size(62, 10);
             this.pb28.TabIndex = 4;
             this.pb28.TabStop = false;
             // 
@@ -1363,8 +1361,11 @@
             this.rtxtPortion.Size = new System.Drawing.Size(20, 20);
             this.rtxtPortion.TabIndex = 1;
             this.rtxtPortion.Text = "";
+            this.rtxtPortion.SelectionChanged += new System.EventHandler(this.rtxtPortion_SelectionChanged);
             this.rtxtPortion.Click += new System.EventHandler(this.rtxtPortion_Click);
             this.rtxtPortion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtPortion_KeyDown);
+            this.rtxtPortion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtPortion_KeyPress);
+            this.rtxtPortion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rtxtPortion_KeyUp);
             // 
             // rtxtAmountsOfFood
             // 
@@ -1385,12 +1386,14 @@
             this.rtxtAmountsOfFood.SelectionChanged += new System.EventHandler(this.rtxtAmountsOfFood_SelectionChanged);
             this.rtxtAmountsOfFood.Click += new System.EventHandler(this.rtxtAmountsOfFood_Click);
             this.rtxtAmountsOfFood.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtAmountsOfFood_KeyDown);
+            this.rtxtAmountsOfFood.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtAmountsOfFood_KeyPress);
+            this.rtxtAmountsOfFood.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rtxtAmountsOfFood_KeyUp);
             this.rtxtAmountsOfFood.MouseEnter += new System.EventHandler(this.rtxtAmountsOfFood_SelectionChanged);
             // 
             // pb9
             // 
             this.pb9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb9.Location = new System.Drawing.Point(119, 74);
+            this.pb9.Location = new System.Drawing.Point(126, 74);
             this.pb9.Name = "pb9";
             this.pb9.Size = new System.Drawing.Size(5, 683);
             this.pb9.TabIndex = 9;
@@ -1408,9 +1411,9 @@
             // pb2
             // 
             this.pb2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb2.Location = new System.Drawing.Point(119, 64);
+            this.pb2.Location = new System.Drawing.Point(126, 64);
             this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(343, 10);
+            this.pb2.Size = new System.Drawing.Size(338, 10);
             this.pb2.TabIndex = 11;
             this.pb2.TabStop = false;
             // 
@@ -1553,7 +1556,7 @@
             // 
             this.pictureBox18.BackColor = System.Drawing.Color.White;
             this.pictureBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox18.Location = new System.Drawing.Point(463, 63);
+            this.pictureBox18.Location = new System.Drawing.Point(464, 64);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(1, 695);
             this.pictureBox18.TabIndex = 26;
@@ -1764,11 +1767,11 @@
             this.rTxtIngredients.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.rTxtIngredients.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rTxtIngredients.ForeColor = System.Drawing.Color.White;
-            this.rTxtIngredients.Location = new System.Drawing.Point(124, 74);
+            this.rTxtIngredients.Location = new System.Drawing.Point(130, 74);
             this.rTxtIngredients.Name = "rTxtIngredients";
             this.rTxtIngredients.ReadOnly = true;
             this.rTxtIngredients.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.rTxtIngredients.Size = new System.Drawing.Size(339, 684);
+            this.rTxtIngredients.Size = new System.Drawing.Size(335, 684);
             this.rTxtIngredients.TabIndex = 4;
             this.rTxtIngredients.Text = "";
             this.rTxtIngredients.WordWrap = false;
@@ -1988,15 +1991,12 @@
             this.contextAmounts.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cofnijToolStripMenuItem,
             this.toolStripMenuItem2,
-            this.wytnijToolStripMenuItem2,
             this.kopiujToolStripMenuItem2,
-            this.wklejToolStripMenuItem2,
             this.usuńToolStripMenuItem2,
             this.toolStripMenuItem1,
             this.CMAmountsEnter});
             this.contextAmounts.Name = "contextMenuStrip3";
-            this.contextAmounts.Size = new System.Drawing.Size(203, 148);
-            this.contextAmounts.Opening += new System.ComponentModel.CancelEventHandler(this.contextAmounts_Opening);
+            this.contextAmounts.Size = new System.Drawing.Size(203, 104);
             // 
             // cofnijToolStripMenuItem
             // 
@@ -2011,14 +2011,6 @@
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(199, 6);
             // 
-            // wytnijToolStripMenuItem2
-            // 
-            this.wytnijToolStripMenuItem2.Name = "wytnijToolStripMenuItem2";
-            this.wytnijToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.wytnijToolStripMenuItem2.Size = new System.Drawing.Size(202, 22);
-            this.wytnijToolStripMenuItem2.Text = "Wytnij";
-            this.wytnijToolStripMenuItem2.Click += new System.EventHandler(this.wytnijToolStripMenuItem2_Click);
-            // 
             // kopiujToolStripMenuItem2
             // 
             this.kopiujToolStripMenuItem2.Name = "kopiujToolStripMenuItem2";
@@ -2026,14 +2018,6 @@
             this.kopiujToolStripMenuItem2.Size = new System.Drawing.Size(202, 22);
             this.kopiujToolStripMenuItem2.Text = "Kopiuj";
             this.kopiujToolStripMenuItem2.Click += new System.EventHandler(this.kopiujToolStripMenuItem2_Click);
-            // 
-            // wklejToolStripMenuItem2
-            // 
-            this.wklejToolStripMenuItem2.Name = "wklejToolStripMenuItem2";
-            this.wklejToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.wklejToolStripMenuItem2.Size = new System.Drawing.Size(202, 22);
-            this.wklejToolStripMenuItem2.Text = "Wklej";
-            this.wklejToolStripMenuItem2.Click += new System.EventHandler(this.wklejToolStripMenuItem2_Click);
             // 
             // usuńToolStripMenuItem2
             // 
@@ -2154,7 +2138,8 @@
             this.toolStripMenuItem9,
             this.separatorToolStripMenuItem1});
             this.contextIngridients.Name = "contextMenuStrip2";
-            this.contextIngridients.Size = new System.Drawing.Size(203, 176);
+            this.contextIngridients.Size = new System.Drawing.Size(203, 198);
+            this.contextIngridients.Opening += new System.ComponentModel.CancelEventHandler(this.contextIngridients_Opening);
             // 
             // undoToolStripMenuItem
             // 
@@ -2299,6 +2284,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.Maroon;
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnClose.Location = new System.Drawing.Point(879, 4);
@@ -2612,9 +2598,7 @@
         private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cofnijToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem wytnijToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem kopiujToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem wklejToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem cofnijToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;

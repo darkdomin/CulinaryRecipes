@@ -5,13 +5,13 @@ namespace CulinaryRecipes
 {
      class Function
     {
+      
         public static void UncheckedCheckBox(Control set)
         {
             foreach (Control p in set.Controls)
             {
                 if (p is CheckBox)
                 {
-
                     ((CheckBox)p).Checked = false;
                 }
             }
@@ -38,16 +38,22 @@ namespace CulinaryRecipes
             return gray;
         }
 
-
         public static void ColorAreaAfterUnblocking(Control set)
         {
             foreach (Control kolorOdblokowania in set.Controls)
             {
-                if (kolorOdblokowania is RichTextBox) ((RichTextBox)kolorOdblokowania).BackColor = CreateBrightColor();
+                if (kolorOdblokowania is RichTextBox )
+                {
+                    ((RichTextBox)kolorOdblokowania).BackColor = CreateBrightColor();
+                   
+                }
             }
             foreach (Control kolorOdblokowania in set.Controls)
             {
-                if (kolorOdblokowania is TextBox) ((TextBox)kolorOdblokowania).BackColor = CreateBrightColor();
+                if (kolorOdblokowania is TextBox)
+                {
+                    ((TextBox)kolorOdblokowania).BackColor = CreateBrightColor();
+                }
             }
         }
 
@@ -83,13 +89,20 @@ namespace CulinaryRecipes
         {
             foreach (Control kolorOdblokowania in set.Controls)
             {
-                if (kolorOdblokowania is RichTextBox) ((RichTextBox)kolorOdblokowania).BackColor = CreateColorBlockingFields();
+                if (kolorOdblokowania is RichTextBox)
+                {
+                    ((RichTextBox)kolorOdblokowania).BackColor = CreateColorBlockingFields();
+                }
             }
             foreach (Control kolorOdblokowania in set.Controls)
             {
-                if (kolorOdblokowania is TextBox) ((TextBox)kolorOdblokowania).BackColor = CreateColorBlockingFields();
+                if (kolorOdblokowania is TextBox)
+                {
+                    ((TextBox)kolorOdblokowania).BackColor = CreateColorBlockingFields();
+                }
             }
-            name.BackColor = Function.CreateColor();//txtPortion
+
+            name.BackColor = CreateColor();
         }
 
         public static void BlockCheckbox(Control set)
@@ -121,11 +134,11 @@ namespace CulinaryRecipes
             }
         }
        
+        //sprawdz czy dana nazwa istnieje w bazie
         public static bool CheckName(TextBox name,string correctName)
         {
-            
-           
             bool variable = false;
+
             foreach (var r in RecipesBase.getAll("RecipesBase"))
             {
                 if (r.RecipesName == name.Text&& r.RecipesName!= correctName)
@@ -134,9 +147,9 @@ namespace CulinaryRecipes
                     MessageBox.Show("Taka nazwa już istnieje w bazie danych");
                     name.Text = "";
                     break;
-
                 }
             }
+
             return variable;
         }
 
@@ -155,7 +168,6 @@ namespace CulinaryRecipes
         {
             if (name.SelectedText.Length >= 0)
             {
-
                 name.SelectionStart = 0;
             }
         }
@@ -176,48 +188,18 @@ namespace CulinaryRecipes
                 i++;
             }
         }
+
         //Podmienia funkcje prawego przycisku
         public static void ChangeContextMenu(RichTextBox nameRich, ContextMenuStrip copyTool, ContextMenuStrip nameTool)
         {
-            if (nameRich.ReadOnly == false) nameRich.ContextMenuStrip = copyTool;
-            else nameRich.ContextMenuStrip = nameTool;
-        }
-
-        public static string RemoveWhiteSpace(string example)
-        {
-            string empty = string.Empty;
-            
-            foreach (char item in example)
+            if (nameRich.ReadOnly == false)
             {
-                if (item == ' ') continue;
-                else empty += item;
+                nameRich.ContextMenuStrip = copyTool;
             }
-            return empty;
+            else
+            {
+                nameRich.ContextMenuStrip = nameTool;
+            }
         }
-
-
-        //public static void Color(Control set, Color color, Panel panPicture)
-        //{
-        //    foreach (Control c in set.Controls)
-        //    {
-        //        if (c is PictureBox)
-        //        {
-        //            if (c.Name == Star(panPicture)) continue;
-        //            else ((PictureBox)c).BackColor = color;
-        //        }
-        //    }
-        //}
-
-        //////funkcja usprawniająca do funkcji Color
-        //public static string Star(Control set)
-        //{
-        //    string NameofPictureBox = string.Empty;
-        //    foreach (Control c in set.Controls)
-        //    {
-        //        if (c is PictureBox)
-        //            NameofPictureBox = c.Name;
-        //    }
-        //    return NameofPictureBox;
-        //}
      }
 }

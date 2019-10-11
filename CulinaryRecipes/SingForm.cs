@@ -15,10 +15,10 @@ namespace CulinaryRecipes
         public string gramsSing;
         public string descriptionSing;
         int id;
+
         public SingForm()
         {
             InitializeComponent();
-          
         }
 
         //przepisuje całe słowa z ciągu do tablicy string
@@ -46,68 +46,30 @@ namespace CulinaryRecipes
         }
 
         //zwraca ilość linii w ciągu
-        public int GetNumberOfLines(string tekst)
+        public int GetNumberOfLines(string textName)
         {
-            string jakis = string.Empty;
-            int linia = 1;
-            foreach (char item in tekst)
+            int line = 1;
+
+            foreach (char item in textName)
             {
-                if (item == '\n') linia++;
+                if (item == '\n') line++;
             }
-            return linia;
+            return line;
         }
 
         //porównuje ilośćlinii
         public int CompareLinesLength(string amounts, string grams, string ingredient)
         {
             int length = 0;
+
             if (GetNumberOfLines(amounts) > GetNumberOfLines(grams) && GetNumberOfLines(amounts) > GetNumberOfLines(ingredient)) length = GetNumberOfLines(amounts);
             else if (GetNumberOfLines(grams) > GetNumberOfLines(amounts) && GetNumberOfLines(grams) > GetNumberOfLines(ingredient)) length = GetNumberOfLines(grams);
             else if (GetNumberOfLines(ingredient) > GetNumberOfLines(amounts) && GetNumberOfLines(ingredient) > GetNumberOfLines(grams)) length = GetNumberOfLines(ingredient);
             else length = GetNumberOfLines(amounts);
+
             return length;
         }
 
-        string host = "";
-
-        //przypisz smtp do zmiennej host
-        public void AssignSMTPToHost(TextBox nameFrom)
-        {
-            if (nameFrom.Text.Contains(Email.wp.ToString()))
-            {
-                host = "smtp.wp.pl";
-            }
-            else if (nameFrom.Text.Contains(Email.outlook.ToString()))
-            {
-                host = "smtp-mail.outlook.com";
-            }
-            else if (nameFrom.Text.Contains(Email.o2.ToString()))
-            {
-                host = "poczta.o2.pl";
-            }
-            else if (nameFrom.Text.Contains(Email.onet.ToString()))
-            {
-                host = "smtp.poczta.onet.pl";
-
-            }
-            //else if (nameFrom.Text.Contains(Email.interia.ToString()))
-            //{
-            //    host = "poczta.interia.pl";
-            //}
-            else if (nameFrom.Text.Contains(Email.gmail.ToString()))
-            {
-                host = "smtp.gmail.com";
-            }
-            else
-            {
-
-                MessageBox.Show("Niestety program w tej chwili obsługuje tylko:\n" +
-                    " wp, onet, o2, interia, outlook, gmail ");
-                nameFrom.Text = "";
-                txtPassword.Text = "";
-
-            }
-        }
         string[] bodyTable;
         string body = string.Empty;
 
@@ -129,17 +91,19 @@ namespace CulinaryRecipes
         public string DeleteCharInDescription()
         {
             string newString = string.Empty;
+
             foreach (char item in descriptionSing)
             {
                 if (item == ']') continue;
                 else if (item == '[') continue;
                 else newString += item;
             }
+
             return newString;
         }
 
         int comLength;
-        public void sklec()
+        public void TextCombine()
         {
             CopyList(amount, ReplaceStringToList(amountsSing));
             CopyList(gram, ReplaceStringToList(gramsSing));
@@ -163,46 +127,42 @@ namespace CulinaryRecipes
 
         private void Send()
         {
-            bool mailSent = false;
             SetBodyEmail();
             try
             {
                 MailMessage mail = new MailMessage();
                 SmtpClient client = new SmtpClient();
 
-                mail.From = new MailAddress(txtEmail.Text);
+                mail.From = new MailAddress("culinaryrecipes@wp.pl");
                 mail.To.Add(new MailAddress(txtTo.Text));
                 mail.Subject = titleSing;
 
                 if (ChcAddDescription.Checked) mail.Body = body + "\n" + DeleteCharInDescription();
                 else mail.Body = body;
 
-                
-                client.Host = host;
-                if (!string.IsNullOrWhiteSpace(host))
-                {
 
-                    client.UseDefaultCredentials = false;
-                    client.Credentials = new NetworkCredential(txtEmail.Text, txtPassword.Text);
+                client.Host = "smtp.wp.pl";
 
-                    client.Port = 587;
-                    client.EnableSsl = true;
+                client.UseDefaultCredentials = false;
+                client.Credentials = new NetworkCredential("culinaryrecipes@wp.pl", "");
+
+                client.Port = 587;
+                client.EnableSsl = true;
 
 
-                    client.Send(mail);
+                client.Send(mail);
 
-                    MessageBox.Show("E mail został wysłany");
+                MessageBox.Show("E mail został wysłany");
 
-                    Array.Clear(bodyTable, 0, bodyTable.Length);
-                    amount.Clear();
-                    gram.Clear();
-                    ingre.Clear();
-                }
+                Array.Clear(bodyTable, 0, bodyTable.Length);
+                amount.Clear();
+                gram.Clear();
+                ingre.Clear();
             }
             catch (Exception ex)
             {
-                // MessageBox.Show(ex.Message);
-                MessageBox.Show("Hasło lub Email jest nie poprawne!");              
+                MessageBox.Show(ex.Message);
+
             }
             Array.Clear(bodyTable, 0, bodyTable.Length);
             amount.Clear();
@@ -213,23 +173,12 @@ namespace CulinaryRecipes
 
         private void SendButton()
         {
-            if (txtEmail.Text != "" && txtPassword.Text != "" && txtTo.Text != "")
+            if (txtTo.Text != "")
             {
-                AssignSMTPToHost(txtEmail);
-                if (host != "")
-                {
-                    sklec();
-                    Send();
-                }
+                TextCombine();
+                Send();
             }
-            if (txtEmail.Text == "")
-            {
-                errorProvider1.SetError(txtEmail, "Pola nie mogą być puste");
-            }
-            if (txtPassword.Text == "")
-            {
-                errorProvider2.SetError(txtPassword, "Pola nie mogą być puste");
-            }
+
             if (txtTo.Text == "")
             {
                 errorProvider3.SetError(txtTo, "Pola nie mogą być puste");
@@ -243,7 +192,7 @@ namespace CulinaryRecipes
 
         private void SingForm_Load(object sender, EventArgs e)
         {
-            this.Size = new Size(405, 508);
+            this.Size = new Size(405, 430);
             CreateDataGridView();
             comLength = CompareLinesLength(amountsSing, gramsSing, ingredientSing);
 
@@ -256,7 +205,7 @@ namespace CulinaryRecipes
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             pbIncreaseSize.Visible = false;
-            this.Size = new Size(800, 508);
+            this.Size = new Size(800, 430);
             pbDecreaseSize.Visible = true;
         }
 
@@ -264,7 +213,7 @@ namespace CulinaryRecipes
         {
             pbDecreaseSize.Visible = false;
             pbIncreaseSize.Visible = true;
-            this.Size = new Size(405, 508);
+            this.Size = new Size(405, 430);
         }
 
         bool add = false;
@@ -285,7 +234,6 @@ namespace CulinaryRecipes
             }
             else
             {
-
                 try
                 {
                     AddEmail();
@@ -324,6 +272,7 @@ namespace CulinaryRecipes
         public void Fill()
         {
             dgGrid.Rows.Clear();
+
             foreach (var item in EmailBase.getAll("EmailBase"))
             {
                 dgGrid.Rows.Add(item.Id, item.Email);
@@ -341,7 +290,6 @@ namespace CulinaryRecipes
         }
 
         static string chooseEmail = "Wybierz Email";
-        static string writeEmail = "Wpisz Email";
         bool modify = false;
         private void btnModify_Click(object sender, EventArgs e)
         {
@@ -414,22 +362,17 @@ namespace CulinaryRecipes
         {
             id = Convert.ToInt32(dgGrid.Rows[e.RowIndex].Cells[0].Value);
             txtAddEmail.Enabled = true;
+
             if (txtAddEmail.Visible == true)
             {
-
                 txtAddEmail.Text = dgGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-            
-
             }
             else
             {
                 btnDelete.Enabled = true;
 
-                if (txtEmail.Text == "")
-                {
-                    txtEmail.Text = dgGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-                }
-                else txtTo.Text = dgGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtTo.Text = string.Empty;
+                txtTo.Text = dgGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
 
                 dgGrid.DefaultCellStyle.SelectionBackColor = Color.SlateGray;
                 errorProvider1.Clear();
@@ -489,24 +432,6 @@ namespace CulinaryRecipes
             btnDeleteAll.TurnOFFTheButton();
         }
 
-        private void txtEmail_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode != Keys.Space)
-            {
-                errorProvider1.Clear();
-            }
-            if (e.KeyCode == Keys.Enter) txtPassword.Focus();
-        }
-
-        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode != Keys.Space)
-            {
-                errorProvider2.Clear();
-            }
-            if (e.KeyCode == Keys.Enter) txtTo.Focus();
-        }
-
         private void txtTo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode != Keys.Space)
@@ -523,15 +448,14 @@ namespace CulinaryRecipes
             }
             if (e.KeyCode == Keys.Enter && add)
             {
-
                 AddEmail();
-
             }
             if (e.KeyCode == Keys.Enter && modify)
             {
                 ModifyEmail();
             }
         }
+
         private void Cancel()
         {
             btnCancel.Visible = false;
@@ -544,6 +468,7 @@ namespace CulinaryRecipes
             ButtonMy.TurnOFFAllTheButtons(panelGroup);
             btnDeleteAll.Visible = false;
         }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Cancel();
@@ -558,13 +483,9 @@ namespace CulinaryRecipes
 
         private void SingForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void pomocProblemyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form5 newForm = new Form5();
-            newForm.ShowDialog();
+            Form1 open = new Form1();
+            this.Hide();
+            open.ShowDialog();
         }
 
         private void btnSend_KeyDown(object sender, KeyEventArgs e)

@@ -22,14 +22,14 @@ namespace CulinaryRecipes {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class gwiazda {
+    internal class star {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal gwiazda() {
+        internal star() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace CulinaryRecipes {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CulinaryRecipes.gwiazda", typeof(gwiazda).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CulinaryRecipes.star", typeof(star).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

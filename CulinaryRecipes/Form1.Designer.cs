@@ -328,7 +328,6 @@
             this.importujBazęToolStripMenuItem.Name = "importujBazęToolStripMenuItem";
             this.importujBazęToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.importujBazęToolStripMenuItem.Text = "Import";
-           
             // 
             // importujPojedynczyPlikToolStripMenuItem
             // 
@@ -1185,11 +1184,11 @@
             this.lblPasta.AutoSize = true;
             this.lblPasta.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPasta.ForeColor = System.Drawing.Color.White;
-            this.lblPasta.Location = new System.Drawing.Point(4, 22);
+            this.lblPasta.Location = new System.Drawing.Point(-2, 26);
             this.lblPasta.Name = "lblPasta";
-            this.lblPasta.Size = new System.Drawing.Size(85, 26);
+            this.lblPasta.Size = new System.Drawing.Size(95, 26);
             this.lblPasta.TabIndex = 10;
-            this.lblPasta.Text = "  KASZA\r\nRYŻ, MAKARON\r\n";
+            this.lblPasta.Text = "KASZA,PIECZYWO\r\nRYŻ, MAKARON\r\n";
             this.lblPasta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel26
@@ -1378,14 +1377,14 @@
             // 
             this.txtSeek.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtSeek.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtSeek.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)), true);
-            this.txtSeek.Location = new System.Drawing.Point(210, 161);
+            this.txtSeek.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtSeek.Location = new System.Drawing.Point(210, 167);
             this.txtSeek.Name = "txtSeek";
-            this.txtSeek.Size = new System.Drawing.Size(453, 37);
+            this.txtSeek.Size = new System.Drawing.Size(453, 33);
             this.txtSeek.TabIndex = 0;
             this.txtSeek.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSeek.TextChanged += new System.EventHandler(this.txtSeek_TextChanged);
             this.txtSeek.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSeek_KeyDown);
+            this.txtSeek.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSeek_KeyUp);
             // 
             // dgGrid
             // 
@@ -1419,6 +1418,7 @@
             this.dgGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGrid_CellClick);
             this.dgGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgGrid_CellDoubleClick);
             this.dgGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgGrid_KeyDown);
+            this.dgGrid.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgGrid_KeyUp);
             // 
             // txtLittleName
             // 
@@ -1684,9 +1684,9 @@
             this.btnSeek.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSeek.ForeColor = System.Drawing.Color.Transparent;
             this.btnSeek.Image = ((System.Drawing.Image)(resources.GetObject("btnSeek.Image")));
-            this.btnSeek.Location = new System.Drawing.Point(665, 161);
+            this.btnSeek.Location = new System.Drawing.Point(665, 165);
             this.btnSeek.Name = "btnSeek";
-            this.btnSeek.Size = new System.Drawing.Size(38, 38);
+            this.btnSeek.Size = new System.Drawing.Size(36, 36);
             this.btnSeek.TabIndex = 1;
             this.btnSeek.TabStop = false;
             this.btnSeek.UseVisualStyleBackColor = false;

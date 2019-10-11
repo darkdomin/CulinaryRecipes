@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace CulinaryRecipes
 {
     static class ButtonMy
     {
-        public static IEnumerable<Control> Controls { get; private set; }
-
         public static void TurnOnTheButton(this Button _name)
         {
             _name.BackColor = Color.White;
@@ -22,13 +19,13 @@ namespace CulinaryRecipes
 
         public static void TurnOFFAllTheButtons(this Control _name)
         {
-            foreach (Control przyciski in _name.Controls)
+            foreach (Control button in _name.Controls)
             {
-                if (przyciski is Button)
+                if (button is Button)
                 {
-                    ((Button)przyciski).BackColor = Color.Maroon;
+                    ((Button)button).BackColor = Color.Maroon;
 
-                    ((Button)przyciski).ForeColor = Color.White;
+                    ((Button)button).ForeColor = Color.White;
                 }
             }
         }
@@ -47,36 +44,35 @@ namespace CulinaryRecipes
             }
         }
 
-        public static void ZmienKolor(this ReadOnlyRichTextBox rich)
+        public static void ChangeColorOneElement(this ReadOnlyRichTextBox rich)
         {
             if (rich.ReadOnly == false)
             {
-                rich.BackColor = Podkreslenie();
-            }
-
-        }
-
-        public static void ZmienKolor(this RichTextBox rich)
-        {
-            if (rich.ReadOnly == false)
-            {
-                rich.BackColor = Podkreslenie();
+                rich.BackColor = BackgroundColorLightened();
             }
         }
 
-        public static void ZmienKolor(this TextBox rich)
+        public static void ChangeColorOneElement(this RichTextBox rich)
         {
             if (rich.ReadOnly == false)
             {
-                rich.BackColor = Podkreslenie();
+                rich.BackColor = BackgroundColorLightened();
             }
         }
 
-        public static void BorderColor(RichTextBox rich, Control set,Panel panPicture)
+        public static void ChangeColorOneElement(this TextBox rich)
         {
             if (rich.ReadOnly == false)
             {
-                WyzerujKolor(rich, set, panPicture);//nazwa do zmiany
+                rich.BackColor = BackgroundColorLightened();
+            }
+        }
+
+        public static void BorderColor(RichTextBox rich, Control set, Panel panPicture)
+        {
+            if (rich.ReadOnly == false)
+            {
+                ResetColor(rich, set, panPicture);
 
                 foreach (Control item in set.Controls)
                 {
@@ -92,7 +88,7 @@ namespace CulinaryRecipes
                              (item.Location.X - rich.Location.X == rich.Size.Width)
                             )
                         {
-                            ((PictureBox)item).BackColor = Podkreslenie();
+                            ((PictureBox)item).BackColor = BackgroundColorLightened();
 
                         }
 
@@ -103,7 +99,7 @@ namespace CulinaryRecipes
 
         public static void ChangeForeColorToBlack(this RichTextBox fore)
         {
-            fore.ForeColor = Color.Black; 
+            fore.ForeColor = Color.Black;
         }
 
         public static void ChangeForeColorToBlack(this TextBox fore)
@@ -111,10 +107,9 @@ namespace CulinaryRecipes
             fore.ForeColor = Color.Black;
         }
 
-
         public static void ChangeForeColorToWhite(Control set)
-          {
-            
+        {
+
             foreach (Control fore in set.Controls)
             {
                 if (fore is RichTextBox)
@@ -126,14 +121,13 @@ namespace CulinaryRecipes
                     ((TextBox)fore).ForeColor = Color.White;
                 }
             }
-           
-          }
+        }
 
         public static void BorderColor(TextBox rich, Control set, Panel panPicture)
         {
             if (rich.ReadOnly == false)
             {
-                WyzerujKolor(rich, set, panPicture);//nazwa do zmiany
+                ResetColor(rich, set, panPicture);
 
                 foreach (Control item in set.Controls)
                 {
@@ -149,21 +143,21 @@ namespace CulinaryRecipes
                              (item.Location.X - rich.Location.X == rich.Size.Width)
                             )
                         {
-                            ((PictureBox)item).BackColor = Podkreslenie();
+                            ((PictureBox)item).BackColor = BackgroundColorLightened();
                         }
-
                     }
                 }
             }
         }
 
-        public static Color Podkreslenie()
+        public static Color BackgroundColorLightened()
         {
             Color gray = new Color();
             gray = Color.FromArgb(167, 171, 197);
             return gray;
         }
-        public static void WyzerujKolor(RichTextBox rich, Control set, Panel panPicture)
+
+        public static void ResetColor(RichTextBox rich, Control set, Panel panPicture)
         {
             foreach (Control c in set.Controls)
             {
@@ -184,15 +178,15 @@ namespace CulinaryRecipes
                 }
                 if (c is TextBox)
                 {
-                    
+
                     ((TextBox)c).BackColor = Function.CreateBrightColor();
                     ((TextBox)c).ForeColor = Color.White;
-                }
 
+                }
             }
         }
 
-        public static void WyzerujKolor(TextBox rich, Control set, Panel panPicture)
+        public static void ResetColor(TextBox rich, Control set, Panel panPicture)
         {
             foreach (Control c in set.Controls)
             {
@@ -211,19 +205,13 @@ namespace CulinaryRecipes
                         ((RichTextBox)c).ForeColor = Color.White;
                     }
                 }
-                //if (c is TextBox)
-                //{
-
-                //    ((TextBox)c).BackColor = Function.CreateBrightColor();
-                //    ((TextBox)c).ForeColor = Color.White;
-                //}
-
             }
         }
 
         public static string Star(Control set)
         {
             string NameofPictureBox = string.Empty;
+
             foreach (Control c in set.Controls)
             {
                 if (c is PictureBox)

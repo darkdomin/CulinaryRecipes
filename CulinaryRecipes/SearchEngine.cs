@@ -23,6 +23,22 @@ namespace CulinaryRecipes
             }
         }
 
+        public bool FilldgGrid(string text)
+        {
+            bool found = false;
+            foreach (var r in RecipesBase.getAll("RecipesBase"))
+            {
+                if (text == r.RecipesName)
+                {
+                    dgGrid.Rows.Add(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian, r.Grams);
+                    found = true;
+                    break;
+                }
+
+            }
+            return found;
+        }
+
         public void Search(int number)
         {
             
@@ -38,6 +54,7 @@ namespace CulinaryRecipes
             {
                 CopyDataGrid[j] = dgGrid.Rows[j].Cells[number].Value.ToString().ToUpper();
             }
+
 
             for (int i = 0; i < dgGrid.RowCount; i++)
             {

@@ -14,12 +14,12 @@ namespace CulinaryRecipes
         {
             this.ReadOnly = true;
         }
-        //protected override void WndProc(ref Message m)
-        //{
-        //    base.WndProc(ref m);
-        //    if (this.ReadOnly == true) HideCaret(this.Handle);
-        //    else ShowCaret(this.Handle);
-        //}
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+            if (this.ReadOnly == true) HideCaret(this.Handle);
+            else ShowCaret(this.Handle);
+        }
 
     }
 }

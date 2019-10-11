@@ -44,6 +44,7 @@ namespace CulinaryRecipes
 
         public bool addRecipeForm3 { get; set; }
         public bool addRecipe { get; set; }
+        public bool newForm3 { get; set; }
 
         string add = "add";
 
@@ -237,6 +238,7 @@ namespace CulinaryRecipes
         private void btnPhotoForm3_Click(object sender, EventArgs e)
         {
             OpenFileDialog otworz_plik = new OpenFileDialog();
+
             otworz_plik.Filter = "Pliki graficzne |*.jpg; *.tiff; *.raw;*.txt";
             if (otworz_plik.ShowDialog() == DialogResult.OK)
             {
@@ -281,6 +283,7 @@ namespace CulinaryRecipes
 
         private void button4_Click(object sender, EventArgs e)
         {
+            RichTextBoxMy p = new RichTextBoxMy();
             Form2 model = new Form2();
 
             if (idDgGridForm3 == 0) model.clear = add;
@@ -316,7 +319,8 @@ namespace CulinaryRecipes
             model.executionTimeForm2 = executionTimeForm3;
 
             model.unlockFieldsForm2 = unlockFieldsForm3;
-            model.addRecipeForm2 = addRecipeForm3;
+           
+                p.AddRecipeForm2 = addRecipeForm3;
             model.addRecipe = addRecipe;
 
             #region MealAdd
@@ -355,6 +359,8 @@ namespace CulinaryRecipes
             model.portions = portions3;
             model.cancel = cancel3;
             #endregion
+
+            model.newForm = newForm3;
 
             this.Visible = false;
             this.Close();
