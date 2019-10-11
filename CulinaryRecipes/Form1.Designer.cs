@@ -1383,6 +1383,7 @@
             this.txtSeek.Size = new System.Drawing.Size(453, 33);
             this.txtSeek.TabIndex = 0;
             this.txtSeek.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+    
             this.txtSeek.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSeek_KeyDown);
             this.txtSeek.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSeek_KeyUp);
             // 

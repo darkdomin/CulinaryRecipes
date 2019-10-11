@@ -1871,12 +1871,14 @@ namespace CulinaryRecipes
 
             if(searchEngine.FilldgGrid(txtSeek.Text))
             {
+                DeleteDuplicate();
                 dgGrid.Focus();
                 OneCliCK();
 
                 txtSeek.Focus();
             }
         }
+
 
         private void RemoveVegetarianRecipesWithDataGridView(string _propName)
         {
