@@ -537,6 +537,10 @@ namespace CulinaryRecipes
         /// <param name="Ingridient"></param>
         public void AlignTheNumberOfLines(RichTextBox Grams, RichTextBox Ingridient)
         {
+            int tempNumberLine = NumberLine;
+            int tempMaxLine = MaxLine;
+            
+
             if (Ingridient.Lines.Length > bufor.Count || Ingridient.Lines.Length > Grams.Lines.Length)
             {
                 AlignTheNumberOfLinesCenter(Ingridient, bufor);
@@ -552,6 +556,10 @@ namespace CulinaryRecipes
                 AlignTheNumberOfLinesCenter(Grams, Ingridient);
                 AlignTheNumberOfLinesCenter(Grams, bufor);
             }
+
+            NumberLine = tempNumberLine;
+            MaxLine = tempMaxLine;
+            
         }
 
         /// <summary>
@@ -561,7 +569,7 @@ namespace CulinaryRecipes
         /// <param name="shortName"></param>
         public void AlignTheNumberOfLinesCenter(RichTextBox longName, RichTextBox shortName)
         {
-            int tempNumberLine = NumberLine;
+           // int tempNumberLine = NumberLine;
             while (longName.Lines.Length > shortName.Lines.Length)
             {
                 int i = shortName.Text.Length;
@@ -569,7 +577,7 @@ namespace CulinaryRecipes
                 shortName.Text = shortName.Text.Insert(i, "\n");
                 shortName.SelectionStart = i;
             }
-            NumberLine = tempNumberLine;
+         //   NumberLine = tempNumberLine;
         }
 
         public void AlignTheNumberOfLinesCenter(List<string> longName, RichTextBox shortName)

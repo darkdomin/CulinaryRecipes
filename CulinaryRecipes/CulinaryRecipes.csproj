@@ -49,10 +49,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>ECAE70F1256F55229DB705B64D499C8950F54636</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B194B8F27A472898768CADCED0D0C3A2083F2A9A</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>CulinaryRecipes_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>CulinaryRecipes_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -176,6 +176,7 @@
     <EmbeddedResource Include="SingForm.resx">
       <DependentUpon>SingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CulinaryRecipes_1_TemporaryKey.pfx" />
     <None Include="CulinaryRecipes_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

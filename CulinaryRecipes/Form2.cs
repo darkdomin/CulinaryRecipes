@@ -43,11 +43,14 @@ namespace CulinaryRecipes
         public bool seekUnsubscribeForm2;
         public bool addRecipe;
         public bool newForm = false;
-
+        private bool EnterOffBoolDescription = false;
         string PunktorOn = "Punktor Wł";
         string PunktorOff = "Punktor Wył";
         bool rtxDescriptionBool = false;
         int numberLine = 0;
+
+        Font letter;
+        Graphics graph;
 
         //sprawdza czy wpisany znak jest cyfrą, pomijając puste pola. Jezeli jest błąd zmienna check przyjmuje wartość true;
         bool check = false;
@@ -280,15 +283,16 @@ namespace CulinaryRecipes
             string precautionary = elementName.Text;
 
             elementName.Paste();
-            variableToCountNumberOfLines = NumberLinesHowManyLines(elementName.Text);
+            //  variableToCountNumberOfLines = NumberLinesHowManyLines(elementName.Text);
 
-            if (variableToCountNumberOfLines > lenght)
+            if (numberLine > lenght)//variableToCountNumberOfLines
             {
                 elementName.Text = precautionary;
                 MessageBox.Show("Program może posiadać tylko 38 linii.\n Przekroczyłeś je wklejając tekst.");
             }
 
             p.AlignTheNumberOfLines(rTxtGrams, rTxtIngredients);
+
         }
 
         public int NumberLinesHowManyLines(string name)
@@ -297,7 +301,12 @@ namespace CulinaryRecipes
 
             foreach (char item in name)
             {
-                if (item == '\n')
+                //if (item == '\n')
+                //{
+                //    numberLines++;
+                //    p.NumberLine++;
+                //}
+                if (name.Contains('\n'))
                 {
                     numberLines++;
                     p.NumberLine++;
@@ -337,16 +346,217 @@ namespace CulinaryRecipes
             name.SelectionStart = 4 + i;
         }
 
-        //Punktor - do poprawy przy kolejnych aktualizacjach
+        //Punktor
+        char sign = '•';
+        string window = "     ";
+        int additionalNumberOfCharacters = 12;
         private void Punktor(KeyEventArgs e)
         {
-            char sign = '•';
-
+            EnterOffBoolDescription = true;
             int i = rtxtDescription.SelectionStart;
-            rtxtDescription.Text = rtxtDescription.Text.Insert(i, Environment.NewLine + " " + sign + "       ");
+
+            RichTextBoxMy.NewLine(rtxtDescription);
+            rtxtDescription.AppendText(window + sign + window);
+
             e.Handled = true;
-            rtxtDescription.SelectionStart = 6 + i;
+            rtxtDescription.SelectionStart = i + additionalNumberOfCharacters;
         }
+
+        private void Punktor(KeyEventArgs e, RichTextBox name)
+        {
+            EnterOffBoolDescription = true;
+            int i = rtxtDescription.SelectionStart;
+
+            RichTextBoxMy.NewLine(rtxtDescription);
+            rtxtDescription.Text = rtxtDescription.Text.Insert(i, Environment.NewLine + window + sign + window);
+
+            e.Handled = true;
+            rtxtDescription.SelectionStart = i + additionalNumberOfCharacters;
+        }
+
+        /// <summary>
+        /// Oblicza szerokość linii na podstawie richtextbox.Lines[numberline]
+        /// </summary>
+        int space = 0;
+        string line;
+        float lineWidth;
+        public float LineWidth(KeyPressEventArgs a)
+        {
+            if (string.IsNullOrEmpty(rtxtDescription.Text))
+            {
+                line = a.KeyChar.ToString();
+            }
+            else
+            {
+                line = rtxtDescription.Lines[numberLine];
+                lineWidth = graph.MeasureString(line, letter).Width;
+            }
+
+            if (a.KeyChar == 32)
+            {
+                space++;
+                lineWidth += ((float)4.999999 * space);
+            }
+            else
+            {
+                space = 0;
+            }
+
+            return lineWidth;
+        }
+
+        /// <summary>
+        /// Zlicza ilość przerw przed punktorem
+        /// </summary>
+        /// <param name="NameofStringInWhichEnterWillbeCounted"></param>
+        /// <returns></returns>
+        private int NumberOfEnter(string NameofStringInWhichEnterWillbeCounted)
+        {
+            int addNumberOfWindow = 0;
+
+            foreach (var item in NameofStringInWhichEnterWillbeCounted)
+            {
+                if (item == '\n')
+                {
+                    addNumberOfWindow++;
+                }
+            }
+            return addNumberOfWindow;
+        }
+
+        /// Dzieli string na linie - ma zastosowanie podczas wklejania tekstu
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        private string SplitLinesIntoSublines(string name)
+        {
+            double lineWidth = 0;
+            string Line = string.Empty;
+            string wordMovedToNextLine = string.Empty;
+            string ShortenedStringbyThLastWord = string.Empty;
+            string main = string.Empty;
+            string suportingString = string.Empty;
+
+            foreach (char item in name)
+            {
+                if (item != '\n' && item != '\r')
+                {
+                    Line += item;
+                }
+
+                lineWidth = graph.MeasureString(Line, letter).Width;
+
+                if (lineWidth >= rtxtDescription.Width - 30)
+                {
+                    lineWidth = 0;
+
+                    wordMovedToNextLine = CharacterCounting(Line);
+                    ShortenedStringbyThLastWord = DeletesLastWordInLine(Line);
+
+                    suportingString = ShortenedStringbyThLastWord + '\n' + window + wordMovedToNextLine;
+
+                    main += suportingString;
+                    Line = string.Empty;
+                    suportingString = string.Empty;
+                }
+                else
+                {
+                    if ((item == '\n') && (lineWidth < rtxtDescription.Width - 30))
+                    {
+                        suportingString += item + window;
+                        Line = string.Empty;
+                        lineWidth = 0;
+                    }
+                    else if (item != '\r')
+                    {
+                        suportingString += item;
+                    }
+                }
+            }
+            main += suportingString;
+
+            return main;
+        }
+
+        /// <summary>
+        /// Usuwa ostatni wyraz w linii i zwraca string bez tego wyrazu
+        /// </summary>
+        /// <param name="textLine"></param>
+        /// <returns></returns>
+        private string DeletesLastWordInLine(string textLine)
+        {
+            string text = textLine;
+
+            int lengthOfTheLastString = CharacterCounting(textLine).Length;
+
+            for (int i = 0; i < lengthOfTheLastString; i++)
+            {
+                text = text.Remove(text.Length - 1);
+            }
+
+            return text;
+        }
+
+        /// <summary>
+        /// Zlicza znaki - czy linia nie jest szersza niż textbox
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        private string CharacterCounting(string text)
+        {
+            string textTemp = string.Empty;
+
+            if (!text.EndsWith(" \n"))
+            {
+                foreach (char item in text)
+                {
+                    if (item != ' ')
+                    {
+                        textTemp += item;
+                    }
+                    else
+                    {
+                        textTemp = string.Empty;
+                    }
+                }
+            }
+
+            return textTemp;
+        }
+
+        public int NumberOfCharactersToFocus(string textboxText)
+        {
+            int start = rtxtDescription.SelectionStart;
+
+            string text = string.Empty;
+            numberLine = 0;
+            int temp = 0;
+
+            foreach (char item in textboxText)
+            {
+                if (start <= temp)
+                {
+                    break;
+                }
+                else
+                {
+                    if (item == '\n')
+                    {
+                        numberLine++;
+                        temp++;
+                    }
+                    else
+                    {
+                        text += item;
+                        temp++;
+
+                    }
+                }
+            }
+
+            return numberLine;
+        }
+
 
         //podswietla pole gdy ktoś w dziwny sposob zaznaczy - spojrzeć na ta funkcje
         private void HighlightingEditFieldInOtherCases(KeyEventArgs e, RichTextBox name, bool nameBool)
@@ -437,17 +647,24 @@ namespace CulinaryRecipes
         //przycina dodatkowe spacje w nazwie i ustawia fokus na koncu 
         private void SetFocusToTheEndOfTheName(TextBox name)
         {
-            if (addRecipe == false)
+            try
             {
-                if (name.Text.Last() != 32)
+                if (addRecipe == false)
                 {
-                    name.SelectionStart = name.TextLength;
+                    if (name.Text.Last() != 32)
+                    {
+                        name.SelectionStart = name.TextLength;
+                    }
+                    else
+                    {
+                        name.Text = name.Text.TrimEnd();
+                        name.SelectionStart = name.TextLength;
+                    }
                 }
-                else
-                {
-                    name.Text = name.Text.TrimEnd();
-                    name.SelectionStart = name.TextLength;
-                }
+            }
+            catch (Exception ex)
+            {
+                // ex.Message;
             }
         }
 
@@ -536,7 +753,7 @@ namespace CulinaryRecipes
         double convertNumbers;
         string convertportions = "Przelicz Porcje";
         string convert = "Przelicz";
-        
+
         private void ConvertFunction()
         {
             if (rtxtAmountsOfFood.ReadOnly == false)
@@ -580,7 +797,7 @@ namespace CulinaryRecipes
                             {
                                 foreach (var item in RichTextBoxMy.ulamki)
                                 {
-                                    if(rtxtAmountsOfFood.Lines[i]==item)
+                                    if (rtxtAmountsOfFood.Lines[i] == item)
                                     {
                                         if (!copy)
                                         {
@@ -588,10 +805,10 @@ namespace CulinaryRecipes
                                             p.CompareBuforWithSelection();
                                             copy = true;
                                         }
-                                        
+
                                         p.howeverDelete = true;
                                         p.ConvertToDecimalFraction(rtxtAmountsOfFood.Lines[i], i);
-                                     
+
                                     }
                                 }
                             }
@@ -688,9 +905,9 @@ namespace CulinaryRecipes
                 maxLine = numberLine;
                 p.MaxLine = p.NumberLine;
 
-                if ((maxLine > p.bufor.Count - 1))
+                if ((maxLine > p.bufor.Count))
                 {
-                    maxLine = p.bufor.Count - 1;
+                    p.AlignTheNumberOfLines(rTxtGrams, rTxtIngredients);
                 }
             }
             else
@@ -1098,6 +1315,10 @@ namespace CulinaryRecipes
                 txtName.ChangeColorOneElement();
                 txtName.ForeColor = System.Drawing.Color.Black;
             }
+
+            letter = rtxtDescription.Font;
+            graph = this.CreateGraphics();
+
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
@@ -1211,15 +1432,25 @@ namespace CulinaryRecipes
 
         private void wklejToolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            rtxtDescription.Paste();
-            // ta funkcję zostawić 
+            string clipboardText = string.Empty;
+            int start = rtxtDescription.SelectionStart;
 
-            //if (Clipboard.ContainsText(TextDataFormat.Text))
-            //{
-            //    string clipboardText = Clipboard.GetText(TextDataFormat.Text); 
-            //    txtName.Text = clipboardText.Length.ToString();
-            //}
+
+            if (Clipboard.ContainsText(TextDataFormat.Text) && EnterOffBoolDescription)
+            {
+                clipboardText = Clipboard.GetText(TextDataFormat.Text);
+
+                string rozbity = SplitLinesIntoSublines(clipboardText);
+                rtxtDescription.Text = rtxtDescription.Text.Insert(start, rozbity);
+
+                rtxtDescription.SelectionStart = start + clipboardText.Length + (window.Length * NumberOfEnter(clipboardText));
+            }
+            else
+            {
+                rtxtDescription.Paste();
+            }
         }
+
 
         private void usuńToolStripMenuItem4_Click(object sender, EventArgs e)
         {
@@ -1231,10 +1462,12 @@ namespace CulinaryRecipes
             if (cmList.Text == PunktorOn)
             {
                 cmList.Text = PunktorOff;
+                EnterOffBoolDescription = false;
             }
             else
             {
                 cmList.Text = PunktorOn;
+                EnterOffBoolDescription = true;
             }
         }
 
@@ -2232,17 +2465,29 @@ namespace CulinaryRecipes
                     UndoChanges();
                 }
 
-                if (e.KeyCode == Keys.Enter && cmList.Text == PunktorOn)
-                {
-                    int i = rtxtDescription.SelectionStart;
-                    rtxtDescription.Text = rtxtDescription.Text.Insert(i, "\n " + " " + interval + " ");
-                    e.Handled = true;
-                    rtxtDescription.SelectionStart = 4 + i;
-                }
+                //if (e.KeyCode == Keys.Enter && cmList.Text == PunktorOn)
+                //{
+                //    int i = rtxtDescription.SelectionStart;
+                //    rtxtDescription.Text = rtxtDescription.Text.Insert(i, "\n " + " " + interval + " ");
+                //    e.Handled = true;
+                //    rtxtDescription.SelectionStart = 4 + i;
+                //}
+
+                //if (e.KeyCode == Keys.Enter && cmList.Text == PunktorOff)
+                //{
+                //    Punktor(e);
+                //}
 
                 if (e.KeyCode == Keys.Enter && cmList.Text == PunktorOff)
                 {
-                    Punktor(e);
+                    if (numberLine >= maxLine)
+                    {
+                        Punktor(e);
+                    }
+                    else
+                    {
+                        Punktor(e, rtxtDescription);
+                    }
                 }
             }
         }
@@ -2304,6 +2549,7 @@ namespace CulinaryRecipes
         int rtxtAmountsSelectionStartTemp = 0;
         private void rtxtAmountsOfFood_KeyDown(object sender, KeyEventArgs e)
         {
+
             if (rtxtAmountsOfFood.ReadOnly == false)
             {
 
@@ -2359,6 +2605,7 @@ namespace CulinaryRecipes
                     rtxtAmountsOfFood.SelectionStart = selectionStart;
                 }
             }
+
         }
 
         string getLine = string.Empty;
@@ -2697,13 +2944,108 @@ namespace CulinaryRecipes
             CheckChangedGroup(chcDrink, 5, IdMealForm2);
         }
 
-        private void ContextMenuGrams_Opening(object sender, CancelEventArgs e)
+
+        string ShortenedStringbyThLastWord;
+        string wordMovedToNextLine;
+        bool zero = false;
+        string signLength = "  ";
+        private void rtxtDescription_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+            try
+            {
+                if (numberLine < maxLine)
+                {
+                    numberLine = NumberOfCharactersToFocus(rtxtDescription.Text);
+                }
+
+
+                if (e.KeyChar != 8)
+                {
+                    if (LineWidth(e) > rtxtDescription.Width - 30)
+                    {
+                        if (numberLine > maxLine)
+                        {
+
+                            if (!rtxtDescription.Lines[numberLine].EndsWith(" \n"))
+                            {
+                                if (e.KeyChar != 32)
+                                {
+                                    ShortenedStringbyThLastWord = DeletesLastWordInLine(rtxtDescription.Lines[numberLine]);
+                                    wordMovedToNextLine = CharacterCounting(rtxtDescription.Lines[numberLine]);
+
+                                    RichTextBoxMy.NewLine(rtxtDescription);
+                                    rtxtDescription.Text = rtxtDescription.Text.Replace(rtxtDescription.Lines[numberLine], ShortenedStringbyThLastWord);
+                                }
+                                else
+                                {
+                                    RichTextBoxMy.NewLine(rtxtDescription);
+                                    zero = true;
+                                }
+
+                                if (!EnterOffBoolDescription)
+                                {
+                                    rtxtDescription.Text += wordMovedToNextLine;
+                                }
+                                else
+                                {
+                                    rtxtDescription.Text += window + window + signLength + wordMovedToNextLine;
+                                }
+                            }
+                            else
+                            {
+                                rtxtDescription.Text += window;
+                            }
+
+                            rtxtDescription.SelectionStart = rtxtDescription.TextLength;
+                        }
+                        else
+                        {
+                            wordMovedToNextLine = CharacterCounting(rtxtDescription.Lines[numberLine]);
+
+                            if (!rtxtDescription.Lines[numberLine].EndsWith(" \n"))
+                            {
+                                ShortenedStringbyThLastWord = DeletesLastWordInLine(rtxtDescription.Lines[numberLine]);
+
+
+                                int start = rtxtDescription.SelectionStart;
+
+                                rtxtDescription.Text = rtxtDescription.Text.Replace(rtxtDescription.Lines[numberLine], ShortenedStringbyThLastWord);
+
+                                rtxtDescription.SelectionStart = start - wordMovedToNextLine.Length;
+                                start = rtxtDescription.SelectionStart;
+
+                                if (!EnterOffBoolDescription)
+                                {
+                                    rtxtDescription.Text = rtxtDescription.Text.Insert(start, "\n" + wordMovedToNextLine);
+
+                                    rtxtDescription.SelectionStart = start + wordMovedToNextLine.Length + 1;
+                                }
+                                else
+                                {
+                                    rtxtDescription.Text = rtxtDescription.Text.Insert(start, "\n" + window + window + signLength + wordMovedToNextLine);
+
+                                    rtxtDescription.SelectionStart = start + additionalNumberOfCharacters + wordMovedToNextLine.Length + 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+               MessageBox.Show(ex.Message);
+            }
         }
 
-        private void contextIngridients_Opening(object sender, CancelEventArgs e)
+        private void rtxtDescription_KeyUp(object sender, KeyEventArgs e)
         {
+
+            if (zero)
+            {
+                rtxtDescription.SelectionStart = rtxtDescription.SelectionStart - 1;
+                zero = false;
+            }
 
         }
 

@@ -1745,6 +1745,8 @@
             this.rtxtDescription.SelectionChanged += new System.EventHandler(this.rtxtDescription_SelectionChanged);
             this.rtxtDescription.Click += new System.EventHandler(this.rtxtDescription_Click);
             this.rtxtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtDescription_KeyDown);
+            this.rtxtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtDescription_KeyPress);
+            this.rtxtDescription.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rtxtDescription_KeyUp);
             // 
             // label12
             // 
@@ -1876,7 +1878,7 @@
             this.CMGramsEnter});
             this.ContextMenuGrams.Name = "Context";
             this.ContextMenuGrams.Size = new System.Drawing.Size(203, 126);
-            this.ContextMenuGrams.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuGrams_Opening);
+        
             // 
             // cofnijToolStripMenuItem3
             // 
@@ -2138,8 +2140,8 @@
             this.toolStripMenuItem9,
             this.separatorToolStripMenuItem1});
             this.contextIngridients.Name = "contextMenuStrip2";
-            this.contextIngridients.Size = new System.Drawing.Size(203, 198);
-            this.contextIngridients.Opening += new System.ComponentModel.CancelEventHandler(this.contextIngridients_Opening);
+            this.contextIngridients.Size = new System.Drawing.Size(203, 176);
+            
             // 
             // undoToolStripMenuItem
             // 

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.cMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -1383,7 +1383,6 @@
             this.txtSeek.Size = new System.Drawing.Size(453, 33);
             this.txtSeek.TabIndex = 0;
             this.txtSeek.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-    
             this.txtSeek.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSeek_KeyDown);
             this.txtSeek.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSeek_KeyUp);
             // 
@@ -1397,14 +1396,14 @@
             this.dgGrid.ColumnHeadersVisible = false;
             this.dgGrid.ContextMenuStrip = this.cMenuStrip;
             this.dgGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.dgGrid.Location = new System.Drawing.Point(210, 488);
             this.dgGrid.MultiSelect = false;
@@ -1467,7 +1466,7 @@
             this.lblOcena.AutoSize = true;
             this.lblOcena.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblOcena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblOcena.Location = new System.Drawing.Point(484, 400);
+            this.lblOcena.Location = new System.Drawing.Point(484, 399);
             this.lblOcena.Name = "lblOcena";
             this.lblOcena.Size = new System.Drawing.Size(48, 15);
             this.lblOcena.TabIndex = 25;
@@ -1560,7 +1559,7 @@
             this.lblKitchen.AutoSize = true;
             this.lblKitchen.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblKitchen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblKitchen.Location = new System.Drawing.Point(261, 398);
+            this.lblKitchen.Location = new System.Drawing.Point(261, 399);
             this.lblKitchen.Name = "lblKitchen";
             this.lblKitchen.Size = new System.Drawing.Size(56, 15);
             this.lblKitchen.TabIndex = 40;
@@ -1571,10 +1570,11 @@
             this.lblCuisine.AutoSize = true;
             this.lblCuisine.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblCuisine.ForeColor = System.Drawing.Color.White;
-            this.lblCuisine.Location = new System.Drawing.Point(317, 396);
+            this.lblCuisine.Location = new System.Drawing.Point(317, 400);
             this.lblCuisine.Name = "lblCuisine";
-            this.lblCuisine.Size = new System.Drawing.Size(0, 14);
+            this.lblCuisine.Size = new System.Drawing.Size(29, 14);
             this.lblCuisine.TabIndex = 41;
+            this.lblCuisine.Text = "prob";
             // 
             // lblNameSeek
             // 
@@ -1636,7 +1636,7 @@
             // pbStar3
             // 
             this.pbStar3.Image = global::CulinaryRecipes.Properties.Resources.gwiazdka;
-            this.pbStar3.Location = new System.Drawing.Point(624, 395);
+            this.pbStar3.Location = new System.Drawing.Point(624, 394);
             this.pbStar3.Name = "pbStar3";
             this.pbStar3.Size = new System.Drawing.Size(21, 18);
             this.pbStar3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1647,7 +1647,7 @@
             // pbStar2
             // 
             this.pbStar2.Image = global::CulinaryRecipes.Properties.Resources.gwiazdka;
-            this.pbStar2.Location = new System.Drawing.Point(562, 396);
+            this.pbStar2.Location = new System.Drawing.Point(562, 395);
             this.pbStar2.Name = "pbStar2";
             this.pbStar2.Size = new System.Drawing.Size(18, 17);
             this.pbStar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1658,7 +1658,7 @@
             // pbStar1
             // 
             this.pbStar1.Image = global::CulinaryRecipes.Properties.Resources.gwiazdka;
-            this.pbStar1.Location = new System.Drawing.Point(592, 395);
+            this.pbStar1.Location = new System.Drawing.Point(592, 394);
             this.pbStar1.Name = "pbStar1";
             this.pbStar1.Size = new System.Drawing.Size(21, 18);
             this.pbStar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
