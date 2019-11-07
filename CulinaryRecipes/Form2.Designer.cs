@@ -1732,6 +1732,7 @@
             this.rtxtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.rtxtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtxtDescription.BulletIndent = 10;
             this.rtxtDescription.ContextMenuStrip = this.contextCopy;
             this.rtxtDescription.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtxtDescription.ForeColor = System.Drawing.Color.White;
@@ -1878,7 +1879,6 @@
             this.CMGramsEnter});
             this.ContextMenuGrams.Name = "Context";
             this.ContextMenuGrams.Size = new System.Drawing.Size(203, 126);
-        
             // 
             // cofnijToolStripMenuItem3
             // 
@@ -2141,7 +2141,6 @@
             this.separatorToolStripMenuItem1});
             this.contextIngridients.Name = "contextMenuStrip2";
             this.contextIngridients.Size = new System.Drawing.Size(203, 176);
-            
             // 
             // undoToolStripMenuItem
             // 
