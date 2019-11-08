@@ -1352,7 +1352,8 @@ namespace CulinaryRecipes
 
                 chcVegetarian.Enabled = true;
                 this.CancelButton = btnClose;
-       
+
+              
 
             }
             else if (unlockFieldsForm2 == "1" && txtName.ReadOnly == true)
@@ -1479,12 +1480,19 @@ namespace CulinaryRecipes
 
             letter = rtxtDescription.Font;
             graph = this.CreateGraphics();
+           
 
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            CloseForm();
+
+            if (!cancel)
+            {
+                Application.Exit();
+            }
+            
+          
         }
 
         public RecipesBase Model(RecipesBase model)
@@ -2008,6 +2016,7 @@ namespace CulinaryRecipes
             ModifyRecipes();
         }
 
+       
         private void btnClose_Click(object sender, EventArgs e)
         {
             CloseForm();
@@ -2015,14 +2024,18 @@ namespace CulinaryRecipes
 
         private void CloseForm()
         {
-            this.Hide();
-            Form1 form1 = new Form1();
+     
+            
+                this.Hide();
+                Form1 form1 = new Form1();
 
-            RememberIfCheckBoxChecked(form1);
-            form1.seekUnsubscribe = seekUnsubscribeForm2;
+                RememberIfCheckBoxChecked(form1);
+                form1.seekUnsubscribe = seekUnsubscribeForm2;
 
-            form1.counter = counterForm2;
-            form1.ShowDialog();
+                form1.counter = counterForm2;
+
+                form1.ShowDialog();
+   
         }
 
         private void AddRecipes()
@@ -3268,6 +3281,12 @@ namespace CulinaryRecipes
                 zero = false;
             }
 
+        }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            this.cancel = true;
         }
 
         private void chcPreserves_CheckedChanged(object sender, EventArgs e)
