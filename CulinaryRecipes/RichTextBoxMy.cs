@@ -61,11 +61,11 @@ namespace CulinaryRecipes
                 return _line.Length + 1 > _capacity;
             }
         }
-
+           
         /// <summary>
         /// Podczas dodawania kolejnych elementów w tekscie - sprawdza czy lista jest pusta
         /// </summary>
-        public bool ListIsEmpty
+        private bool ListIsEmpty
         {
             get
             {
@@ -83,8 +83,7 @@ namespace CulinaryRecipes
         {
             if ((value >= 46 && value <= 57) || value == 44)
             {
-              //  _line =
-                    GetLine(bufor);
+                    GetLine(bufor, NumberLine);
 
                 if (_line.Length == 0 && (value == 46 || value == 44 || value == 47))
                 {
@@ -100,9 +99,8 @@ namespace CulinaryRecipes
                     if (value != 13 && value != 8)
                     {
                         _lineBuilder.Append(value);
-
-                      //  _line = 
-                            GetLine(bufor);
+ 
+                            GetLine(bufor, NumberLine);
 
                         if (MaxLine != NumberLine)
                         {
@@ -110,7 +108,7 @@ namespace CulinaryRecipes
                             {
                                 _line = _line.Remove(_line.Length - 1);
 
-                                _lineSelection = ZwrotSumyRoznicyWStartSelection(_selectionList);
+                                _lineSelection = ZwrotSumyRoznicyWStartSelection(_selectionList, NumberLine);
 
                                 if (_lineSelection == _capacity) _lineSelection--;
 
@@ -118,7 +116,7 @@ namespace CulinaryRecipes
                             }
                             else
                             {
-                                _lineSelection = ZwrotSumyRoznicyWStartSelection(_selectionList);
+                                _lineSelection = ZwrotSumyRoznicyWStartSelection(_selectionList, NumberLine);
                             }
 
                             _line = _line.Insert(_lineSelection, _lineBuilder.ToString());
@@ -129,20 +127,20 @@ namespace CulinaryRecipes
                             {
                                 _line = _line.Remove(_line.Length - 1);
 
-                                _lineSelection = ZwrotSumyRoznicyWStartSelection(_selectionList);
+                                _lineSelection = ZwrotSumyRoznicyWStartSelection(_selectionList, NumberLine);
 
-                                if (ZwrotSumyRoznicyWStartSelection(_selectionList) == _capacity)
+                                if (ZwrotSumyRoznicyWStartSelection(_selectionList, NumberLine) == _capacity)
                                 {
                                     _lineSelection--;
                                 }
-                                else if (ZwrotSumyRoznicyWStartSelection(_selectionList) > _capacity)
+                                else if (ZwrotSumyRoznicyWStartSelection(_selectionList, NumberLine) > _capacity)
                                 {
                                     _lineSelection = _capacity - 1;
                                 }
                             }
                             else
                             {
-                                _lineSelection = ZwrotSumyRoznicyWStartSelection(_selectionList);
+                                _lineSelection = ZwrotSumyRoznicyWStartSelection(_selectionList, NumberLine);
                             }
 
                             _line = _line.Insert(_lineSelection, _lineBuilder.ToString());
@@ -176,8 +174,7 @@ namespace CulinaryRecipes
             if (value == 13 && EnterOn)
             {
                 NumberLine = NumberLine - 1;
-               // _line = 
-                    GetLine(bufor);
+                    GetLine(bufor, NumberLine);
                 NumberLine++;
               
                 if (ClearTypedIncorrectly(_line) == false)
@@ -202,9 +199,8 @@ namespace CulinaryRecipes
                             {
                                 CopyTextToList(TextboxText);
                                 CompareBuforWithSelection();
-                                NumberLine = NumberLine - 1;
-                                //_line = 
-                                    GetLine(bufor);
+                                NumberLine = NumberLine - 1; 
+                                    GetLine(bufor, NumberLine);
                                 ClearTypedIncorrectly(_line);
                                 NumberLine++;
                             }
@@ -230,8 +226,8 @@ namespace CulinaryRecipes
             }
             else if (value == 13 && EnterOn == false)
             {
-                //   _line = GetLine(bufor);
-                GetLine(bufor);
+               
+                GetLine(bufor, NumberLine);
 
                 if (ClearTypedIncorrectly(_line))
                 {
@@ -437,7 +433,7 @@ namespace CulinaryRecipes
             return zero;
         }
         //zmienić nazwe
-        private int ZwrotSumyRoznicyWStartSelection(List<int> listName)
+        private int ZwrotSumyRoznicyWStartSelection(List<int> listName,int nrLinii)
         {
             int result;
             int sum = 0;
@@ -445,7 +441,7 @@ namespace CulinaryRecipes
 
             foreach (var item in listName)
             {
-                if (variable == NumberLine)
+                if (variable == nrLinii)
                 {
                     break;
                 }
@@ -696,13 +692,13 @@ namespace CulinaryRecipes
         /// </summary>
         /// <param name="listName"></param>
         /// <returns></returns>
-        public string GetLine(List<string> listName)
+        public string GetLine(List<string> listName,int nrLinii)
         {
             try
             {
                 if (!ListIsEmpty)
                 {
-                    _line= listName[NumberLine];
+                    _line= listName[nrLinii];
                 }
             }
             catch (NullReferenceException ex)

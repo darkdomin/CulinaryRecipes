@@ -28,6 +28,7 @@ namespace CulinaryRecipes
         public string RatingForm3 { get; set; }
         public string clearForm3 { get; set; }
         public string LinkForm23 { get; set; }
+        public string correctModyficationName3;
 
         //zmienne pamięciowe- Anuluj//
         public string title3 { get; set; }
@@ -41,7 +42,7 @@ namespace CulinaryRecipes
         public string rating3 { get; set; }
 
         public bool cancel3 { get; set; }
-
+        public bool hideForm3;
         public bool addRecipeForm3 { get; set; }
         public bool addRecipe { get; set; }
         public bool newForm3 { get; set; }
@@ -323,6 +324,8 @@ namespace CulinaryRecipes
                 p.AddRecipeForm2 = addRecipeForm3;
             model.addRecipe = addRecipe;
 
+            model.correctModyficationName = correctModyficationName3;
+
             #region MealAdd
             model.IdMealForm2[0] = IdMealForm3[0];
             model.IdMealForm2[1] = IdMealForm3[1];
@@ -361,9 +364,9 @@ namespace CulinaryRecipes
             #endregion
 
             model.newForm = newForm3;
-
+         //   model.hideForm = hideForm3;
             this.Visible = false;
-            this.Close();
+            //this.Close();
             model.ShowDialog();
         }
 

@@ -84,6 +84,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoCompleter.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ButtonMy.cs" />
     <Compile Include="Db.cs" />
     <Compile Include="EmailBase.cs" />

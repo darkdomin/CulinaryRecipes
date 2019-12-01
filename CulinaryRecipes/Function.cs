@@ -141,7 +141,7 @@ namespace CulinaryRecipes
 
             foreach (var r in RecipesBase.getAll("RecipesBase"))
             {
-                if (r.RecipesName == name.Text&& r.RecipesName!= correctName)
+                if (r.RecipesName == name.Text && r.RecipesName!= correctName)
                 {
                     variable = true;
                     MessageBox.Show("Taka nazwa już istnieje w bazie danych");

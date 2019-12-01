@@ -21,7 +21,7 @@ namespace CulinaryRecipes
         public int[] idMeal = new int[7];
         public int[] ingridients = new int[8];
         public bool seekUnsubscribe = false;
-       
+
 
         List<string> autoComp = new List<string>();
         public List<CheckBox> CheckBoxList = new List<CheckBox>();
@@ -210,7 +210,7 @@ namespace CulinaryRecipes
 
             p.AddRecipeForm2 = add;
             NewForm.addRecipe = true;
-          
+
 
             this.Visible = false;
             NewForm.ShowDialog();
@@ -292,12 +292,11 @@ namespace CulinaryRecipes
                 OpenForm.counterForm2 = counter;
                 OpenForm.seekUnsubscribeForm2 = seekUnsubscribe;
 
-                
+
                 this.Visible = false;
-               
                 OpenForm.ShowDialog();
-          
-                    this.Hide();
+                this.Close();
+
 
             }
         }
@@ -474,7 +473,7 @@ namespace CulinaryRecipes
 
         private void importujCalaBazęDanychToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                searchEngine = new SearchEngine(txtSeek.Text, dgGrid);
+            searchEngine = new SearchEngine(txtSeek.Text, dgGrid);
 
             dgGrid.Visible = false;
             searchEngine.FilldgGrid();
@@ -551,16 +550,17 @@ namespace CulinaryRecipes
 
         private void CMSSend_Click(object sender, EventArgs e)
         {
-
+            
             Logo show = new Logo();
             show.titleLogo = txtLittleName.Text;
             show.ingredientLogo = ingredientColumnDgGridForm1;
             show.amountsLogo = amountsOfIngredientsForm1;
             show.gramsLogo = gramsColumnDgGridForm1;
             show.descriptionLogo = descriptionForm1;
-            show.Show();
             this.Hide();
-                      
+            show.ShowDialog();
+          
+
         }
 
         #endregion Menu
@@ -1735,10 +1735,7 @@ namespace CulinaryRecipes
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-           if(!securityClose)
-                Application.Exit();
-            
-        
+            Application.Exit();
         }
 
         private void eksportujPlikToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1859,7 +1856,6 @@ namespace CulinaryRecipes
             }
         }
         DataGridViewCellEventArgs a;
-        private bool securityClose;
 
         private void txtSeek_KeyUp(object sender, KeyEventArgs e)
         {
@@ -1882,7 +1878,7 @@ namespace CulinaryRecipes
         {
             SearchGeneral();
 
-            if(searchEngine.FilldgGrid(txtSeek.Text))
+            if (searchEngine.FilldgGrid(txtSeek.Text))
             {
                 DeleteDuplicate();
                 dgGrid.Focus();

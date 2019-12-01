@@ -1269,6 +1269,7 @@
             this.rTxtGrams.SelectionChanged += new System.EventHandler(this.rTxtGrams_SelectionChanged);
             this.rTxtGrams.Click += new System.EventHandler(this.rTxtGrams_Click);
             this.rTxtGrams.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtGrams_KeyDown);
+            this.rTxtGrams.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rTxtGrams_KeyPress);
             this.rTxtGrams.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rTxtGrams_KeyUp);
             // 
             // contextCopy
@@ -1732,7 +1733,6 @@
             this.rtxtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.rtxtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxtDescription.BulletIndent = 10;
             this.rtxtDescription.ContextMenuStrip = this.contextCopy;
             this.rtxtDescription.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtxtDescription.ForeColor = System.Drawing.Color.White;
@@ -2408,7 +2408,6 @@
             this.MaximizeBox = false;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);
