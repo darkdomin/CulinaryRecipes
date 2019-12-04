@@ -59,7 +59,7 @@ namespace CulinaryRecipes
         bool check = false;
         bool blockFunc = false;
 
-        string[] sortedUnits = { "dag", "gałązki", "garść", "gram" };
+        string[] sortedUnits = { "dag", "gałązki", "gałązka", "garść", "gram", "kg", "kostka", "kostki", "listki", "listek", "puszka", "łyżka", "łyżeczka", "szt", "szczypty", "szklanka", "szklanki", "ząbki", "ml", "ziarna" };
 
 
 
@@ -300,27 +300,6 @@ namespace CulinaryRecipes
 
             p.AlignTheNumberOfLines(rTxtGrams, rTxtIngredients);
 
-        }
-
-        public int NumberLinesHowManyLines(string name)
-        {
-            int numberLines = 1;
-
-            foreach (char item in name)
-            {
-                //if (item == '\n')
-                //{
-                //    numberLines++;
-                //    p.NumberLine++;
-                //}
-                if (name.Contains('\n'))
-                {
-                    numberLines++;
-                    p.NumberLine++;
-                }
-            }
-
-            return numberLines;
         }
 
         //Jesli pierwsza linia nie istnieje
@@ -1051,8 +1030,8 @@ namespace CulinaryRecipes
         {
             int index = name.SelectionStart;
             numberLine = name.GetLineFromCharIndex(index);
-            p.NumberLine = name.GetLineFromCharIndex(index);
-            // completModel.NumberLineGram= name.GetLineFromCharIndex(index);
+            p.NumberLine = numberLine;//name.GetLineFromCharIndex(index);
+
 
             if (numberLine >= maxLine)
             {
@@ -2879,7 +2858,7 @@ namespace CulinaryRecipes
 
                     rtxtAmountsOfFood.SelectionStart = selectionStart;
 
-                    getLine = p.TextOutput(p.NumberLine); //
+                    getLine = p.TextOutput(p.NumberLine);
                 }
                 else if (e.KeyCode != Keys.Left && e.KeyCode != Keys.Right && e.KeyCode != Keys.Up && e.KeyCode != Keys.Down)
                 {
@@ -3047,6 +3026,7 @@ namespace CulinaryRecipes
 
         public void CopyTextToTable(string text, string[] table)
         {
+
             try
             {
                 Array.Clear(table, 0, table.Length);
@@ -3073,12 +3053,14 @@ namespace CulinaryRecipes
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
         bool rtxGramsBool = false;
 
         string[] tab = new string[0];
         string newWord = string.Empty;
         int counter = 0;
+        bool polishLetter = false;
         private void rTxtGrams_KeyUp(object sender, KeyEventArgs e)
         {
             if (rTxtGrams.Lines.Length > tab.Length)
@@ -3099,27 +3081,86 @@ namespace CulinaryRecipes
                     int start;
                     start = rTxtGrams.SelectionStart;
 
-                    if (e.KeyValue >= 65 && e.KeyValue <= 122)
+                    if (e.KeyValue >= 65 && e.KeyValue <= 122 || e.KeyValue == 322 || e.KeyValue == 380 || e.KeyValue == 378 || e.KeyValue == 261 || e.KeyValue == 263 || e.KeyValue == 243 || e.KeyValue == 347 || e.KeyValue == 324 || e.KeyValue == 281)
                     {
-                        newWord += e.KeyData;
-                        newWord = newWord.ToLower();
+                        string temp = string.Empty;
+                        temp += e.KeyData;
 
-                        var linqAnswer = from slowo in sortedUnits
-                                         where slowo.StartsWith(newWord)
-                                         select slowo;
-
-                        foreach (var word in linqAnswer)
+                        if (temp == "L, Control, Alt")
                         {
+                            temp = "ł";
+                            polishLetter = true;
+                        }
+                        else if (temp == "Z, Control, Alt")
+                        {
+                            temp = "ż";
+                            polishLetter = true;
+                        }
+                        else if (temp == "Z, Control, Alt")
+                        {
+                            temp = "ź";
+                            polishLetter = true;
+                        }
+                        else if (temp == "A, Control, Alt")
+                        {
+                            temp = "ą";
+                            polishLetter = true;
+                        }
+                        else if (temp == "C, Control, Alt")
+                        {
+                            temp = "ć";
+                            polishLetter = true;
+                        }
+                        else if (temp == "O, Control, Alt")
+                        {
+                            temp = "ó";
+                            polishLetter = true;
+                        }
+                        else if (temp == "S, Control, Alt")
+                        {
+                            temp = "ś";
+                            polishLetter = true;
+                        }
+                        else if (temp == "N, Control, Alt")
+                        {
+                            temp = "ń";
+                            polishLetter = true;
+                        }
+                        else if (temp == "E, Control, Alt")
+                        {
+                            temp = "ę";
+                            polishLetter = true;
+                        }
 
+                        if (polishLetter)
+                        {
+                            newWord += temp;
+                            polishLetter = false;
+                        }
+                        else
+                        {
+                            newWord += e.KeyData;
+                        }
+
+                        newWord = newWord.ToLower();
+                        temp = string.Empty;
+
+                        var linqQuery = from slowo in sortedUnits
+                                        where slowo.StartsWith(newWord)
+                                        select slowo;
+
+                        foreach (var word in linqQuery)
+                        {
                             tab[numberLine] = string.Empty;
+
                             for (int i = 0; i < word.Length; i++)
                             {
                                 tab[numberLine] += word[i];
                             }
 
-                            int temp = numberLine;
+                            int tempNum = numberLine;
                             rTxtGrams.Lines = tab;
-                            numberLine = temp;
+                            numberLine = tempNum;
 
                             if (numberLine == 0)
                             {
@@ -3129,17 +3170,12 @@ namespace CulinaryRecipes
                             else
                             {
                                 rTxtGrams.SelectionStart = start;
-                                rTxtGrams.SelectionLength = start + word.Length - start-counter;
+                                rTxtGrams.SelectionLength = start + word.Length - start - counter;
                                 counter++;
                             }
 
                             break;
                         }
-                    }
-                    else if (e.KeyCode == Keys.Enter)
-                    {
-                        newWord = string.Empty;
-                        counter = 0;
                     }
 
                 }
@@ -3156,6 +3192,9 @@ namespace CulinaryRecipes
                         newWord = string.Empty;
                     }
                     CopyTextToTable(rTxtGrams.Text, tab);
+
+
+
                 }
 
                 if (p.Deleted)
@@ -3169,10 +3208,12 @@ namespace CulinaryRecipes
             }
         }
 
+
         private void rTxtGrams_KeyDown(object sender, KeyEventArgs e)
         {
             if (rTxtGrams.ReadOnly == false)
             {
+                IndexChar(rTxtGrams);
                 changeLine = false;
                 HighlightingEditFieldInOtherCases(e, rTxtGrams, rtxGramsBool);
 
@@ -3182,6 +3223,17 @@ namespace CulinaryRecipes
 
                     AmountsAndGramsKeyDown(e, rTxtGrams, rTxtIngredients, rtxtAmountsOfFood);
                 }
+
+
+                if (rTxtGrams.Lines.Length > 0)
+                {
+                    if (rTxtGrams.SelectionLength - counter >= rTxtGrams.Lines[numberLine].Length && rTxtGrams.Lines[numberLine].Length != 0)
+                    {
+                        newWord = string.Empty;
+                    }
+
+                }
+
             }
         }
 
@@ -3196,13 +3248,14 @@ namespace CulinaryRecipes
                 ClearError(rTxtGrams);
 
                 CheckNameAfterClick();
+                counter = 0;
+
             }
         }
 
         private void rTxtGrams_SelectionChanged(object sender, EventArgs e)
         {
-            //completModel.StartSelectionGram = rTxtGrams.SelectionStart;
-            //completModel.TextboxTextGram = rTxtGrams.Text;
+
             IndexChar(rTxtGrams);
         }
 
@@ -3231,6 +3284,10 @@ namespace CulinaryRecipes
 
                         DisplayForm(rtxtAmountsOfFood);
                     }
+                    //Autouzupełnianie rtxtgrams
+                    newWord = string.Empty;
+                    counter = 0;
+                    rTxtGrams.SelectionLength = 0;
                 }
                 else if (e.KeyCode == Keys.Escape && txtName.ReadOnly == false)
                 {
@@ -3418,51 +3475,26 @@ namespace CulinaryRecipes
             }
 
         }
-        AutoCompleter completModel = new AutoCompleter();
 
         private void rTxtGrams_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //completModel.Input(e.KeyChar);
 
-            //if (e.KeyChar == 13)
-            //{
+            try
+            {
+                if (rTxtGrams.Lines.Length > 0)
+                {
+                    if (rTxtGrams.SelectionLength - counter >= rTxtGrams.Lines[numberLine].Length)
+                    {
+                        // fillAutoComplete = true;
+                        //   newWord = string.Empty;
+                    }
 
-            //    int selectionStart = completModel.StartSelectionGram;
-
-            //    rTxtGrams.Lines = completModel.TextOutputGram();
-            //    rTxtGrams.SelectionStart = selectionStart;
-            //}
-
-
-            //int start= rTxtGrams.SelectionStart;
-            // foreach (var word in sortedUnits)
-            // {
-            //     if (word[0] == e.KeyChar)
-            //     {
-
-            //         start = rTxtGrams.SelectionStart;
-
-            //         for (int i = 1; i < word.Length; i++)
-            //         {
-            //             rTxtGrams.Text += word[i];
-            //             start++;
-            //         }
-
-            //        //  rTxtGrams.SelectionLength = word.Length+1;
-            //         break;
-
-
-
-
-            //     }
-
-
-            // }
-            // rTxtGrams.SelectionLength = start;
-
-
-            //     rTxtGrams.SelectionBackColor = Function.CreateBrightColor();
-
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void chcPreserves_CheckedChanged(object sender, EventArgs e)
