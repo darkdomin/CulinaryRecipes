@@ -59,7 +59,7 @@ namespace CulinaryRecipes
         bool check = false;
         bool blockFunc = false;
 
-        string[] sortedUnits = { "dag", "gałązki", "gałązka", "garść", "gram", "kg", "kostka", "kostki", "listki", "listek", "puszka", "łyżka", "łyżeczka", "szt", "szczypty", "szklanka", "szklanki", "ząbki", "ml", "ziarna" };
+        string[] sortedUnits = { "dag", "gałązki", "gałązka", "garść", "gram", "kg", "kostka", "kostki", "listki", "listek", "puszka", "łyżka", "łyżeczka", "szt", "szczypty", "szklanka", "szklanki", "ząbki", "ml", "ziarna","płaty" };
 
 
 
@@ -106,6 +106,7 @@ namespace CulinaryRecipes
         {
             elementName.ForeColor = System.Drawing.Color.Green;
         }
+
 
         //zmienia color czcionki na biały w polach textbox i richtextbox
         private void ChangeColorToWhite(Control set)
@@ -1423,7 +1424,7 @@ namespace CulinaryRecipes
                 Function.DisplaySelectionRightPanel(panelLeft, ingridientsForm2);
 
                 txtName.Text = titleForm2;
-                Function.UncheckText(txtName);
+          
                 rtxtPortion.Text = numberOfPortionsForm2.ToString();
 
                 rtxtAmountsOfFood.Text = amountsOfIngredientsForm2;
@@ -1470,7 +1471,7 @@ namespace CulinaryRecipes
             graph = this.CreateGraphics();
 
             correctModyficationName = titleForm2;
-
+            Function.UncheckText(txtName);
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
@@ -1701,20 +1702,36 @@ namespace CulinaryRecipes
         {
             toolTip1.SetToolTip(btnAddRest, "Dodaj - Zdjęcie, czas przygotowania,\n stopień trudności i rodzaj kuchni");
         }
+        private void ChangeColorButtonEnterWhenShortCut()
+        {
+            if (btnEnter.Text == "OFF")
+            {
+                btnEnter.Text = "ON";
+                btnEnter.ForeColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                btnEnter.Text = "OFF";
+                btnEnter.ForeColor = System.Drawing.Color.Red;
+            }
+        }
 
         private void eNTERToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ContextEnter(CMAmountsEnter, CMGramsEnter, CMIngridientsEnter);
+            ChangeColorButtonEnterWhenShortCut();
         }
 
         private void CMGramsEnter_Click(object sender, EventArgs e)
         {
             ContextEnter(CMGramsEnter, CMAmountsEnter, CMIngridientsEnter);
+            ChangeColorButtonEnterWhenShortCut();
         }
 
         private void CMIngridientsEnter_Click(object sender, EventArgs e)
         {
             ContextEnter(CMIngridientsEnter, CMAmountsEnter, CMGramsEnter);
+            ChangeColorButtonEnterWhenShortCut();
         }
 
         private void wytnijToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -3063,6 +3080,7 @@ namespace CulinaryRecipes
         bool polishLetter = false;
         private void rTxtGrams_KeyUp(object sender, KeyEventArgs e)
         {
+
             if (rTxtGrams.Lines.Length > tab.Length)
             {
                 Array.Resize(ref tab, maxLine + 1);
@@ -3206,6 +3224,8 @@ namespace CulinaryRecipes
             {
                 MessageBox.Show(ex.Message);
             }
+
+           
         }
 
 
@@ -3257,6 +3277,7 @@ namespace CulinaryRecipes
         {
 
             IndexChar(rTxtGrams);
+
         }
 
 
@@ -3494,6 +3515,21 @@ namespace CulinaryRecipes
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ContextEnter(CMAmountsEnter, CMGramsEnter, CMIngridientsEnter);
+            if (btnEnter.Text == "OFF")
+            {
+                btnEnter.Text = "ON";
+                btnEnter.ForeColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                btnEnter.Text = "OFF";
+                btnEnter.ForeColor = System.Drawing.Color.Red;
             }
         }
 

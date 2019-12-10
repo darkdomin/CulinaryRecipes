@@ -444,6 +444,7 @@ namespace CulinaryRecipes
                 searchEngine.FilldgGrid();
             }
             lblCleanVisibleFalse();
+            lblStatistic.Text = 0.ToString();
         }
 
         private void nowyPrzepisToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1571,6 +1572,14 @@ namespace CulinaryRecipes
                     count++;
                 }
 
+                for (int i=0;i<=count;i+=10)
+                {
+                    if (count - 1 == 0 || count - 1 >= 5+i) lblCulinary.Text = "Przepisów";
+                    else if (count - 1 == 1+i) lblCulinary.Text = "Przepis";
+                    else if (count - 1 > 1+i && count - 1 < 5+i && i>20) lblCulinary.Text = "Przepisy";
+                    else lblCulinary.Text = "Przepisów";
+                }
+
                 lblStatistic.Text = NewId.ToString();
                 lblStatistic.Visible = true;
                 lblCulinary.Visible = true;
@@ -1580,6 +1589,7 @@ namespace CulinaryRecipes
                 lblStatistic.Visible = false;
                 lblCulinary.Visible = false;
             }
+            
         }
 
         public void ExportOneFile()
