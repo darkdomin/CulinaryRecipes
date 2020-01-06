@@ -776,5 +776,231 @@ namespace CulinaryRecipes
 
             return _selectionList;
         }
+
+        //string[] tab = new string[0];
+        //string newWord = string.Empty;
+        //int counter = 0;
+        //bool polishLetter = false;
+
+        //public void AutoCmoplete(RichTextBox fieldName)
+        //{
+
+        //    if (fieldName.Lines.Length > tab.Length)
+        //    {
+        //        Array.Resize(ref tab, MaxLine + 1);
+        //    }
+        //    if (NumberLine < MaxLine && e.KeyCode == Keys.Enter)
+        //    {
+        //        CopyTextToTable(fieldName.Text, tab);
+        //    }
+
+        //    //zakreślacz w gramach
+        //    try
+        //    {
+        //        if (e.KeyCode != Keys.Back && e.KeyCode != Keys.Delete && e.KeyCode != Keys.Enter)
+        //        {
+        //            int start;
+        //            start = fieldName.SelectionStart;
+
+        //            //if (e.KeyValue >= 65 && e.KeyValue <= 122 || e.KeyValue == 322 || e.KeyValue == 380 || e.KeyValue == 378 || e.KeyValue == 261 || e.KeyValue == 263 || e.KeyValue == 243 || e.KeyValue == 347 || e.KeyValue == 324 || e.KeyValue == 281)
+        //            //{
+        //            string temp = string.Empty;
+        //            temp += e.KeyData;
+
+        //            if (temp == "L, Control, Alt")
+        //            {
+        //                temp = "ł";
+        //                polishLetter = true;
+        //            }
+        //            else if (temp == "Z, Control, Alt")
+        //            {
+        //                temp = "ż";
+        //                polishLetter = true;
+        //            }
+        //            else if (temp == "Z, Control, Alt")
+        //            {
+        //                temp = "ź";
+        //                polishLetter = true;
+        //            }
+        //            else if (temp == "A, Control, Alt")
+        //            {
+        //                temp = "ą";
+        //                polishLetter = true;
+        //            }
+        //            else if (temp == "C, Control, Alt")
+        //            {
+        //                temp = "ć";
+        //                polishLetter = true;
+        //            }
+        //            else if (temp == "O, Control, Alt")
+        //            {
+        //                temp = "ó";
+        //                polishLetter = true;
+        //            }
+        //            else if (temp == "S, Control, Alt")
+        //            {
+        //                temp = "ś";
+        //                polishLetter = true;
+        //            }
+        //            else if (temp == "N, Control, Alt")
+        //            {
+        //                temp = "ń";
+        //                polishLetter = true;
+        //            }
+        //            else if (temp == "E, Control, Alt")
+        //            {
+        //                temp = "ę";
+        //                polishLetter = true;
+        //            }
+
+        //            if (polishLetter)
+        //            {
+        //                newWord += temp;
+        //                polishLetter = false;
+        //            }
+        //            else
+        //            {
+        //                newWord += e.KeyData;
+        //            }
+
+        //            newWord = newWord.ToLower();
+        //            newWord = Deleteletter(newWord, 'd');
+        //            temp = string.Empty;
+
+        //            List<string> linqQuery = new List<string>();
+        //            //var linqQuery = from slowo in sortedUnits
+        //            //                where slowo.StartsWith(newWord)
+        //            //                select slowo;
+
+        //            string wordTemp = string.Empty;
+        //            foreach (var item in sortedUnits)
+        //            {
+        //                if (item.StartsWith(newWord)) linqQuery.Add(item);
+        //            }
+
+
+        //            if (linqQuery.Count == 0)
+        //            {
+
+        //                linqQuery.Add(newWord);
+        //            }
+
+        //            foreach (var word in linqQuery)
+        //            {
+        //                if (Convert.ToDouble(fieldName.Lines[NumberLine]) < 1)
+        //                {
+        //                    linqQuery.Sort();
+        //                    foreach (var item in linqQuery)
+        //                    {
+        //                        if (item.EndsWith("i") || item.EndsWith("a") || item.EndsWith("g"))
+        //                        {
+        //                            wordTemp = item;
+        //                            break;
+        //                        }
+        //                        else
+        //                        {
+        //                            wordTemp = item;
+        //                        }
+        //                    }
+        //                }
+        //                else if (Convert.ToDouble(rtxtAmountsOfFood.Lines[numberLine]) == 1)
+        //                {
+        //                    linqQuery.Sort();
+        //                    foreach (var item in linqQuery)
+        //                    {
+        //                        if (item.EndsWith("a") || item.EndsWith("k") || item.EndsWith("ć") || item.EndsWith("r") || item.EndsWith("g"))
+        //                        {
+        //                            wordTemp = item;
+        //                            break;
+        //                        }
+        //                        else
+        //                        {
+        //                            wordTemp = item;
+        //                        }
+        //                    }
+
+        //                }
+        //                else if (Convert.ToDouble(rtxtAmountsOfFood.Lines[numberLine]) > 1 && Convert.ToDouble(rtxtAmountsOfFood.Lines[numberLine]) < 5)
+        //                {
+        //                    linqQuery.Sort();
+        //                    foreach (var item in linqQuery)
+        //                    {
+        //                        if (item.EndsWith("i") || item.EndsWith("y") || item.EndsWith("g"))
+        //                        {
+        //                            wordTemp = item;
+        //                            break;
+        //                        }
+        //                        else
+        //                        {
+        //                            wordTemp = item;
+        //                        }
+        //                    }
+        //                }
+        //                else if (Convert.ToDouble(rtxtAmountsOfFood.Lines[numberLine]) >= 5 && Convert.ToDouble(rtxtAmountsOfFood.Lines[numberLine]) < 22)
+        //                {
+        //                    linqQuery.Sort();
+        //                    foreach (var item in linqQuery)
+        //                    {
+        //                        if (item.EndsWith("k") || item.EndsWith("ów") || item.EndsWith("g"))
+        //                        {
+        //                            wordTemp = item;
+        //                            break;
+        //                        }
+        //                        else
+        //                        {
+        //                            wordTemp = item;
+        //                        }
+        //                    }
+        //                }
+        //                else wordTemp = word;
+
+
+        //                tab[numberLine] = string.Empty;
+
+        //                for (int i = 0; i < wordTemp.Length; i++)
+        //                {
+        //                    tab[numberLine] += wordTemp[i];
+        //                }
+
+        //                int tempNum = numberLine;
+        //                rTxtGrams.Lines = tab;
+        //                numberLine = tempNum;
+
+        //                if (numberLine == 0)
+        //                {
+        //                    rTxtGrams.SelectionStart = start;
+        //                    rTxtGrams.SelectionLength = wordTemp.Length - start;
+        //                }
+        //                else
+        //                {
+        //                    rTxtGrams.SelectionStart = start;
+        //                    rTxtGrams.SelectionLength = start + wordTemp.Length - start - counter;
+        //                    counter++;
+        //                }
+
+        //                break;
+        //            }
+        //        }
+        //        else if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
+        //        {
+        //            counter = 0;
+
+        //            if (newWord.Length > 1)
+        //            {
+        //                newWord = rTxtGrams.Lines[numberLine];
+        //            }
+        //            else
+        //            {
+        //                newWord = string.Empty;
+        //            }
+        //            CopyTextToTable(rTxtGrams.Text, tab);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        
+      //  }
     }
 }

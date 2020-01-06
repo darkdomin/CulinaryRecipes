@@ -144,7 +144,7 @@ namespace CulinaryRecipes
                 client.Host = "smtp.wp.pl";
 
                 client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("culinaryrecipes@wp.pl", "");
+                client.Credentials = new NetworkCredential("culinaryrecipes@wp.pl", "19darkculinary80");
 
                 client.Port = 587;
                 client.EnableSsl = true;
