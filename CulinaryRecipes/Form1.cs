@@ -23,6 +23,8 @@ namespace CulinaryRecipes
         public bool seekUnsubscribe = false;
 
 
+
+
         List<string> autoComp = new List<string>();
         public List<CheckBox> CheckBoxList = new List<CheckBox>();
         SearchEngine searchEngine;
@@ -37,8 +39,10 @@ namespace CulinaryRecipes
             "Drinkscheckbox", "Preservescheckbox", "Saladcheckbox"
         };
 
+
+
         string[] nameColumnCheckBox =
-        {
+            {
             "IdFishIngredients","IdPastaIngredients","IdFruitsIngredients",
             "IdMuschroomsIngredients", "IdBirdIngredients", "IdMeatIngredients",
             "IdEggsIngredients", "Vegetarian", "SnackMeal",
@@ -136,6 +140,8 @@ namespace CulinaryRecipes
             CheckBoxList.Add(chcDrink);
             CheckBoxList.Add(chcPreserves);
             CheckBoxList.Add(chcSalad);
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -148,6 +154,7 @@ namespace CulinaryRecipes
             {
                 txtSeek.AutoCompleteCustomSource.Add(r.RecipesName);
             }
+
 
 
             searchName = 1;
@@ -551,7 +558,7 @@ namespace CulinaryRecipes
 
         private void CMSSend_Click(object sender, EventArgs e)
         {
-            
+
             Logo show = new Logo();
             show.titleLogo = txtLittleName.Text;
             show.ingredientLogo = ingredientColumnDgGridForm1;
@@ -560,7 +567,7 @@ namespace CulinaryRecipes
             show.descriptionLogo = descriptionForm1;
             this.Hide();
             show.ShowDialog();
-          
+
 
         }
 
@@ -570,11 +577,12 @@ namespace CulinaryRecipes
 
         private void AllCheckboxElse(string nameInDataBase, CheckBox nameThis, string nameColumnDgGrid, Label labelVeg, Label main)
         {
+
             txtSeek.Text = String.Empty;
             ClearSeek();
 
             fillGrid(nameInDataBase, nameThis, nameColumnDgGrid);
-            UncheckCheckboxAfterPressingAnother(nameThis);
+            //UncheckCheckboxAfterPressingAnother(nameThis);
             FillDataGrdViewVegetarianRecipes(nameThis, nameColumnDgGrid);
 
             DisplayGreenVegetarianLabel(nameThis, labelVeg, main);
@@ -586,8 +594,11 @@ namespace CulinaryRecipes
 
             ChangeButtonFilterColor();
 
-            dgGrid.Focus();
-            OneCliCK();
+            if (dgGrid.RowCount > 0)
+            {
+                dgGrid.Focus();
+                OneCliCK();
+            }
 
 
         }
@@ -610,73 +621,129 @@ namespace CulinaryRecipes
             DisplayGreenVegetarianLabel(nameThis, nameVeg, main);
         }
 
+        private void AddAndRemoveObjectToDictionaryRight(int key, string nameCheckboxInCreateDGView, CheckBox name, bool zaraz)
+        {
+            if (name.Checked)
+            {
+                rightSideDict.Add(key, nameCheckboxInCreateDGView);
+                rightSideDictBool.Add(key, zaraz);
+            }
+            else
+            {
+                rightSideDict.Remove(key);
+                rightSideDictBool.Remove(key);
+            }
+
+        }
+
+        private void AddAndRemoveObjectToDictionaryLeft(int key, string nameCheckboxInCreateDGView, CheckBox name, bool zaraz)
+        {
+            if (name.Checked)
+            {
+                leftSideDict.Add(key, nameCheckboxInCreateDGView);
+                leftSideDictBool.Add(key, zaraz);
+            }
+            else
+            {
+                leftSideDict.Remove(key);
+                leftSideDictBool.Remove(key);
+            }
+        }
+
+
+        bool[] dopetliVegeterianRight = new bool[] { true, true, true, true, true, true, true };
+        bool[] dopetliVegeterianLeft = new bool[] { true, true, true, true, true, true, true };
+
+
+
         private void chcSnack_CheckedChanged(object sender, EventArgs e)
         {
+
+
+            AddAndRemoveObjectToDictionaryRight(1, CreateDg.Snackcheckbox.ToString(), chcSnack, dopetliVegeterianRight[0]);
             GetAndHideRecipes(chcSnack, lblSnackVeg, lblSnack, CreateDg.Snackcheckbox.ToString(), RecipesData.SnackMeal.ToString());
+
+
         }
+
 
         private void chcDinner_CheckedChanged(object sender, EventArgs e)
         {
+
+            AddAndRemoveObjectToDictionaryRight(2, CreateDg.Dinnercheckbox.ToString(), chcDinner, dopetliVegeterianRight[1]);
             GetAndHideRecipes(chcDinner, lblDinnerVeg, lblDinner, CreateDg.Dinnercheckbox.ToString(), RecipesData.DinnerMeal.ToString());
         }
 
         private void chcSoup_CheckedChanged(object sender, EventArgs e)
         {
+            AddAndRemoveObjectToDictionaryRight(3, CreateDg.Soupcheckbox.ToString(), chcSoup, dopetliVegeterianRight[2]);
             GetAndHideRecipes(chcSoup, lblSoupVeg, lblSoup, CreateDg.Soupcheckbox.ToString(), RecipesData.SoupMeal.ToString());
         }
 
         private void chcDessert_CheckedChanged(object sender, EventArgs e)
         {
+            AddAndRemoveObjectToDictionaryRight(4, CreateDg.Dessertcheckbox.ToString(), chcDessert, dopetliVegeterianRight[3]);
             GetAndHideRecipes(chcDessert, lblDessertVeg, lblDessert, CreateDg.Dessertcheckbox.ToString(), RecipesData.DessertMeal.ToString());
         }
 
         private void chcDrink_CheckedChanged(object sender, EventArgs e)
         {
+            AddAndRemoveObjectToDictionaryRight(5, CreateDg.Drinkscheckbox.ToString(), chcDrink, dopetliVegeterianRight[4]);
             GetAndHideRecipes(chcDrink, lblDrinksVeg, lblDrinks, CreateDg.Drinkscheckbox.ToString(), RecipesData.DrinkMeal.ToString());
         }
 
         private void chcPreserves_CheckedChanged(object sender, EventArgs e)
         {
+            AddAndRemoveObjectToDictionaryRight(6, CreateDg.Preservescheckbox.ToString(), chcPreserves, dopetliVegeterianRight[5]);
             GetAndHideRecipes(chcPreserves, lblPrevervesVeg, lblPreserves, CreateDg.Preservescheckbox.ToString(), RecipesData.PreservesMeal.ToString());
         }
 
         private void chcSalad_CheckedChanged(object sender, EventArgs e)
         {
+            AddAndRemoveObjectToDictionaryRight(7, CreateDg.Saladcheckbox.ToString(), chcSalad, dopetliVegeterianRight[6]);
             GetAndHideRecipes(chcSalad, lblSaladVeg, lblSalad, CreateDg.Saladcheckbox.ToString(), RecipesData.SaladMeal.ToString());
         }
 
         private void chcFish_CheckedChanged(object sender, EventArgs e)
         {
+            AddAndRemoveObjectToDictionaryLeft(8, CreateDg.Fishcheckbox.ToString(), chcFish, dopetliVegeterianLeft[0]);
+
             GetAndHideRecipes(chcFish, lblFishVeg, lblFish, CreateDg.Fishcheckbox.ToString(), RecipesData.IdFishIngredients.ToString());
         }
 
         private void chcPasta_CheckedChanged(object sender, EventArgs e)
         {
+            AddAndRemoveObjectToDictionaryLeft(9, CreateDg.Pastacheckbox.ToString(), chcPasta, dopetliVegeterianLeft[1]);
             GetAndHideRecipes(chcPasta, lblPastaVeg, lblPasta, CreateDg.Pastacheckbox.ToString(), RecipesData.IdPastaIngredients.ToString());
         }
 
         private void chcFruits_CheckedChanged(object sender, EventArgs e)
         {
+            AddAndRemoveObjectToDictionaryLeft(10, CreateDg.Fruitscheckbox.ToString(), chcFruits, dopetliVegeterianLeft[2]);
             GetAndHideRecipes(chcFruits, lblFruitsVeg, lblFruits, CreateDg.Fruitscheckbox.ToString(), RecipesData.IdFruitsIngredients.ToString());
         }
 
         private void chcMuschrooms_CheckedChanged(object sender, EventArgs e)
         {
+            AddAndRemoveObjectToDictionaryLeft(11, CreateDg.Mushroomscheckbox.ToString(), chcMuschrooms, dopetliVegeterianLeft[3]);
             GetAndHideRecipes(chcMuschrooms, lblMushroomVeg, lblMuschrooms, CreateDg.Mushroomscheckbox.ToString(), RecipesData.IdMuschroomsIngredients.ToString());
         }
 
         private void chcBird_CheckedChanged(object sender, EventArgs e)
         {
+            AddAndRemoveObjectToDictionaryLeft(12, CreateDg.Birdcheckbox.ToString(), chcBird, dopetliVegeterianLeft[4]);
             GetAndHideRecipes(chcBird, lblBirdVeg, lblBird, CreateDg.Birdcheckbox.ToString(), RecipesData.IdBirdIngredients.ToString());
         }
 
         private void chcMeat_CheckedChanged(object sender, EventArgs e)
         {
+            AddAndRemoveObjectToDictionaryLeft(13, CreateDg.Meatcheckbox.ToString(), chcMeat, dopetliVegeterianLeft[5]);
             GetAndHideRecipes(chcMeat, lblMeatVeg, lblMeat, CreateDg.Meatcheckbox.ToString(), RecipesData.IdMeatIngredients.ToString());
         }
 
         private void chcEggs_CheckedChanged(object sender, EventArgs e)
         {
+            AddAndRemoveObjectToDictionaryLeft(14, CreateDg.Eggscheckbox.ToString(), chcEggs, dopetliVegeterianLeft[6]);
             GetAndHideRecipes(chcEggs, lblEggsVeg, lblEggs, CreateDg.Eggscheckbox.ToString(), RecipesData.IdEggsIngredients.ToString());
         }
 
@@ -742,6 +809,12 @@ namespace CulinaryRecipes
         List<string> columnLevel = new List<string>();
         List<string> columnRating = new List<string>();
         List<string> columnCuisine = new List<string>();
+
+        Dictionary<int, string> rightSideDict = new Dictionary<int, string>();
+        Dictionary<int, string> leftSideDict = new Dictionary<int, string>();
+
+        Dictionary<int, bool> rightSideDictBool = new Dictionary<int, bool>();
+        Dictionary<int, bool> leftSideDictBool = new Dictionary<int, bool>();
 
         //do zmiany
         public void AddResultNameToList(string resultName, CheckBox checkBoxName, Control set)
@@ -1401,6 +1474,7 @@ namespace CulinaryRecipes
                     lblClearCheckBox.Visible = true;
                     lblRightTwoLine.Visible = true;
                     lblRightOneLine.Visible = true;
+                    break;
                 }
             }
         }
@@ -1460,6 +1534,8 @@ namespace CulinaryRecipes
             }
         }
 
+        bool rightSide = false;
+        bool leftSide = false;
         private void GetAndHideRecipes(CheckBox checkboxName, Label labelCheckboxNameVeg, Label labelCheckboxName, string elementInDataGrid, string elementInDataBase)
         {
             if (checkboxName.Checked == false)
@@ -1468,7 +1544,15 @@ namespace CulinaryRecipes
             }
             else
             {
-                AllCheckboxElse(elementInDataBase, checkboxName, elementInDataGrid, labelCheckboxNameVeg, labelCheckboxName);
+                if (rightSide && leftSide)
+                {
+                    //CreateDg.Pastacheckbox.ToString()-przyklad
+                    //Convert.ToInt32(dgGrid.Rows[i].Cells[nameMain].Value) == 1 && Convert.ToInt32(dgGrid.Rows[i].Cells["Vegetarian"].Value) == 1 && main.Checked)
+                }
+                else
+                {
+                    AllCheckboxElse(elementInDataBase, checkboxName, elementInDataGrid, labelCheckboxNameVeg, labelCheckboxName);
+                }
             }
             AllCheckboxAfterElse();
         }
@@ -1572,11 +1656,11 @@ namespace CulinaryRecipes
                     count++;
                 }
 
-                for (int i=0;i<=count;i+=10)
+                for (int i = 0; i <= count; i += 10)
                 {
-                    if (count - 1 == 0 || count - 1 >= 5+i) lblCulinary.Text = "Przepisów";
-                    else if (count - 1 == 1+i) lblCulinary.Text = "Przepis";
-                    else if (count - 1 > 1+i && count - 1 < 5+i && i>20) lblCulinary.Text = "Przepisy";
+                    if (count - 1 == 0 || count - 1 >= 5 + i) lblCulinary.Text = "Przepisów";
+                    else if (count - 1 == 1 + i) lblCulinary.Text = "Przepis";
+                    else if (count - 1 > 1 + i && count - 1 < 5 + i && i > 20) lblCulinary.Text = "Przepisy";
                     else lblCulinary.Text = "Przepisów";
                 }
 
@@ -1589,7 +1673,7 @@ namespace CulinaryRecipes
                 lblStatistic.Visible = false;
                 lblCulinary.Visible = false;
             }
-            
+
         }
 
         public void ExportOneFile()
@@ -1831,18 +1915,33 @@ namespace CulinaryRecipes
 
         #endregion Function
 
+        string[] joinDict;
+        int it = 0;
         #region vegetarian
         private void FillDataGrdViewVegetarianRecipes(CheckBox main, string nameMain)
         {
-            delete = false;
+            joinDict = new string[leftSideDict.Count + rightSideDict.Count];
 
+            foreach (var item in leftSideDict.Values)
+            {
+                joinDict[it] = item;
+                it++;
+            }
+            foreach (var item in rightSideDict.Values)
+            {
+                joinDict[it] = item;
+                it++;
+            }
+            it = 0;
+            delete = false;
+            int j = 0;
             if (chcVegetarian.Checked)
             {
                 for (int i = dgGrid.RowCount - 1; i >= 0; i--)
                 {
-                    for (int j = 0; j < CheckBoxList.Count; j++)
+                    foreach (var item in joinDict)
                     {
-                        if (Convert.ToInt32(dgGrid.Rows[i].Cells[nameMain].Value) == 1 && Convert.ToInt32(dgGrid.Rows[i].Cells["Vegetarian"].Value) == 1 && main.Checked)
+                        if (Convert.ToInt32(dgGrid.Rows[i].Cells[item].Value) == 1 && Convert.ToInt32(dgGrid.Rows[i].Cells["Vegetarian"].Value) == 1)//&& main.Checked
                         {
                             delete = false;
                             break;
@@ -1853,7 +1952,10 @@ namespace CulinaryRecipes
                         }
 
                     }
-                    if (delete == true) dgGrid.Rows.Remove(dgGrid.Rows[i]);
+
+                    if (delete == true)
+
+                        dgGrid.Rows.Remove(dgGrid.Rows[i]);
                 }
             }
         }
@@ -1909,13 +2011,21 @@ namespace CulinaryRecipes
 
             if (chcVegetarian.Checked)
             {
-                foreach (var r in RecipesBase.getAll("RecipesBase"))
+                if (rightSideDict.Count > 0 || leftSideDict.Count > 0)
                 {
-                    if ((int)RecipesBase.GetPropValue(r, _propName) == 1 && chcVegetarian.Checked)
+                    FillDataGrdViewVegetarianRecipes(chcDinner, CreateDg.Dinnercheckbox.ToString());
+                }
+                else
+                {
+                    foreach (var r in RecipesBase.getAll("RecipesBase"))
                     {
-                        dgGrid.Rows.Add(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian, r.Grams);
+                        if ((int)RecipesBase.GetPropValue(r, _propName) == 1 && chcVegetarian.Checked)
+                        {
+                            dgGrid.Rows.Add(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian, r.Grams);
+                        }
                     }
                 }
+
             }
         }
 
@@ -2005,6 +2115,7 @@ namespace CulinaryRecipes
 
         }
 
+
         private void chcVegetarian_CheckedChanged(object sender, EventArgs e)
         {
             if (chcVegetarian.Checked == false)
@@ -2034,88 +2145,105 @@ namespace CulinaryRecipes
                         delete2 = true;
                     }
                 }
-                for (int j = 0; j < CheckBoxList.Count; j++)
-                {
-                    if (delete2)
-                        if (CheckBoxList[j].Name != "chcVegetarian")
-                            CheckBoxList[j].Checked = false;
-                    quantity = 0;
-                }
+                ////for (int j = 0; j < CheckBoxList.Count; j++)
+                ////{
+                ////    if (delete2)
+                ////        if (CheckBoxList[j].Name != "chcVegetarian")
+                ////            CheckBoxList[j].Checked = false;
+                ////    quantity = 0;
+                ////}
                 if (chcFish.Checked)
                 {
                     FillDataGrdViewVegetarianRecipes(chcFish, CreateDg.Fishcheckbox.ToString());
                     DisplayGreenVegetarianLabel(chcFish, lblFishVeg, lblFish);
                 }
-                else if (chcPasta.Checked)
+                if (chcPasta.Checked)
                 {
                     FillDataGrdViewVegetarianRecipes(chcPasta, CreateDg.Pastacheckbox.ToString());
                     DisplayGreenVegetarianLabel(chcPasta, lblPastaVeg, lblPasta);
                 }
-                else if (chcFruits.Checked)
+                if (chcFruits.Checked)
                 {
                     FillDataGrdViewVegetarianRecipes(chcFruits, CreateDg.Fruitscheckbox.ToString());
                     DisplayGreenVegetarianLabel(chcFruits, lblFruitsVeg, lblFruits);
                 }
-                else if (chcMuschrooms.Checked)
+                if (chcMuschrooms.Checked)
                 {
                     FillDataGrdViewVegetarianRecipes(chcMuschrooms, CreateDg.Mushroomscheckbox.ToString());
                     DisplayGreenVegetarianLabel(chcMuschrooms, lblMushroomVeg, lblMuschrooms);
                 }
-                else if (chcBird.Checked)
+                if (chcBird.Checked)
                 {
                     FillDataGrdViewVegetarianRecipes(chcBird, CreateDg.Birdcheckbox.ToString());
                     DisplayGreenVegetarianLabel(chcBird, lblBirdVeg, lblBird);
                 }
-                else if (chcMeat.Checked)
+                if (chcMeat.Checked)
                 {
                     FillDataGrdViewVegetarianRecipes(chcMeat, CreateDg.Meatcheckbox.ToString());
                     DisplayGreenVegetarianLabel(chcMeat, lblMeatVeg, lblMeat);
                 }
-                else if (chcEggs.Checked)
+                if (chcEggs.Checked)
                 {
                     FillDataGrdViewVegetarianRecipes(chcEggs, CreateDg.Eggscheckbox.ToString());
                     DisplayGreenVegetarianLabel(chcEggs, lblEggsVeg, lblEggs);
                 }
-                else if (chcSnack.Checked)
+                if (chcSnack.Checked)
                 {
                     FillDataGrdViewVegetarianRecipes(chcSnack, CreateDg.Snackcheckbox.ToString());
                     DisplayGreenVegetarianLabel(chcSnack, lblSnackVeg, lblSnack);
                 }
-                else if (chcDinner.Checked)
+                if (chcDinner.Checked)
                 {
                     FillDataGrdViewVegetarianRecipes(chcDinner, CreateDg.Dinnercheckbox.ToString());
-                    DisplayGreenVegetarianLabel(chcDinner, lblDinnerVeg, lblDinner);
+                    DisplayGreenVegetarianLabel(chcDinner, lblDinnerVeg, lblDinner);//
                 }
-                else if (chcSoup.Checked)
+                //foreach (var item in rightSideDictBool)
+                //{
+                //    if (item.Value)
+                //    {
+                //        FillDataGrdViewVegetarianRecipes(chcDinner, CreateDg.Dinnercheckbox.ToString());
+                //         DisplayGreenVegetarianLabel(chcDinner lblDinnerVeg, lblDinner);//
+                //    }
+                //    else
+                //    {
+                //        ClearDgGrid();
+                //        fillGrid(RecipesData.Vegetarian.ToString(), chcVegetarian, RecipesData.Vegetarian.ToString());
+                //    }
+                //}
+
+                if (chcSoup.Checked)
                 {
                     FillDataGrdViewVegetarianRecipes(chcSoup, CreateDg.Soupcheckbox.ToString());
                     DisplayGreenVegetarianLabel(chcSoup, lblSoupVeg, lblSoup);
                 }
-                else if (chcDessert.Checked)
+                if (chcDessert.Checked)
                 {
                     FillDataGrdViewVegetarianRecipes(chcDessert, CreateDg.Dessertcheckbox.ToString());
                     DisplayGreenVegetarianLabel(chcDessert, lblDessertVeg, lblDessert);
                 }
-                else if (chcDrink.Checked)
+                if (chcDrink.Checked)
                 {
                     FillDataGrdViewVegetarianRecipes(chcDrink, CreateDg.Drinkscheckbox.ToString());
                     DisplayGreenVegetarianLabel(chcDrink, lblDrinksVeg, lblDrinks);
                 }
-                else if (chcPreserves.Checked)
+                if (chcPreserves.Checked)
                 {
                     FillDataGrdViewVegetarianRecipes(chcPreserves, CreateDg.Preservescheckbox.ToString());
                     DisplayGreenVegetarianLabel(chcPreserves, lblPrevervesVeg, lblPreserves);
                 }
-                else if (chcSalad.Checked)
+                if (chcSalad.Checked)
                 {
                     FillDataGrdViewVegetarianRecipes(chcSalad, CreateDg.Saladcheckbox.ToString());
                     DisplayGreenVegetarianLabel(chcSalad, lblSaladVeg, lblSalad);
                 }
                 else
                 {
+
                     ClearDgGrid();
                     fillGrid(RecipesData.Vegetarian.ToString(), chcVegetarian, RecipesData.Vegetarian.ToString());
+
                 }
+
             }
 
             DeleteDuplicate();
