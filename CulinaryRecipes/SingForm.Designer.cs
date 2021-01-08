@@ -280,7 +280,7 @@
             // pbDecreaseSize
             // 
             this.pbDecreaseSize.Image = ((System.Drawing.Image)(resources.GetObject("pbDecreaseSize.Image")));
-            this.pbDecreaseSize.Location = new System.Drawing.Point(390, 173);
+            this.pbDecreaseSize.Location = new System.Drawing.Point(398, 173);
             this.pbDecreaseSize.Name = "pbDecreaseSize";
             this.pbDecreaseSize.Size = new System.Drawing.Size(23, 50);
             this.pbDecreaseSize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -291,7 +291,7 @@
             // pbIncreaseSize
             // 
             this.pbIncreaseSize.Image = ((System.Drawing.Image)(resources.GetObject("pbIncreaseSize.Image")));
-            this.pbIncreaseSize.Location = new System.Drawing.Point(361, 173);
+            this.pbIncreaseSize.Location = new System.Drawing.Point(356, 173);
             this.pbIncreaseSize.Name = "pbIncreaseSize";
             this.pbIncreaseSize.Size = new System.Drawing.Size(23, 50);
             this.pbIncreaseSize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

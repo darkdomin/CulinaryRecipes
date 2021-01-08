@@ -1,0 +1,34 @@
+﻿namespace CulinaryRecipes.Models
+{
+    enum RecipesData
+    {
+        Id,
+        RecipesName,
+        Ingredients,
+        AmountsMeal,
+        ShortDescription,
+        LongDescription,
+        NumberPortions,
+        CategoryCuisines,
+        CategoryRating,
+        CategoryDifficultLevel,
+        CategoryPreparationTime,
+        SnackMeal,
+        DinnerMeal,
+        SoupMeal,
+        DessertMeal,
+        DrinkMeal,
+        PreservesMeal,
+        SaladMeal,
+        IdFishIngredients,
+        IdPastaIngredients,
+        IdFruitsIngredients,
+        IdMuschroomsIngredients,
+        IdBirdIngredients,
+        IdMeatIngredients,
+        IdEggsIngredients,
+        PhotoLinkLocation,
+        Vegetarian,
+        Grams
+    }
+}

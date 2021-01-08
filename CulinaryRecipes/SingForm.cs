@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
@@ -15,75 +15,85 @@ namespace CulinaryRecipes
         public string gramsSing;
         public string descriptionSing;
         int id;
+        string[] bodyTable;
+        string[] amount;
+        string[] gram;
+        string[] ingre;
 
         public SingForm()
         {
             InitializeComponent();
         }
 
-        //przepisuje całe słowa z ciągu do tablicy string
-        public List<string> ReplaceStringToList(string amountsOrGramsOrIngredients)
+        /// <summary>
+        /// Copies lines of text into an array
+        /// </summary>
+        /// <param name="amountsOrGramsOrIngredients"></param>
+        /// <returns></returns>
+        public string[] ReplaceStringToArray(string amountsOrGramsOrIngredients)
         {
-            string copy = string.Empty;
-            List<string> newList = new List<string>();
-
-            foreach (char item in amountsOrGramsOrIngredients)
-            {
-                if (item == '\n')
-                {
-                    newList.Add(copy);
-                    copy = string.Empty;
-                }
-                else
-                {
-                    copy += item;
-                }
-            }
-
-            newList.Add(copy);
-
-            return newList;
+            return amountsOrGramsOrIngredients.Split('\n');
         }
 
-        //zwraca ilość linii w ciągu
+        /// <summary>
+        /// Returns the number of lines in a string
+        /// </summary>
+        /// <param name="textName"></param>
+        /// <returns></returns>
         public int GetNumberOfLines(string textName)
         {
-            int line = 1;
-
-            foreach (char item in textName)
-            {
-                if (item == '\n') line++;
-            }
-            return line;
+            string[] pod = textName.Split('\n');
+            return pod.Length;
         }
 
-        //porównuje ilośćlinii
+        /// <summary>
+        /// Compares the number of lines
+        /// </summary>
+        /// <param name="amounts"></param>
+        /// <param name="grams"></param>
+        /// <param name="ingredient"></param>
+        /// <returns></returns>
         public int CompareLinesLength(string amounts, string grams, string ingredient)
         {
             int length = 0;
+            length = GetNumberOfLines(amounts);
 
-            if (GetNumberOfLines(amounts) > GetNumberOfLines(grams) && GetNumberOfLines(amounts) > GetNumberOfLines(ingredient)) length = GetNumberOfLines(amounts);
-            else if (GetNumberOfLines(grams) > GetNumberOfLines(amounts) && GetNumberOfLines(grams) > GetNumberOfLines(ingredient)) length = GetNumberOfLines(grams);
-            else if (GetNumberOfLines(ingredient) > GetNumberOfLines(amounts) && GetNumberOfLines(ingredient) > GetNumberOfLines(grams)) length = GetNumberOfLines(ingredient);
-            else length = GetNumberOfLines(amounts);
+            if (length < GetNumberOfLines(grams))
+            {
+                length = GetNumberOfLines(grams);
+            }
+            if (length < GetNumberOfLines(ingredient))
+            {
+                length = GetNumberOfLines(ingredient);
+            }
 
             return length;
         }
 
-        string[] bodyTable;
-        string body = string.Empty;
-
-        List<string> amount = new List<string>();
-        List<string> gram = new List<string>();
-        List<string> ingre = new List<string>();
-
-        //funkcja skracająca odczyt w funkcji
-        public void CopyList(List<string> save, List<string> read)
+        /// <summary>
+        /// Removes unnecessary characters
+        /// </summary>
+        /// <param name="save"></param>
+        /// <param name="read"></param>
+        public void RemoveUnnecessaryCharacter(ref string[] save, string[] read)
         {
-            foreach (var item in read)
+            if (read.Contains("]["))
             {
-                if (item != "][") save.Add(item);
-                else save.Add("");
+                for (int i = 0; i < read.Length; i++)
+                {
+                    if (read[i].Contains("]["))
+                    {
+                        save[i] = "";
+                    }
+                    else
+                    {
+                        save[i] = read[i];
+                    }
+                }
+            }
+            else
+            {
+                save = read;
             }
         }
 
@@ -92,11 +102,25 @@ namespace CulinaryRecipes
         {
             string newString = string.Empty;
 
-            foreach (char item in descriptionSing)
+            if (descriptionSing.Contains("]["))
             {
-                if (item == ']') continue;
-                else if (item == '[') continue;
-                else newString += item;
+                string[] line = descriptionSing.Split('\n');
+
+                for (int i = 0; i < line.Length; i++)
+                {
+                    if (line[i].Contains("]["))
+                    {
+                        newString += " ";
+                    }
+                    else
+                    {
+                        newString += line[i];
+                    }
+                }
+            }
+            else
+            {
+                newString = descriptionSing;
             }
 
             return newString;
@@ -105,9 +129,13 @@ namespace CulinaryRecipes
         int comLength;
         public void TextCombine()
         {
-            CopyList(amount, ReplaceStringToList(amountsSing));
-            CopyList(gram, ReplaceStringToList(gramsSing));
-            CopyList(ingre, ReplaceStringToList(ingredientSing));
+            amount = new string[comLength];
+            gram = new string[comLength];
+            ingre = new string[comLength];
+
+            RemoveUnnecessaryCharacter(ref amount, ReplaceStringToArray(amountsSing));
+            RemoveUnnecessaryCharacter(ref gram, ReplaceStringToArray(gramsSing));
+            RemoveUnnecessaryCharacter(ref ingre, ReplaceStringToArray(ingredientSing));
 
             bodyTable = new string[comLength];
 
@@ -117,58 +145,62 @@ namespace CulinaryRecipes
             }
         }
 
-        private void SetBodyEmail()
+        private string[] NewMethod(string nameForm)
         {
-            foreach (var item in bodyTable)
+            string[] name = ReplaceStringToArray(nameForm);
+            Array.Resize(ref name, comLength);
+            return name;
+        }
+
+        private string BodyEmail()
+        {
+            string body = string.Empty;
+
+            for (int i = 0; i < bodyTable.Length; i++)
             {
-                body += item + "\n";
+                body += bodyTable[i] + '\n';
             }
+            return body;
         }
 
         private void Send()
         {
-            SetBodyEmail();
+            BodyEmail();
             try
             {
+                const string email = "culinaryrecipes@wp.pl";
+                const string pass = "";
                 MailMessage mail = new MailMessage();
                 SmtpClient client = new SmtpClient();
 
-                mail.From = new MailAddress("culinaryrecipes@wp.pl");
+                mail.From = new MailAddress(email);
                 mail.To.Add(new MailAddress(txtTo.Text));
                 mail.Subject = titleSing;
 
-                if (ChcAddDescription.Checked) mail.Body = body + "\n" + DeleteCharInDescription();
-                else mail.Body = body;
+                if (ChcAddDescription.Checked) mail.Body = BodyEmail() + "\n" + DeleteCharInDescription();
+                else mail.Body = BodyEmail();
 
 
                 client.Host = "smtp.wp.pl";
 
                 client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential("culinaryrecipes@wp.pl", "19darkculinary80");
+                client.Credentials = new NetworkCredential(email,pass);
 
                 client.Port = 587;
                 client.EnableSsl = true;
-
 
                 client.Send(mail);
 
                 MessageBox.Show("E mail został wysłany");
 
                 Array.Clear(bodyTable, 0, bodyTable.Length);
-                amount.Clear();
-                gram.Clear();
-                ingre.Clear();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             }
+
             Array.Clear(bodyTable, 0, bodyTable.Length);
-            amount.Clear();
-            gram.Clear();
-            ingre.Clear();
-            body = "";
         }
 
         private void SendButton()
@@ -192,7 +224,7 @@ namespace CulinaryRecipes
 
         private void SingForm_Load(object sender, EventArgs e)
         {
-            this.Size = new Size(405, 430);
+            this.Size = new Size(400, 430);
             CreateDataGridView();
             comLength = CompareLinesLength(amountsSing, gramsSing, ingredientSing);
 
@@ -262,7 +294,7 @@ namespace CulinaryRecipes
                 btnModify.Enabled = true;
                 btnCancel.Visible = false;
 
-                btnAdd.TurnOFFTheButton();
+                btnAdd.TurnOffTheButton();
                 add = false;
             }
 
@@ -339,7 +371,7 @@ namespace CulinaryRecipes
 
             EmailBase.update(mod);
             MessageBox.Show("Modyfikacja przebiegła pomyślnie!!!");
-            btnModify.TurnOFFTheButton();
+            btnModify.TurnOffTheButton();
 
             Fill();
 
@@ -398,7 +430,7 @@ namespace CulinaryRecipes
                         EmailBase.del(s.Id);
                         MessageBox.Show("Email został usunięty");
 
-                        btnDelete.TurnOFFTheButton();
+                        btnDelete.TurnOffTheButton();
                         btnDeleteAll.Visible = false;
                         btnCancel.Visible = false;
 
@@ -422,6 +454,7 @@ namespace CulinaryRecipes
             btnCancel.Visible = true;
             btnDeleteAll.TurnOnTheButton();
             EmailBase search = new EmailBase();
+
             if (MessageBox.Show("Czy na pewno usunąć Bazę danych? \nOperacja nie do odwrócenia", "Uwaga!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
                 EmailBase.ClearDb();
@@ -429,7 +462,7 @@ namespace CulinaryRecipes
                 Fill();
                 btnCancel.Visible = false;
             }
-            btnDeleteAll.TurnOFFTheButton();
+            btnDeleteAll.TurnOffTheButton();
         }
 
         private void txtTo_KeyDown(object sender, KeyEventArgs e)
@@ -465,7 +498,7 @@ namespace CulinaryRecipes
             lblAdd.Visible = false;
             txtAddEmail.Visible = false;
             txtAddEmail.Text = "";
-            ButtonMy.TurnOFFAllTheButtons(panelGroup);
+            ButtonMy.TurnOffAllTheButtons(panelGroup);
             btnDeleteAll.Visible = false;
         }
 

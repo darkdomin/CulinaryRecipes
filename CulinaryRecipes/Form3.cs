@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -9,49 +10,51 @@ namespace CulinaryRecipes
 {
     public partial class Form3 : Form
     {
-        public int idDgGridForm3 { get; set; }
-        public int numberOfPortionsForm3 { get; set; }
-        public int counterForm3 { get; set; }
-        public int portions3 { get; set; }
+        public int idDgGridForm3;
+        public int numberOfPortionsForm3;
+        public int counterForm3;
+        public int portions3;
 
-        public string titleForm3 { get; set; }
-        public string gramsForm3 { get; set; }
-        public string ingredientForm3 { get; set; }
-        public string shortDescriptionForm3 { get; set; }
-        public string InstructionForm3 { get; set; }
-        public string listOfCuisinesForm3 { get; set; }
-        public string difficultLevelForm3 { get; set; }
-        public string executionTimeForm3 { get; set; }
-        public string AmountsOfFoodForm3 { get; set; }
+        public string titleForm3;
+        public string gramsForm3;
+        public string ingredientForm3;
+        public string shortDescriptionForm3;
+        public string InstructionForm3;
+        public string listOfCuisinesForm3;
+        public string difficultLevelForm3;
+        public string executionTimeForm3;
+        public string AmountsOfFoodForm3;
         public string unlockFieldsForm3 = "1";
-        public string photoForm3 { get; set; }
-        public string RatingForm3 { get; set; }
-        public string clearForm3 { get; set; }
-        public string LinkForm23 { get; set; }
+        public string photoForm3;
+        public string RatingForm3;
+        public string clearForm3;
+        public string LinkForm23;
         public string correctModyficationName3;
 
         //zmienne pamięciowe- Anuluj//
-        public string title3 { get; set; }
-        public string amounts3 { get; set; }
-        public string ingrediet3 { get; set; }
-        public string shortDes3 { get; set; }
-        public string longDes3 { get; set; }
-        public string cuisines3 { get; set; }
-        public string level3 { get; set; }
-        public string time3 { get; set; }
-        public string rating3 { get; set; }
+        public string title3;
+        public string amounts3;
+        public string ingrediet3;
+        public string shortDes3;
+        public string longDes3;
+        public string cuisines3;
+        public string level3;
+        public string time3;
+        public string rating3;
 
-        public bool cancel3 { get; set; }
+        public bool cancel3;
         public bool hideForm3;
-        public bool addRecipeForm3 { get; set; }
-        public bool addRecipe { get; set; }
-        public bool newForm3 { get; set; }
+        public bool addRecipeForm3;
+        public bool addRecipe;
+        public bool newForm3;
+
+        public List<CheckBox> SavedCheckBoxForm3 = new List<CheckBox>();
 
         string add = "add";
 
         private void TurnOnAndOffTheButton(GroupBox panelName, Button turnOnOff)
         {
-            ButtonMy.TurnOFFAllTheButtons(panelName);
+            ButtonMy.TurnOffAllTheButtons(panelName);
             ButtonMy.TurnOnTheButton(turnOnOff);
         }
 
@@ -222,7 +225,7 @@ namespace CulinaryRecipes
                 DisplayHighlightedButton(difficultLevelForm3, gbLevel);
                 DisplayHighlightedButton(executionTimeForm3, gbTime);
                 DisplayPhoto();
-                ButtonMy.CheckedTypeOfCuisine(listOfCuisinesForm3, gbKitchen);
+                ButtonMy.SelectTypeOfCuisine(listOfCuisinesForm3, gbKitchen);
             }
         }
 
@@ -265,7 +268,9 @@ namespace CulinaryRecipes
 
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            Form1 shutdown = new Form1();
+            shutdown.Show();
         }
 
         private void wklejToolStripMenuItem_Click(object sender, EventArgs e)
@@ -281,10 +286,10 @@ namespace CulinaryRecipes
         public string interval = "  ";
         public int[] IdMealForm3 = new int[7];
         public int[] idComponentsForm3 = new int[8];
+        internal bool InTheProcessOfAdding;
 
         private void button4_Click(object sender, EventArgs e)
         {
-            RichTextBoxMy p = new RichTextBoxMy();
             Form2 model = new Form2();
 
             if (idDgGridForm3 == 0) model.clear = add;
@@ -321,30 +326,32 @@ namespace CulinaryRecipes
 
             model.unlockFieldsForm2 = unlockFieldsForm3;
            
-                p.AddRecipeForm2 = addRecipeForm3;
+           // p.AddRecipeForm2 = addRecipeForm3;
             model.addRecipe = addRecipe;
+            model.InTheProcessOfAdding = InTheProcessOfAdding;
+            InTheProcessOfAdding = false;
 
             model.correctModyficationName = correctModyficationName3;
 
             #region MealAdd
-            model.IdMealForm2[0] = IdMealForm3[0];
-            model.IdMealForm2[1] = IdMealForm3[1];
-            model.IdMealForm2[2] = IdMealForm3[2];
-            model.IdMealForm2[3] = IdMealForm3[3];
-            model.IdMealForm2[4] = IdMealForm3[4];
-            model.IdMealForm2[5] = IdMealForm3[5];
-            model.IdMealForm2[6] = IdMealForm3[6];
+            model.checkBoxDish[0] = IdMealForm3[0];
+            model.checkBoxDish[1] = IdMealForm3[1];
+            model.checkBoxDish[2] = IdMealForm3[2];
+            model.checkBoxDish[3] = IdMealForm3[3];
+            model.checkBoxDish[4] = IdMealForm3[4];
+            model.checkBoxDish[5] = IdMealForm3[5];
+            model.checkBoxDish[6] = IdMealForm3[6];
             #endregion
 
             #region ComponentAdd
-            model.ingridientsForm2[0] = idComponentsForm3[0];
-            model.ingridientsForm2[1] = idComponentsForm3[1];
-            model.ingridientsForm2[2] = idComponentsForm3[2];
-            model.ingridientsForm2[3] = idComponentsForm3[3];
-            model.ingridientsForm2[4] = idComponentsForm3[4];
-            model.ingridientsForm2[5] = idComponentsForm3[5];
-            model.ingridientsForm2[6] = idComponentsForm3[6];
-            model.ingridientsForm2[7] = idComponentsForm3[7];
+            model.checkBoxIngredients[0] = idComponentsForm3[0];
+            model.checkBoxIngredients[1] = idComponentsForm3[1];
+            model.checkBoxIngredients[2] = idComponentsForm3[2];
+            model.checkBoxIngredients[3] = idComponentsForm3[3];
+            model.checkBoxIngredients[4] = idComponentsForm3[4];
+            model.checkBoxIngredients[5] = idComponentsForm3[5];
+            model.checkBoxIngredients[6] = idComponentsForm3[6];
+            model.checkBoxIngredients[7] = idComponentsForm3[7];
             #endregion
 
             model.counterForm2 = counterForm3;
@@ -363,10 +370,10 @@ namespace CulinaryRecipes
             model.cancel = cancel3;
             #endregion
 
+            model.SavedCheckBoxForm2 = SavedCheckBoxForm3;
             model.newForm = newForm3;
-         //   model.hideForm = hideForm3;
-            this.Visible = false;
-            //this.Close();
+
+            this.Hide();
             model.ShowDialog();
         }
 
@@ -517,5 +524,21 @@ namespace CulinaryRecipes
             toolTip1.SetToolTip(rtxtLinkForm3, "Klawisz 'Esc' - Czyści pole");
         }
         #endregion keyDown
+
+        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (InTheProcessOfAdding)
+            {
+                var result = MessageBox.Show("Jesteś w trakcie dodawania przepisu\nNa pewno przerwać proces?", "Zamykanie programu", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    InTheProcessOfAdding = false;
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 }

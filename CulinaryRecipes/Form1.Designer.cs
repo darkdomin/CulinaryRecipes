@@ -50,95 +50,56 @@
             this.oProgramieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.chcSnack = new System.Windows.Forms.CheckBox();
             this.lblSnack = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.lblSnackVeg = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.lblDinnerVeg = new System.Windows.Forms.Label();
             this.lblDinner = new System.Windows.Forms.Label();
             this.chcDinner = new System.Windows.Forms.CheckBox();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.lblSoupVeg = new System.Windows.Forms.Label();
             this.lblSoup = new System.Windows.Forms.Label();
             this.chcSoup = new System.Windows.Forms.CheckBox();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.lblDessertVeg = new System.Windows.Forms.Label();
             this.chcDessert = new System.Windows.Forms.CheckBox();
             this.lblDessert = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.lblDrinksVeg = new System.Windows.Forms.Label();
-            this.lblDrinks = new System.Windows.Forms.Label();
+            this.lblDrink = new System.Windows.Forms.Label();
             this.chcDrink = new System.Windows.Forms.CheckBox();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.lblPrevervesVeg = new System.Windows.Forms.Label();
             this.lblPreserves = new System.Windows.Forms.Label();
             this.chcPreserves = new System.Windows.Forms.CheckBox();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.lblSaladVeg = new System.Windows.Forms.Label();
             this.lblSalad = new System.Windows.Forms.Label();
             this.chcSalad = new System.Windows.Forms.CheckBox();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.lblVegetarian = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.chcStstistic = new System.Windows.Forms.CheckBox();
+            this.lblCulinary = new System.Windows.Forms.Label();
+            this.chcVegetarian = new System.Windows.Forms.CheckBox();
             this.chcBird = new System.Windows.Forms.CheckBox();
             this.chcEggs = new System.Windows.Forms.CheckBox();
             this.chcMuschrooms = new System.Windows.Forms.CheckBox();
             this.chcMeat = new System.Windows.Forms.CheckBox();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.lblFishVeg = new System.Windows.Forms.Label();
             this.chcFish = new System.Windows.Forms.CheckBox();
             this.lblFish = new System.Windows.Forms.Label();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.lblPastaVeg = new System.Windows.Forms.Label();
             this.chcPasta = new System.Windows.Forms.CheckBox();
             this.lblPasta = new System.Windows.Forms.Label();
-            this.panel26 = new System.Windows.Forms.Panel();
-            this.lblFruitsVeg = new System.Windows.Forms.Label();
             this.chcFruits = new System.Windows.Forms.CheckBox();
             this.lblFruits = new System.Windows.Forms.Label();
-            this.panel27 = new System.Windows.Forms.Panel();
-            this.lblMushroomVeg = new System.Windows.Forms.Label();
+            this.lblDrinkVeg = new System.Windows.Forms.Label();
             this.lblMuschrooms = new System.Windows.Forms.Label();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.lblBirdVeg = new System.Windows.Forms.Label();
+            this.lblPrevervesVeg = new System.Windows.Forms.Label();
             this.lblBird = new System.Windows.Forms.Label();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.lblMeatVeg = new System.Windows.Forms.Label();
+            this.lblSaladVeg = new System.Windows.Forms.Label();
             this.lblMeat = new System.Windows.Forms.Label();
-            this.panel30 = new System.Windows.Forms.Panel();
-            this.lblEggsVeg = new System.Windows.Forms.Label();
             this.lblEggs = new System.Windows.Forms.Label();
             this.txtSeek = new System.Windows.Forms.TextBox();
             this.dgGrid = new System.Windows.Forms.DataGridView();
             this.txtLittleName = new System.Windows.Forms.TextBox();
-            this.txtShortDescription = new System.Windows.Forms.TextBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblOcena = new System.Windows.Forms.Label();
             this.lblShortTime = new System.Windows.Forms.Label();
@@ -158,16 +119,8 @@
             this.pbStar2 = new System.Windows.Forms.PictureBox();
             this.pbStar1 = new System.Windows.Forms.PictureBox();
             this.pbLittlePhoto = new System.Windows.Forms.PictureBox();
-            this.btnSeek = new System.Windows.Forms.Button();
             this.pbFrame = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblCulinary = new System.Windows.Forms.Label();
-            this.chcStstistic = new System.Windows.Forms.CheckBox();
-            this.lblCleanDgGrid = new System.Windows.Forms.Label();
-            this.lblLeftOneLine = new System.Windows.Forms.Label();
-            this.lblLeftTwoLine = new System.Windows.Forms.Label();
-            this.chcVegetarian = new System.Windows.Forms.CheckBox();
-            this.lblVegetarian = new System.Windows.Forms.Label();
             this.lblClearCheckBox = new System.Windows.Forms.Label();
             this.lblRightTwoLine = new System.Windows.Forms.Label();
             this.lblRightOneLine = new System.Windows.Forms.Label();
@@ -194,56 +147,30 @@
             this.chcFilterTime90 = new System.Windows.Forms.CheckBox();
             this.chcFilterTime60 = new System.Windows.Forms.CheckBox();
             this.panelFilterTime = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelFilterLevel = new System.Windows.Forms.Panel();
             this.panelFilterRating = new System.Windows.Forms.Panel();
             this.btnFilter = new System.Windows.Forms.Button();
             this.btnFilterClose = new System.Windows.Forms.PictureBox();
+            this.panelFiltrComponents = new System.Windows.Forms.Panel();
+            this.panelRighCentre = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelLeftCenter = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelMiddle = new System.Windows.Forms.Panel();
+            this.panelScreen = new System.Windows.Forms.Panel();
+            this.txtShortDescription = new System.Windows.Forms.RichTextBox();
             this.cMenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.panel7.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.panel16.SuspendLayout();
-            this.panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            this.panel18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            this.panel19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            this.panel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            this.panel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            this.panel23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            this.panel24.SuspendLayout();
-            this.panel25.SuspendLayout();
-            this.panel26.SuspendLayout();
-            this.panel27.SuspendLayout();
-            this.panel28.SuspendLayout();
-            this.panel29.SuspendLayout();
-            this.panel30.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar2)).BeginInit();
@@ -256,6 +183,11 @@
             this.panelFilterLevel.SuspendLayout();
             this.panelFilterRating.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFilterClose)).BeginInit();
+            this.panelFiltrComponents.SuspendLayout();
+            this.panelRighCentre.SuspendLayout();
+            this.panelLeftCenter.SuspendLayout();
+            this.panelMiddle.SuspendLayout();
+            this.panelScreen.SuspendLayout();
             this.SuspendLayout();
             // 
             // cMenuStrip
@@ -302,23 +234,24 @@
             this.usuńBazęDanychToolStripMenuItem,
             this.toolStripMenuItem2,
             this.zamknijToolStripMenuItem});
+            this.plikToolStripMenuItem.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.plikToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
-            this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.plikToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.plikToolStripMenuItem.Text = "Plik";
             // 
             // nowyPrzepisToolStripMenuItem
             // 
             this.nowyPrzepisToolStripMenuItem.Name = "nowyPrzepisToolStripMenuItem";
             this.nowyPrzepisToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nowyPrzepisToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.nowyPrzepisToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.nowyPrzepisToolStripMenuItem.Text = "Nowy przepis";
             this.nowyPrzepisToolStripMenuItem.Click += new System.EventHandler(this.nowyPrzepisToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(218, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(232, 6);
             // 
             // importujBazęToolStripMenuItem
             // 
@@ -326,7 +259,7 @@
             this.importujPojedynczyPlikToolStripMenuItem,
             this.importujCalaBazęDanychToolStripMenuItem});
             this.importujBazęToolStripMenuItem.Name = "importujBazęToolStripMenuItem";
-            this.importujBazęToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.importujBazęToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.importujBazęToolStripMenuItem.Text = "Import";
             // 
             // importujPojedynczyPlikToolStripMenuItem
@@ -334,7 +267,7 @@
             this.importujPojedynczyPlikToolStripMenuItem.Name = "importujPojedynczyPlikToolStripMenuItem";
             this.importujPojedynczyPlikToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.I)));
-            this.importujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.importujPojedynczyPlikToolStripMenuItem.Size = new System.Drawing.Size(294, 22);
             this.importujPojedynczyPlikToolStripMenuItem.Text = "Importuj pojedynczy plik";
             this.importujPojedynczyPlikToolStripMenuItem.Click += new System.EventHandler(this.importujPojedynczyPlikToolStripMenuItem_Click);
             // 
@@ -342,14 +275,14 @@
             // 
             this.importujCalaBazęDanychToolStripMenuItem.Name = "importujCalaBazęDanychToolStripMenuItem";
             this.importujCalaBazęDanychToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.importujCalaBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.importujCalaBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(294, 22);
             this.importujCalaBazęDanychToolStripMenuItem.Text = "Importuj Cała Bazę Danych";
             this.importujCalaBazęDanychToolStripMenuItem.Click += new System.EventHandler(this.importujCalaBazęDanychToolStripMenuItem_Click);
             // 
             // exportujBazęDanychToolStripMenuItem
             // 
             this.exportujBazęDanychToolStripMenuItem.Name = "exportujBazęDanychToolStripMenuItem";
-            this.exportujBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.exportujBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.exportujBazęDanychToolStripMenuItem.Text = "Eksport Bazy Danych";
             this.exportujBazęDanychToolStripMenuItem.Click += new System.EventHandler(this.exportujBazęDanychToolStripMenuItem_Click);
             // 
@@ -357,28 +290,29 @@
             // 
             this.usuńBazęDanychToolStripMenuItem.Name = "usuńBazęDanychToolStripMenuItem";
             this.usuńBazęDanychToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.usuńBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.usuńBazęDanychToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.usuńBazęDanychToolStripMenuItem.Text = "Usuń Bazę danych";
             this.usuńBazęDanychToolStripMenuItem.Click += new System.EventHandler(this.usuńBazęDanychToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(218, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(232, 6);
             // 
             // zamknijToolStripMenuItem
             // 
             this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
             this.zamknijToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.zamknijToolStripMenuItem.Text = "Zamknij";
             this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
             // 
             // oProgramieToolStripMenuItem
             // 
+            this.oProgramieToolStripMenuItem.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.oProgramieToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.oProgramieToolStripMenuItem.Name = "oProgramieToolStripMenuItem";
-            this.oProgramieToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.oProgramieToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.oProgramieToolStripMenuItem.Text = "O programie";
             this.oProgramieToolStripMenuItem.Click += new System.EventHandler(this.oProgramieToolStripMenuItem_Click);
             // 
@@ -395,13 +329,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel8);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.pictureBox10);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(810, 126);
             this.panel1.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
@@ -409,145 +340,45 @@
             this.panel1.Size = new System.Drawing.Size(94, 643);
             this.panel1.TabIndex = 4;
             // 
-            // panel9
+            // pictureBox10
             // 
-            this.panel9.Controls.Add(this.pictureBox5);
-            this.panel9.Location = new System.Drawing.Point(6, 192);
-            this.panel9.Margin = new System.Windows.Forms.Padding(10);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(70, 70);
-            this.panel9.TabIndex = 6;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox5.TabIndex = 5;
-            this.pictureBox5.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Location = new System.Drawing.Point(6, 100);
-            this.panel2.Margin = new System.Windows.Forms.Padding(10);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(70, 70);
-            this.panel2.TabIndex = 5;
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(6, 67);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox10.TabIndex = 5;
+            this.pictureBox10.TabStop = false;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Location = new System.Drawing.Point(6, 212);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(70, 70);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             // 
-            // panel8
+            // pictureBox5
             // 
-            this.panel8.Controls.Add(this.pictureBox7);
-            this.panel8.Location = new System.Drawing.Point(4, 372);
-            this.panel8.Margin = new System.Windows.Forms.Padding(10);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(70, 70);
-            this.panel8.TabIndex = 6;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox7.TabIndex = 5;
-            this.pictureBox7.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Location = new System.Drawing.Point(6, 10);
-            this.panel3.Margin = new System.Windows.Forms.Padding(10);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(70, 70);
-            this.panel3.TabIndex = 6;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.pictureBox9);
-            this.panel4.Location = new System.Drawing.Point(6, 550);
-            this.panel4.Margin = new System.Windows.Forms.Padding(10);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(70, 70);
-            this.panel4.TabIndex = 6;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox9.TabIndex = 5;
-            this.pictureBox9.TabStop = false;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.pictureBox6);
-            this.panel6.Location = new System.Drawing.Point(6, 282);
-            this.panel6.Margin = new System.Windows.Forms.Padding(10);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(70, 70);
-            this.panel6.TabIndex = 6;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(6, 363);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox5.TabIndex = 5;
+            this.pictureBox5.TabStop = false;
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox6.Location = new System.Drawing.Point(6, 507);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(70, 70);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox6.TabIndex = 5;
             this.pictureBox6.TabStop = false;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.pictureBox8);
-            this.panel5.Location = new System.Drawing.Point(6, 462);
-            this.panel5.Margin = new System.Windows.Forms.Padding(10);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(70, 70);
-            this.panel5.TabIndex = 6;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox8.TabIndex = 5;
-            this.pictureBox8.TabStop = false;
             // 
             // chcSnack
             // 
@@ -555,7 +386,7 @@
             this.chcSnack.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcSnack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcSnack.ForeColor = System.Drawing.Color.White;
-            this.chcSnack.Location = new System.Drawing.Point(51, 13);
+            this.chcSnack.Location = new System.Drawing.Point(65, 70);
             this.chcSnack.Name = "chcSnack";
             this.chcSnack.Size = new System.Drawing.Size(15, 14);
             this.chcSnack.TabIndex = 13;
@@ -565,53 +396,34 @@
             // 
             // lblSnack
             // 
+            this.lblSnack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSnack.AutoSize = true;
             this.lblSnack.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblSnack.ForeColor = System.Drawing.Color.White;
-            this.lblSnack.Location = new System.Drawing.Point(5, 36);
+            this.lblSnack.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSnack.Location = new System.Drawing.Point(19, 88);
             this.lblSnack.Name = "lblSnack";
-            this.lblSnack.Size = new System.Drawing.Size(62, 13);
+            this.lblSnack.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblSnack.Size = new System.Drawing.Size(63, 26);
             this.lblSnack.TabIndex = 7;
-            this.lblSnack.Text = "PRZEKĄSKI";
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.lblSnackVeg);
-            this.panel7.Controls.Add(this.lblSnack);
-            this.panel7.Controls.Add(this.chcSnack);
-            this.panel7.Location = new System.Drawing.Point(737, 136);
-            this.panel7.Margin = new System.Windows.Forms.Padding(10);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(70, 70);
-            this.panel7.TabIndex = 8;
+            this.lblSnack.Text = ",KOLACJE\r\nŚNIADANIA\r\n";
             // 
             // lblSnackVeg
             // 
             this.lblSnackVeg.AutoSize = true;
             this.lblSnackVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblSnackVeg.Location = new System.Drawing.Point(19, 15);
+            this.lblSnackVeg.Location = new System.Drawing.Point(41, 70);
             this.lblSnackVeg.Name = "lblSnackVeg";
             this.lblSnackVeg.Size = new System.Drawing.Size(25, 13);
             this.lblSnackVeg.TabIndex = 14;
             this.lblSnackVeg.Text = "Veg";
             this.lblSnackVeg.Visible = false;
             // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.lblDinnerVeg);
-            this.panel10.Controls.Add(this.lblDinner);
-            this.panel10.Controls.Add(this.chcDinner);
-            this.panel10.Location = new System.Drawing.Point(737, 226);
-            this.panel10.Margin = new System.Windows.Forms.Padding(10);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(70, 70);
-            this.panel10.TabIndex = 8;
-            // 
             // lblDinnerVeg
             // 
             this.lblDinnerVeg.AutoSize = true;
             this.lblDinnerVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDinnerVeg.Location = new System.Drawing.Point(20, 7);
+            this.lblDinnerVeg.Location = new System.Drawing.Point(39, 222);
             this.lblDinnerVeg.Name = "lblDinnerVeg";
             this.lblDinnerVeg.Size = new System.Drawing.Size(25, 13);
             this.lblDinnerVeg.TabIndex = 15;
@@ -623,8 +435,9 @@
             this.lblDinner.AutoSize = true;
             this.lblDinner.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblDinner.ForeColor = System.Drawing.Color.White;
-            this.lblDinner.Location = new System.Drawing.Point(5, 23);
+            this.lblDinner.Location = new System.Drawing.Point(30, 239);
             this.lblDinner.Name = "lblDinner";
+            this.lblDinner.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblDinner.Size = new System.Drawing.Size(52, 26);
             this.lblDinner.TabIndex = 8;
             this.lblDinner.Text = "DANIE\r\nGŁÓWNE";
@@ -636,7 +449,7 @@
             this.chcDinner.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcDinner.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcDinner.ForeColor = System.Drawing.Color.White;
-            this.chcDinner.Location = new System.Drawing.Point(51, 9);
+            this.chcDinner.Location = new System.Drawing.Point(67, 222);
             this.chcDinner.Name = "chcDinner";
             this.chcDinner.Size = new System.Drawing.Size(15, 14);
             this.chcDinner.TabIndex = 14;
@@ -644,22 +457,11 @@
             this.chcDinner.UseVisualStyleBackColor = true;
             this.chcDinner.CheckedChanged += new System.EventHandler(this.chcDinner_CheckedChanged);
             // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.lblSoupVeg);
-            this.panel11.Controls.Add(this.lblSoup);
-            this.panel11.Controls.Add(this.chcSoup);
-            this.panel11.Location = new System.Drawing.Point(737, 318);
-            this.panel11.Margin = new System.Windows.Forms.Padding(10);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(70, 70);
-            this.panel11.TabIndex = 6;
-            // 
             // lblSoupVeg
             // 
             this.lblSoupVeg.AutoSize = true;
             this.lblSoupVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblSoupVeg.Location = new System.Drawing.Point(23, 9);
+            this.lblSoupVeg.Location = new System.Drawing.Point(35, 372);
             this.lblSoupVeg.Name = "lblSoupVeg";
             this.lblSoupVeg.Size = new System.Drawing.Size(25, 13);
             this.lblSoupVeg.TabIndex = 16;
@@ -671,11 +473,12 @@
             this.lblSoup.AutoSize = true;
             this.lblSoup.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblSoup.ForeColor = System.Drawing.Color.White;
-            this.lblSoup.Location = new System.Drawing.Point(13, 28);
+            this.lblSoup.Location = new System.Drawing.Point(44, 390);
             this.lblSoup.Name = "lblSoup";
-            this.lblSoup.Size = new System.Drawing.Size(36, 26);
+            this.lblSoup.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblSoup.Size = new System.Drawing.Size(37, 26);
             this.lblSoup.TabIndex = 10;
-            this.lblSoup.Text = "SOSY,\r\nZUPY";
+            this.lblSoup.Text = ",SOSY\r\nZUPY";
             this.lblSoup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // chcSoup
@@ -684,7 +487,7 @@
             this.chcSoup.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcSoup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcSoup.ForeColor = System.Drawing.Color.White;
-            this.chcSoup.Location = new System.Drawing.Point(50, 26);
+            this.chcSoup.Location = new System.Drawing.Point(63, 372);
             this.chcSoup.Name = "chcSoup";
             this.chcSoup.Size = new System.Drawing.Size(15, 14);
             this.chcSoup.TabIndex = 15;
@@ -692,22 +495,11 @@
             this.chcSoup.UseVisualStyleBackColor = true;
             this.chcSoup.CheckedChanged += new System.EventHandler(this.chcSoup_CheckedChanged);
             // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.lblDessertVeg);
-            this.panel12.Controls.Add(this.chcDessert);
-            this.panel12.Controls.Add(this.lblDessert);
-            this.panel12.Location = new System.Drawing.Point(737, 408);
-            this.panel12.Margin = new System.Windows.Forms.Padding(10);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(70, 70);
-            this.panel12.TabIndex = 9;
-            // 
             // lblDessertVeg
             // 
             this.lblDessertVeg.AutoSize = true;
             this.lblDessertVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDessertVeg.Location = new System.Drawing.Point(24, 7);
+            this.lblDessertVeg.Location = new System.Drawing.Point(37, 530);
             this.lblDessertVeg.Name = "lblDessertVeg";
             this.lblDessertVeg.Size = new System.Drawing.Size(25, 13);
             this.lblDessertVeg.TabIndex = 17;
@@ -720,7 +512,7 @@
             this.chcDessert.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcDessert.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcDessert.ForeColor = System.Drawing.Color.White;
-            this.chcDessert.Location = new System.Drawing.Point(52, 13);
+            this.chcDessert.Location = new System.Drawing.Point(63, 528);
             this.chcDessert.Name = "chcDessert";
             this.chcDessert.Size = new System.Drawing.Size(15, 14);
             this.chcDessert.TabIndex = 16;
@@ -733,46 +525,25 @@
             this.lblDessert.AutoSize = true;
             this.lblDessert.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblDessert.ForeColor = System.Drawing.Color.White;
-            this.lblDessert.Location = new System.Drawing.Point(4, 23);
+            this.lblDessert.Location = new System.Drawing.Point(38, 545);
             this.lblDessert.Name = "lblDessert";
+            this.lblDessert.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblDessert.Size = new System.Drawing.Size(46, 26);
             this.lblDessert.TabIndex = 10;
-            this.lblDessert.Text = "CIASTA,\r\nDESERY";
+            this.lblDessert.Text = ",CIASTA\r\nDESERY";
             this.lblDessert.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel13
+            // lblDrink
             // 
-            this.panel13.Controls.Add(this.lblDrinksVeg);
-            this.panel13.Controls.Add(this.lblDrinks);
-            this.panel13.Controls.Add(this.chcDrink);
-            this.panel13.Location = new System.Drawing.Point(737, 498);
-            this.panel13.Margin = new System.Windows.Forms.Padding(10);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(70, 70);
-            this.panel13.TabIndex = 10;
-            // 
-            // lblDrinksVeg
-            // 
-            this.lblDrinksVeg.AutoSize = true;
-            this.lblDrinksVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDrinksVeg.Location = new System.Drawing.Point(22, 10);
-            this.lblDrinksVeg.Name = "lblDrinksVeg";
-            this.lblDrinksVeg.Size = new System.Drawing.Size(25, 13);
-            this.lblDrinksVeg.TabIndex = 18;
-            this.lblDrinksVeg.Text = "Veg";
-            this.lblDrinksVeg.Visible = false;
-            // 
-            // lblDrinks
-            // 
-            this.lblDrinks.AutoSize = true;
-            this.lblDrinks.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDrinks.ForeColor = System.Drawing.Color.White;
-            this.lblDrinks.Location = new System.Drawing.Point(3, 27);
-            this.lblDrinks.Name = "lblDrinks";
-            this.lblDrinks.Size = new System.Drawing.Size(46, 26);
-            this.lblDrinks.TabIndex = 12;
-            this.lblDrinks.Text = "DRINKI,\r\nNAPOJE";
-            this.lblDrinks.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDrink.AutoSize = true;
+            this.lblDrink.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDrink.ForeColor = System.Drawing.Color.White;
+            this.lblDrink.Location = new System.Drawing.Point(3, 240);
+            this.lblDrink.Name = "lblDrink";
+            this.lblDrink.Size = new System.Drawing.Size(46, 26);
+            this.lblDrink.TabIndex = 12;
+            this.lblDrink.Text = "DRINKI,\r\nNAPOJE";
+            this.lblDrink.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // chcDrink
             // 
@@ -780,7 +551,7 @@
             this.chcDrink.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcDrink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcDrink.ForeColor = System.Drawing.Color.White;
-            this.chcDrink.Location = new System.Drawing.Point(51, 9);
+            this.chcDrink.Location = new System.Drawing.Point(5, 221);
             this.chcDrink.Name = "chcDrink";
             this.chcDrink.Size = new System.Drawing.Size(15, 14);
             this.chcDrink.TabIndex = 17;
@@ -788,38 +559,16 @@
             this.chcDrink.UseVisualStyleBackColor = true;
             this.chcDrink.CheckedChanged += new System.EventHandler(this.chcDrink_CheckedChanged);
             // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.lblPrevervesVeg);
-            this.panel14.Controls.Add(this.lblPreserves);
-            this.panel14.Controls.Add(this.chcPreserves);
-            this.panel14.Location = new System.Drawing.Point(737, 588);
-            this.panel14.Margin = new System.Windows.Forms.Padding(10);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(70, 70);
-            this.panel14.TabIndex = 11;
-            // 
-            // lblPrevervesVeg
-            // 
-            this.lblPrevervesVeg.AutoSize = true;
-            this.lblPrevervesVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPrevervesVeg.Location = new System.Drawing.Point(20, 11);
-            this.lblPrevervesVeg.Name = "lblPrevervesVeg";
-            this.lblPrevervesVeg.Size = new System.Drawing.Size(25, 13);
-            this.lblPrevervesVeg.TabIndex = 19;
-            this.lblPrevervesVeg.Text = "Veg";
-            this.lblPrevervesVeg.Visible = false;
-            // 
             // lblPreserves
             // 
             this.lblPreserves.AutoSize = true;
             this.lblPreserves.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPreserves.ForeColor = System.Drawing.Color.White;
-            this.lblPreserves.Location = new System.Drawing.Point(2, 33);
+            this.lblPreserves.Location = new System.Drawing.Point(3, 391);
             this.lblPreserves.Name = "lblPreserves";
-            this.lblPreserves.Size = new System.Drawing.Size(70, 13);
-            this.lblPreserves.TabIndex = 12;
-            this.lblPreserves.Text = "PRZETWORY";
+            this.lblPreserves.Size = new System.Drawing.Size(70, 26);
+            this.lblPreserves.TabIndex = 20;
+            this.lblPreserves.Text = "PRZEKĄSKI,\r\nPRZETWORY";
             // 
             // chcPreserves
             // 
@@ -827,7 +576,7 @@
             this.chcPreserves.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcPreserves.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcPreserves.ForeColor = System.Drawing.Color.White;
-            this.chcPreserves.Location = new System.Drawing.Point(51, 11);
+            this.chcPreserves.Location = new System.Drawing.Point(7, 371);
             this.chcPreserves.Name = "chcPreserves";
             this.chcPreserves.Size = new System.Drawing.Size(15, 14);
             this.chcPreserves.TabIndex = 17;
@@ -835,34 +584,12 @@
             this.chcPreserves.UseVisualStyleBackColor = true;
             this.chcPreserves.CheckedChanged += new System.EventHandler(this.chcPreserves_CheckedChanged);
             // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.lblSaladVeg);
-            this.panel15.Controls.Add(this.lblSalad);
-            this.panel15.Controls.Add(this.chcSalad);
-            this.panel15.Location = new System.Drawing.Point(737, 676);
-            this.panel15.Margin = new System.Windows.Forms.Padding(10);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(70, 70);
-            this.panel15.TabIndex = 12;
-            // 
-            // lblSaladVeg
-            // 
-            this.lblSaladVeg.AutoSize = true;
-            this.lblSaladVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblSaladVeg.Location = new System.Drawing.Point(20, 7);
-            this.lblSaladVeg.Name = "lblSaladVeg";
-            this.lblSaladVeg.Size = new System.Drawing.Size(25, 13);
-            this.lblSaladVeg.TabIndex = 20;
-            this.lblSaladVeg.Text = "Veg";
-            this.lblSaladVeg.Visible = false;
-            // 
             // lblSalad
             // 
             this.lblSalad.AutoSize = true;
             this.lblSalad.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblSalad.ForeColor = System.Drawing.Color.White;
-            this.lblSalad.Location = new System.Drawing.Point(3, 24);
+            this.lblSalad.Location = new System.Drawing.Point(3, 535);
             this.lblSalad.Name = "lblSalad";
             this.lblSalad.Size = new System.Drawing.Size(55, 26);
             this.lblSalad.TabIndex = 12;
@@ -875,7 +602,7 @@
             this.chcSalad.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcSalad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcSalad.ForeColor = System.Drawing.Color.White;
-            this.chcSalad.Location = new System.Drawing.Point(51, 10);
+            this.chcSalad.Location = new System.Drawing.Point(4, 515);
             this.chcSalad.Name = "chcSalad";
             this.chcSalad.Size = new System.Drawing.Size(15, 14);
             this.chcSalad.TabIndex = 18;
@@ -885,13 +612,12 @@
             // 
             // panel16
             // 
-            this.panel16.Controls.Add(this.panel17);
-            this.panel16.Controls.Add(this.panel18);
-            this.panel16.Controls.Add(this.panel19);
-            this.panel16.Controls.Add(this.panel20);
-            this.panel16.Controls.Add(this.panel21);
-            this.panel16.Controls.Add(this.panel22);
-            this.panel16.Controls.Add(this.panel23);
+            this.panel16.Controls.Add(this.pictureBox8);
+            this.panel16.Controls.Add(this.lblVegetarian);
+            this.panel16.Controls.Add(this.pictureBox7);
+            this.panel16.Controls.Add(this.pictureBox9);
+            this.panel16.Controls.Add(this.chcStstistic);
+            this.panel16.Controls.Add(this.lblCulinary);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel16.Location = new System.Drawing.Point(0, 126);
             this.panel16.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
@@ -899,145 +625,88 @@
             this.panel16.Size = new System.Drawing.Size(94, 643);
             this.panel16.TabIndex = 13;
             // 
-            // panel17
+            // pictureBox8
             // 
-            this.panel17.Controls.Add(this.pictureBox12);
-            this.panel17.Location = new System.Drawing.Point(18, 192);
-            this.panel17.Margin = new System.Windows.Forms.Padding(10);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(70, 70);
-            this.panel17.TabIndex = 6;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(18, 363);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox8.TabIndex = 6;
+            this.pictureBox8.TabStop = false;
             // 
-            // pictureBox12
+            // lblVegetarian
             // 
-            this.pictureBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox12.TabIndex = 4;
-            this.pictureBox12.TabStop = false;
+            this.lblVegetarian.AutoSize = true;
+            this.lblVegetarian.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblVegetarian.ForeColor = System.Drawing.Color.White;
+            this.lblVegetarian.Location = new System.Drawing.Point(31, 76);
+            this.lblVegetarian.Name = "lblVegetarian";
+            this.lblVegetarian.Size = new System.Drawing.Size(36, 13);
+            this.lblVegetarian.TabIndex = 7;
+            this.lblVegetarian.Text = "WEGE";
+            this.lblVegetarian.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel18
+            // pictureBox7
             // 
-            this.panel18.Controls.Add(this.pictureBox11);
-            this.panel18.Location = new System.Drawing.Point(18, 100);
-            this.panel18.Margin = new System.Windows.Forms.Padding(10);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(70, 70);
-            this.panel18.TabIndex = 5;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(18, 212);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox7.TabIndex = 6;
+            this.pictureBox7.TabStop = false;
             // 
-            // pictureBox11
+            // pictureBox9
             // 
-            this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox11.TabIndex = 4;
-            this.pictureBox11.TabStop = false;
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(18, 507);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox9.TabIndex = 6;
+            this.pictureBox9.TabStop = false;
             // 
-            // panel19
+            // chcStstistic
             // 
-            this.panel19.Controls.Add(this.pictureBox14);
-            this.panel19.Location = new System.Drawing.Point(16, 372);
-            this.panel19.Margin = new System.Windows.Forms.Padding(10);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(70, 70);
-            this.panel19.TabIndex = 6;
+            this.chcStstistic.AutoSize = true;
+            this.chcStstistic.BackColor = System.Drawing.Color.Transparent;
+            this.chcStstistic.Location = new System.Drawing.Point(12, 12);
+            this.chcStstistic.Name = "chcStstistic";
+            this.chcStstistic.Size = new System.Drawing.Size(71, 17);
+            this.chcStstistic.TabIndex = 19;
+            this.chcStstistic.TabStop = false;
+            this.chcStstistic.Text = "Statystyki";
+            this.chcStstistic.UseVisualStyleBackColor = false;
+            this.chcStstistic.Visible = false;
+            this.chcStstistic.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // pictureBox14
+            // lblCulinary
             // 
-            this.pictureBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox14.TabIndex = 4;
-            this.pictureBox14.TabStop = false;
+            this.lblCulinary.AutoSize = true;
+            this.lblCulinary.BackColor = System.Drawing.Color.Transparent;
+            this.lblCulinary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblCulinary.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblCulinary.Location = new System.Drawing.Point(25, 39);
+            this.lblCulinary.Name = "lblCulinary";
+            this.lblCulinary.Size = new System.Drawing.Size(64, 15);
+            this.lblCulinary.TabIndex = 51;
+            this.lblCulinary.Text = "Przepisów:";
+            this.lblCulinary.Visible = false;
             // 
-            // panel20
+            // chcVegetarian
             // 
-            this.panel20.Controls.Add(this.pictureBox10);
-            this.panel20.Location = new System.Drawing.Point(18, 10);
-            this.panel20.Margin = new System.Windows.Forms.Padding(10);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(70, 70);
-            this.panel20.TabIndex = 6;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox10.TabIndex = 4;
-            this.pictureBox10.TabStop = false;
-            // 
-            // panel21
-            // 
-            this.panel21.Controls.Add(this.pictureBox16);
-            this.panel21.Location = new System.Drawing.Point(18, 550);
-            this.panel21.Margin = new System.Windows.Forms.Padding(10);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(70, 70);
-            this.panel21.TabIndex = 6;
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox16.TabIndex = 4;
-            this.pictureBox16.TabStop = false;
-            // 
-            // panel22
-            // 
-            this.panel22.Controls.Add(this.pictureBox13);
-            this.panel22.Location = new System.Drawing.Point(18, 282);
-            this.panel22.Margin = new System.Windows.Forms.Padding(10);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(70, 70);
-            this.panel22.TabIndex = 6;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox13.TabIndex = 4;
-            this.pictureBox13.TabStop = false;
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.pictureBox15);
-            this.panel23.Location = new System.Drawing.Point(18, 462);
-            this.panel23.Margin = new System.Windows.Forms.Padding(10);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(70, 70);
-            this.panel23.TabIndex = 6;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox15.TabIndex = 4;
-            this.pictureBox15.TabStop = false;
+            this.chcVegetarian.AutoSize = true;
+            this.chcVegetarian.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.chcVegetarian.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chcVegetarian.ForeColor = System.Drawing.Color.White;
+            this.chcVegetarian.Location = new System.Drawing.Point(6, 71);
+            this.chcVegetarian.Name = "chcVegetarian";
+            this.chcVegetarian.Size = new System.Drawing.Size(15, 14);
+            this.chcVegetarian.TabIndex = 7;
+            this.chcVegetarian.TabStop = false;
+            this.chcVegetarian.UseVisualStyleBackColor = true;
+            this.chcVegetarian.CheckedChanged += new System.EventHandler(this.chcVegetarian_CheckedChanged);
             // 
             // chcBird
             // 
@@ -1045,7 +714,7 @@
             this.chcBird.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcBird.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcBird.ForeColor = System.Drawing.Color.White;
-            this.chcBird.Location = new System.Drawing.Point(5, 17);
+            this.chcBird.Location = new System.Drawing.Point(69, 60);
             this.chcBird.Name = "chcBird";
             this.chcBird.Size = new System.Drawing.Size(15, 14);
             this.chcBird.TabIndex = 10;
@@ -1058,8 +727,9 @@
             this.chcEggs.AutoSize = true;
             this.chcEggs.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcEggs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chcEggs.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.chcEggs.ForeColor = System.Drawing.Color.White;
-            this.chcEggs.Location = new System.Drawing.Point(4, 15);
+            this.chcEggs.Location = new System.Drawing.Point(169, 59);
             this.chcEggs.Name = "chcEggs";
             this.chcEggs.Size = new System.Drawing.Size(15, 14);
             this.chcEggs.TabIndex = 12;
@@ -1073,7 +743,7 @@
             this.chcMuschrooms.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcMuschrooms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcMuschrooms.ForeColor = System.Drawing.Color.White;
-            this.chcMuschrooms.Location = new System.Drawing.Point(4, 13);
+            this.chcMuschrooms.Location = new System.Drawing.Point(119, 59);
             this.chcMuschrooms.Name = "chcMuschrooms";
             this.chcMuschrooms.Size = new System.Drawing.Size(15, 14);
             this.chcMuschrooms.TabIndex = 9;
@@ -1087,7 +757,7 @@
             this.chcMeat.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcMeat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcMeat.ForeColor = System.Drawing.Color.White;
-            this.chcMeat.Location = new System.Drawing.Point(4, 19);
+            this.chcMeat.Location = new System.Drawing.Point(19, 59);
             this.chcMeat.Name = "chcMeat";
             this.chcMeat.Size = new System.Drawing.Size(15, 14);
             this.chcMeat.TabIndex = 11;
@@ -1095,35 +765,13 @@
             this.chcMeat.UseVisualStyleBackColor = true;
             this.chcMeat.CheckedChanged += new System.EventHandler(this.chcMeat_CheckedChanged);
             // 
-            // panel24
-            // 
-            this.panel24.Controls.Add(this.lblFishVeg);
-            this.panel24.Controls.Add(this.chcFish);
-            this.panel24.Controls.Add(this.lblFish);
-            this.panel24.Location = new System.Drawing.Point(96, 136);
-            this.panel24.Margin = new System.Windows.Forms.Padding(10);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(92, 70);
-            this.panel24.TabIndex = 14;
-            // 
-            // lblFishVeg
-            // 
-            this.lblFishVeg.AutoSize = true;
-            this.lblFishVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblFishVeg.Location = new System.Drawing.Point(24, 14);
-            this.lblFishVeg.Name = "lblFishVeg";
-            this.lblFishVeg.Size = new System.Drawing.Size(25, 13);
-            this.lblFishVeg.TabIndex = 15;
-            this.lblFishVeg.Text = "Veg";
-            this.lblFishVeg.Visible = false;
-            // 
             // chcFish
             // 
             this.chcFish.AutoSize = true;
             this.chcFish.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcFish.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFish.ForeColor = System.Drawing.Color.White;
-            this.chcFish.Location = new System.Drawing.Point(3, 12);
+            this.chcFish.Location = new System.Drawing.Point(23, 24);
             this.chcFish.Name = "chcFish";
             this.chcFish.Size = new System.Drawing.Size(15, 14);
             this.chcFish.TabIndex = 6;
@@ -1136,34 +784,12 @@
             this.lblFish.AutoSize = true;
             this.lblFish.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblFish.ForeColor = System.Drawing.Color.White;
-            this.lblFish.Location = new System.Drawing.Point(5, 26);
+            this.lblFish.Location = new System.Drawing.Point(16, 8);
             this.lblFish.Name = "lblFish";
-            this.lblFish.Size = new System.Drawing.Size(84, 26);
+            this.lblFish.Size = new System.Drawing.Size(30, 26);
             this.lblFish.TabIndex = 6;
-            this.lblFish.Text = "      RYBY\r\nOWOCE MORZA\r\n";
+            this.lblFish.Text = "Ryby\r\n\r\n";
             this.lblFish.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel25
-            // 
-            this.panel25.Controls.Add(this.lblPastaVeg);
-            this.panel25.Controls.Add(this.chcPasta);
-            this.panel25.Controls.Add(this.lblPasta);
-            this.panel25.Location = new System.Drawing.Point(96, 226);
-            this.panel25.Margin = new System.Windows.Forms.Padding(10);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(92, 70);
-            this.panel25.TabIndex = 9;
-            // 
-            // lblPastaVeg
-            // 
-            this.lblPastaVeg.AutoSize = true;
-            this.lblPastaVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPastaVeg.Location = new System.Drawing.Point(23, 9);
-            this.lblPastaVeg.Name = "lblPastaVeg";
-            this.lblPastaVeg.Size = new System.Drawing.Size(25, 13);
-            this.lblPastaVeg.TabIndex = 16;
-            this.lblPastaVeg.Text = "Veg";
-            this.lblPastaVeg.Visible = false;
             // 
             // chcPasta
             // 
@@ -1171,7 +797,7 @@
             this.chcPasta.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcPasta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcPasta.ForeColor = System.Drawing.Color.White;
-            this.chcPasta.Location = new System.Drawing.Point(3, 8);
+            this.chcPasta.Location = new System.Drawing.Point(165, 25);
             this.chcPasta.Name = "chcPasta";
             this.chcPasta.Size = new System.Drawing.Size(15, 14);
             this.chcPasta.TabIndex = 7;
@@ -1184,34 +810,12 @@
             this.lblPasta.AutoSize = true;
             this.lblPasta.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPasta.ForeColor = System.Drawing.Color.White;
-            this.lblPasta.Location = new System.Drawing.Point(-2, 26);
+            this.lblPasta.Location = new System.Drawing.Point(152, 11);
             this.lblPasta.Name = "lblPasta";
-            this.lblPasta.Size = new System.Drawing.Size(95, 26);
+            this.lblPasta.Size = new System.Drawing.Size(42, 13);
             this.lblPasta.TabIndex = 10;
-            this.lblPasta.Text = "KASZA,PIECZYWO\r\nRYŻ, MAKARON\r\n";
+            this.lblPasta.Text = "Mączne";
             this.lblPasta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel26
-            // 
-            this.panel26.Controls.Add(this.lblFruitsVeg);
-            this.panel26.Controls.Add(this.chcFruits);
-            this.panel26.Controls.Add(this.lblFruits);
-            this.panel26.Location = new System.Drawing.Point(96, 318);
-            this.panel26.Margin = new System.Windows.Forms.Padding(10);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(89, 70);
-            this.panel26.TabIndex = 9;
-            // 
-            // lblFruitsVeg
-            // 
-            this.lblFruitsVeg.AutoSize = true;
-            this.lblFruitsVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblFruitsVeg.Location = new System.Drawing.Point(20, 14);
-            this.lblFruitsVeg.Name = "lblFruitsVeg";
-            this.lblFruitsVeg.Size = new System.Drawing.Size(25, 13);
-            this.lblFruitsVeg.TabIndex = 17;
-            this.lblFruitsVeg.Text = "Veg";
-            this.lblFruitsVeg.Visible = false;
             // 
             // chcFruits
             // 
@@ -1219,7 +823,7 @@
             this.chcFruits.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcFruits.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFruits.ForeColor = System.Drawing.Color.White;
-            this.chcFruits.Location = new System.Drawing.Point(3, 14);
+            this.chcFruits.Location = new System.Drawing.Point(95, 25);
             this.chcFruits.Name = "chcFruits";
             this.chcFruits.Size = new System.Drawing.Size(15, 14);
             this.chcFruits.TabIndex = 8;
@@ -1232,146 +836,91 @@
             this.lblFruits.AutoSize = true;
             this.lblFruits.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblFruits.ForeColor = System.Drawing.Color.White;
-            this.lblFruits.Location = new System.Drawing.Point(19, 25);
+            this.lblFruits.Location = new System.Drawing.Point(59, 11);
             this.lblFruits.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.lblFruits.Name = "lblFruits";
-            this.lblFruits.Size = new System.Drawing.Size(67, 26);
+            this.lblFruits.Size = new System.Drawing.Size(87, 26);
             this.lblFruits.TabIndex = 12;
-            this.lblFruits.Text = "OWOCE \r\nI  WARZYWA\r\n";
+            this.lblFruits.Text = "Owoce i Warzywa\r\n\r\n";
             this.lblFruits.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel27
+            // lblDrinkVeg
             // 
-            this.panel27.Controls.Add(this.lblMushroomVeg);
-            this.panel27.Controls.Add(this.chcMuschrooms);
-            this.panel27.Controls.Add(this.lblMuschrooms);
-            this.panel27.Location = new System.Drawing.Point(96, 408);
-            this.panel27.Margin = new System.Windows.Forms.Padding(10);
-            this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(89, 70);
-            this.panel27.TabIndex = 9;
-            // 
-            // lblMushroomVeg
-            // 
-            this.lblMushroomVeg.AutoSize = true;
-            this.lblMushroomVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblMushroomVeg.Location = new System.Drawing.Point(24, 13);
-            this.lblMushroomVeg.Name = "lblMushroomVeg";
-            this.lblMushroomVeg.Size = new System.Drawing.Size(25, 13);
-            this.lblMushroomVeg.TabIndex = 18;
-            this.lblMushroomVeg.Text = "Veg";
-            this.lblMushroomVeg.Visible = false;
+            this.lblDrinkVeg.AutoSize = true;
+            this.lblDrinkVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDrinkVeg.Location = new System.Drawing.Point(19, 220);
+            this.lblDrinkVeg.Name = "lblDrinkVeg";
+            this.lblDrinkVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblDrinkVeg.TabIndex = 18;
+            this.lblDrinkVeg.Text = "Veg";
+            this.lblDrinkVeg.Visible = false;
             // 
             // lblMuschrooms
             // 
             this.lblMuschrooms.AutoSize = true;
             this.lblMuschrooms.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblMuschrooms.ForeColor = System.Drawing.Color.White;
-            this.lblMuschrooms.Location = new System.Drawing.Point(39, 32);
+            this.lblMuschrooms.Location = new System.Drawing.Point(107, 46);
             this.lblMuschrooms.Name = "lblMuschrooms";
-            this.lblMuschrooms.Size = new System.Drawing.Size(48, 13);
+            this.lblMuschrooms.Size = new System.Drawing.Size(39, 13);
             this.lblMuschrooms.TabIndex = 14;
-            this.lblMuschrooms.Text = "GRZYBY";
+            this.lblMuschrooms.Text = "Grzyby";
             // 
-            // panel28
+            // lblPrevervesVeg
             // 
-            this.panel28.Controls.Add(this.lblBirdVeg);
-            this.panel28.Controls.Add(this.chcBird);
-            this.panel28.Controls.Add(this.lblBird);
-            this.panel28.Location = new System.Drawing.Point(96, 498);
-            this.panel28.Margin = new System.Windows.Forms.Padding(10);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(89, 70);
-            this.panel28.TabIndex = 9;
-            // 
-            // lblBirdVeg
-            // 
-            this.lblBirdVeg.AutoSize = true;
-            this.lblBirdVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblBirdVeg.Location = new System.Drawing.Point(23, 12);
-            this.lblBirdVeg.Name = "lblBirdVeg";
-            this.lblBirdVeg.Size = new System.Drawing.Size(25, 13);
-            this.lblBirdVeg.TabIndex = 19;
-            this.lblBirdVeg.Text = "Veg";
-            this.lblBirdVeg.Visible = false;
+            this.lblPrevervesVeg.AutoSize = true;
+            this.lblPrevervesVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPrevervesVeg.Location = new System.Drawing.Point(21, 373);
+            this.lblPrevervesVeg.Name = "lblPrevervesVeg";
+            this.lblPrevervesVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblPrevervesVeg.TabIndex = 19;
+            this.lblPrevervesVeg.Text = "Veg";
+            this.lblPrevervesVeg.Visible = false;
             // 
             // lblBird
             // 
             this.lblBird.AutoSize = true;
             this.lblBird.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblBird.ForeColor = System.Drawing.Color.White;
-            this.lblBird.Location = new System.Drawing.Point(-1, 25);
+            this.lblBird.Location = new System.Drawing.Point(60, 46);
             this.lblBird.Name = "lblBird";
-            this.lblBird.Size = new System.Drawing.Size(89, 26);
+            this.lblBird.Size = new System.Drawing.Size(30, 13);
             this.lblBird.TabIndex = 16;
-            this.lblBird.Text = "DRÓB\r\nDZIKIE PTACTWO";
+            this.lblBird.Text = "Drób";
             this.lblBird.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel29
+            // lblSaladVeg
             // 
-            this.panel29.Controls.Add(this.lblMeatVeg);
-            this.panel29.Controls.Add(this.chcMeat);
-            this.panel29.Controls.Add(this.lblMeat);
-            this.panel29.Location = new System.Drawing.Point(96, 588);
-            this.panel29.Margin = new System.Windows.Forms.Padding(10);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(88, 70);
-            this.panel29.TabIndex = 15;
-            // 
-            // lblMeatVeg
-            // 
-            this.lblMeatVeg.AutoSize = true;
-            this.lblMeatVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblMeatVeg.Location = new System.Drawing.Point(21, 19);
-            this.lblMeatVeg.Name = "lblMeatVeg";
-            this.lblMeatVeg.Size = new System.Drawing.Size(25, 13);
-            this.lblMeatVeg.TabIndex = 20;
-            this.lblMeatVeg.Text = "Veg";
-            this.lblMeatVeg.Visible = false;
+            this.lblSaladVeg.AutoSize = true;
+            this.lblSaladVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSaladVeg.Location = new System.Drawing.Point(16, 517);
+            this.lblSaladVeg.Name = "lblSaladVeg";
+            this.lblSaladVeg.Size = new System.Drawing.Size(25, 13);
+            this.lblSaladVeg.TabIndex = 20;
+            this.lblSaladVeg.Text = "Veg";
+            this.lblSaladVeg.Visible = false;
             // 
             // lblMeat
             // 
             this.lblMeat.AutoSize = true;
             this.lblMeat.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblMeat.ForeColor = System.Drawing.Color.White;
-            this.lblMeat.Location = new System.Drawing.Point(39, 39);
+            this.lblMeat.Location = new System.Drawing.Point(9, 46);
             this.lblMeat.Name = "lblMeat";
-            this.lblMeat.Size = new System.Drawing.Size(39, 13);
+            this.lblMeat.Size = new System.Drawing.Size(34, 13);
             this.lblMeat.TabIndex = 16;
-            this.lblMeat.Text = "MIĘSO";
-            // 
-            // panel30
-            // 
-            this.panel30.Controls.Add(this.lblEggsVeg);
-            this.panel30.Controls.Add(this.chcEggs);
-            this.panel30.Controls.Add(this.lblEggs);
-            this.panel30.Location = new System.Drawing.Point(96, 675);
-            this.panel30.Margin = new System.Windows.Forms.Padding(10);
-            this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(88, 70);
-            this.panel30.TabIndex = 16;
-            // 
-            // lblEggsVeg
-            // 
-            this.lblEggsVeg.AutoSize = true;
-            this.lblEggsVeg.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblEggsVeg.Location = new System.Drawing.Point(21, 12);
-            this.lblEggsVeg.Name = "lblEggsVeg";
-            this.lblEggsVeg.Size = new System.Drawing.Size(25, 13);
-            this.lblEggsVeg.TabIndex = 21;
-            this.lblEggsVeg.Text = "Veg";
-            this.lblEggsVeg.Visible = false;
+            this.lblMeat.Text = "Mięso";
             // 
             // lblEggs
             // 
             this.lblEggs.AutoSize = true;
             this.lblEggs.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblEggs.ForeColor = System.Drawing.Color.White;
-            this.lblEggs.Location = new System.Drawing.Point(49, 33);
+            this.lblEggs.Location = new System.Drawing.Point(163, 46);
             this.lblEggs.Name = "lblEggs";
-            this.lblEggs.Size = new System.Drawing.Size(29, 13);
+            this.lblEggs.Size = new System.Drawing.Size(24, 13);
             this.lblEggs.TabIndex = 16;
-            this.lblEggs.Text = "JAJA";
+            this.lblEggs.Text = "Jaja";
             // 
             // txtSeek
             // 
@@ -1380,10 +929,10 @@
             this.txtSeek.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtSeek.Location = new System.Drawing.Point(210, 167);
             this.txtSeek.Name = "txtSeek";
-            this.txtSeek.Size = new System.Drawing.Size(453, 33);
+            this.txtSeek.Size = new System.Drawing.Size(492, 33);
             this.txtSeek.TabIndex = 0;
-            this.txtSeek.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSeek.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSeek_KeyDown);
+            this.txtSeek.TextChanged += new System.EventHandler(this.txtSeek_TextChanged);
+            this.txtSeek.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSeek_KeyPress);
             this.txtSeek.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSeek_KeyUp);
             // 
             // dgGrid
@@ -1398,7 +947,7 @@
             this.dgGrid.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
@@ -1424,9 +973,9 @@
             // 
             this.txtLittleName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.txtLittleName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLittleName.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtLittleName.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtLittleName.ForeColor = System.Drawing.Color.White;
-            this.txtLittleName.Location = new System.Drawing.Point(457, 260);
+            this.txtLittleName.Location = new System.Drawing.Point(264, 54);
             this.txtLittleName.Multiline = true;
             this.txtLittleName.Name = "txtLittleName";
             this.txtLittleName.ReadOnly = true;
@@ -1435,52 +984,38 @@
             this.txtLittleName.TabStop = false;
             this.txtLittleName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtShortDescription
-            // 
-            this.txtShortDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            this.txtShortDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtShortDescription.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtShortDescription.ForeColor = System.Drawing.Color.White;
-            this.txtShortDescription.Location = new System.Drawing.Point(458, 308);
-            this.txtShortDescription.Multiline = true;
-            this.txtShortDescription.Name = "txtShortDescription";
-            this.txtShortDescription.ReadOnly = true;
-            this.txtShortDescription.Size = new System.Drawing.Size(229, 73);
-            this.txtShortDescription.TabIndex = 23;
-            this.txtShortDescription.TabStop = false;
-            this.txtShortDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTime.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblTime.Location = new System.Drawing.Point(260, 231);
+            this.lblTime.Location = new System.Drawing.Point(60, 25);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(38, 15);
+            this.lblTime.Size = new System.Drawing.Size(41, 13);
             this.lblTime.TabIndex = 24;
             this.lblTime.Text = "Czas:";
             // 
             // lblOcena
             // 
             this.lblOcena.AutoSize = true;
-            this.lblOcena.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblOcena.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblOcena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblOcena.Location = new System.Drawing.Point(484, 399);
+            this.lblOcena.Location = new System.Drawing.Point(291, 192);
             this.lblOcena.Name = "lblOcena";
-            this.lblOcena.Size = new System.Drawing.Size(48, 15);
+            this.lblOcena.Size = new System.Drawing.Size(51, 13);
             this.lblOcena.TabIndex = 25;
             this.lblOcena.Text = "Ocena:";
             // 
             // lblShortTime
             // 
             this.lblShortTime.AutoSize = true;
-            this.lblShortTime.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblShortTime.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblShortTime.ForeColor = System.Drawing.Color.White;
-            this.lblShortTime.Location = new System.Drawing.Point(309, 232);
+            this.lblShortTime.Location = new System.Drawing.Point(109, 25);
             this.lblShortTime.Name = "lblShortTime";
-            this.lblShortTime.Size = new System.Drawing.Size(0, 14);
+            this.lblShortTime.Size = new System.Drawing.Size(12, 13);
             this.lblShortTime.TabIndex = 26;
+            this.lblShortTime.Text = "-";
             // 
             // btnOpen
             // 
@@ -1490,7 +1025,7 @@
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOpen.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOpen.ForeColor = System.Drawing.Color.White;
-            this.btnOpen.Location = new System.Drawing.Point(428, 432);
+            this.btnOpen.Location = new System.Drawing.Point(421, 432);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(64, 23);
             this.btnOpen.TabIndex = 4;
@@ -1524,7 +1059,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(586, 430);
+            this.btnClose.Location = new System.Drawing.Point(583, 430);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(64, 23);
             this.btnClose.TabIndex = 5;
@@ -1536,54 +1071,55 @@
             // lblShortLevel
             // 
             this.lblShortLevel.AutoSize = true;
-            this.lblShortLevel.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblShortLevel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblShortLevel.ForeColor = System.Drawing.Color.White;
-            this.lblShortLevel.Location = new System.Drawing.Point(592, 232);
+            this.lblShortLevel.Location = new System.Drawing.Point(399, 26);
             this.lblShortLevel.Name = "lblShortLevel";
-            this.lblShortLevel.Size = new System.Drawing.Size(0, 14);
+            this.lblShortLevel.Size = new System.Drawing.Size(12, 13);
             this.lblShortLevel.TabIndex = 39;
+            this.lblShortLevel.Text = "-";
             // 
             // lblLevel
             // 
             this.lblLevel.AutoSize = true;
-            this.lblLevel.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblLevel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblLevel.Location = new System.Drawing.Point(471, 231);
+            this.lblLevel.Location = new System.Drawing.Point(276, 25);
             this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(108, 15);
+            this.lblLevel.Size = new System.Drawing.Size(121, 13);
             this.lblLevel.TabIndex = 38;
             this.lblLevel.Text = "Stopień trudność:";
             // 
             // lblKitchen
             // 
             this.lblKitchen.AutoSize = true;
-            this.lblKitchen.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblKitchen.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblKitchen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblKitchen.Location = new System.Drawing.Point(261, 399);
+            this.lblKitchen.Location = new System.Drawing.Point(55, 193);
             this.lblKitchen.Name = "lblKitchen";
-            this.lblKitchen.Size = new System.Drawing.Size(56, 15);
+            this.lblKitchen.Size = new System.Drawing.Size(62, 13);
             this.lblKitchen.TabIndex = 40;
             this.lblKitchen.Text = "Kuchnia:";
             // 
             // lblCuisine
             // 
             this.lblCuisine.AutoSize = true;
-            this.lblCuisine.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblCuisine.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblCuisine.ForeColor = System.Drawing.Color.White;
-            this.lblCuisine.Location = new System.Drawing.Point(317, 400);
+            this.lblCuisine.Location = new System.Drawing.Point(117, 192);
             this.lblCuisine.Name = "lblCuisine";
-            this.lblCuisine.Size = new System.Drawing.Size(29, 14);
+            this.lblCuisine.Size = new System.Drawing.Size(12, 13);
             this.lblCuisine.TabIndex = 41;
-            this.lblCuisine.Text = "prob";
+            this.lblCuisine.Text = "-";
             // 
             // lblNameSeek
             // 
             this.lblNameSeek.AutoSize = true;
             this.lblNameSeek.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNameSeek.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNameSeek.Location = new System.Drawing.Point(492, 140);
+            this.lblNameSeek.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNameSeek.Location = new System.Drawing.Point(593, 140);
             this.lblNameSeek.Name = "lblNameSeek";
-            this.lblNameSeek.Size = new System.Drawing.Size(50, 14);
+            this.lblNameSeek.Size = new System.Drawing.Size(54, 13);
             this.lblNameSeek.TabIndex = 43;
             this.lblNameSeek.Text = "NAZWA";
             this.lblNameSeek.Click += new System.EventHandler(this.lblNameSeek_Click);
@@ -1592,10 +1128,10 @@
             // 
             this.lblAmountsSeek.AutoSize = true;
             this.lblAmountsSeek.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblAmountsSeek.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblAmountsSeek.Location = new System.Drawing.Point(381, 140);
+            this.lblAmountsSeek.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblAmountsSeek.Location = new System.Drawing.Point(479, 140);
             this.lblAmountsSeek.Name = "lblAmountsSeek";
-            this.lblAmountsSeek.Size = new System.Drawing.Size(61, 13);
+            this.lblAmountsSeek.Size = new System.Drawing.Size(72, 13);
             this.lblAmountsSeek.TabIndex = 45;
             this.lblAmountsSeek.Text = "SKŁADNIKI";
             this.lblAmountsSeek.Click += new System.EventHandler(this.lblAmountsSeek_Click);
@@ -1603,10 +1139,10 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.Location = new System.Drawing.Point(226, 140);
+            this.label14.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Location = new System.Drawing.Point(249, 140);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(101, 14);
+            this.label14.Size = new System.Drawing.Size(114, 13);
             this.label14.TabIndex = 46;
             this.label14.Text = "WYSZUKIWANIE:";
             // 
@@ -1614,7 +1150,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(462, 138);
+            this.label15.Location = new System.Drawing.Point(567, 138);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(10, 14);
             this.label15.TabIndex = 47;
@@ -1623,10 +1159,10 @@
             // lblStatistic
             // 
             this.lblStatistic.AutoSize = true;
-            this.lblStatistic.BackColor = System.Drawing.Color.Black;
+            this.lblStatistic.BackColor = System.Drawing.Color.Transparent;
             this.lblStatistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblStatistic.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblStatistic.Location = new System.Drawing.Point(805, 71);
+            this.lblStatistic.Location = new System.Drawing.Point(96, 165);
             this.lblStatistic.Name = "lblStatistic";
             this.lblStatistic.Size = new System.Drawing.Size(26, 15);
             this.lblStatistic.TabIndex = 50;
@@ -1636,7 +1172,7 @@
             // pbStar3
             // 
             this.pbStar3.Image = global::CulinaryRecipes.Properties.Resources.gwiazdka;
-            this.pbStar3.Location = new System.Drawing.Point(624, 394);
+            this.pbStar3.Location = new System.Drawing.Point(424, 186);
             this.pbStar3.Name = "pbStar3";
             this.pbStar3.Size = new System.Drawing.Size(21, 18);
             this.pbStar3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1647,7 +1183,7 @@
             // pbStar2
             // 
             this.pbStar2.Image = global::CulinaryRecipes.Properties.Resources.gwiazdka;
-            this.pbStar2.Location = new System.Drawing.Point(562, 395);
+            this.pbStar2.Location = new System.Drawing.Point(362, 188);
             this.pbStar2.Name = "pbStar2";
             this.pbStar2.Size = new System.Drawing.Size(18, 17);
             this.pbStar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1658,7 +1194,7 @@
             // pbStar1
             // 
             this.pbStar1.Image = global::CulinaryRecipes.Properties.Resources.gwiazdka;
-            this.pbStar1.Location = new System.Drawing.Point(592, 394);
+            this.pbStar1.Location = new System.Drawing.Point(392, 187);
             this.pbStar1.Name = "pbStar1";
             this.pbStar1.Size = new System.Drawing.Size(21, 18);
             this.pbStar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1669,35 +1205,18 @@
             // pbLittlePhoto
             // 
             this.pbLittlePhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbLittlePhoto.Location = new System.Drawing.Point(226, 259);
+            this.pbLittlePhoto.Location = new System.Drawing.Point(28, 54);
             this.pbLittlePhoto.Name = "pbLittlePhoto";
-            this.pbLittlePhoto.Size = new System.Drawing.Size(218, 131);
+            this.pbLittlePhoto.Size = new System.Drawing.Size(210, 131);
             this.pbLittlePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLittlePhoto.TabIndex = 21;
             this.pbLittlePhoto.TabStop = false;
             this.pbLittlePhoto.Visible = false;
             // 
-            // btnSeek
-            // 
-            this.btnSeek.BackColor = System.Drawing.Color.Maroon;
-            this.btnSeek.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSeek.FlatAppearance.BorderSize = 0;
-            this.btnSeek.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSeek.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSeek.Image = ((System.Drawing.Image)(resources.GetObject("btnSeek.Image")));
-            this.btnSeek.Location = new System.Drawing.Point(665, 165);
-            this.btnSeek.Name = "btnSeek";
-            this.btnSeek.Size = new System.Drawing.Size(36, 36);
-            this.btnSeek.TabIndex = 1;
-            this.btnSeek.TabStop = false;
-            this.btnSeek.UseVisualStyleBackColor = false;
-            this.btnSeek.Click += new System.EventHandler(this.btnSeek_Click);
-            this.btnSeek.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnSeek_KeyDown);
-            // 
             // pbFrame
             // 
             this.pbFrame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbFrame.Location = new System.Drawing.Point(210, 224);
+            this.pbFrame.Location = new System.Drawing.Point(9, 15);
             this.pbFrame.Name = "pbFrame";
             this.pbFrame.Size = new System.Drawing.Size(492, 197);
             this.pbFrame.TabIndex = 18;
@@ -1715,115 +1234,27 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // lblCulinary
-            // 
-            this.lblCulinary.AutoSize = true;
-            this.lblCulinary.BackColor = System.Drawing.Color.Black;
-            this.lblCulinary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblCulinary.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblCulinary.Location = new System.Drawing.Point(831, 71);
-            this.lblCulinary.Name = "lblCulinary";
-            this.lblCulinary.Size = new System.Drawing.Size(61, 15);
-            this.lblCulinary.TabIndex = 51;
-            this.lblCulinary.Text = "Przepisów";
-            this.lblCulinary.Visible = false;
-            // 
-            // chcStstistic
-            // 
-            this.chcStstistic.AutoSize = true;
-            this.chcStstistic.BackColor = System.Drawing.Color.Black;
-            this.chcStstistic.Location = new System.Drawing.Point(821, 93);
-            this.chcStstistic.Name = "chcStstistic";
-            this.chcStstistic.Size = new System.Drawing.Size(71, 17);
-            this.chcStstistic.TabIndex = 19;
-            this.chcStstistic.TabStop = false;
-            this.chcStstistic.Text = "Statystyki";
-            this.chcStstistic.UseVisualStyleBackColor = false;
-            this.chcStstistic.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // lblCleanDgGrid
-            // 
-            this.lblCleanDgGrid.AutoSize = true;
-            this.lblCleanDgGrid.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCleanDgGrid.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblCleanDgGrid.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblCleanDgGrid.Location = new System.Drawing.Point(317, 461);
-            this.lblCleanDgGrid.Name = "lblCleanDgGrid";
-            this.lblCleanDgGrid.Size = new System.Drawing.Size(73, 13);
-            this.lblCleanDgGrid.TabIndex = 53;
-            this.lblCleanDgGrid.Text = "wyczyść Listę";
-            this.lblCleanDgGrid.Visible = false;
-            this.lblCleanDgGrid.Click += new System.EventHandler(this.lblCleanDgGrid_Click);
-            // 
-            // lblLeftOneLine
-            // 
-            this.lblLeftOneLine.AutoSize = true;
-            this.lblLeftOneLine.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblLeftOneLine.Location = new System.Drawing.Point(298, 460);
-            this.lblLeftOneLine.Name = "lblLeftOneLine";
-            this.lblLeftOneLine.Size = new System.Drawing.Size(10, 14);
-            this.lblLeftOneLine.TabIndex = 54;
-            this.lblLeftOneLine.Text = "|";
-            this.lblLeftOneLine.Visible = false;
-            // 
-            // lblLeftTwoLine
-            // 
-            this.lblLeftTwoLine.AutoSize = true;
-            this.lblLeftTwoLine.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblLeftTwoLine.Location = new System.Drawing.Point(404, 460);
-            this.lblLeftTwoLine.Name = "lblLeftTwoLine";
-            this.lblLeftTwoLine.Size = new System.Drawing.Size(10, 14);
-            this.lblLeftTwoLine.TabIndex = 55;
-            this.lblLeftTwoLine.Text = "|";
-            this.lblLeftTwoLine.Visible = false;
-            // 
-            // chcVegetarian
-            // 
-            this.chcVegetarian.AutoSize = true;
-            this.chcVegetarian.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.chcVegetarian.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chcVegetarian.ForeColor = System.Drawing.Color.White;
-            this.chcVegetarian.Location = new System.Drawing.Point(688, 138);
-            this.chcVegetarian.Name = "chcVegetarian";
-            this.chcVegetarian.Size = new System.Drawing.Size(15, 14);
-            this.chcVegetarian.TabIndex = 7;
-            this.chcVegetarian.TabStop = false;
-            this.chcVegetarian.UseVisualStyleBackColor = true;
-            this.chcVegetarian.CheckedChanged += new System.EventHandler(this.chcVegetarian_CheckedChanged);
-            // 
-            // lblVegetarian
-            // 
-            this.lblVegetarian.AutoSize = true;
-            this.lblVegetarian.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblVegetarian.ForeColor = System.Drawing.Color.White;
-            this.lblVegetarian.Location = new System.Drawing.Point(592, 141);
-            this.lblVegetarian.Name = "lblVegetarian";
-            this.lblVegetarian.Size = new System.Drawing.Size(95, 13);
-            this.lblVegetarian.TabIndex = 7;
-            this.lblVegetarian.Text = "WEGETARIAŃSKIE";
-            this.lblVegetarian.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // lblClearCheckBox
             // 
             this.lblClearCheckBox.AutoSize = true;
             this.lblClearCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblClearCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblClearCheckBox.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblClearCheckBox.Location = new System.Drawing.Point(505, 460);
+            this.lblClearCheckBox.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblClearCheckBox.Location = new System.Drawing.Point(209, 5);
             this.lblClearCheckBox.Name = "lblClearCheckBox";
-            this.lblClearCheckBox.Size = new System.Drawing.Size(101, 13);
+            this.lblClearCheckBox.Size = new System.Drawing.Size(67, 13);
             this.lblClearCheckBox.TabIndex = 57;
-            this.lblClearCheckBox.Text = "wyczyść checkboxy";
+            this.lblClearCheckBox.Text = "WYCZYŚĆ";
             this.lblClearCheckBox.Visible = false;
             this.lblClearCheckBox.Click += new System.EventHandler(this.lblClearCheckBox_Click_1);
             // 
             // lblRightTwoLine
             // 
             this.lblRightTwoLine.AutoSize = true;
-            this.lblRightTwoLine.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblRightTwoLine.Location = new System.Drawing.Point(613, 459);
+            this.lblRightTwoLine.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblRightTwoLine.Location = new System.Drawing.Point(277, 3);
             this.lblRightTwoLine.Name = "lblRightTwoLine";
-            this.lblRightTwoLine.Size = new System.Drawing.Size(10, 14);
+            this.lblRightTwoLine.Size = new System.Drawing.Size(13, 14);
             this.lblRightTwoLine.TabIndex = 59;
             this.lblRightTwoLine.Text = "|";
             this.lblRightTwoLine.Visible = false;
@@ -1831,10 +1262,10 @@
             // lblRightOneLine
             // 
             this.lblRightOneLine.AutoSize = true;
-            this.lblRightOneLine.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblRightOneLine.Location = new System.Drawing.Point(486, 459);
+            this.lblRightOneLine.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblRightOneLine.Location = new System.Drawing.Point(195, 3);
             this.lblRightOneLine.Name = "lblRightOneLine";
-            this.lblRightOneLine.Size = new System.Drawing.Size(10, 14);
+            this.lblRightOneLine.Size = new System.Drawing.Size(13, 14);
             this.lblRightOneLine.TabIndex = 58;
             this.lblRightOneLine.Text = "|";
             this.lblRightOneLine.Visible = false;
@@ -1847,7 +1278,7 @@
             this.btnFilterOpen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFilterOpen.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnFilterOpen.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFilterOpen.Location = new System.Drawing.Point(405, 26);
+            this.btnFilterOpen.Location = new System.Drawing.Point(369, 29);
             this.btnFilterOpen.Name = "btnFilterOpen";
             this.btnFilterOpen.Size = new System.Drawing.Size(123, 35);
             this.btnFilterOpen.TabIndex = 61;
@@ -1860,11 +1291,11 @@
             this.chcFilterTime30.AutoSize = true;
             this.chcFilterTime30.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterTime30.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterTime30.Location = new System.Drawing.Point(19, 21);
+            this.chcFilterTime30.Location = new System.Drawing.Point(10, 25);
             this.chcFilterTime30.Name = "chcFilterTime30";
-            this.chcFilterTime30.Size = new System.Drawing.Size(55, 17);
+            this.chcFilterTime30.Size = new System.Drawing.Size(37, 17);
             this.chcFilterTime30.TabIndex = 62;
-            this.chcFilterTime30.Text = "30min";
+            this.chcFilterTime30.Text = "30";
             this.chcFilterTime30.UseVisualStyleBackColor = true;
             this.chcFilterTime30.CheckedChanged += new System.EventHandler(this.chcFilterTime30_CheckedChanged);
             // 
@@ -1887,7 +1318,7 @@
             this.chcFilterCuisineAmerican.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.chcFilterCuisineAmerican.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterCuisineAmerican.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterCuisineAmerican.Location = new System.Drawing.Point(6, 6);
+            this.chcFilterCuisineAmerican.Location = new System.Drawing.Point(3, 6);
             this.chcFilterCuisineAmerican.Name = "chcFilterCuisineAmerican";
             this.chcFilterCuisineAmerican.Size = new System.Drawing.Size(77, 31);
             this.chcFilterCuisineAmerican.TabIndex = 64;
@@ -1922,9 +1353,9 @@
             this.panelFiltrCuisine.Controls.Add(this.chcFilterCuisineCzech);
             this.panelFiltrCuisine.Controls.Add(this.chcFilterCuisineAsian);
             this.panelFiltrCuisine.Controls.Add(this.chcFilterCuisineAmerican);
-            this.panelFiltrCuisine.Location = new System.Drawing.Point(477, 27);
+            this.panelFiltrCuisine.Location = new System.Drawing.Point(366, 29);
             this.panelFiltrCuisine.Name = "panelFiltrCuisine";
-            this.panelFiltrCuisine.Size = new System.Drawing.Size(317, 83);
+            this.panelFiltrCuisine.Size = new System.Drawing.Size(307, 83);
             this.panelFiltrCuisine.TabIndex = 66;
             this.panelFiltrCuisine.Visible = false;
             // 
@@ -1934,7 +1365,7 @@
             this.chcFilterCuisineHungarian.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.chcFilterCuisineHungarian.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterCuisineHungarian.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterCuisineHungarian.Location = new System.Drawing.Point(246, 40);
+            this.chcFilterCuisineHungarian.Location = new System.Drawing.Point(244, 44);
             this.chcFilterCuisineHungarian.Name = "chcFilterCuisineHungarian";
             this.chcFilterCuisineHungarian.Size = new System.Drawing.Size(61, 31);
             this.chcFilterCuisineHungarian.TabIndex = 81;
@@ -1948,7 +1379,7 @@
             this.chcFilterCuisineItalian.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.chcFilterCuisineItalian.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterCuisineItalian.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterCuisineItalian.Location = new System.Drawing.Point(254, 6);
+            this.chcFilterCuisineItalian.Location = new System.Drawing.Point(196, 6);
             this.chcFilterCuisineItalian.Name = "chcFilterCuisineItalian";
             this.chcFilterCuisineItalian.Size = new System.Drawing.Size(45, 31);
             this.chcFilterCuisineItalian.TabIndex = 80;
@@ -1962,7 +1393,7 @@
             this.chcFilterCuisinePolish.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.chcFilterCuisinePolish.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterCuisinePolish.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterCuisinePolish.Location = new System.Drawing.Point(207, 40);
+            this.chcFilterCuisinePolish.Location = new System.Drawing.Point(198, 43);
             this.chcFilterCuisinePolish.Name = "chcFilterCuisinePolish";
             this.chcFilterCuisinePolish.Size = new System.Drawing.Size(43, 31);
             this.chcFilterCuisinePolish.TabIndex = 79;
@@ -1976,7 +1407,7 @@
             this.chcFilterCuisineGreek.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.chcFilterCuisineGreek.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterCuisineGreek.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterCuisineGreek.Location = new System.Drawing.Point(205, 6);
+            this.chcFilterCuisineGreek.Location = new System.Drawing.Point(84, 43);
             this.chcFilterCuisineGreek.Name = "chcFilterCuisineGreek";
             this.chcFilterCuisineGreek.Size = new System.Drawing.Size(44, 31);
             this.chcFilterCuisineGreek.TabIndex = 78;
@@ -1990,7 +1421,7 @@
             this.chcFilterCuisinePortuguese.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.chcFilterCuisinePortuguese.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterCuisinePortuguese.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterCuisinePortuguese.Location = new System.Drawing.Point(135, 40);
+            this.chcFilterCuisinePortuguese.Location = new System.Drawing.Point(8, 43);
             this.chcFilterCuisinePortuguese.Name = "chcFilterCuisinePortuguese";
             this.chcFilterCuisinePortuguese.Size = new System.Drawing.Size(69, 31);
             this.chcFilterCuisinePortuguese.TabIndex = 77;
@@ -2004,7 +1435,7 @@
             this.chcFilterCuisineSpanish.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.chcFilterCuisineSpanish.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterCuisineSpanish.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterCuisineSpanish.Location = new System.Drawing.Point(137, 6);
+            this.chcFilterCuisineSpanish.Location = new System.Drawing.Point(129, 6);
             this.chcFilterCuisineSpanish.Name = "chcFilterCuisineSpanish";
             this.chcFilterCuisineSpanish.Size = new System.Drawing.Size(65, 31);
             this.chcFilterCuisineSpanish.TabIndex = 76;
@@ -2018,7 +1449,7 @@
             this.chcFilterCuisineFrench.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.chcFilterCuisineFrench.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterCuisineFrench.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterCuisineFrench.Location = new System.Drawing.Point(81, 40);
+            this.chcFilterCuisineFrench.Location = new System.Drawing.Point(134, 43);
             this.chcFilterCuisineFrench.Name = "chcFilterCuisineFrench";
             this.chcFilterCuisineFrench.Size = new System.Drawing.Size(59, 31);
             this.chcFilterCuisineFrench.TabIndex = 75;
@@ -2032,7 +1463,7 @@
             this.chcFilterCuisineCzech.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.chcFilterCuisineCzech.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterCuisineCzech.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterCuisineCzech.Location = new System.Drawing.Point(88, 6);
+            this.chcFilterCuisineCzech.Location = new System.Drawing.Point(81, 6);
             this.chcFilterCuisineCzech.Name = "chcFilterCuisineCzech";
             this.chcFilterCuisineCzech.Size = new System.Drawing.Size(44, 31);
             this.chcFilterCuisineCzech.TabIndex = 74;
@@ -2046,7 +1477,7 @@
             this.chcFilterCuisineAsian.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.chcFilterCuisineAsian.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterCuisineAsian.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterCuisineAsian.Location = new System.Drawing.Point(16, 39);
+            this.chcFilterCuisineAsian.Location = new System.Drawing.Point(244, 6);
             this.chcFilterCuisineAsian.Name = "chcFilterCuisineAsian";
             this.chcFilterCuisineAsian.Size = new System.Drawing.Size(58, 31);
             this.chcFilterCuisineAsian.TabIndex = 73;
@@ -2111,11 +1542,11 @@
             this.chcFilterTime900.AutoSize = true;
             this.chcFilterTime900.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterTime900.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterTime900.Location = new System.Drawing.Point(87, 45);
+            this.chcFilterTime900.Location = new System.Drawing.Point(53, 49);
             this.chcFilterTime900.Name = "chcFilterTime900";
-            this.chcFilterTime900.Size = new System.Drawing.Size(79, 17);
+            this.chcFilterTime900.Size = new System.Drawing.Size(61, 17);
             this.chcFilterTime900.TabIndex = 68;
-            this.chcFilterTime900.Text = "Pow 90min";
+            this.chcFilterTime900.Text = "Pow 90";
             this.chcFilterTime900.UseVisualStyleBackColor = true;
             this.chcFilterTime900.CheckedChanged += new System.EventHandler(this.chcFilterTime900_CheckedChanged);
             // 
@@ -2124,11 +1555,11 @@
             this.chcFilterTime90.AutoSize = true;
             this.chcFilterTime90.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterTime90.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterTime90.Location = new System.Drawing.Point(19, 45);
+            this.chcFilterTime90.Location = new System.Drawing.Point(10, 49);
             this.chcFilterTime90.Name = "chcFilterTime90";
-            this.chcFilterTime90.Size = new System.Drawing.Size(56, 17);
+            this.chcFilterTime90.Size = new System.Drawing.Size(38, 17);
             this.chcFilterTime90.TabIndex = 67;
-            this.chcFilterTime90.Text = "90min";
+            this.chcFilterTime90.Text = "90";
             this.chcFilterTime90.UseVisualStyleBackColor = true;
             this.chcFilterTime90.CheckedChanged += new System.EventHandler(this.chcFilterTime90_CheckedChanged);
             // 
@@ -2137,32 +1568,46 @@
             this.chcFilterTime60.AutoSize = true;
             this.chcFilterTime60.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chcFilterTime60.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chcFilterTime60.Location = new System.Drawing.Point(87, 21);
+            this.chcFilterTime60.Location = new System.Drawing.Point(53, 25);
             this.chcFilterTime60.Name = "chcFilterTime60";
-            this.chcFilterTime60.Size = new System.Drawing.Size(56, 17);
+            this.chcFilterTime60.Size = new System.Drawing.Size(38, 17);
             this.chcFilterTime60.TabIndex = 66;
-            this.chcFilterTime60.Text = "60min";
+            this.chcFilterTime60.Text = "60";
             this.chcFilterTime60.UseVisualStyleBackColor = true;
             this.chcFilterTime60.CheckedChanged += new System.EventHandler(this.chcFiltrTime60_CheckedChanged);
             // 
             // panelFilterTime
             // 
+            this.panelFilterTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFilterTime.Controls.Add(this.label2);
             this.panelFilterTime.Controls.Add(this.chcFilterTime90);
             this.panelFilterTime.Controls.Add(this.chcFilterTime30);
             this.panelFilterTime.Controls.Add(this.chcFilterTime60);
             this.panelFilterTime.Controls.Add(this.chcFilterTime900);
-            this.panelFilterTime.Location = new System.Drawing.Point(126, 27);
+            this.panelFilterTime.Location = new System.Drawing.Point(76, 29);
             this.panelFilterTime.Name = "panelFilterTime";
-            this.panelFilterTime.Size = new System.Drawing.Size(172, 83);
+            this.panelFilterTime.Size = new System.Drawing.Size(121, 83);
             this.panelFilterTime.TabIndex = 67;
             this.panelFilterTime.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.Location = new System.Drawing.Point(35, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 69;
+            this.label2.Text = "Minuty:";
+            // 
             // panelFilterLevel
             // 
+            this.panelFilterLevel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelFilterLevel.Controls.Add(this.chcFilterLevelVeryHard);
             this.panelFilterLevel.Controls.Add(this.chcFiltrLevelEasy);
             this.panelFilterLevel.Controls.Add(this.chcFilterLevelHard);
-            this.panelFilterLevel.Location = new System.Drawing.Point(309, 27);
+            this.panelFilterLevel.Location = new System.Drawing.Point(201, 29);
             this.panelFilterLevel.Name = "panelFilterLevel";
             this.panelFilterLevel.Size = new System.Drawing.Size(88, 83);
             this.panelFilterLevel.TabIndex = 69;
@@ -2170,10 +1615,11 @@
             // 
             // panelFilterRating
             // 
+            this.panelFilterRating.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelFilterRating.Controls.Add(this.chcFilterRatingThree);
             this.panelFilterRating.Controls.Add(this.chcFilterRatingOne);
             this.panelFilterRating.Controls.Add(this.chcFilterRatingTwo);
-            this.panelFilterRating.Location = new System.Drawing.Point(404, 27);
+            this.panelFilterRating.Location = new System.Drawing.Point(296, 29);
             this.panelFilterRating.Name = "panelFilterRating";
             this.panelFilterRating.Size = new System.Drawing.Size(64, 83);
             this.panelFilterRating.TabIndex = 70;
@@ -2185,7 +1631,7 @@
             this.btnFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFilter.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnFilter.Location = new System.Drawing.Point(45, 76);
+            this.btnFilter.Location = new System.Drawing.Point(7, 76);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(63, 25);
             this.btnFilter.TabIndex = 71;
@@ -2199,22 +1645,147 @@
             this.btnFilterClose.BackColor = System.Drawing.Color.Maroon;
             this.btnFilterClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFilterClose.Image = ((System.Drawing.Image)(resources.GetObject("btnFilterClose.Image")));
-            this.btnFilterClose.Location = new System.Drawing.Point(65, 37);
+            this.btnFilterClose.Location = new System.Drawing.Point(28, 45);
             this.btnFilterClose.Name = "btnFilterClose";
-            this.btnFilterClose.Size = new System.Drawing.Size(25, 25);
+            this.btnFilterClose.Size = new System.Drawing.Size(20, 20);
             this.btnFilterClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnFilterClose.TabIndex = 72;
             this.btnFilterClose.TabStop = false;
             this.btnFilterClose.Visible = false;
             this.btnFilterClose.Click += new System.EventHandler(this.btnFilterClose_Click);
             // 
+            // panelFiltrComponents
+            // 
+            this.panelFiltrComponents.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFiltrComponents.Controls.Add(this.chcFruits);
+            this.panelFiltrComponents.Controls.Add(this.chcPasta);
+            this.panelFiltrComponents.Controls.Add(this.chcBird);
+            this.panelFiltrComponents.Controls.Add(this.chcMeat);
+            this.panelFiltrComponents.Controls.Add(this.lblBird);
+            this.panelFiltrComponents.Controls.Add(this.lblPasta);
+            this.panelFiltrComponents.Controls.Add(this.chcEggs);
+            this.panelFiltrComponents.Controls.Add(this.lblMeat);
+            this.panelFiltrComponents.Controls.Add(this.lblMuschrooms);
+            this.panelFiltrComponents.Controls.Add(this.lblEggs);
+            this.panelFiltrComponents.Controls.Add(this.chcMuschrooms);
+            this.panelFiltrComponents.Controls.Add(this.lblFruits);
+            this.panelFiltrComponents.Controls.Add(this.chcFish);
+            this.panelFiltrComponents.Controls.Add(this.lblFish);
+            this.panelFiltrComponents.Location = new System.Drawing.Point(680, 29);
+            this.panelFiltrComponents.Name = "panelFiltrComponents";
+            this.panelFiltrComponents.Size = new System.Drawing.Size(217, 83);
+            this.panelFiltrComponents.TabIndex = 73;
+            this.panelFiltrComponents.Visible = false;
+            // 
+            // panelRighCentre
+            // 
+            this.panelRighCentre.Controls.Add(this.lblDessert);
+            this.panelRighCentre.Controls.Add(this.lblDessertVeg);
+            this.panelRighCentre.Controls.Add(this.lblSoup);
+            this.panelRighCentre.Controls.Add(this.chcDessert);
+            this.panelRighCentre.Controls.Add(this.lblSoupVeg);
+            this.panelRighCentre.Controls.Add(this.lblDinner);
+            this.panelRighCentre.Controls.Add(this.lblDinnerVeg);
+            this.panelRighCentre.Controls.Add(this.chcSoup);
+            this.panelRighCentre.Controls.Add(this.lblSnack);
+            this.panelRighCentre.Controls.Add(this.lblSnackVeg);
+            this.panelRighCentre.Controls.Add(this.chcDinner);
+            this.panelRighCentre.Controls.Add(this.chcSnack);
+            this.panelRighCentre.Location = new System.Drawing.Point(722, 133);
+            this.panelRighCentre.Name = "panelRighCentre";
+            this.panelRighCentre.Size = new System.Drawing.Size(85, 636);
+            this.panelRighCentre.TabIndex = 74;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 100);
+            this.panel2.TabIndex = 0;
+            // 
+            // panelLeftCenter
+            // 
+            this.panelLeftCenter.Controls.Add(this.chcVegetarian);
+            this.panelLeftCenter.Controls.Add(this.lblDrinkVeg);
+            this.panelLeftCenter.Controls.Add(this.chcDrink);
+            this.panelLeftCenter.Controls.Add(this.label1);
+            this.panelLeftCenter.Controls.Add(this.lblPrevervesVeg);
+            this.panelLeftCenter.Controls.Add(this.chcPreserves);
+            this.panelLeftCenter.Controls.Add(this.lblDrink);
+            this.panelLeftCenter.Controls.Add(this.lblPreserves);
+            this.panelLeftCenter.Controls.Add(this.lblSaladVeg);
+            this.panelLeftCenter.Controls.Add(this.chcSalad);
+            this.panelLeftCenter.Controls.Add(this.lblSalad);
+            this.panelLeftCenter.Location = new System.Drawing.Point(96, 132);
+            this.panelLeftCenter.Name = "panelLeftCenter";
+            this.panelLeftCenter.Size = new System.Drawing.Size(83, 637);
+            this.panelLeftCenter.TabIndex = 75;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(19, 371);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Veg";
+            this.label1.Visible = false;
+            // 
+            // panelMiddle
+            // 
+            this.panelMiddle.Controls.Add(this.lblClearCheckBox);
+            this.panelMiddle.Controls.Add(this.lblRightOneLine);
+            this.panelMiddle.Controls.Add(this.lblRightTwoLine);
+            this.panelMiddle.Location = new System.Drawing.Point(210, 459);
+            this.panelMiddle.Name = "panelMiddle";
+            this.panelMiddle.Size = new System.Drawing.Size(492, 23);
+            this.panelMiddle.TabIndex = 76;
+            // 
+            // panelScreen
+            // 
+            this.panelScreen.Controls.Add(this.txtShortDescription);
+            this.panelScreen.Controls.Add(this.lblShortLevel);
+            this.panelScreen.Controls.Add(this.lblShortTime);
+            this.panelScreen.Controls.Add(this.pbStar3);
+            this.panelScreen.Controls.Add(this.pbStar1);
+            this.panelScreen.Controls.Add(this.pbStar2);
+            this.panelScreen.Controls.Add(this.txtLittleName);
+            this.panelScreen.Controls.Add(this.lblOcena);
+            this.panelScreen.Controls.Add(this.lblKitchen);
+            this.panelScreen.Controls.Add(this.lblCuisine);
+            this.panelScreen.Controls.Add(this.pbLittlePhoto);
+            this.panelScreen.Controls.Add(this.lblTime);
+            this.panelScreen.Controls.Add(this.lblLevel);
+            this.panelScreen.Controls.Add(this.pbFrame);
+            this.panelScreen.Location = new System.Drawing.Point(201, 206);
+            this.panelScreen.Name = "panelScreen";
+            this.panelScreen.Size = new System.Drawing.Size(514, 220);
+            this.panelScreen.TabIndex = 77;
+            // 
+            // txtShortDescription
+            // 
+            this.txtShortDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            this.txtShortDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtShortDescription.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtShortDescription.ForeColor = System.Drawing.Color.White;
+            this.txtShortDescription.Location = new System.Drawing.Point(254, 102);
+            this.txtShortDescription.Name = "txtShortDescription";
+            this.txtShortDescription.Size = new System.Drawing.Size(239, 79);
+            this.txtShortDescription.TabIndex = 42;
+            this.txtShortDescription.Text = "";
+            // 
             // Form1
             // 
-            this.AcceptButton = this.btnSeek;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.ClientSize = new System.Drawing.Size(904, 769);
+            this.Controls.Add(this.panelMiddle);
+            this.Controls.Add(this.lblStatistic);
+            this.Controls.Add(this.panelLeftCenter);
+            this.Controls.Add(this.panelRighCentre);
+            this.Controls.Add(this.panelFiltrComponents);
             this.Controls.Add(this.btnFilterClose);
             this.Controls.Add(this.btnFilterOpen);
             this.Controls.Add(this.btnFilter);
@@ -2222,59 +1793,20 @@
             this.Controls.Add(this.panelFilterLevel);
             this.Controls.Add(this.panelFilterTime);
             this.Controls.Add(this.panelFiltrCuisine);
-            this.Controls.Add(this.lblClearCheckBox);
-            this.Controls.Add(this.lblRightTwoLine);
-            this.Controls.Add(this.lblRightOneLine);
-            this.Controls.Add(this.lblVegetarian);
-            this.Controls.Add(this.chcVegetarian);
-            this.Controls.Add(this.lblCleanDgGrid);
-            this.Controls.Add(this.lblLeftTwoLine);
-            this.Controls.Add(this.lblLeftOneLine);
-            this.Controls.Add(this.chcStstistic);
-            this.Controls.Add(this.lblCulinary);
-            this.Controls.Add(this.lblStatistic);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.lblAmountsSeek);
             this.Controls.Add(this.lblNameSeek);
-            this.Controls.Add(this.lblCuisine);
-            this.Controls.Add(this.lblKitchen);
-            this.Controls.Add(this.lblShortLevel);
-            this.Controls.Add(this.lblLevel);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnOpen);
-            this.Controls.Add(this.pbStar3);
-            this.Controls.Add(this.pbStar2);
-            this.Controls.Add(this.pbStar1);
-            this.Controls.Add(this.lblShortTime);
-            this.Controls.Add(this.lblOcena);
-            this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.txtShortDescription);
-            this.Controls.Add(this.txtLittleName);
-            this.Controls.Add(this.pbLittlePhoto);
-            this.Controls.Add(this.btnSeek);
             this.Controls.Add(this.dgGrid);
-            this.Controls.Add(this.pbFrame);
             this.Controls.Add(this.txtSeek);
-            this.Controls.Add(this.panel30);
-            this.Controls.Add(this.panel29);
-            this.Controls.Add(this.panel28);
-            this.Controls.Add(this.panel27);
-            this.Controls.Add(this.panel26);
-            this.Controls.Add(this.panel25);
-            this.Controls.Add(this.panel24);
             this.Controls.Add(this.panel16);
-            this.Controls.Add(this.panel15);
-            this.Controls.Add(this.panel14);
-            this.Controls.Add(this.panel13);
-            this.Controls.Add(this.panel12);
-            this.Controls.Add(this.panel11);
-            this.Controls.Add(this.panel10);
-            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panelScreen);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2283,69 +1815,22 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Culinary Recipes";
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.cMenuStrip.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
-            this.panel16.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            this.panel18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            this.panel19.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            this.panel20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            this.panel21.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            this.panel22.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            this.panel23.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            this.panel24.ResumeLayout(false);
-            this.panel24.PerformLayout();
-            this.panel25.ResumeLayout(false);
-            this.panel25.PerformLayout();
-            this.panel26.ResumeLayout(false);
-            this.panel26.PerformLayout();
-            this.panel27.ResumeLayout(false);
-            this.panel27.PerformLayout();
-            this.panel28.ResumeLayout(false);
-            this.panel28.PerformLayout();
-            this.panel29.ResumeLayout(false);
-            this.panel29.PerformLayout();
-            this.panel30.ResumeLayout(false);
-            this.panel30.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar2)).EndInit();
@@ -2362,6 +1847,16 @@
             this.panelFilterRating.ResumeLayout(false);
             this.panelFilterRating.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFilterClose)).EndInit();
+            this.panelFiltrComponents.ResumeLayout(false);
+            this.panelFiltrComponents.PerformLayout();
+            this.panelRighCentre.ResumeLayout(false);
+            this.panelRighCentre.PerformLayout();
+            this.panelLeftCenter.ResumeLayout(false);
+            this.panelLeftCenter.PerformLayout();
+            this.panelMiddle.ResumeLayout(false);
+            this.panelMiddle.PerformLayout();
+            this.panelScreen.ResumeLayout(false);
+            this.panelScreen.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2381,38 +1876,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.CheckBox chcSnack;
         private System.Windows.Forms.Label lblSnack;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.Panel panel29;
-        private System.Windows.Forms.Panel panel30;
         private System.Windows.Forms.TextBox txtSeek;
         private System.Windows.Forms.PictureBox pbFrame;
         private System.Windows.Forms.DataGridView dgGrid;
@@ -2420,27 +1886,16 @@
         private System.Windows.Forms.Label lblDinner;
         private System.Windows.Forms.CheckBox chcDinner;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label lblSoup;
         private System.Windows.Forms.CheckBox chcSoup;
         private System.Windows.Forms.Label lblDessert;
         private System.Windows.Forms.CheckBox chcDessert;
-        private System.Windows.Forms.Label lblDrinks;
+        private System.Windows.Forms.Label lblDrink;
         private System.Windows.Forms.CheckBox chcDrink;
-        private System.Windows.Forms.Label lblPreserves;
         private System.Windows.Forms.CheckBox chcPreserves;
         private System.Windows.Forms.Label lblSalad;
         private System.Windows.Forms.CheckBox chcSalad;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox16;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.Label lblFish;
         private System.Windows.Forms.CheckBox chcFish;
         private System.Windows.Forms.Label lblPasta;
@@ -2455,10 +1910,8 @@
         private System.Windows.Forms.CheckBox chcMeat;
         private System.Windows.Forms.Label lblEggs;
         private System.Windows.Forms.CheckBox chcEggs;
-        private System.Windows.Forms.Button btnSeek;
         private System.Windows.Forms.PictureBox pbLittlePhoto;
         private System.Windows.Forms.TextBox txtLittleName;
-        private System.Windows.Forms.TextBox txtShortDescription;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblOcena;
         private System.Windows.Forms.Label lblShortTime;
@@ -2483,9 +1936,6 @@
         private System.Windows.Forms.Label lblStatistic;
         private System.Windows.Forms.Label lblCulinary;
         private System.Windows.Forms.CheckBox chcStstistic;
-        private System.Windows.Forms.Label lblCleanDgGrid;
-        private System.Windows.Forms.Label lblLeftOneLine;
-        private System.Windows.Forms.Label lblLeftTwoLine;
         private System.Windows.Forms.ToolStripMenuItem importujCalaBazęDanychToolStripMenuItem;
         private System.Windows.Forms.CheckBox chcVegetarian;
         private System.Windows.Forms.Label lblVegetarian;
@@ -2496,16 +1946,9 @@
         private System.Windows.Forms.Label lblDinnerVeg;
         private System.Windows.Forms.Label lblSoupVeg;
         private System.Windows.Forms.Label lblDessertVeg;
-        private System.Windows.Forms.Label lblDrinksVeg;
+        private System.Windows.Forms.Label lblDrinkVeg;
         private System.Windows.Forms.Label lblPrevervesVeg;
         private System.Windows.Forms.Label lblSaladVeg;
-        private System.Windows.Forms.Label lblFishVeg;
-        private System.Windows.Forms.Label lblPastaVeg;
-        private System.Windows.Forms.Label lblFruitsVeg;
-        private System.Windows.Forms.Label lblMushroomVeg;
-        private System.Windows.Forms.Label lblBirdVeg;
-        private System.Windows.Forms.Label lblMeatVeg;
-        private System.Windows.Forms.Label lblEggsVeg;
         private System.Windows.Forms.Button btnFilterOpen;
         private System.Windows.Forms.CheckBox chcFilterTime30;
         private System.Windows.Forms.CheckBox chcFiltrLevelEasy;
@@ -2535,6 +1978,20 @@
         private System.Windows.Forms.PictureBox btnFilterClose;
         private System.Windows.Forms.ToolStripMenuItem CMSexportOne;
         private System.Windows.Forms.ToolStripMenuItem CMSSend;
+        private System.Windows.Forms.Label lblPreserves;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panelFiltrComponents;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Panel panelRighCentre;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelLeftCenter;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelMiddle;
+        private System.Windows.Forms.Panel panelScreen;
+        private System.Windows.Forms.RichTextBox txtShortDescription;
     }
 }
 

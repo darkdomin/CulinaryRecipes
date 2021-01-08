@@ -45,8 +45,8 @@
             this.txt.ReadOnly = true;
             this.txt.Size = new System.Drawing.Size(307, 167);
             this.txt.TabIndex = 0;
-            this.txt.Text = "\r\n   Culinary Recipes\r\n   wersja 3.0\r\n\r\n   Dominik Stryjecki\r\n   rok : 2018\r\n   k" +
-    "ontakt: darkdomin@wp.pl\r\n";
+            this.txt.Text = "\r\n   Culinary Recipes\r\n   wersja 5.0\r\n\r\n   Dominik Stryjecki\r\n   rok : 2018\n   ko" +
+    "ntakt: darkdomin@wp.pl\r\n";
             // 
             // Form4
             // 

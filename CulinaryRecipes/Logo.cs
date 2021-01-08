@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CulinaryRecipes
@@ -22,18 +15,16 @@ namespace CulinaryRecipes
         {
             InitializeComponent();
         }
-        int time=1 ;
-       
+        int time = 0;
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-         
-            if (time == 5)
+            if (time == 4)
             {
                 timer1.Stop();
 
-
                 SingForm show = new SingForm();
-                 show.titleSing = titleLogo;
+                show.titleSing = titleLogo;
                 show.ingredientSing = ingredientLogo;
                 show.amountsSing = amountsLogo;
                 show.gramsSing = gramsLogo;
@@ -46,7 +37,5 @@ namespace CulinaryRecipes
                 time++;
             }
         }
-
-
     }
 }

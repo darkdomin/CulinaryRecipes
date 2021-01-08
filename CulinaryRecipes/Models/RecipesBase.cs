@@ -1,5 +1,6 @@
-﻿using System.Xml.Serialization;
-
+﻿
+using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace CulinaryRecipes
 {
@@ -27,7 +28,6 @@ namespace CulinaryRecipes
         public string CategoryDifficultLevel { get; set; }
         [XmlElement("CzasPrzygotowania")]
         public string CategoryPreparationTime { get; set; }
-
 
         #region Meal
         [XmlElement("Snack")]
@@ -69,10 +69,7 @@ namespace CulinaryRecipes
         [XmlElement("Gramatura")]
         public string Grams { get; set; }
 
-        public RecipesBase()
-        {
-
-        }
+        public RecipesBase() { }
 
         public RecipesBase(int Id, string Name, string Ingredients, string Amounts, string ShortDescription, string LongDescription, int NumberPortions, string CategoryCuisines, string CategoryRating, string categoryDifficultLevel, string categoryPreparationTime, int snack, int dinner, int soup, int dessert, int drink, int preserves, int salad, int fish, int pasta, int fruits, int muschrooms, int bird, int meat, int eggs, string photoLinkLocation, int vegetarian, string grams)
         {
@@ -107,43 +104,78 @@ namespace CulinaryRecipes
             this.Grams = grams;
         }
 
-        public static void add(RecipesBase objekt)
+        private static LiteDB.LiteCollection<RecipesBase> Join()
         {
             var db = Db.connect();
-            var col = db.GetCollection<RecipesBase>("RecipesBase");
+            var col = db.GetCollection<RecipesBase>("RecipesBase"); 
+            return col;
+        }
+
+        /// <summary>
+        /// Add file to database
+        /// </summary>
+        /// <param name="objekt"></param>
+        public static void Add(RecipesBase objekt)
+        {
+            dynamic col = Join();
             col.Insert(objekt);
         }
-        //wypełnij
-        public static dynamic getAll(string nameBase)  ///IEnumerable<RecipesBase>
+
+        /// <summary>
+        /// Get all files
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<RecipesBase> GetAll(string nameBase) 
         {
-            var db = Db.connect();
-            var col = db.GetCollection<RecipesBase>(nameBase);
+            var col = Join();
             return col.FindAll();
-
         }
-        //usuń
-        public static void del(int id)
+
+        /// <summary>
+        ///  Get all files
+        /// </summary>
+        /// <param name="nameBase"></param>
+        /// <returns></returns>
+        //public static dynamic GetAll(string nameBase)
+        //{
+        //    var col = Join();
+        //    return col.FindAll();
+        //}
+
+        /// <summary>
+        /// Delete single file form Database
+        /// </summary>
+        /// <param name="id"></param>
+        public static void DeleteSingleFile(int id)
         {
-            var db = Db.connect();
-            var col = db.GetCollection<RecipesBase>("RecipesBase");
+            var col = Join();
             col.Delete(id);
-
         }
-        //znajdz po numerze ID
-        public static RecipesBase getById(int id)
+
+        /// <summary>
+        /// Find by id number
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static RecipesBase GetById(int id)
         {
-            var db = Db.connect();
-            var col = db.GetCollection<RecipesBase>("RecipesBase");
+            var col = Join();
             return col.FindById(id);
         }
-        //aktualizuj
-        public static void update(RecipesBase p)
+
+        /// <summary>
+        /// Update DataBase
+        /// </summary>
+        /// <param name="p"></param>
+        public static void Update(RecipesBase p)
         {
-            var db = Db.connect();
-            var col = db.GetCollection<RecipesBase>("RecipesBase");
+            var col = Join();
             col.Update(p);
         }
 
+        /// <summary>
+        /// Remove all files from DataBase
+        /// </summary>
         public static void ClearDb()
         {
             using (var db = Db.connect())
@@ -153,9 +185,14 @@ namespace CulinaryRecipes
             }
         }
 
-        public static object GetPropValue(object src, string propName)
+        /// <summary>
+        /// Get the number of items in the database
+        /// </summary>
+        /// <returns></returns>
+        public static int GetCount()
         {
-            return src.GetType().GetProperty(propName).GetValue(src, null);
+            var col = Join();
+            return col.Count();
         }
     }
 }

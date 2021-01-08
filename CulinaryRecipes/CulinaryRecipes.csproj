@@ -49,10 +49,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B194B8F27A472898768CADCED0D0C3A2083F2A9A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>F0AEEB1D25CB1852D531B36F0F1290D9633CD56A</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>CulinaryRecipes_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -84,12 +85,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoCompleter.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ButtonMy.cs" />
-    <Compile Include="Db.cs" />
-    <Compile Include="EmailBase.cs" />
+    <Compile Include="Models\AutoCompleter.cs" />
+    <Compile Include="Models\ButtonMy.cs" />
+    <Compile Include="Models\ColorMy.cs" />
+    <Compile Include="Models\ConvertUnits.cs" />
+    <Compile Include="Models\Db.cs" />
+    <Compile Include="Models\Deserialization.cs" />
+    <Compile Include="Models\EmailBase.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,13 +110,19 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="AboutProgram .cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="AboutProgram .Designer.cs">
+      <DependentUpon>AboutProgram .cs</DependentUpon>
     </Compile>
-    <Compile Include="Function.cs" />
+    <Compile Include="Models\Function.cs" />
+    <Compile Include="Models\BulletCharacter.cs" />
+    <Compile Include="Models\RecipesData.cs" />
+    <Compile Include="Models\RichTextBoxExtension.cs" />
+    <Compile Include="Models\RowComparer.cs" />
+    <Compile Include="Models\Serialization.cs" />
+    <Compile Include="Models\Stamp.cs" />
     <Compile Include="star.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -128,25 +136,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rating.cs" />
-    <Compile Include="ReadOnlyRichTextBox.cs">
+    <Compile Include="Models\Rating.cs" />
+    <Compile Include="Models\ReadOnlyRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ReadOnlyTextBox.cs">
+    <Compile Include="Models\ReadOnlyTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RecipesBase.cs" />
-    <Compile Include="SearchEngine.cs" />
+    <Compile Include="Models\RecipesBase.cs" />
+    <Compile Include="Models\SearchEngine.cs" />
     <Compile Include="SingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SingForm.Designer.cs">
       <DependentUpon>SingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vegetarian.cs" />
-    <Compile Include="RichTextBoxMy.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Models\Vegetarian.cs" />
+    <Compile Include="Models\RichTextBoxMy.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,8 +162,8 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="AboutProgram .resx">
+      <DependentUpon>AboutProgram .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="star.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -180,6 +186,7 @@
       <DependentUpon>SingForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CulinaryRecipes_1_TemporaryKey.pfx" />
+    <None Include="CulinaryRecipes_2_TemporaryKey.pfx" />
     <None Include="CulinaryRecipes_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -215,5 +222,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

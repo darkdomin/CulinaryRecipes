@@ -103,32 +103,18 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnBullPoint = new System.Windows.Forms.PictureBox();
             this.btnEnter = new System.Windows.Forms.Button();
-            this.lblEnter = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.chcVegetarian = new System.Windows.Forms.CheckBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.pb29 = new System.Windows.Forms.PictureBox();
+            this.lblGrams = new System.Windows.Forms.Label();
             this.rTxtGrams = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.contextCopy = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.kopiujToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.pbConvert = new System.Windows.Forms.PictureBox();
-            this.pb28 = new System.Windows.Forms.PictureBox();
-            this.pb27 = new System.Windows.Forms.PictureBox();
-            this.btnAddRest = new System.Windows.Forms.Button();
-            this.txtShortDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
+            this.rtxtShortDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.rtxtPortion = new System.Windows.Forms.RichTextBox();
             this.rtxtAmountsOfFood = new System.Windows.Forms.RichTextBox();
-            this.pb9 = new System.Windows.Forms.PictureBox();
-            this.pb1 = new System.Windows.Forms.PictureBox();
-            this.pb2 = new System.Windows.Forms.PictureBox();
-            this.pb8 = new System.Windows.Forms.PictureBox();
-            this.pb6 = new System.Windows.Forms.PictureBox();
-            this.pb7 = new System.Windows.Forms.PictureBox();
-            this.pb5 = new System.Windows.Forms.PictureBox();
-            this.pb3 = new System.Windows.Forms.PictureBox();
-            this.pb4 = new System.Windows.Forms.PictureBox();
             this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
@@ -142,21 +128,23 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnConvert = new System.Windows.Forms.Button();
             this.lblCuisine = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblCusine = new System.Windows.Forms.Label();
+            this.lblAmounts = new System.Windows.Forms.Label();
             this.lblLevel = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblPortion = new System.Windows.Forms.Label();
+            this.lblRating = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.rtxtDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblIngredients = new System.Windows.Forms.Label();
             this.rTxtIngredients = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.txtName = new CulinaryRecipes.ReadOnlyTextBox();
             this.panelPicture = new System.Windows.Forms.Panel();
+            this.btnAddRest = new System.Windows.Forms.Button();
+            this.panelStar = new System.Windows.Forms.Panel();
             this.pbStar1 = new System.Windows.Forms.PictureBox();
             this.pbStar2 = new System.Windows.Forms.PictureBox();
             this.pbStar3 = new System.Windows.Forms.PictureBox();
@@ -185,7 +173,6 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.CMAmountsEnter = new System.Windows.Forms.ToolStripMenuItem();
             this.contextLongDescription = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmList = new System.Windows.Forms.ToolStripMenuItem();
             this.separatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.cofnijToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -257,20 +244,8 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb29)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBullPoint)).BeginInit();
             this.contextCopy.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbConvert)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
@@ -283,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelPicture.SuspendLayout();
+            this.panelStar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar3)).BeginInit();
@@ -928,11 +904,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(15, 586);
+            this.label5.Location = new System.Drawing.Point(15, 576);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 13);
+            this.label5.Size = new System.Drawing.Size(72, 26);
             this.label5.TabIndex = 0;
-            this.label5.Text = "PRZETWORY";
+            this.label5.Text = "PRZEKĄSKI,\r\nPRZETWORY";
             // 
             // label
             // 
@@ -986,11 +962,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(17, 26);
+            this.label2.Location = new System.Drawing.Point(17, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.Size = new System.Drawing.Size(64, 26);
             this.label2.TabIndex = 0;
-            this.label2.Text = "PRZEKĄSKI";
+            this.label2.Text = "  KOLACJE,\r\nŚNIADANIA";
             // 
             // panel3
             // 
@@ -1135,30 +1111,16 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
+            this.panelMain.Controls.Add(this.btnBullPoint);
             this.panelMain.Controls.Add(this.btnEnter);
-            this.panelMain.Controls.Add(this.lblEnter);
-            this.panelMain.Controls.Add(this.label23);
+            this.panelMain.Controls.Add(this.lblTitle);
             this.panelMain.Controls.Add(this.label22);
             this.panelMain.Controls.Add(this.chcVegetarian);
-            this.panelMain.Controls.Add(this.label21);
-            this.panelMain.Controls.Add(this.pb29);
+            this.panelMain.Controls.Add(this.lblGrams);
             this.panelMain.Controls.Add(this.rTxtGrams);
-            this.panelMain.Controls.Add(this.pbConvert);
-            this.panelMain.Controls.Add(this.pb28);
-            this.panelMain.Controls.Add(this.pb27);
-            this.panelMain.Controls.Add(this.btnAddRest);
-            this.panelMain.Controls.Add(this.txtShortDescription);
+            this.panelMain.Controls.Add(this.rtxtShortDescription);
             this.panelMain.Controls.Add(this.rtxtPortion);
             this.panelMain.Controls.Add(this.rtxtAmountsOfFood);
-            this.panelMain.Controls.Add(this.pb9);
-            this.panelMain.Controls.Add(this.pb1);
-            this.panelMain.Controls.Add(this.pb2);
-            this.panelMain.Controls.Add(this.pb8);
-            this.panelMain.Controls.Add(this.pb6);
-            this.panelMain.Controls.Add(this.pb7);
-            this.panelMain.Controls.Add(this.pb5);
-            this.panelMain.Controls.Add(this.pb3);
-            this.panelMain.Controls.Add(this.pb4);
             this.panelMain.Controls.Add(this.pictureBox26);
             this.panelMain.Controls.Add(this.pictureBox25);
             this.panelMain.Controls.Add(this.pictureBox24);
@@ -1172,75 +1134,81 @@
             this.panelMain.Controls.Add(this.pictureBox1);
             this.panelMain.Controls.Add(this.btnConvert);
             this.panelMain.Controls.Add(this.lblCuisine);
-            this.panelMain.Controls.Add(this.label20);
-            this.panelMain.Controls.Add(this.label15);
+            this.panelMain.Controls.Add(this.lblCusine);
+            this.panelMain.Controls.Add(this.lblAmounts);
             this.panelMain.Controls.Add(this.lblLevel);
             this.panelMain.Controls.Add(this.label19);
-            this.panelMain.Controls.Add(this.label18);
-            this.panelMain.Controls.Add(this.label17);
+            this.panelMain.Controls.Add(this.lblPortion);
+            this.panelMain.Controls.Add(this.lblRating);
             this.panelMain.Controls.Add(this.lblTime);
             this.panelMain.Controls.Add(this.label16);
             this.panelMain.Controls.Add(this.label14);
-            this.panelMain.Controls.Add(this.label13);
+            this.panelMain.Controls.Add(this.lblDescription);
             this.panelMain.Controls.Add(this.rtxtDescription);
-            this.panelMain.Controls.Add(this.label12);
+            this.panelMain.Controls.Add(this.lblIngredients);
             this.panelMain.Controls.Add(this.rTxtIngredients);
             this.panelMain.Controls.Add(this.txtName);
             this.panelMain.Controls.Add(this.panelPicture);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.panelMain.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.panelMain.Location = new System.Drawing.Point(100, 24);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1034, 801);
             this.panelMain.TabIndex = 0;
             // 
+            // btnBullPoint
+            // 
+            this.btnBullPoint.Image = ((System.Drawing.Image)(resources.GetObject("btnBullPoint.Image")));
+            this.btnBullPoint.Location = new System.Drawing.Point(959, 348);
+            this.btnBullPoint.Name = "btnBullPoint";
+            this.btnBullPoint.Size = new System.Drawing.Size(46, 23);
+            this.btnBullPoint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBullPoint.TabIndex = 53;
+            this.btnBullPoint.TabStop = false;
+            this.btnBullPoint.Click += new System.EventHandler(this.pbBullPoint);
+            // 
             // btnEnter
             // 
+            this.btnEnter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEnter.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnEnter.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnEnter.ForeColor = System.Drawing.Color.Red;
-            this.btnEnter.Location = new System.Drawing.Point(263, 39);
+            this.btnEnter.Location = new System.Drawing.Point(285, 39);
             this.btnEnter.Name = "btnEnter";
-            this.btnEnter.Size = new System.Drawing.Size(71, 20);
+            this.btnEnter.Size = new System.Drawing.Size(85, 20);
             this.btnEnter.TabIndex = 51;
-            this.btnEnter.Text = "OFF";
+            this.btnEnter.TabStop = false;
+            this.btnEnter.Text = "ENTER OFF";
             this.btnEnter.UseVisualStyleBackColor = true;
             this.btnEnter.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lblEnter
+            // lblTitle
             // 
-            this.lblEnter.AutoSize = true;
-            this.lblEnter.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblEnter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblEnter.Location = new System.Drawing.Point(208, 43);
-            this.lblEnter.Name = "lblEnter";
-            this.lblEnter.Size = new System.Drawing.Size(49, 14);
-            this.lblEnter.TabIndex = 50;
-            this.lblEnter.Text = "ENTER:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label23.Location = new System.Drawing.Point(7, 17);
-            this.label23.Margin = new System.Windows.Forms.Padding(0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(43, 14);
-            this.label23.TabIndex = 49;
-            this.label23.Text = "Nazwa";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblTitle.Location = new System.Drawing.Point(4, 17);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(49, 13);
+            this.lblTitle.TabIndex = 49;
+            this.lblTitle.Text = "Nazwa";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label22
             // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(916, 39);
+            this.label22.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label22.Location = new System.Drawing.Point(923, 44);
+            this.label22.Margin = new System.Windows.Forms.Padding(0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(95, 13);
             this.label22.TabIndex = 21;
             this.label22.Text = "WEGETARIAŃSKIE";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // chcVegetarian
             // 
@@ -1248,7 +1216,7 @@
             this.chcVegetarian.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.chcVegetarian.Enabled = false;
             this.chcVegetarian.ForeColor = System.Drawing.Color.White;
-            this.chcVegetarian.Location = new System.Drawing.Point(898, 38);
+            this.chcVegetarian.Location = new System.Drawing.Point(904, 42);
             this.chcVegetarian.Name = "chcVegetarian";
             this.chcVegetarian.Size = new System.Drawing.Size(15, 14);
             this.chcVegetarian.TabIndex = 47;
@@ -1256,49 +1224,43 @@
             this.chcVegetarian.UseVisualStyleBackColor = true;
             this.chcVegetarian.CheckedChanged += new System.EventHandler(this.chcVegetarian_CheckedChanged);
             // 
-            // label21
+            // lblGrams
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label21.Location = new System.Drawing.Point(52, 47);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(58, 14);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Jednostki";
-            // 
-            // pb29
-            // 
-            this.pb29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb29.Location = new System.Drawing.Point(57, 74);
-            this.pb29.Name = "pb29";
-            this.pb29.Size = new System.Drawing.Size(5, 683);
-            this.pb29.TabIndex = 1;
-            this.pb29.TabStop = false;
+            this.lblGrams.AutoSize = true;
+            this.lblGrams.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblGrams.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblGrams.Location = new System.Drawing.Point(57, 46);
+            this.lblGrams.Name = "lblGrams";
+            this.lblGrams.Size = new System.Drawing.Size(66, 14);
+            this.lblGrams.TabIndex = 0;
+            this.lblGrams.Text = "Jednostki";
+            this.lblGrams.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // rTxtGrams
             // 
             this.rTxtGrams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.rTxtGrams.AutoWordSelection = true;
             this.rTxtGrams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.rTxtGrams.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rTxtGrams.ContextMenuStrip = this.contextCopy;
-            this.rTxtGrams.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rTxtGrams.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rTxtGrams.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rTxtGrams.ForeColor = System.Drawing.Color.White;
-            this.rTxtGrams.Location = new System.Drawing.Point(62, 74);
+            this.rTxtGrams.Location = new System.Drawing.Point(57, 70);
             this.rTxtGrams.MaxLength = 400;
             this.rTxtGrams.Name = "rTxtGrams";
             this.rTxtGrams.ReadOnly = true;
-            this.rTxtGrams.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.rTxtGrams.Size = new System.Drawing.Size(57, 683);
+            this.rTxtGrams.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.rTxtGrams.Size = new System.Drawing.Size(78, 681);
             this.rTxtGrams.TabIndex = 3;
             this.rTxtGrams.Text = "";
             this.rTxtGrams.WordWrap = false;
             this.rTxtGrams.SelectionChanged += new System.EventHandler(this.rTxtGrams_SelectionChanged);
             this.rTxtGrams.Click += new System.EventHandler(this.rTxtGrams_Click);
             this.rTxtGrams.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtGrams_KeyDown);
-
             this.rTxtGrams.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rTxtGrams_KeyUp);
+            this.rTxtGrams.Validated += new System.EventHandler(this.rTxtGrams_Validated);
             // 
             // contextCopy
             // 
@@ -1315,100 +1277,60 @@
             this.kopiujToolStripMenu.Text = "Kopiuj";
             this.kopiujToolStripMenu.Click += new System.EventHandler(this.kopiujToolStripMenu_Click);
             // 
-            // pbConvert
+            // rtxtShortDescription
             // 
-            this.pbConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
-            this.pbConvert.Location = new System.Drawing.Point(453, 39);
-            this.pbConvert.Name = "pbConvert";
-            this.pbConvert.Size = new System.Drawing.Size(5, 20);
-            this.pbConvert.TabIndex = 3;
-            this.pbConvert.TabStop = false;
-            // 
-            // pb28
-            // 
-            this.pb28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb28.Location = new System.Drawing.Point(57, 64);
-            this.pb28.Name = "pb28";
-            this.pb28.Size = new System.Drawing.Size(62, 10);
-            this.pb28.TabIndex = 4;
-            this.pb28.TabStop = false;
-            // 
-            // pb27
-            // 
-            this.pb27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb27.Location = new System.Drawing.Point(8, 74);
-            this.pb27.Name = "pb27";
-            this.pb27.Size = new System.Drawing.Size(5, 683);
-            this.pb27.TabIndex = 5;
-            this.pb27.TabStop = false;
-            // 
-            // btnAddRest
-            // 
-            this.btnAddRest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnAddRest.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddRest.FlatAppearance.BorderSize = 0;
-            this.btnAddRest.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddRest.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAddRest.ForeColor = System.Drawing.Color.White;
-            this.btnAddRest.Location = new System.Drawing.Point(740, 200);
-            this.btnAddRest.Name = "btnAddRest";
-            this.btnAddRest.Size = new System.Drawing.Size(75, 34);
-            this.btnAddRest.TabIndex = 7;
-            this.btnAddRest.Text = "Dodaj";
-            this.btnAddRest.UseVisualStyleBackColor = false;
-            this.btnAddRest.Visible = false;
-            this.btnAddRest.Click += new System.EventHandler(this.btnAddRest_Click);
-            this.btnAddRest.MouseEnter += new System.EventHandler(this.btnAddRest_MouseEnter);
-            // 
-            // txtShortDescription
-            // 
-            this.txtShortDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.txtShortDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtShortDescription.ContextMenuStrip = this.contextCopy;
-            this.txtShortDescription.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtShortDescription.ForeColor = System.Drawing.Color.White;
-            this.txtShortDescription.Location = new System.Drawing.Point(797, 137);
-            this.txtShortDescription.Name = "txtShortDescription";
-            this.txtShortDescription.ReadOnly = true;
-            this.txtShortDescription.Size = new System.Drawing.Size(210, 130);
-            this.txtShortDescription.TabIndex = 5;
-            this.txtShortDescription.Text = "";
-            this.txtShortDescription.Click += new System.EventHandler(this.txtShortDescription_Click);
-            this.txtShortDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortDescription_KeyDown);
-            this.txtShortDescription.MouseEnter += new System.EventHandler(this.txtShortDescription_MouseEnter);
+            this.rtxtShortDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.rtxtShortDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtxtShortDescription.ContextMenuStrip = this.contextCopy;
+            this.rtxtShortDescription.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rtxtShortDescription.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rtxtShortDescription.ForeColor = System.Drawing.Color.White;
+            this.rtxtShortDescription.Location = new System.Drawing.Point(800, 121);
+            this.rtxtShortDescription.MaxLength = 140;
+            this.rtxtShortDescription.Name = "rtxtShortDescription";
+            this.rtxtShortDescription.ReadOnly = true;
+            this.rtxtShortDescription.Size = new System.Drawing.Size(210, 125);
+            this.rtxtShortDescription.TabIndex = 5;
+            this.rtxtShortDescription.Text = "";
+            this.rtxtShortDescription.Click += new System.EventHandler(this.txtShortDescription_Click);
+            this.rtxtShortDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortDescription_KeyDown);
+            this.rtxtShortDescription.MouseEnter += new System.EventHandler(this.txtShortDescription_MouseEnter);
+            this.rtxtShortDescription.Validated += new System.EventHandler(this.rtxtShortDescription_Validated);
             // 
             // rtxtPortion
             // 
             this.rtxtPortion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(43)))), ((int)(((byte)(57)))));
             this.rtxtPortion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxtPortion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rtxtPortion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtxtPortion.ForeColor = System.Drawing.Color.White;
-            this.rtxtPortion.Location = new System.Drawing.Point(458, 39);
+            this.rtxtPortion.Location = new System.Drawing.Point(543, 39);
+            this.rtxtPortion.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.rtxtPortion.MaxLength = 2;
             this.rtxtPortion.Multiline = false;
             this.rtxtPortion.Name = "rtxtPortion";
-            this.rtxtPortion.Size = new System.Drawing.Size(20, 20);
+            this.rtxtPortion.ReadOnly = true;
+            this.rtxtPortion.Size = new System.Drawing.Size(27, 20);
             this.rtxtPortion.TabIndex = 1;
             this.rtxtPortion.Text = "";
-            this.rtxtPortion.SelectionChanged += new System.EventHandler(this.rtxtPortion_SelectionChanged);
             this.rtxtPortion.Click += new System.EventHandler(this.rtxtPortion_Click);
             this.rtxtPortion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtPortion_KeyDown);
-            this.rtxtPortion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtPortion_KeyPress);
-            this.rtxtPortion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rtxtPortion_KeyUp);
+            this.rtxtPortion.Validated += new System.EventHandler(this.rtxtPortion_Validated);
             // 
             // rtxtAmountsOfFood
             // 
+            this.rtxtAmountsOfFood.AutoWordSelection = true;
             this.rtxtAmountsOfFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.rtxtAmountsOfFood.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtAmountsOfFood.ContextMenuStrip = this.contextCopy;
-            this.rtxtAmountsOfFood.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rtxtAmountsOfFood.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rtxtAmountsOfFood.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtxtAmountsOfFood.ForeColor = System.Drawing.Color.White;
-            this.rtxtAmountsOfFood.Location = new System.Drawing.Point(13, 74);
+            this.rtxtAmountsOfFood.Location = new System.Drawing.Point(13, 70);
             this.rtxtAmountsOfFood.Name = "rtxtAmountsOfFood";
             this.rtxtAmountsOfFood.ReadOnly = true;
             this.rtxtAmountsOfFood.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.rtxtAmountsOfFood.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.rtxtAmountsOfFood.Size = new System.Drawing.Size(38, 683);
+            this.rtxtAmountsOfFood.Size = new System.Drawing.Size(39, 681);
             this.rtxtAmountsOfFood.TabIndex = 2;
             this.rtxtAmountsOfFood.Text = "";
             this.rtxtAmountsOfFood.WordWrap = false;
@@ -1417,89 +1339,8 @@
             this.rtxtAmountsOfFood.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtAmountsOfFood_KeyDown);
             this.rtxtAmountsOfFood.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtAmountsOfFood_KeyPress);
             this.rtxtAmountsOfFood.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rtxtAmountsOfFood_KeyUp);
-            this.rtxtAmountsOfFood.MouseEnter += new System.EventHandler(this.rtxtAmountsOfFood_SelectionChanged);
-            // 
-            // pb9
-            // 
-            this.pb9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb9.Location = new System.Drawing.Point(126, 74);
-            this.pb9.Name = "pb9";
-            this.pb9.Size = new System.Drawing.Size(5, 683);
-            this.pb9.TabIndex = 9;
-            this.pb9.TabStop = false;
-            // 
-            // pb1
-            // 
-            this.pb1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb1.Location = new System.Drawing.Point(8, 64);
-            this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(43, 10);
-            this.pb1.TabIndex = 10;
-            this.pb1.TabStop = false;
-            // 
-            // pb2
-            // 
-            this.pb2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb2.Location = new System.Drawing.Point(126, 64);
-            this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(338, 10);
-            this.pb2.TabIndex = 11;
-            this.pb2.TabStop = false;
-            // 
-            // pb8
-            // 
-            this.pb8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb8.Location = new System.Drawing.Point(1001, 386);
-            this.pb8.Name = "pb8";
-            this.pb8.Size = new System.Drawing.Size(10, 371);
-            this.pb8.TabIndex = 12;
-            this.pb8.TabStop = false;
-            // 
-            // pb6
-            // 
-            this.pb6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb6.Location = new System.Drawing.Point(487, 386);
-            this.pb6.Name = "pb6";
-            this.pb6.Size = new System.Drawing.Size(10, 371);
-            this.pb6.TabIndex = 13;
-            this.pb6.TabStop = false;
-            // 
-            // pb7
-            // 
-            this.pb7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb7.Location = new System.Drawing.Point(487, 376);
-            this.pb7.Name = "pb7";
-            this.pb7.Size = new System.Drawing.Size(524, 10);
-            this.pb7.TabIndex = 14;
-            this.pb7.TabStop = false;
-            // 
-            // pb5
-            // 
-            this.pb5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb5.Location = new System.Drawing.Point(1007, 137);
-            this.pb5.Name = "pb5";
-            this.pb5.Size = new System.Drawing.Size(5, 130);
-            this.pb5.TabIndex = 15;
-            this.pb5.TabStop = false;
-            // 
-            // pb3
-            // 
-            this.pb3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb3.Location = new System.Drawing.Point(792, 137);
-            this.pb3.Name = "pb3";
-            this.pb3.Size = new System.Drawing.Size(5, 130);
-            this.pb3.TabIndex = 16;
-            this.pb3.TabStop = false;
-            // 
-            // pb4
-            // 
-            this.pb4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.pb4.Location = new System.Drawing.Point(792, 132);
-            this.pb4.Name = "pb4";
-            this.pb4.Size = new System.Drawing.Size(220, 5);
-            this.pb4.TabIndex = 17;
-            this.pb4.TabStop = false;
-            this.pb4.Tag = "a";
+            this.rtxtAmountsOfFood.MouseEnter += new System.EventHandler(this.rtxtAmountsOfFood_MouseEnter);
+            this.rtxtAmountsOfFood.Validated += new System.EventHandler(this.rtxtAmountsOfFood_Validated);
             // 
             // pictureBox26
             // 
@@ -1545,9 +1386,9 @@
             // 
             this.pictureBox22.BackColor = System.Drawing.Color.White;
             this.pictureBox22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox22.Location = new System.Drawing.Point(476, 757);
+            this.pictureBox22.Location = new System.Drawing.Point(486, 757);
             this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(545, 1);
+            this.pictureBox22.Size = new System.Drawing.Size(535, 1);
             this.pictureBox22.TabIndex = 22;
             this.pictureBox22.TabStop = false;
             // 
@@ -1557,7 +1398,7 @@
             this.pictureBox21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox21.Location = new System.Drawing.Point(7, 757);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(456, 1);
+            this.pictureBox21.Size = new System.Drawing.Size(470, 1);
             this.pictureBox21.TabIndex = 23;
             this.pictureBox21.TabStop = false;
             // 
@@ -1567,7 +1408,7 @@
             this.pictureBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox20.Location = new System.Drawing.Point(8, 63);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(455, 1);
+            this.pictureBox20.Size = new System.Drawing.Size(470, 1);
             this.pictureBox20.TabIndex = 24;
             this.pictureBox20.TabStop = false;
             // 
@@ -1585,7 +1426,7 @@
             // 
             this.pictureBox18.BackColor = System.Drawing.Color.White;
             this.pictureBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox18.Location = new System.Drawing.Point(464, 64);
+            this.pictureBox18.Location = new System.Drawing.Point(476, 63);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(1, 695);
             this.pictureBox18.TabIndex = 26;
@@ -1605,7 +1446,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(476, 333);
+            this.pictureBox1.Location = new System.Drawing.Point(486, 333);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1, 425);
             this.pictureBox1.TabIndex = 28;
@@ -1617,11 +1458,11 @@
             this.btnConvert.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConvert.FlatAppearance.BorderSize = 0;
             this.btnConvert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnConvert.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnConvert.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnConvert.ForeColor = System.Drawing.Color.White;
-            this.btnConvert.Location = new System.Drawing.Point(502, 37);
+            this.btnConvert.Location = new System.Drawing.Point(583, 37);
             this.btnConvert.Name = "btnConvert";
-            this.btnConvert.Size = new System.Drawing.Size(97, 22);
+            this.btnConvert.Size = new System.Drawing.Size(98, 22);
             this.btnConvert.TabIndex = 0;
             this.btnConvert.TabStop = false;
             this.btnConvert.Text = "Przelicz Porcje";
@@ -1633,128 +1474,128 @@
             // lblCuisine
             // 
             this.lblCuisine.AutoSize = true;
-            this.lblCuisine.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblCuisine.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblCuisine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblCuisine.Location = new System.Drawing.Point(598, 308);
             this.lblCuisine.Name = "lblCuisine";
-            this.lblCuisine.Size = new System.Drawing.Size(11, 15);
+            this.lblCuisine.Size = new System.Drawing.Size(12, 13);
             this.lblCuisine.TabIndex = 0;
             this.lblCuisine.Text = "-";
             // 
-            // label20
+            // lblCusine
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label20.Location = new System.Drawing.Point(543, 308);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(56, 15);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Kuchnia:";
+            this.lblCusine.AutoSize = true;
+            this.lblCusine.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblCusine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblCusine.Location = new System.Drawing.Point(543, 308);
+            this.lblCusine.Name = "lblCusine";
+            this.lblCusine.Size = new System.Drawing.Size(57, 13);
+            this.lblCusine.TabIndex = 0;
+            this.lblCusine.Text = "Kuchnia:";
             // 
-            // label15
+            // lblAmounts
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label15.Location = new System.Drawing.Point(6, 47);
-            this.label15.Margin = new System.Windows.Forms.Padding(0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(33, 14);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Ilości";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAmounts.AutoSize = true;
+            this.lblAmounts.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblAmounts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblAmounts.Location = new System.Drawing.Point(11, 46);
+            this.lblAmounts.Margin = new System.Windows.Forms.Padding(0);
+            this.lblAmounts.Name = "lblAmounts";
+            this.lblAmounts.Size = new System.Drawing.Size(39, 14);
+            this.lblAmounts.TabIndex = 0;
+            this.lblAmounts.Text = "Ilości";
+            this.lblAmounts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // lblLevel
             // 
             this.lblLevel.AutoSize = true;
-            this.lblLevel.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblLevel.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblLevel.ForeColor = System.Drawing.Color.White;
             this.lblLevel.Location = new System.Drawing.Point(901, 76);
             this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(11, 14);
+            this.lblLevel.Size = new System.Drawing.Size(12, 13);
             this.lblLevel.TabIndex = 0;
             this.lblLevel.Text = "-";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label19.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label19.Location = new System.Drawing.Point(787, 75);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(108, 15);
+            this.label19.Size = new System.Drawing.Size(110, 13);
             this.label19.TabIndex = 0;
             this.label19.Text = "Stopień Trudność:";
             // 
-            // label18
+            // lblPortion
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label18.Location = new System.Drawing.Point(394, 40);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(57, 19);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Porcje:";
+            this.lblPortion.AutoSize = true;
+            this.lblPortion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPortion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblPortion.Location = new System.Drawing.Point(488, 44);
+            this.lblPortion.Name = "lblPortion";
+            this.lblPortion.Size = new System.Drawing.Size(55, 16);
+            this.lblPortion.TabIndex = 0;
+            this.lblPortion.Text = "Porcje:";
             // 
-            // label17
+            // lblRating
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label17.Location = new System.Drawing.Point(718, 308);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(48, 15);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Ocena:";
-            this.label17.Visible = false;
+            this.lblRating.AutoSize = true;
+            this.lblRating.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblRating.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblRating.Location = new System.Drawing.Point(718, 308);
+            this.lblRating.Name = "lblRating";
+            this.lblRating.Size = new System.Drawing.Size(48, 13);
+            this.lblRating.TabIndex = 0;
+            this.lblRating.Text = "Ocena:";
+            this.lblRating.Visible = false;
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTime.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTime.ForeColor = System.Drawing.Color.White;
             this.lblTime.Location = new System.Drawing.Point(584, 75);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(11, 14);
+            this.lblTime.Size = new System.Drawing.Size(12, 13);
             this.lblTime.TabIndex = 0;
             this.lblTime.Text = "-";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label16.Location = new System.Drawing.Point(540, 74);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(38, 15);
+            this.label16.Size = new System.Drawing.Size(40, 13);
             this.label16.TabIndex = 0;
             this.label16.Text = "Czas:";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label14.Location = new System.Drawing.Point(791, 103);
+            this.label14.Location = new System.Drawing.Point(797, 102);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 19);
+            this.label14.Size = new System.Drawing.Size(38, 13);
             this.label14.TabIndex = 0;
             this.label14.Text = "Skrót";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label13
+            // lblDescription
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label13.Location = new System.Drawing.Point(490, 346);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 19);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Opis";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblDescription.Location = new System.Drawing.Point(492, 350);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(40, 18);
+            this.lblDescription.TabIndex = 0;
+            this.lblDescription.Text = "Opis";
+            this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // rtxtDescription
             // 
@@ -1762,53 +1603,58 @@
             this.rtxtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.rtxtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtDescription.ContextMenuStrip = this.contextCopy;
-            this.rtxtDescription.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rtxtDescription.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rtxtDescription.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtxtDescription.ForeColor = System.Drawing.Color.White;
-            this.rtxtDescription.Location = new System.Drawing.Point(497, 386);
+            this.rtxtDescription.Location = new System.Drawing.Point(493, 374);
+            this.rtxtDescription.Margin = new System.Windows.Forms.Padding(0);
             this.rtxtDescription.Name = "rtxtDescription";
             this.rtxtDescription.ReadOnly = true;
             this.rtxtDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtxtDescription.Size = new System.Drawing.Size(504, 371);
+            this.rtxtDescription.Size = new System.Drawing.Size(521, 377);
             this.rtxtDescription.TabIndex = 6;
             this.rtxtDescription.Text = "";
-            this.rtxtDescription.SelectionChanged += new System.EventHandler(this.rtxtDescription_SelectionChanged);
             this.rtxtDescription.Click += new System.EventHandler(this.rtxtDescription_Click);
             this.rtxtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtDescription_KeyDown);
-            this.rtxtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtxtDescription_KeyPress);
-            this.rtxtDescription.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rtxtDescription_KeyUp);
+            this.rtxtDescription.Validated += new System.EventHandler(this.rtxtDescription_Validated);
             // 
-            // label12
+            // lblIngredients
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label12.Location = new System.Drawing.Point(111, 47);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 14);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Składniki";
+            this.lblIngredients.AutoSize = true;
+            this.lblIngredients.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblIngredients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblIngredients.Location = new System.Drawing.Point(140, 46);
+            this.lblIngredients.Margin = new System.Windows.Forms.Padding(0);
+            this.lblIngredients.Name = "lblIngredients";
+            this.lblIngredients.Size = new System.Drawing.Size(62, 14);
+            this.lblIngredients.TabIndex = 0;
+            this.lblIngredients.Text = "Składniki";
+            this.lblIngredients.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // rTxtIngredients
             // 
             this.rTxtIngredients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.rTxtIngredients.AutoWordSelection = true;
             this.rTxtIngredients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.rTxtIngredients.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rTxtIngredients.ContextMenuStrip = this.contextCopy;
-            this.rTxtIngredients.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.rTxtIngredients.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rTxtIngredients.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rTxtIngredients.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rTxtIngredients.ForeColor = System.Drawing.Color.White;
-            this.rTxtIngredients.Location = new System.Drawing.Point(130, 74);
+            this.rTxtIngredients.Location = new System.Drawing.Point(140, 70);
             this.rTxtIngredients.Name = "rTxtIngredients";
             this.rTxtIngredients.ReadOnly = true;
             this.rTxtIngredients.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.rTxtIngredients.Size = new System.Drawing.Size(335, 684);
+            this.rTxtIngredients.Size = new System.Drawing.Size(330, 681);
             this.rTxtIngredients.TabIndex = 4;
             this.rTxtIngredients.Text = "";
             this.rTxtIngredients.WordWrap = false;
             this.rTxtIngredients.SelectionChanged += new System.EventHandler(this.rTxtIngredients_SelectionChanged);
             this.rTxtIngredients.Click += new System.EventHandler(this.rTxtIngredients_Click);
             this.rTxtIngredients.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtIngredients_KeyDown);
+            this.rTxtIngredients.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rTxtIngredients_KeyUp);
+            this.rTxtIngredients.Validated += new System.EventHandler(this.rTxtIngredients_Validated);
             // 
             // txtName
             // 
@@ -1816,34 +1662,63 @@
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtName.ContextMenuStrip = this.contextCopy;
             this.txtName.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtName.Font = new System.Drawing.Font("Corbel", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtName.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtName.ForeColor = System.Drawing.Color.White;
-            this.txtName.Location = new System.Drawing.Point(55, 7);
+            this.txtName.Location = new System.Drawing.Point(54, 7);
             this.txtName.MaxLength = 85;
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(965, 25);
+            this.txtName.Size = new System.Drawing.Size(966, 26);
             this.txtName.TabIndex = 0;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtName.Click += new System.EventHandler(this.txtName_Click);
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
+            this.txtName.Validated += new System.EventHandler(this.txtName_Validated);
             // 
             // panelPicture
             // 
-            this.panelPicture.Controls.Add(this.pbStar1);
-            this.panelPicture.Controls.Add(this.pbStar2);
-            this.panelPicture.Controls.Add(this.pbStar3);
+            this.panelPicture.Controls.Add(this.btnAddRest);
+            this.panelPicture.Controls.Add(this.panelStar);
             this.panelPicture.Controls.Add(this.pbLittlePhoto);
             this.panelPicture.Controls.Add(this.pictureBox2);
-            this.panelPicture.Location = new System.Drawing.Point(473, 58);
+            this.panelPicture.Location = new System.Drawing.Point(480, 58);
             this.panelPicture.Name = "panelPicture";
-            this.panelPicture.Size = new System.Drawing.Size(553, 285);
+            this.panelPicture.Size = new System.Drawing.Size(546, 285);
             this.panelPicture.TabIndex = 48;
+            // 
+            // btnAddRest
+            // 
+            this.btnAddRest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAddRest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddRest.FlatAppearance.BorderSize = 0;
+            this.btnAddRest.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddRest.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAddRest.ForeColor = System.Drawing.Color.White;
+            this.btnAddRest.Location = new System.Drawing.Point(371, 194);
+            this.btnAddRest.Name = "btnAddRest";
+            this.btnAddRest.Size = new System.Drawing.Size(110, 23);
+            this.btnAddRest.TabIndex = 7;
+            this.btnAddRest.Text = "Dodaj";
+            this.btnAddRest.UseVisualStyleBackColor = false;
+            this.btnAddRest.Visible = false;
+            this.btnAddRest.Click += new System.EventHandler(this.btnAddRest_Click);
+            this.btnAddRest.MouseEnter += new System.EventHandler(this.btnAddRest_MouseEnter);
+            // 
+            // panelStar
+            // 
+            this.panelStar.Controls.Add(this.pbStar1);
+            this.panelStar.Controls.Add(this.pbStar2);
+            this.panelStar.Controls.Add(this.pbStar3);
+            this.panelStar.Location = new System.Drawing.Point(347, 218);
+            this.panelStar.Name = "panelStar";
+            this.panelStar.Size = new System.Drawing.Size(166, 49);
+            this.panelStar.TabIndex = 47;
             // 
             // pbStar1
             // 
             this.pbStar1.Image = global::CulinaryRecipes.Properties.Resources.gwiazdka;
-            this.pbStar1.Location = new System.Drawing.Point(421, 227);
+            this.pbStar1.Location = new System.Drawing.Point(67, 15);
             this.pbStar1.Name = "pbStar1";
             this.pbStar1.Size = new System.Drawing.Size(23, 23);
             this.pbStar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1854,7 +1729,7 @@
             // pbStar2
             // 
             this.pbStar2.Image = global::CulinaryRecipes.Properties.Resources.gwiazdka;
-            this.pbStar2.Location = new System.Drawing.Point(357, 227);
+            this.pbStar2.Location = new System.Drawing.Point(14, 15);
             this.pbStar2.Name = "pbStar2";
             this.pbStar2.Size = new System.Drawing.Size(23, 23);
             this.pbStar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1865,7 +1740,7 @@
             // pbStar3
             // 
             this.pbStar3.Image = global::CulinaryRecipes.Properties.Resources.gwiazdka;
-            this.pbStar3.Location = new System.Drawing.Point(479, 227);
+            this.pbStar3.Location = new System.Drawing.Point(126, 15);
             this.pbStar3.Name = "pbStar3";
             this.pbStar3.Size = new System.Drawing.Size(23, 23);
             this.pbStar3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1877,7 +1752,7 @@
             // 
             this.pbLittlePhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbLittlePhoto.Image = global::CulinaryRecipes.Properties.Resources.przepisy;
-            this.pbLittlePhoto.Location = new System.Drawing.Point(17, 45);
+            this.pbLittlePhoto.Location = new System.Drawing.Point(19, 45);
             this.pbLittlePhoto.Name = "pbLittlePhoto";
             this.pbLittlePhoto.Size = new System.Drawing.Size(289, 194);
             this.pbLittlePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1888,9 +1763,9 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(6, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(545, 270);
+            this.pictureBox2.Size = new System.Drawing.Size(535, 270);
             this.pictureBox2.TabIndex = 46;
             this.pictureBox2.TabStop = false;
             // 
@@ -2075,7 +1950,6 @@
             // contextLongDescription
             // 
             this.contextLongDescription.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmList,
             this.separatorToolStripMenuItem,
             this.toolStripMenuItem4,
             this.cofnijToolStripMenuItem2,
@@ -2085,48 +1959,40 @@
             this.wklejToolStripMenuItem4,
             this.usuńToolStripMenuItem4});
             this.contextLongDescription.Name = "contextMenuStrip5";
-            this.contextLongDescription.Size = new System.Drawing.Size(199, 170);
-            // 
-            // cmList
-            // 
-            this.cmList.Name = "cmList";
-            this.cmList.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Space)));
-            this.cmList.Size = new System.Drawing.Size(198, 22);
-            this.cmList.Text = "Punktor Wł";
-            this.cmList.Click += new System.EventHandler(this.włToolStripMenuItem_Click);
+            this.contextLongDescription.Size = new System.Drawing.Size(197, 148);
             // 
             // separatorToolStripMenuItem
             // 
             this.separatorToolStripMenuItem.Name = "separatorToolStripMenuItem";
             this.separatorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
-            this.separatorToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.separatorToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.separatorToolStripMenuItem.Text = "Separator";
             this.separatorToolStripMenuItem.Click += new System.EventHandler(this.separatorToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(195, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(193, 6);
             // 
             // cofnijToolStripMenuItem2
             // 
             this.cofnijToolStripMenuItem2.Name = "cofnijToolStripMenuItem2";
             this.cofnijToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.cofnijToolStripMenuItem2.Size = new System.Drawing.Size(198, 22);
+            this.cofnijToolStripMenuItem2.Size = new System.Drawing.Size(196, 22);
             this.cofnijToolStripMenuItem2.Text = "Cofnij";
             this.cofnijToolStripMenuItem2.Click += new System.EventHandler(this.cofnijToolStripMenuItem2_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(195, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(193, 6);
             // 
             // wytnijToolStripMenuItem4
             // 
             this.wytnijToolStripMenuItem4.Name = "wytnijToolStripMenuItem4";
             this.wytnijToolStripMenuItem4.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.wytnijToolStripMenuItem4.Size = new System.Drawing.Size(198, 22);
+            this.wytnijToolStripMenuItem4.Size = new System.Drawing.Size(196, 22);
             this.wytnijToolStripMenuItem4.Text = "Wytnij";
             this.wytnijToolStripMenuItem4.Click += new System.EventHandler(this.wytnijToolStripMenuItem4_Click);
             // 
@@ -2134,7 +2000,7 @@
             // 
             this.kopiujToolStripMenuItem4.Name = "kopiujToolStripMenuItem4";
             this.kopiujToolStripMenuItem4.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.kopiujToolStripMenuItem4.Size = new System.Drawing.Size(198, 22);
+            this.kopiujToolStripMenuItem4.Size = new System.Drawing.Size(196, 22);
             this.kopiujToolStripMenuItem4.Text = "Kopiuj";
             this.kopiujToolStripMenuItem4.Click += new System.EventHandler(this.kopiujToolStripMenuItem4_Click);
             // 
@@ -2142,7 +2008,7 @@
             // 
             this.wklejToolStripMenuItem4.Name = "wklejToolStripMenuItem4";
             this.wklejToolStripMenuItem4.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.wklejToolStripMenuItem4.Size = new System.Drawing.Size(198, 22);
+            this.wklejToolStripMenuItem4.Size = new System.Drawing.Size(196, 22);
             this.wklejToolStripMenuItem4.Text = "Wklej";
             this.wklejToolStripMenuItem4.Click += new System.EventHandler(this.wklejToolStripMenuItem4_Click);
             // 
@@ -2150,7 +2016,7 @@
             // 
             this.usuńToolStripMenuItem4.Name = "usuńToolStripMenuItem4";
             this.usuńToolStripMenuItem4.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.usuńToolStripMenuItem4.Size = new System.Drawing.Size(198, 22);
+            this.usuńToolStripMenuItem4.Size = new System.Drawing.Size(196, 22);
             this.usuńToolStripMenuItem4.Text = "Usuń";
             this.usuńToolStripMenuItem4.Click += new System.EventHandler(this.usuńToolStripMenuItem4_Click);
             // 
@@ -2169,7 +2035,6 @@
             this.separatorToolStripMenuItem1});
             this.contextIngridients.Name = "contextMenuStrip2";
             this.contextIngridients.Size = new System.Drawing.Size(203, 176);
-            this.contextIngridients.Opening += new System.ComponentModel.CancelEventHandler(this.contextIngridients_Opening);
             // 
             // undoToolStripMenuItem
             // 
@@ -2316,7 +2181,7 @@
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnClose.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnClose.Location = new System.Drawing.Point(879, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
@@ -2324,6 +2189,7 @@
             this.btnClose.Text = "Zamknij";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Validated += new System.EventHandler(this.btnClose_Validated);
             // 
             // btnCancel
             // 
@@ -2331,7 +2197,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.Maroon;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancel.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCancel.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(722, 4);
             this.btnCancel.Name = "btnCancel";
@@ -2341,6 +2207,7 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Validated += new System.EventHandler(this.btnCancel_Validated);
             // 
             // btnDelete
             // 
@@ -2348,7 +2215,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.Maroon;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDelete.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(560, 4);
             this.btnDelete.Name = "btnDelete";
@@ -2364,9 +2231,9 @@
             this.btnModify.BackColor = System.Drawing.Color.Maroon;
             this.btnModify.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModify.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnModify.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnModify.ForeColor = System.Drawing.Color.White;
-            this.btnModify.Location = new System.Drawing.Point(291, 3);
+            this.btnModify.Location = new System.Drawing.Point(264, 3);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(75, 23);
             this.btnModify.TabIndex = 9;
@@ -2380,14 +2247,15 @@
             this.btnAdd.BackColor = System.Drawing.Color.Maroon;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAdd.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAdd.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(41, 4);
+            this.btnAdd.Location = new System.Drawing.Point(55, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Visible = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // printDocument1
@@ -2411,7 +2279,7 @@
             // 
             // backgroundWorker1
             // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker1_DoWork);
             // 
             // printDialog1
             // 
@@ -2437,6 +2305,7 @@
             this.MaximizeBox = false;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -2475,20 +2344,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBullPoint)).EndInit();
             this.contextCopy.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbConvert)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
@@ -2501,6 +2358,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelPicture.ResumeLayout(false);
+            this.panelStar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbStar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar3)).EndInit();
@@ -2585,24 +2443,24 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblIngredients;
         private ReadOnlyRichTextBox rtxtDescription;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pbLittlePhoto;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblPortion;
         private System.Windows.Forms.PictureBox pbStar3;
         private System.Windows.Forms.PictureBox pbStar2;
         private System.Windows.Forms.PictureBox pbStar1;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblRating;
         private System.Windows.Forms.Label lblLevel;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button btnAddRest;
         private System.Windows.Forms.Label lblCuisine;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblCusine;
+        private System.Windows.Forms.Label lblAmounts;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
@@ -2636,7 +2494,6 @@
         private System.Windows.Forms.ToolStripMenuItem kopiujToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem wklejToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem cmList;
         private System.Windows.Forms.ToolStripMenuItem separatorToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem cofnijToolStripMenuItem2;
@@ -2656,17 +2513,8 @@
         private System.Windows.Forms.PictureBox pictureBox25;
         private System.Windows.Forms.PictureBox pictureBox24;
         private System.Windows.Forms.PictureBox pictureBox26;
-        private System.Windows.Forms.PictureBox pb4;
-        private System.Windows.Forms.PictureBox pb3;
-        private System.Windows.Forms.PictureBox pb5;
-        private System.Windows.Forms.PictureBox pb6;
-        private System.Windows.Forms.PictureBox pb7;
         private ReadOnlyTextBox txtName;
-        private System.Windows.Forms.PictureBox pb8;
         private ReadOnlyRichTextBox rTxtIngredients;
-        private System.Windows.Forms.PictureBox pb1;
-        private System.Windows.Forms.PictureBox pb2;
-        private System.Windows.Forms.PictureBox pb9;
         private System.Windows.Forms.ToolStripMenuItem podglToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem drukujToolStripMenuItem;
         private System.Windows.Forms.PrintDialog printDialog1;
@@ -2676,13 +2524,9 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.RichTextBox rtxtAmountsOfFood;
         private System.Windows.Forms.RichTextBox rtxtPortion;
-        private ReadOnlyRichTextBox txtShortDescription;
-        private System.Windows.Forms.PictureBox pb27;
-        private System.Windows.Forms.PictureBox pb28;
-        private System.Windows.Forms.PictureBox pbConvert;
+        private ReadOnlyRichTextBox rtxtShortDescription;
         private ReadOnlyRichTextBox rTxtGrams;
-        private System.Windows.Forms.PictureBox pb29;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblGrams;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.CheckBox chcVegetarian;
         private System.Windows.Forms.ToolTip toolTip1;
@@ -2693,7 +2537,6 @@
         private System.Windows.Forms.ToolStripMenuItem CMIngridientsEnter;
         private System.Windows.Forms.ToolStripMenuItem cofnijToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem wytnijToolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem wklejToolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem5;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem CMGramsEnter;
@@ -2711,8 +2554,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem14;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnEnter;
-        private System.Windows.Forms.Label lblEnter;
+        private System.Windows.Forms.PictureBox btnBullPoint;
+        private System.Windows.Forms.Panel panelStar;
+        private System.Windows.Forms.ToolStripMenuItem wklejToolStripMenuItem5;
     }
 }
