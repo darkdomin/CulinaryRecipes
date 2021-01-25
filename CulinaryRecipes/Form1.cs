@@ -65,12 +65,12 @@ namespace CulinaryRecipes
             saveFileDialog1.Filter = "Pliki tekstowe (*.xml)|*.xml";
             zap = new IEnumerable<RecipesBase>[panelFilterTime.Controls.Count];
 
-            foreach (var r in RecipesBase.GetAll("RecipesBase"))
+            foreach (var r in DbFunc<RecipesBase>.GetAll())  
             {
                 txtSeek.AutoCompleteCustomSource.Add(r.RecipesName);
             }
 
-            if (RecipesBase.GetCount() == 0)
+            if (DbFunc<RecipesBase>.GetCount() == 0)
             {
                 DataBaseIsEmpty = true;
             }
@@ -364,7 +364,7 @@ namespace CulinaryRecipes
         {
             if (MessageBox.Show("Czy na pewno usunąć Bazę danych? \nOperacja nie do odwrócenia", "Uwaga!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                RecipesBase.ClearDb();
+                DbFunc<RecipesBase>.ClearDb("RecipesBase");
 
                 MessageBox.Show("Dokument został usunięty");
                 searchEngine.CompletedgGrid();
@@ -387,7 +387,7 @@ namespace CulinaryRecipes
                 string path = saveFileDialog1.FileName;
                 FileStream fs = new FileStream(path, System.IO.FileMode.Create, FileAccess.Write);
 
-                foreach (var r in RecipesBase.GetAll("RecipesBase"))
+                foreach (var r in DbFunc<RecipesBase>.GetAll()) 
                 {
                     ls.Add(new RecipesBase(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian, r.Grams));
                 }
@@ -667,7 +667,7 @@ namespace CulinaryRecipes
         {
             if (_name.Checked)
             {
-                foreach (var r in RecipesBase.GetAll("RecipesBase"))
+                foreach (var r in DbFunc<RecipesBase>.GetAll()) 
                 {
                     for (int i = 0; i < panelColumn.Count; i++)
                     {
@@ -779,7 +779,7 @@ namespace CulinaryRecipes
 
         private void FilterTime(int numberInTheTable, string minutes)
         {
-            zap[numberInTheTable] = from recipe in RecipesBase.GetAll("RecipesBase")
+            zap[numberInTheTable] = from recipe in DbFunc<RecipesBase>.GetAll()
                                     where recipe.CategoryPreparationTime == minutes
                                     select recipe;
         }
@@ -877,7 +877,7 @@ namespace CulinaryRecipes
 
         private void Przypisanie(int row, int idGrid)
         {
-            getExportId = RecipesBase.GetById(idGrid);
+            getExportId = DbFunc<RecipesBase>.GetById(idGrid);
             txtLittleName.Text = dgGrid.Rows[row].Cells[1].Value.ToString();
             ingredientColumnDgGridForm1 = dgGrid.Rows[row].Cells[2].Value.ToString();
             amountsOfIngredientsForm1 = dgGrid.Rows[row].Cells[3].Value.ToString();
@@ -1223,7 +1223,7 @@ namespace CulinaryRecipes
         {
             if (chcStstistic.Checked)
             {
-                int count = RecipesBase.GetCount();
+                int count = DbFunc<RecipesBase>.GetCount();
 
                 for (int i = 0; i <= count; i += 10)
                 {
@@ -1272,8 +1272,8 @@ namespace CulinaryRecipes
             {
                 if (MessageBox.Show("Czy na pewno usunąć Plik? \nOperacja nie do odwrócenia", "Uwaga!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var s = RecipesBase.GetById(numberId);
-                    RecipesBase.DeleteSingleFile(s.Id);
+                    var s = DbFunc<RecipesBase>.GetById(numberId);
+                    DbFunc<RecipesBase>.DeleteSingleFile(s.Id);
 
                     MessageBox.Show("Dokument został usunięty");
                 }
@@ -1570,8 +1570,8 @@ namespace CulinaryRecipes
 
                         foreach (var item in searchEngine.CheckBoxList)
                         {
-                            Vegetarian.SprawdzLabel(panelRighCentre, item.Name);
-                            Vegetarian.SprawdzLabel(panelLeftCenter, item.Name);
+                            Vegetarian.ChangeLabelColorForVeg(panelRighCentre, item.Name);
+                            Vegetarian.ChangeLabelColorForVeg(panelLeftCenter, item.Name);
                         }
                     }
                     else
@@ -1614,8 +1614,8 @@ namespace CulinaryRecipes
 
                     foreach (var item in searchEngine.CheckBoxList)
                     {
-                        Vegetarian.SprawdzLabel(panelRighCentre, item.Name);
-                        Vegetarian.SprawdzLabel(panelLeftCenter, item.Name);
+                        Vegetarian.ChangeLabelColorForVeg(panelRighCentre, item.Name);
+                        Vegetarian.ChangeLabelColorForVeg(panelLeftCenter, item.Name);
                     }
 
                     lblVegetarian.WhiteLabel();

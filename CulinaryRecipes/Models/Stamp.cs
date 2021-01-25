@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace CulinaryRecipes.Models
+﻿namespace CulinaryRecipes.Models
 {
     class Stamp
     {
-        private static string stringOfCharacters = "][";
+        private const string stringOfCharacters = "][";
 
         /// <summary>
         ///  Adds a character to an empty field (preventing it from moving up)

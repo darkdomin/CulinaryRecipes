@@ -19,7 +19,7 @@ namespace CulinaryRecipes.Models
         {
             double result = 0;
 
-            if (text.Contains("/"))
+            if (IsFraction(text))
             {
                 string leftSide = string.Empty;
                 string rightSide = string.Empty;
@@ -46,10 +46,13 @@ namespace CulinaryRecipes.Models
             double leftResult;
             double rightResult;
 
-            leftResult = double.Parse(leftSide);
-            rightResult = double.Parse(rightSide);
-            result = leftResult / rightResult;
+            double.TryParse(leftSide, out leftResult);
+            double.TryParse(rightSide, out rightResult);
 
+            if (rightResult != 0)
+                result = leftResult / rightResult;
+            else
+                result = 0;
             return result;
         }
 
@@ -113,16 +116,17 @@ namespace CulinaryRecipes.Models
             return text;
         }
 
-        //wew
         private static void ConvertToDecimalFractionalAndDouble(string[] textLines, double[] convertedTextLine)
         {
-            for (int i = 0; i < textLines.Length; i++)
+            if (textLines != null)
             {
-                convertedTextLine[i] = ConverterToDecimal(textLines[i]);
+                for (int i = 0; i < textLines.Length; i++)
+                {
+                    convertedTextLine[i] = ConverterToDecimal(textLines[i]);
+                }
             }
         }
 
-        //wew
         private static void ResultForOnePerson(int numberOfPeopleCurrently, double[] convertedTextLine)
         {
             for (int i = 0; i < convertedTextLine.Length; i++)
@@ -131,7 +135,6 @@ namespace CulinaryRecipes.Models
             }
         }
 
-        //wew
         private static void IncreaseToCertainNumber(int numberOfPeople, double[] convertedTextLine)
         {
             for (int i = 0; i < convertedTextLine.Length; i++)
@@ -141,7 +144,7 @@ namespace CulinaryRecipes.Models
             }
         }
 
-        private static bool IsDecimalFraction(string text)
+        private static bool IsFraction(string text)
         {
             if (text.Contains("/")) return true;
             else return false;

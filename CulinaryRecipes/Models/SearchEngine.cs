@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CulinaryRecipes.Models;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -6,11 +7,9 @@ namespace CulinaryRecipes
 {
     class SearchEngine
     {
-        #region Fields
-
         string _txtSeek;
         DataGridView _dgGrid;
-        string[] _sortedGridTab = new string[RecipesBase.GetCount()];
+        string[] _sortedGridTab = new string[DbFunc<RecipesBase>.GetCount()];
         /// <summary>
         /// Name in Data Base
         /// </summary>
@@ -20,7 +19,6 @@ namespace CulinaryRecipes
             "IdFishIngredients", "IdPastaIngredients", "IdFruitsIngredients", "IdMuschroomsIngredients", "IdBirdIngredients",
             "IdMeatIngredients", "IdEggsIngredients"//, "Vegetarian"
         };
-        #endregion Fields
 
         public SearchEngine(string txtSeek, DataGridView dgGrid)
         {
@@ -63,7 +61,7 @@ namespace CulinaryRecipes
         {
             try
             {
-                foreach (var r in RecipesBase.GetAll("RecipesBase"))
+                foreach (var r in DbFunc<RecipesBase>.GetAll())
                 {
                     CompleteDataGridRow(r);
                 }
@@ -88,7 +86,7 @@ namespace CulinaryRecipes
             bool found = false;
             try
             {
-                foreach (var r in RecipesBase.GetAll("RecipesBase"))
+                foreach (var r in DbFunc<RecipesBase>.GetAll())
                 {
                     string[] tab = r.RecipesName.Split(' ');
 
@@ -134,7 +132,7 @@ namespace CulinaryRecipes
         {
             if (_checkBoxName.Checked)
             {
-                foreach (var r in RecipesBase.GetAll("RecipesBase"))
+                foreach (var r in DbFunc<RecipesBase>.GetAll())
                 {
                     if ((int)GetPropValue(r, propName) == 1)
                     {
@@ -154,7 +152,7 @@ namespace CulinaryRecipes
         {
             try
             {
-                foreach (var r in RecipesBase.GetAll("RecipesBase"))
+                foreach (var r in DbFunc<RecipesBase>.GetAll())
                 {
                     string[] tab = r.RecipesName.Split(' ');
 
@@ -210,7 +208,7 @@ namespace CulinaryRecipes
             {
                 if (vegetarian.Checked)
                 {
-                    foreach (var r in RecipesBase.GetAll("RecipesBase"))
+                    foreach (var r in DbFunc<RecipesBase>.GetAll())
                     {
                         string[] tab = r.RecipesName.Split(' ');
 

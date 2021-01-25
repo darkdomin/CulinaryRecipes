@@ -12,7 +12,6 @@ namespace CulinaryRecipes
         private List<string> _bufor;
         private const int _maxNumberOfLines = 33;
         private RichTextBox rtxtAmount;
-        private int _maxLine = 0;
 
         public RichTextBoxMy(RichTextBox amount) : this(capacity: 4)
         {
@@ -30,17 +29,7 @@ namespace CulinaryRecipes
         public int NumberLine { get; set; }
         public int MaxLine { get; set; } //poprawic MaxLine
         public bool AddRecipeForm2 { get; set; }
-        public int MaxLines
-        {
-            get
-            {
-                return _maxLine;
-            }
-            private set
-            {
-                _maxLine = value;
-            }
-        }
+        public int MaxLines { get; private set; }
 
         /// <summary>
         /// Gets total number of elements in the List
@@ -171,15 +160,14 @@ namespace CulinaryRecipes
 
                 if (NumberLine < MaxLine)
                 {
-
-                    int dlugoscJakas = GetTextToNumberLine().Length + NumberLine;
-                    int dlugoscKoncowa = select - dlugoscJakas;
+                    int textLengthToNumberLine = GetTextToNumberLine().Length + NumberLine;
+                    int finalLenght = select - textLengthToNumberLine;
 
                     string textLine = GetLine(_bufor, NumberLine);
 
-                    if (dlugoscKoncowa < _bufor[NumberLine].Length)
+                    if (finalLenght < _bufor[NumberLine].Length)
                     {
-                        textLine = textLine.Insert(dlugoscKoncowa, value.ToString());
+                        textLine = textLine.Insert(finalLenght, value.ToString());
                     }
                     else
                     {
@@ -628,6 +616,5 @@ namespace CulinaryRecipes
 
             return numberOfCharacters + NumberLine;
         }
-
     }
 }

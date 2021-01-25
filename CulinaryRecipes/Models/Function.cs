@@ -161,7 +161,7 @@ namespace CulinaryRecipes
         {
             bool variable = false;
          
-            foreach (var r in RecipesBase.GetAll("RecipesBase"))
+            foreach (var r in DbFunc<RecipesBase>.GetAll())
             {
                 if (r.RecipesName == name.Text && r.RecipesName != correctName)
                 {
@@ -187,6 +187,11 @@ namespace CulinaryRecipes
             }
         }
 
+        /// <summary>
+        /// Selects checkboxes
+        /// </summary>
+        /// <param name="set"></param>
+        /// <param name="PanelLeftOrRight"></param>
         public static void IsCheckBoxChecked(Control set, int[] PanelLeftOrRight)
         {
             int i = 0;
@@ -204,7 +209,7 @@ namespace CulinaryRecipes
             }
         }
 
-        //liczy ile jest checkboxów w panelu
+        //liczy ile jest checkboxów w panelu - na razie nieużywany
         public static int CheckBoxCountInPanel(Control set)
         {
             int i = 0;
@@ -233,7 +238,7 @@ namespace CulinaryRecipes
 
         public static void SetFocusToTheEndOfTheName(RichTextBox name)
         {
-            if (name.Text.LastOrDefault() != 32)//
+            if (name.Text.LastOrDefault() != 32)
             {
                 name.SelectionStart = name.TextLength;
             }
@@ -294,25 +299,39 @@ namespace CulinaryRecipes
             return pictureName;
         }
 
-        //Czysci Labele i wstawia myślniki
+        /// <summary>
+        /// Clears labels and inserts dashes
+        /// </summary>
+        /// <param name="labelName"></param>
         public static void LabelClearTextInsertDash(Label labelName)
         {
             labelName.Text = Form2.dash;
         }
 
-        //Ukrywa gwiazdki
+        /// <summary>
+        /// Hides the stars from the rating
+        /// </summary>
+        /// <param name="pictureName"></param>
         public static void StarHide(PictureBox pictureName)
         {
             pictureName.Visible = false;
         }
 
-        // W tytule robi duze litrey
+        /// <summary>
+        /// Converts lowercase letters to uppercase letters in the name
+        /// </summary>
+        /// <param name="name"></param>
         public static void TitleTextToUpper(TextBox name)
         {
             name.Text = name.Text.ToUpper();
         }
 
-        //pokazuje gwiazdki z ratingu
+        /// <summary>
+        /// Shows highlighted highlighted stars
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="_name"></param>
+        /// <param name="variableName"></param>
         public static void ShowStar(int id, PictureBox _name, string variableName)
         {
             var stars = from p in Rating.categoryRating
@@ -353,14 +372,14 @@ namespace CulinaryRecipes
             }
         }
 
-        public static void DeleteRecipes(int text)
+        public static void DeleteRecipes(int recipesId)
         {
             if (MessageBox.Show("Czy na pewno usunąć Plik? \nOperacja nie do odwrócenia", "Uwaga!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
-                    var s = RecipesBase.GetById(text);
-                    RecipesBase.DeleteSingleFile(s.Id);
+                    var s = DbFunc<RecipesBase>.GetById(recipesId);
+                    DbFunc<RecipesBase>.DeleteSingleFile(s.Id);
                     MessageBox.Show("Dokument został usunięty");
                 }
                 catch (Exception ex)
@@ -370,30 +389,16 @@ namespace CulinaryRecipes
             }
         }
 
-        public static void HighlightItem(this ReadOnlyRichTextBox rich)
-        {
-            rich.BackColor = ColorMy.BackgroundColorHighlighted();
-        }
-
         /// <summary>
         /// Makes an item a lighter color
         /// </summary>
         /// <param name="rich"></param>
-        public static void HighlightItem(this RichTextBox rich)
+        public static void HighlightItem(this TextBoxBase rich)
         {
             rich.BackColor = ColorMy.BackgroundColorHighlighted();
         }
 
-        /// <summary>
-        /// Makes an item a lighter color
-        /// </summary>
-        /// <param name="rich"></param>
-        public static void HighlightItem(this TextBox rich)
-        {
-            rich.BackColor = ColorMy.BackgroundColorHighlighted();
-        }
-
-        public static void BorderColor(RichTextBox rich, Control set, Panel panPicture)
+        public static void BorderColor(TextBoxBase rich, Control set, Panel panPicture)
         {
             if (rich.ReadOnly == false)
             {
@@ -401,74 +406,17 @@ namespace CulinaryRecipes
             }
         }
 
-        public static void BorderColor(TextBox rich, Control set, Panel panPicture)
-        {
-            if (rich.ReadOnly == false)
-            {
-                ResetColor(rich, set, panPicture);
-
-                foreach (Control item in set.Controls)
-                {
-                    if (item is PictureBox)
-                    {
-                        if (
-                            (rich.Location.X - item.Location.X <= 10 &&
-                              rich.Location.X - item.Location.X >= 0) &&
-
-                             (rich.Location.Y - item.Location.Y <= 10 &&
-                              rich.Location.Y - item.Location.Y >= 0) ||
-
-                             (item.Location.X - rich.Location.X == rich.Size.Width)
-                            )
-                        {
-                            ((PictureBox)item).BackColor = ColorMy.BackgroundColorHighlighted();
-                        }
-                    }
-                }
-            }
-        }
-
-        public static void ResetColor(RichTextBox rich, Control set, Panel panPicture)
+        public static void ResetColor(TextBoxBase rich, Control set, Panel panPicture)
         {
             foreach (Control c in set.Controls)
             {
-
-                if (c is RichTextBox)
+                if (c is TextBoxBase)
                 {
                     if (c.Name == rich.Name) continue;
                     else
                     {
-                        ((RichTextBox)c).BackColor = ColorMy.CreateBright();
-                        ((RichTextBox)c).ForeColor = Color.White;
-                    }
-                }
-                if (c is TextBox)
-                {
-
-                    ((TextBox)c).BackColor = ColorMy.CreateBright();
-                    ((TextBox)c).ForeColor = Color.White;
-
-                }
-            }
-        }
-
-        public static void ResetColor(TextBox rich, Control set, Panel panPicture)
-        {
-            foreach (Control c in set.Controls)
-            {
-                if (c is PictureBox)
-                {
-                    if (c.Name == Star(panPicture) || c.Name == "btnBullPoint") continue;
-                    else ((PictureBox)c).BackColor = ColorMy.CreateBright();
-                }
-
-                if (c is RichTextBox)
-                {
-                    if (c.Name == rich.Name) continue;
-                    else
-                    {
-                        ((RichTextBox)c).BackColor = ColorMy.CreateBright();
-                        ((RichTextBox)c).ForeColor = Color.White;
+                        ((TextBoxBase)c).BackColor = ColorMy.CreateBright();
+                        ((TextBoxBase)c).ForeColor = Color.White;
                     }
                 }
             }
@@ -503,19 +451,19 @@ namespace CulinaryRecipes
             }
         }
 
-        public static void PokazForm(string formName)
+        public static void ShowForm(string formName)
         {
-            var ListaOkien = Application.OpenForms;
+            var windowsCol = Application.OpenForms;
 
-            for (int index = ListaOkien.Count - 1; index >= 0; index--)
+            for (int index = windowsCol.Count - 1; index >= 0; index--)
             {
-                if (ListaOkien[index].Name == formName)
+                if (windowsCol[index].Name == formName)
                 {
-                    ListaOkien[index].Visible = true;
+                    windowsCol[index].Visible = true;
                 }
                 else
                 {
-                    ListaOkien[index].Hide();
+                    windowsCol[index].Hide();
                 }
             }
         }

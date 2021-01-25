@@ -109,10 +109,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.chcVegetarian = new System.Windows.Forms.CheckBox();
             this.lblGrams = new System.Windows.Forms.Label();
-            this.rTxtGrams = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.contextCopy = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.kopiujToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.rtxtShortDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.rtxtPortion = new System.Windows.Forms.RichTextBox();
             this.rtxtAmountsOfFood = new System.Windows.Forms.RichTextBox();
             this.pictureBox26 = new System.Windows.Forms.PictureBox();
@@ -138,10 +136,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.rtxtDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
             this.lblIngredients = new System.Windows.Forms.Label();
-            this.rTxtIngredients = new CulinaryRecipes.ReadOnlyRichTextBox();
-            this.txtName = new CulinaryRecipes.ReadOnlyTextBox();
             this.panelPicture = new System.Windows.Forms.Panel();
             this.btnAddRest = new System.Windows.Forms.Button();
             this.panelStar = new System.Windows.Forms.Panel();
@@ -212,6 +207,11 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.rTxtGrams = new CulinaryRecipes.ReadOnlyRichTextBox();
+            this.rtxtShortDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
+            this.rtxtDescription = new CulinaryRecipes.ReadOnlyRichTextBox();
+            this.rTxtIngredients = new CulinaryRecipes.ReadOnlyRichTextBox();
+            this.txtName = new CulinaryRecipes.ReadOnlyTextBox();
             this.menuStrip1.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1236,32 +1236,6 @@
             this.lblGrams.Text = "Jednostki";
             this.lblGrams.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // rTxtGrams
-            // 
-            this.rTxtGrams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.rTxtGrams.AutoWordSelection = true;
-            this.rTxtGrams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.rTxtGrams.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rTxtGrams.ContextMenuStrip = this.contextCopy;
-            this.rTxtGrams.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rTxtGrams.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rTxtGrams.ForeColor = System.Drawing.Color.White;
-            this.rTxtGrams.Location = new System.Drawing.Point(57, 70);
-            this.rTxtGrams.MaxLength = 400;
-            this.rTxtGrams.Name = "rTxtGrams";
-            this.rTxtGrams.ReadOnly = true;
-            this.rTxtGrams.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.rTxtGrams.Size = new System.Drawing.Size(78, 681);
-            this.rTxtGrams.TabIndex = 3;
-            this.rTxtGrams.Text = "";
-            this.rTxtGrams.WordWrap = false;
-            this.rTxtGrams.SelectionChanged += new System.EventHandler(this.rTxtGrams_SelectionChanged);
-            this.rTxtGrams.Click += new System.EventHandler(this.rTxtGrams_Click);
-            this.rTxtGrams.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtGrams_KeyDown);
-            this.rTxtGrams.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rTxtGrams_KeyUp);
-            this.rTxtGrams.Validated += new System.EventHandler(this.rTxtGrams_Validated);
-            // 
             // contextCopy
             // 
             this.contextCopy.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1276,26 +1250,6 @@
             this.kopiujToolStripMenu.Size = new System.Drawing.Size(150, 22);
             this.kopiujToolStripMenu.Text = "Kopiuj";
             this.kopiujToolStripMenu.Click += new System.EventHandler(this.kopiujToolStripMenu_Click);
-            // 
-            // rtxtShortDescription
-            // 
-            this.rtxtShortDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.rtxtShortDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxtShortDescription.ContextMenuStrip = this.contextCopy;
-            this.rtxtShortDescription.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rtxtShortDescription.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rtxtShortDescription.ForeColor = System.Drawing.Color.White;
-            this.rtxtShortDescription.Location = new System.Drawing.Point(800, 121);
-            this.rtxtShortDescription.MaxLength = 140;
-            this.rtxtShortDescription.Name = "rtxtShortDescription";
-            this.rtxtShortDescription.ReadOnly = true;
-            this.rtxtShortDescription.Size = new System.Drawing.Size(210, 125);
-            this.rtxtShortDescription.TabIndex = 5;
-            this.rtxtShortDescription.Text = "";
-            this.rtxtShortDescription.Click += new System.EventHandler(this.txtShortDescription_Click);
-            this.rtxtShortDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortDescription_KeyDown);
-            this.rtxtShortDescription.MouseEnter += new System.EventHandler(this.txtShortDescription_MouseEnter);
-            this.rtxtShortDescription.Validated += new System.EventHandler(this.rtxtShortDescription_Validated);
             // 
             // rtxtPortion
             // 
@@ -1314,6 +1268,7 @@
             this.rtxtPortion.Text = "";
             this.rtxtPortion.Click += new System.EventHandler(this.rtxtPortion_Click);
             this.rtxtPortion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtPortion_KeyDown);
+            this.rtxtPortion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rtxtPortion_KeyUp);
             this.rtxtPortion.Validated += new System.EventHandler(this.rtxtPortion_Validated);
             // 
             // rtxtAmountsOfFood
@@ -1597,27 +1552,6 @@
             this.lblDescription.Text = "Opis";
             this.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // rtxtDescription
-            // 
-            this.rtxtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtxtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.rtxtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxtDescription.ContextMenuStrip = this.contextCopy;
-            this.rtxtDescription.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rtxtDescription.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rtxtDescription.ForeColor = System.Drawing.Color.White;
-            this.rtxtDescription.Location = new System.Drawing.Point(493, 374);
-            this.rtxtDescription.Margin = new System.Windows.Forms.Padding(0);
-            this.rtxtDescription.Name = "rtxtDescription";
-            this.rtxtDescription.ReadOnly = true;
-            this.rtxtDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtxtDescription.Size = new System.Drawing.Size(521, 377);
-            this.rtxtDescription.TabIndex = 6;
-            this.rtxtDescription.Text = "";
-            this.rtxtDescription.Click += new System.EventHandler(this.rtxtDescription_Click);
-            this.rtxtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtDescription_KeyDown);
-            this.rtxtDescription.Validated += new System.EventHandler(this.rtxtDescription_Validated);
-            // 
             // lblIngredients
             // 
             this.lblIngredients.AutoSize = true;
@@ -1630,51 +1564,6 @@
             this.lblIngredients.TabIndex = 0;
             this.lblIngredients.Text = "Składniki";
             this.lblIngredients.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // rTxtIngredients
-            // 
-            this.rTxtIngredients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.rTxtIngredients.AutoWordSelection = true;
-            this.rTxtIngredients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.rTxtIngredients.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rTxtIngredients.ContextMenuStrip = this.contextCopy;
-            this.rTxtIngredients.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rTxtIngredients.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rTxtIngredients.ForeColor = System.Drawing.Color.White;
-            this.rTxtIngredients.Location = new System.Drawing.Point(140, 70);
-            this.rTxtIngredients.Name = "rTxtIngredients";
-            this.rTxtIngredients.ReadOnly = true;
-            this.rTxtIngredients.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.rTxtIngredients.Size = new System.Drawing.Size(330, 681);
-            this.rTxtIngredients.TabIndex = 4;
-            this.rTxtIngredients.Text = "";
-            this.rTxtIngredients.WordWrap = false;
-            this.rTxtIngredients.SelectionChanged += new System.EventHandler(this.rTxtIngredients_SelectionChanged);
-            this.rTxtIngredients.Click += new System.EventHandler(this.rTxtIngredients_Click);
-            this.rTxtIngredients.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtIngredients_KeyDown);
-            this.rTxtIngredients.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rTxtIngredients_KeyUp);
-            this.rTxtIngredients.Validated += new System.EventHandler(this.rTxtIngredients_Validated);
-            // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.ContextMenuStrip = this.contextCopy;
-            this.txtName.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtName.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtName.ForeColor = System.Drawing.Color.White;
-            this.txtName.Location = new System.Drawing.Point(54, 7);
-            this.txtName.MaxLength = 85;
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(966, 26);
-            this.txtName.TabIndex = 0;
-            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtName.Click += new System.EventHandler(this.txtName_Click);
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
-            this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
-            this.txtName.Validated += new System.EventHandler(this.txtName_Validated);
             // 
             // panelPicture
             // 
@@ -2289,6 +2178,118 @@
             // toolTip1
             // 
             this.toolTip1.AutomaticDelay = 900;
+            // 
+            // rTxtGrams
+            // 
+            this.rTxtGrams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.rTxtGrams.AutoWordSelection = true;
+            this.rTxtGrams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.rTxtGrams.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rTxtGrams.ContextMenuStrip = this.contextCopy;
+            this.rTxtGrams.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rTxtGrams.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rTxtGrams.ForeColor = System.Drawing.Color.White;
+            this.rTxtGrams.Location = new System.Drawing.Point(57, 70);
+            this.rTxtGrams.MaxLength = 400;
+            this.rTxtGrams.Name = "rTxtGrams";
+            this.rTxtGrams.ReadOnly = true;
+            this.rTxtGrams.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.rTxtGrams.Size = new System.Drawing.Size(78, 681);
+            this.rTxtGrams.TabIndex = 3;
+            this.rTxtGrams.Text = "";
+            this.rTxtGrams.WordWrap = false;
+            this.rTxtGrams.SelectionChanged += new System.EventHandler(this.rTxtGrams_SelectionChanged);
+            this.rTxtGrams.Click += new System.EventHandler(this.rTxtGrams_Click);
+            this.rTxtGrams.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtGrams_KeyDown);
+            this.rTxtGrams.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rTxtGrams_KeyUp);
+            this.rTxtGrams.Validated += new System.EventHandler(this.rTxtGrams_Validated);
+            // 
+            // rtxtShortDescription
+            // 
+            this.rtxtShortDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.rtxtShortDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtxtShortDescription.ContextMenuStrip = this.contextCopy;
+            this.rtxtShortDescription.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rtxtShortDescription.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rtxtShortDescription.ForeColor = System.Drawing.Color.White;
+            this.rtxtShortDescription.Location = new System.Drawing.Point(800, 121);
+            this.rtxtShortDescription.MaxLength = 140;
+            this.rtxtShortDescription.Name = "rtxtShortDescription";
+            this.rtxtShortDescription.ReadOnly = true;
+            this.rtxtShortDescription.Size = new System.Drawing.Size(210, 125);
+            this.rtxtShortDescription.TabIndex = 5;
+            this.rtxtShortDescription.Text = "";
+            this.rtxtShortDescription.Click += new System.EventHandler(this.txtShortDescription_Click);
+            this.rtxtShortDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortDescription_KeyDown);
+            this.rtxtShortDescription.MouseEnter += new System.EventHandler(this.txtShortDescription_MouseEnter);
+            this.rtxtShortDescription.Validated += new System.EventHandler(this.rtxtShortDescription_Validated);
+            // 
+            // rtxtDescription
+            // 
+            this.rtxtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtxtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.rtxtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtxtDescription.ContextMenuStrip = this.contextCopy;
+            this.rtxtDescription.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rtxtDescription.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rtxtDescription.ForeColor = System.Drawing.Color.White;
+            this.rtxtDescription.Location = new System.Drawing.Point(493, 374);
+            this.rtxtDescription.Margin = new System.Windows.Forms.Padding(0);
+            this.rtxtDescription.Name = "rtxtDescription";
+            this.rtxtDescription.ReadOnly = true;
+            this.rtxtDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtxtDescription.Size = new System.Drawing.Size(521, 377);
+            this.rtxtDescription.TabIndex = 6;
+            this.rtxtDescription.Text = "";
+            this.rtxtDescription.Click += new System.EventHandler(this.rtxtDescription_Click);
+            this.rtxtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtxtDescription_KeyDown);
+            this.rtxtDescription.Validated += new System.EventHandler(this.rtxtDescription_Validated);
+            // 
+            // rTxtIngredients
+            // 
+            this.rTxtIngredients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.rTxtIngredients.AutoWordSelection = true;
+            this.rTxtIngredients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.rTxtIngredients.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rTxtIngredients.ContextMenuStrip = this.contextCopy;
+            this.rTxtIngredients.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rTxtIngredients.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rTxtIngredients.ForeColor = System.Drawing.Color.White;
+            this.rTxtIngredients.Location = new System.Drawing.Point(140, 70);
+            this.rTxtIngredients.Name = "rTxtIngredients";
+            this.rTxtIngredients.ReadOnly = true;
+            this.rTxtIngredients.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.rTxtIngredients.Size = new System.Drawing.Size(330, 681);
+            this.rTxtIngredients.TabIndex = 4;
+            this.rTxtIngredients.Text = "";
+            this.rTxtIngredients.WordWrap = false;
+            this.rTxtIngredients.SelectionChanged += new System.EventHandler(this.rTxtIngredients_SelectionChanged);
+            this.rTxtIngredients.Click += new System.EventHandler(this.rTxtIngredients_Click);
+            this.rTxtIngredients.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rTxtIngredients_KeyDown);
+            this.rTxtIngredients.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rTxtIngredients_KeyUp);
+            this.rTxtIngredients.Validated += new System.EventHandler(this.rTxtIngredients_Validated);
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtName.ContextMenuStrip = this.contextCopy;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtName.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtName.ForeColor = System.Drawing.Color.White;
+            this.txtName.Location = new System.Drawing.Point(54, 7);
+            this.txtName.MaxLength = 85;
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(966, 26);
+            this.txtName.TabIndex = 0;
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtName.Click += new System.EventHandler(this.txtName_Click);
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
+            this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
+            this.txtName.Validated += new System.EventHandler(this.txtName_Validated);
             // 
             // Form2
             // 

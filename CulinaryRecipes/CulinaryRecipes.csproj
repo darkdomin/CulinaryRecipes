@@ -90,6 +90,7 @@
     <Compile Include="Models\ColorMy.cs" />
     <Compile Include="Models\ConvertUnits.cs" />
     <Compile Include="Models\Db.cs" />
+    <Compile Include="Models\DbFunc.cs" />
     <Compile Include="Models\Deserialization.cs" />
     <Compile Include="Models\EmailBase.cs" />
     <Compile Include="Form1.cs">

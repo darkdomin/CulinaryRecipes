@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CulinaryRecipes.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
@@ -28,7 +29,7 @@ namespace CulinaryRecipes
             {
                 _fs = new FileStream(accessPath, FileMode.Create, FileAccess.Write);
 
-                foreach (var r in RecipesBase.GetAll("RecipesBase"))
+                foreach (var r in DbFunc<RecipesBase>.GetAll())
                 {
                     _ls.Add(new RecipesBase(r.Id, r.RecipesName, r.Ingredients, r.AmountsMeal, r.ShortDescription, r.LongDescription, r.NumberPortions, r.CategoryCuisines, r.CategoryRating, r.CategoryDifficultLevel, r.CategoryPreparationTime, r.SnackMeal, r.DinnerMeal, r.SoupMeal, r.DessertMeal, r.DrinkMeal, r.PreservesMeal, r.SaladMeal, r.IdFishIngredients, r.IdPastaIngredients, r.IdFruitsIngredients, r.IdMuschroomsIngredients, r.IdBirdIngredients, r.IdMeatIngredients, r.IdEggsIngredients, r.PhotoLinkLocation, r.Vegetarian, r.Grams));
                 }
@@ -38,9 +39,13 @@ namespace CulinaryRecipes
 
                 MessageBox.Show("Eksport bazy danych zakończył się sukcesem");
             }
+            catch (IOException ex)
+            {
+                MessageBox.Show("Błąd podczas eksportu", ex.Message);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Błąd podczas eksportu", ex.Message);
             }
         }
 
@@ -62,9 +67,13 @@ namespace CulinaryRecipes
 
                 MessageBox.Show("Eksport pliku zakończył się sukcesem.");
             }
+            catch (IOException ex)
+            {
+                MessageBox.Show("Błąd podczas eksportu", ex.Message);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Błąd podczas eksportu", ex.Message);
             }
         }
     }

@@ -1,13 +1,11 @@
-﻿
-using System.Collections.Generic;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace CulinaryRecipes
 {
     public class RecipesBase
     {
         [XmlAttribute("Id")]
-        public int Id { get; set; }
+        public int Id { get;  set; }
         [XmlElement("NazwaPrzepisu")]
         public string RecipesName { get; set; }
         [XmlElement("Składniki")]
@@ -102,97 +100,6 @@ namespace CulinaryRecipes
             this.PhotoLinkLocation = photoLinkLocation;
             this.Vegetarian = vegetarian;
             this.Grams = grams;
-        }
-
-        private static LiteDB.LiteCollection<RecipesBase> Join()
-        {
-            var db = Db.connect();
-            var col = db.GetCollection<RecipesBase>("RecipesBase"); 
-            return col;
-        }
-
-        /// <summary>
-        /// Add file to database
-        /// </summary>
-        /// <param name="objekt"></param>
-        public static void Add(RecipesBase objekt)
-        {
-            dynamic col = Join();
-            col.Insert(objekt);
-        }
-
-        /// <summary>
-        /// Get all files
-        /// </summary>
-        /// <returns></returns>
-        public static IEnumerable<RecipesBase> GetAll(string nameBase) 
-        {
-            var col = Join();
-            return col.FindAll();
-        }
-
-        /// <summary>
-        ///  Get all files
-        /// </summary>
-        /// <param name="nameBase"></param>
-        /// <returns></returns>
-        //public static dynamic GetAll(string nameBase)
-        //{
-        //    var col = Join();
-        //    return col.FindAll();
-        //}
-
-        /// <summary>
-        /// Delete single file form Database
-        /// </summary>
-        /// <param name="id"></param>
-        public static void DeleteSingleFile(int id)
-        {
-            var col = Join();
-            col.Delete(id);
-        }
-
-        /// <summary>
-        /// Find by id number
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public static RecipesBase GetById(int id)
-        {
-            var col = Join();
-            return col.FindById(id);
-        }
-
-        /// <summary>
-        /// Update DataBase
-        /// </summary>
-        /// <param name="p"></param>
-        public static void Update(RecipesBase p)
-        {
-            var col = Join();
-            col.Update(p);
-        }
-
-        /// <summary>
-        /// Remove all files from DataBase
-        /// </summary>
-        public static void ClearDb()
-        {
-            using (var db = Db.connect())
-            {
-                db.DropCollection("RecipesBase");
-                db.Shrink();
-            }
-        }
-
-        /// <summary>
-        /// Get the number of items in the database
-        /// </summary>
-        /// <returns></returns>
-        public static int GetCount()
-        {
-            var col = Join();
-            return col.Count();
         }
     }
 }

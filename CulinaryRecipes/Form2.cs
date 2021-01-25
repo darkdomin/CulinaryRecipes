@@ -217,7 +217,7 @@ namespace CulinaryRecipes
             if (!isClosing && !InTheProcessOfAdding)
             {
                 this.Visible = false;
-                Function.PokazForm("Form1");
+                Function.ShowForm("Form1");
             }
         }
 
@@ -992,7 +992,7 @@ namespace CulinaryRecipes
                         {
                             #region PanelMain
 
-                            var up = RecipesBase.GetById(idDgGridForm2);
+                            var up = DbFunc<RecipesBase>.GetById(idDgGridForm2);
                             up.RecipesName = txtName.Text;
                             up.AmountsMeal = rtxtAmountsOfFood.Text;
                             up.Grams = rTxtGrams.Text;
@@ -1034,7 +1034,7 @@ namespace CulinaryRecipes
                             if (linkForm2 == null) linkForm2 = Stamp.StampsCharacters();
                             else up.PhotoLinkLocation = linkForm2;
 
-                            RecipesBase.Update(up);
+                            DbFunc<RecipesBase>.Update(up);
                             modify = true;
                             btnClose.Visible = true;
                             chcVegetarian.Enabled = false;
@@ -1100,7 +1100,7 @@ namespace CulinaryRecipes
             if (WantToDisable())
             {
                 this.Visible = false;
-                Function.PokazForm("Form1");
+                Function.ShowForm("Form1");
             }
         }
 
@@ -1194,7 +1194,7 @@ namespace CulinaryRecipes
                         model.Vegetarian = checkBoxIngredients[7];
                         #endregion
 
-                        RecipesBase.Add(model);
+                        DbFunc<RecipesBase>.Add(model);
 
 
 
@@ -1280,6 +1280,7 @@ namespace CulinaryRecipes
 
         private void Convert()
         {
+
             rtxtAmountsOfFood.Lines = ConvertUnits.ConvertFunction(rtxtAmountsOfFood.Text, numberOfPortionsForm2, int.Parse(rtxtPortion.Text));
 
             rtxtPortion.BackColor = ColorMy.CreateDeepBlue();
@@ -1384,7 +1385,7 @@ namespace CulinaryRecipes
                 InTheProcessOfAdding = false;
                 OpenForm.newForm3 = newForm;
                 this.Hide();
-                OpenForm.ShowDialog(); 
+                OpenForm.ShowDialog();
             }
         }
 
@@ -2440,6 +2441,32 @@ namespace CulinaryRecipes
             {
                 txtName.Focus();
                 DisplayForm(txtName);
+            }
+        }
+
+        private void rtxtPortion_KeyUp(object sender, KeyEventArgs e)
+        {
+            bool move = e.KeyCode != Keys.Back && e.KeyCode != Keys.Delete && e.KeyCode != Keys.Left && e.KeyCode != Keys.Right;
+
+            if ((e.KeyValue < 48 || e.KeyValue > 57) && move == true)
+            {
+                bool onlyLast = true;
+                if (rtxtPortion.Text.Length == 2)
+                {
+                    char last = rtxtPortion.Text[rtxtPortion.Text.Length - 1];
+                    char first = rtxtPortion.Text[rtxtPortion.Text.Length - 2];
+
+                    if (first == last)
+                    {
+                        rtxtPortion.Text = string.Empty;
+                        onlyLast = false;
+                    }
+                }
+                if (onlyLast)
+                {
+                    rtxtPortion.Text = rtxtPortion.Text.Remove(rtxtPortion.Text.Length - 1);
+                    rtxtPortion.SelectionStart = rtxtPortion.TextLength;
+                }
             }
         }
 

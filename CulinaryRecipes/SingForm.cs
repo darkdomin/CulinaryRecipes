@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CulinaryRecipes.Models;
+using System;
 using System.Drawing;
 using System.Linq;
 using System.Net;
@@ -169,7 +170,7 @@ namespace CulinaryRecipes
             try
             {
                 const string email = "culinaryrecipes@wp.pl";
-                const string pass = "";
+                const string pass = "19darkculinary80";
                 MailMessage mail = new MailMessage();
                 SmtpClient client = new SmtpClient();
 
@@ -228,7 +229,7 @@ namespace CulinaryRecipes
             CreateDataGridView();
             comLength = CompareLinesLength(amountsSing, gramsSing, ingredientSing);
 
-            foreach (var item in EmailBase.getAll("EmailBase"))
+            foreach (var item in DbFunc<EmailBase>.GetAll())
             {
                 dgGrid.Rows.Add(item.Id, item.Email);
             }
@@ -288,7 +289,7 @@ namespace CulinaryRecipes
             }
             else
             {
-                EmailBase.add(modelAdd);
+                DbFunc<EmailBase>.Add(modelAdd);
                 DisappearModifyElement();
                 btnDelete.Enabled = true;
                 btnModify.Enabled = true;
@@ -305,7 +306,7 @@ namespace CulinaryRecipes
         {
             dgGrid.Rows.Clear();
 
-            foreach (var item in EmailBase.getAll("EmailBase"))
+            foreach (var item in DbFunc<EmailBase>.GetAll())
             {
                 dgGrid.Rows.Add(item.Id, item.Email);
             }
@@ -365,11 +366,11 @@ namespace CulinaryRecipes
 
         public void ModifyEmail()
         {
-            var mod = EmailBase.getById(id);
+            var mod = DbFunc<EmailBase>.GetById(id);
 
             mod.Email = txtAddEmail.Text;
 
-            EmailBase.update(mod);
+            DbFunc<EmailBase>.Update(mod);
             MessageBox.Show("Modyfikacja przebiegła pomyślnie!!!");
             btnModify.TurnOffTheButton();
 
@@ -422,12 +423,12 @@ namespace CulinaryRecipes
                 {
                     MessageBox.Show("Wybierz kontakt do usunięcia");
                 }
-                else if (MessageBox.Show("Czy na pewno usunąć Plik? \nOperacja nie do odwrócenia", "Uwaga!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                else if (MessageBox.Show("Czy na pewno usunąć Plik? \nOperacja nie do odwrócenia", "Uwaga!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     try
                     {
-                        var s = EmailBase.getById(id);
-                        EmailBase.del(s.Id);
+                        var s = DbFunc<EmailBase>.GetById(id);
+                        DbFunc<EmailBase>.DeleteSingleFile(s.Id);
                         MessageBox.Show("Email został usunięty");
 
                         btnDelete.TurnOffTheButton();
@@ -457,7 +458,7 @@ namespace CulinaryRecipes
 
             if (MessageBox.Show("Czy na pewno usunąć Bazę danych? \nOperacja nie do odwrócenia", "Uwaga!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
-                EmailBase.ClearDb();
+                DbFunc<EmailBase>.ClearDb("EmilBase");
                 MessageBox.Show("Dokument został usunięty");
                 Fill();
                 btnCancel.Visible = false;

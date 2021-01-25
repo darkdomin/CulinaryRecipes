@@ -38,17 +38,16 @@ namespace CulinaryRecipes
         }
 
         /// <summary>
-        /// zmiana kolorów labelów podczas zaznaczania i odznaczania vegetarian
+        /// zmiana kolorów labelów podczas zaznaczania i odznaczania vegetarian - wykorzystuje nazwy
         /// </summary>
         /// <param name="set"></param>
         /// <param name="nameCheckbox"></param>
-        public static void SprawdzLabel(Control set, string nameCheckbox)
+        public static void ChangeLabelColorForVeg(Control set, string nameCheckbox)
         {
             foreach (Control item in set.Controls)
             {
                 if (item is Label)
                 {
-
                     if (item.Name.Contains(nameCheckbox.Substring(3)))
                     {
                         if (((Label)item).ForeColor == ((Label)item).GreenLabel())

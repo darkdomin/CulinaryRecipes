@@ -2,9 +2,9 @@
 
 namespace CulinaryRecipes
 {
-    class Db
+    class Db<T>
     {
-        public static LiteDatabase connect()
+        public static LiteDatabase Connect()
         {
             return new LiteDatabase("mydata.db");
         }
